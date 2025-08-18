@@ -93,7 +93,7 @@ const WhyItem = ({ image, clip = CLIP_DIAG, headingTop, headingBottom, gradientW
         ))}
       </motion.div>
       <motion.button
-        className="mt-5 inline-flex items-center gap-2 rounded-md bg-[#FF4C16] px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#e74312]"
+        className="w-fit mt-5 inline-flex items-center gap-2 rounded-md bg-[#FF4C16] px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#e74312]"
         variants={pillVar}
       >
         Apply Now

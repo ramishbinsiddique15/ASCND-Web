@@ -4,6 +4,8 @@ import Footer from '../../components/Footer/Footer'
 import ContractorHero from '../../components/Contractor/ContractorHero'
 import ContractorServices from '../../components/Contractor/ContractorServices'
 import ContractorWhy from '../../components/Contractor/ContractorWhy'
+import ContractorQuote from '../../components/Contractor/ContractorQuote'
+import Contact from '../../components/Home/Contact'
 
 const Contractor = () => {
   return (
@@ -12,6 +14,8 @@ const Contractor = () => {
     <ContractorHero/>
     <ContractorServices/>
     <ContractorWhy/>
+    <ContractorQuote/>
+    <Contact/>
     <Footer/>
     </>
   )

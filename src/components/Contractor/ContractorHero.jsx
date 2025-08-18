@@ -41,7 +41,7 @@ const ContractorHero = () => {
                     {/* Left: Tag + Headline */}
             <motion.div className="md:col-span-7 min-w-0 flex h-full flex-col justify-end md:pr-6 lg:pr-10" variants={container}>
                         <motion.span variants={fadeUp} className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] md:text-[11px]">
-                            ASCND HOME SERVICES
+                            CONTRACTOR SERVICES
                         </motion.span>
                         <h2 className="mt-4 font-extrabold leading-[0.98] text-[#0b0c0e] md:mt-5 text-6xl">
                 <motion.span variants={fadeUp} className="block md:whitespace-normal xl:whitespace-nowrap">Start Something.</motion.span>

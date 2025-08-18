@@ -51,7 +51,7 @@ const Contact = () => {
             <motion.div className="relative mt-3 overflow-visible h-82 rounded-2xl bg-[#FF4C16]" variants={fadeUp}>
               {/* background solar graphic */}
               <img src={contact} alt="" className="absolute inset-0 h-full w-full rounded-2xl object-cover opacity-70" />
-              <div className='absolute inset-0 rounded-2xl bg-[#FF4C16]/80'/>
+              <div className="absolute inset-0 bg-[#FF4C16] mix-blend-multiply opacity-100  rounded-2xl" />
 
               {/* content */}
               <div className="relative grid grid-cols-1 items-end gap-4 px-5 pb-5 pt-4 sm:px-6 sm:pb-6 md:min-h-[260px] h-full z-50">
@@ -61,7 +61,7 @@ const Contact = () => {
                     <br /> along with our latest
                     <br /> news & updates.
                   </motion.h3>
-                  <motion.hr className='border-t border-white mt-5 origin-left' variants={dividerVar}/>
+                  <motion.hr className='border-t border-white mt-5 origin-left' variants={dividerVar} />
 
                   {/* input + button in a row */}
                   <motion.div className="mt-5 flex max-w-lg items-stretch gap-3" variants={fadeUp}>
