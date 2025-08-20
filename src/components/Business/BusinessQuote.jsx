@@ -33,7 +33,7 @@ const BusinessQuote = () => {
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
                 viewport={{ once: true, amount: 0.2 }}
             />
-            <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8">
+            <div className="mx-auto max-w-[100rem] px-4 sm:px-6 ">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 sm:gap-8 items-center">
 
                     {/* Left side - Content */}

@@ -140,7 +140,7 @@ const RequestForm = () => {
       initial="hidden"
       animate="show"
     >
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8">
+      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 ">
         <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start" variants={container}>
           
           {/* Left Side - Text Content */}

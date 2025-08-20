@@ -110,7 +110,7 @@ const Footer = () => {
         alt="ASCND background"
         className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-top"
       />
-      <motion.div className="mx-auto grid min-h-[60vh] sm:min-h-[80vh] md:min-h-[100vh] max-w-[100rem] grid-rows-[1fr_auto] px-3 pb-3 pt-4 sm:px-6 sm:pt-6 md:px-8 lg:px-10" variants={container}>
+      <motion.div className="mx-auto grid min-h-[60vh] sm:min-h-[80vh] md:min-h-[100vh] max-w-[100rem] grid-rows-[1fr_auto] px-3 pb-3 pt-4 sm:px-6 sm:pt-6  " variants={container}>
         {/* Row 1: all primary content starts after ~half height */}
         <motion.section className="relative pt-[20vh] sm:pt-[30vh] md:pt-[36vh] lg:pt-[42vh] xl:pt-[50vh]" variants={container}>
           {/* Logo then divider */}

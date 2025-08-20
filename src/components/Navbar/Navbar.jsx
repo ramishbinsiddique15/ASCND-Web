@@ -55,7 +55,7 @@ const mobileMenuItem = {
 };
 
 const baseBtn =
-  'group flex min-w-0 items-center justify-between gap-2 rounded-md border-2 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.14em] transition-all duration-200 h-9 sm:px-3 sm:py-2 sm:text-[10px] sm:h-10 md:px-4 md:py-2 md:text-[11px] md:h-11 lg:px-5 lg:py-3 lg:text-[12px] lg:h-12';
+  'group flex items-center justify-between gap-2 rounded-md border-2 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.14em] transition-all duration-200 h-9 whitespace-nowrap sm:px-3 sm:py-2 sm:text-[10px] sm:h-10 md:px-4 md:py-2 md:text-[11px] md:h-11 lg:px-5 lg:py-3 lg:text-[12px] lg:h-12';
 const outlineBtn = `${baseBtn} border-[#0D1318]/80 bg-transparent text-[#0D1318] hover:bg-[#0D1318]/[0.04]`;
 const darkBtn = `${baseBtn} border-transparent bg-[#0D1318] text-white hover:bg-[#0D1318]/90`;
 const orangeBtn = `${baseBtn} border-transparent bg-[#FF4C16] text-white hover:bg-[#e74312]`;
@@ -76,7 +76,7 @@ const Navbar = () => {
   return (
     <header className="w-full relative">
       {/* Main bar */}
-      <motion.nav className="w-full bg-white px-4 py-2 text-[#0D1318] sm:px-6 md:px-8 md:py-3 lg:px-12 relative z-50" variants={navReveal} initial="hidden" animate="visible">
+      <motion.nav className="w-full bg-white px-4 py-2 text-[#0D1318] sm:px-6  md:py-3  relative z-50" variants={navReveal} initial="hidden" animate="visible">
         <motion.div className="flex items-center gap-2 md:gap-4" variants={rowStagger} initial="hidden" animate="visible">
           {/* Logo */}
           <motion.div className="flex items-center gap-2 pr-2 md:gap-3 md:pr-4" variants={logoItem}>
@@ -100,43 +100,47 @@ const Navbar = () => {
             {/* Flexible spacer to push buttons away from logo */}
             <div className="flex-1" />
 
-            {/* Buttons row */}
-            <motion.div className="flex min-w-0 flex-nowrap items-center gap-1.5 whitespace-nowrap sm:gap-2 lg:gap-4" variants={rowStagger}>
-              <MotionLink to="/home-owner" className={outlineBtn + ' basis-0 grow min-w-[92px] max-w-[260px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <span className="truncate">
-                  <span className="hidden xl:inline">ASCND YOUR HOME</span>
-                  <span className="hidden lg:inline xl:hidden">YOUR HOME</span>
-                  <span className="lg:hidden">HOME</span>
+            {/* Buttons row - Now with content-based sizing */}
+            <motion.div className="flex items-center gap-1 xl:gap-2 2xl:gap-3" variants={rowStagger}>
+              <MotionLink to="/home-owner" className={outlineBtn} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <span>
+                  <span className="hidden 2xl:inline">ASCND YOUR HOME</span>
+                  <span className="hidden xl:inline 2xl:hidden">YOUR HOME</span>
+                  <span className="xl:hidden">HOME</span>
                 </span>
-                <img src={arrow} alt="" />
+                <img src={arrow} alt="" className="flex-shrink-0" />
               </MotionLink>
-              <MotionLink to="/business" className={outlineBtn + ' basis-0 grow min-w-[92px] max-w-[260px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <span className="truncate">
-                  <span className="hidden xl:inline">ASCND YOUR BUSINESS</span>
-                  <span className="hidden lg:inline xl:hidden">YOUR BUSINESS</span>
-                  <span className="lg:hidden">BUSINESS</span>
+              
+              <MotionLink to="/business" className={outlineBtn} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <span>
+                  <span className="hidden 2xl:inline">ASCND YOUR BUSINESS</span>
+                  <span className="hidden xl:inline 2xl:hidden">YOUR BUSINESS</span>
+                  <span className="xl:hidden">BUSINESS</span>
                 </span>
-                <img src={arrow} alt="" />
+                <img src={arrow} alt="" className="flex-shrink-0" />
               </MotionLink>
-              <MotionLink to="/about" className={outlineBtn + ' justify-center basis-0 grow min-w-[92px] max-w-[220px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <span className="truncate">ABOUT US</span>
+              
+              <MotionLink to="/about" className={outlineBtn + ' justify-center'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <span>ABOUT US</span>
               </MotionLink>
-              <MotionLink to="/request-quote" className={darkBtn + ' basis-0 grow min-w-[92px] max-w-[280px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <span className="truncate">
-                  <span className="hidden xl:inline">REQUEST A QUOTE</span>
-                  <span className="lg:hidden xl:hidden">QUOTE</span>
-                  <span className="hidden lg:inline xl:hidden">QUOTE</span>
+              
+              <MotionLink to="/request-quote" className={darkBtn} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <span>
+                  <span className="hidden 2xl:inline">REQUEST A QUOTE</span>
+                  <span className="hidden xl:inline 2xl:hidden">REQUEST QUOTE</span>
+                  <span className="xl:hidden">QUOTE</span>
                 </span>
-                <img src={request} alt="Request" className="h-3 w-auto sm:h-3.5 md:h-4" />
+                <img src={request} alt="Request" className="h-3 w-auto sm:h-3.5 md:h-4 flex-shrink-0" />
               </MotionLink>
-              <MotionLink to="/business-apply" className={orangeBtn + ' basis-0 grow min-w-[92px] max-w-[200px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <span className="truncate">APPLY</span>
-                <img src={apply} alt="Apply" className="h-3 w-auto sm:h-3.5 md:h-4" />
+              
+              <MotionLink to="/business-apply" className={orangeBtn} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <span>APPLY</span>
+                <img src={apply} alt="Apply" className="h-3 w-auto sm:h-3.5 md:h-4 flex-shrink-0" />
               </MotionLink>
             </motion.div>
 
             {/* Social icons */}
-            <motion.div className="ml-2 flex items-center gap-3 text-[#111] sm:ml-3 md:ml-4 md:gap-4" variants={rowStagger}>
+            <motion.div className="ml-2 flex items-center gap-3 text-[#111] sm:ml-3 md:ml-4 md:gap-4 flex-shrink-0" variants={rowStagger}>
               <motion.span variants={socialItem} whileHover={{ scale: 1.15, rotate: 2 }} whileTap={{ scale: 0.95 }}>
                 <FaLinkedin className="size-4 sm:size-5 md:size-6" />
               </motion.span>

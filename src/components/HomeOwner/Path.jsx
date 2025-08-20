@@ -32,7 +32,7 @@ const Path = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="mx-auto max-w-[100rem] px-4 sm:px-6  ">
         {/* Header Section - Exact match to image */}
         <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-white">
           <div className="relative items-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px]">
@@ -51,7 +51,7 @@ const Path = () => {
             </motion.div>
 
             {/* Right: Text Content */}
-            <motion.div variants={itemVariants} className="px-4 pt-8 sm:px-6 sm:pt-12 md:px-8 md:pt-16 lg:px-12 lg:pt-20 w-[85%] sm:w-[80%] md:w-[75%] ml-auto z-50 pb-6 sm:pb-8 flex items-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px]">
+            <motion.div variants={itemVariants} className="px-4 pt-8 sm:px-6 sm:pt-12  md:pt-16  lg:pt-20 w-[85%] sm:w-[80%] md:w-[75%] ml-auto z-50 pb-6 sm:pb-8 flex items-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px]">
               <h2 className="text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] xl:text-[48px] font-extrabold leading-[0.85] sm:leading-[0.8] text-[#0b0c0e]">
                 We've designed{' '}
                 <span className="text-[#105CE9]">a clear path for homeowners to elevate their home</span>{' '}

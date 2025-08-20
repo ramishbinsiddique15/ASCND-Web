@@ -29,7 +29,7 @@ const BusinessWhy = () => {
         <motion.div className="relative overflow-hidden" variants={fadeUp}>
 
           {/* Content */}
-          <div className="relative px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:px-12 h-full z-10 flex flex-col justify-between">
+          <div className="relative px-4 py-8 sm:px-6 sm:py-10  md:py-12  h-full z-10 flex flex-col justify-between">
             {/* Main heading */}
             <motion.h3 className="font-extrabold leading-[1.1] text-[#0D1318] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-xl sm:max-w-2xl lg:max-w-3xl" variants={fadeUp}>
               Why The ASCND Model Works

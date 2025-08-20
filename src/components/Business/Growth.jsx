@@ -38,7 +38,7 @@ const Growth = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 md:py-10 lg:py-12">
+      <div className="mx-auto max-w-[100rem] px-4 sm:px-6   py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="grid grid-cols-1 items-stretch gap-6 sm:gap-8 md:grid-cols-12 md:gap-10 lg:gap-12 xl:gap-16">
           {/* Left: Outlined clipped text block */}
           <motion.div 

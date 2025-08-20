@@ -106,7 +106,7 @@ const WhyItem = ({ image, clip = CLIP_DIAG, headingTop, headingBottom, gradientW
 const ContractorWhy = () => {
   return (
     <section className="w-full">
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="mx-auto max-w-[100rem] px-4 sm:px-6  ">
         {/* Heading */}
         <motion.div
           initial={{ y: 12, opacity: 0 }}

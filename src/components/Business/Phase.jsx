@@ -87,7 +87,7 @@ const Phase = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8 lg:pl-8 lg:pr-4 py-8 sm:py-10 md:py-12 lg:py-16">
+      <div className="mx-auto max-w-[100rem] px-4 sm:px-6  lg:pl-8 lg:pr-4 py-8 sm:py-10 md:py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start">
           
           {/* Left side - Phase cards */}

@@ -24,7 +24,7 @@ const HomeOwnerQuote = () => {
 
     return (
         <div className="relative w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto h-screen" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}>
-            <motion.div className="absolute inset-0 flex items-center justify-center flex-col text-center px-4 sm:px-6 md:px-8" variants={containerVar} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.5 }}>
+            <motion.div className="absolute inset-0 flex items-center justify-center flex-col text-center px-4 sm:px-6 " variants={containerVar} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.5 }}>
                 <motion.img src={logo} alt="ASCND Logo" className="h-5 sm:h-6 w-auto md:h-7" variants={itemVar} />
                 <motion.h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tighter tracking-tighter" variants={itemVar}>
                     Smart upgrades that improve<br />

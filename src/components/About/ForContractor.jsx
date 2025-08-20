@@ -43,7 +43,7 @@ const ForContractor = () => {
       viewport={{ once: true, amount: 0.3 }}
       variants={container}
     >
-      <div className="max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8">
+      <div className="max-w-[100rem] mx-auto px-4 sm:px-6 ">
         <div className="flex flex-col lg:flex-row items-stretch gap-4 sm:gap-5">
           {/* Left side - Dark section with content */}
           <motion.div className="flex-1" variants={itemVariants}>

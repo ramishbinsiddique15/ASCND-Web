@@ -1,6 +1,6 @@
 import React from 'react';
 import banner from '../../assets/img/banner.jpg';
-import logo from '../../assets/icons/logo.png';
+import logo from '../../assets/icons/logo-white.png';
 import request from '../../assets/icons/request.png';
 import apply from '../../assets/icons/apply.png';
 import doubleArrow from "../../assets/icons/double-arrow.png";
@@ -67,7 +67,7 @@ const Banner = () => {
       {/* Left-aligned headline with logo above */}
       <motion.div className="absolute top-1/2 -translate-y-1/2 px-4 text-left sm:px-6 lg:px-8" variants={heroContainer} initial="hidden" animate="visible">
         <motion.div className="mb-3 sm:mb-4" variants={lineItem}>
-          <img src={logo} alt="ASCND Logo" className="invert-100 h-[35px] sm:h-[42px] lg:h-[50px]" />
+          <img src={logo} alt="ASCND Logo" className="h-[35px] sm:h-[42px] lg:h-[50px]" />
         </motion.div>
         <h1 className="max-w-[60rem] text-[28px] font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-[38px] md:text-[48px] lg:text-[76px]">
           <motion.span className="block" variants={lineItem}>Advanced Strategies</motion.span>
@@ -222,77 +222,43 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* Desktop Layout - Single Row */}
-        <div className="hidden lg:flex items-center justify-between gap-60 border-t pt-5 border-t-white">
-          {/* Left Side: Buttons */}
-          <motion.div className="flex flex-1 flex-wrap items-center gap-4" variants={heroContainer}>
-            {["I'M A HOMEOWNER", "SECURE YOUR BUSINESS", "ABOUT US", "PRODUCTS & QUOTES", "APPLY"].map((label, index) => {
-              if (label === "I'M A HOMEOWNER") {
-                return (
-                  <MotionLink to="/home-owner" role="button" variants={buttonItem}
-                    key={label}
-                    className="group flex flex-1 min-w-0 items-center justify-between gap-3 rounded-lg border-2 border-white/80 bg-transparent px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 h-12"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span>{label}</span>
-                    <img src={doubleArrow} alt="" />
-                  </MotionLink>
-                );
-              } else if (label === "SECURE YOUR BUSINESS") {
-                return (
-                  <MotionLink to="/business" role="button" variants={buttonItem}
-                    key={label}
-                    className="group flex flex-1 min-w-0 items-center justify-between gap-3 rounded-lg border-2 border-white/80 bg-transparent px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 h-12"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span>{label}</span>
-                    <img src={doubleArrow} alt="" />
-                  </MotionLink>
-                );
-              } else if (label === "ABOUT US") {
-                return (
-                  <MotionLink to="/about" role="button" variants={buttonItem}
-                    key={label}
-                    className="group flex flex-1 min-w-0 items-center justify-center gap-3 rounded-lg border-2 border-white/80 bg-transparent px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 h-12"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span>{label}</span>
-                  </MotionLink>
-                );
-              } else if (label === "PRODUCTS & QUOTES") {
-                return (
-                  <MotionLink to="/request-quote" role="button" variants={buttonItem}
-                    key={label}
-                    className="group flex flex-1 min-w-0 items-center justify-between gap-3 rounded-lg border-2 border-white/80 bg-transparent px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 h-12"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span>{label}</span>
-                    <img src={request} alt="Request" style={{ height: '20px' }} />
-                  </MotionLink>
-                );
-              } else if (label === "APPLY") {
-                return (
-                  <MotionLink to="/business-apply" role="button" variants={buttonItem}
-                    key={label}
-                    className="group flex flex-1 min-w-0 items-center justify-between gap-3 rounded-lg border-2 border-white/80 bg-transparent px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 h-12"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span>{label}</span>
-                    <img src={apply} alt="Apply" style={{ height: '20px' }} />
-                  </MotionLink>
-                );
-              }
-              return null;
-            })}
+        {/* Desktop Layout - Responsive Single Row */}
+        <div className="hidden lg:flex items-center justify-between border-t pt-5 border-t-white">
+          {/* Left Side: Buttons - Now with content-based sizing */}
+          <motion.div 
+            className="flex items-center gap-1 lg:gap-2 xl:gap-3 2xl:gap-4 pr-2 lg:pr-4 xl:pr-6 2xl:pr-8" 
+            variants={heroContainer}
+          >
+            {[
+              { label: "I'M A HOMEOWNER", route: "/home-owner", icon: doubleArrow, hasIcon: true },
+              { label: "SECURE YOUR BUSINESS", route: "/business", icon: doubleArrow, hasIcon: true },
+              { label: "ABOUT US", route: "/about", hasIcon: false },
+              { label: "PRODUCTS & QUOTES", route: "/request-quote", icon: request, hasIcon: true },
+              { label: "APPLY", route: "/business-apply", icon: apply, hasIcon: true }
+            ].map(({ label, route, icon, hasIcon }) => (
+              <MotionLink 
+                to={route} 
+                role="button" 
+                variants={buttonItem}
+                key={label}
+                className={`group flex items-center ${hasIcon ? 'justify-between' : 'justify-center'} gap-2 lg:gap-2 xl:gap-3 rounded-lg border-2 border-white/80 bg-transparent px-2 lg:px-3 xl:px-4 2xl:px-6 py-3 xl:py-4 text-[9px] lg:text-[10px] xl:text-[11px] 2xl:text-[13px] font-semibold uppercase tracking-[0.1em] lg:tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 h-10 xl:h-11 2xl:h-12 whitespace-nowrap`}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <span>{label}</span>
+                {hasIcon && (
+                  <img 
+                    src={icon} 
+                    alt="" 
+                    className="h-3 xl:h-4 2xl:h-5 flex-shrink-0" 
+                  />
+                )}
+              </MotionLink>
+            ))}
           </motion.div>
 
           {/* Right Side: Social Icons */}
-          <motion.div className="flex items-center gap-4" variants={heroContainer}>
+          <motion.div className="flex items-center gap-2 xl:gap-3 2xl:gap-4 flex-shrink-0" variants={heroContainer}>
             {[
               { Icon: FaDiscord, label: "Discord" },
               { Icon: FaInstagram, label: "Instagram" },
@@ -302,12 +268,12 @@ const Banner = () => {
                 key={label}
                 href="#"
                 aria-label={label}
-                className="grid size-12 place-items-center rounded-full bg-white text-gray-900 shadow-md transition-transform duration-200 hover:scale-105"
+                className="grid size-10 xl:size-11 2xl:size-12 place-items-center rounded-full bg-white text-gray-900 shadow-md transition-transform duration-200 hover:scale-105 flex-shrink-0"
                 variants={socialItem}
                 whileHover={{ scale: 1.08, rotate: 2 }}
                 whileTap={{ scale: 0.96 }}
               >
-                <Icon className="size-6" />
+                <Icon className="size-4 xl:size-5 2xl:size-6" />
               </motion.a>
             ))}
           </motion.div>

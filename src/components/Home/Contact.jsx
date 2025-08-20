@@ -40,7 +40,7 @@ const Contact = () => {
       whileInView="show"
       viewport={{ once: true, amount: 0.35, margin: '0px 0px -10% 0px' }}
     >
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 md:py-12">
+      <div className="mx-auto max-w-[100rem] px-4 sm:px-6   py-6 sm:py-8 md:py-12">
         <motion.div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2" variants={container}>
           {/* Left: Subscribe card (white card with inset orange panel) */}
           <motion.div className='self-end' variants={slideLeft}>

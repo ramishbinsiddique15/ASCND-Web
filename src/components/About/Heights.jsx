@@ -63,7 +63,7 @@ const Heights = () => {
 
       {/* Content overlay */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6   w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             
             {/* Left side - Logo and heading */}

@@ -32,7 +32,7 @@ const AboutHero = () => {
             initial="hidden"
             animate="show"
         >
-            <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8 lg:px-12">
+            <div className="mx-auto max-w-[100rem] px-4 sm:px-6  ">
                 {/* Content grid */}
                 <motion.div
                     className="grid grid-cols-1 items-stretch gap-6 pb-6 pt-8 sm:gap-8 sm:pb-8 sm:pt-10 md:grid-cols-12 md:gap-14 md:pb-10 md:pt-14 md:min-h-[380px] lg:min-h-[460px] lg:gap-24 lg:pt-16"

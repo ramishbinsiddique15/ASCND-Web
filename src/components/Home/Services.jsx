@@ -195,7 +195,7 @@ const Card = ({ icon, label, title, body, image }) => {
 const Services = () => {
   return (
     <motion.section className="w-full" variants={sectionFade} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}>
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="mx-auto max-w-[100rem] px-4 sm:px-6  ">
         <motion.div className="grid grid-cols-1 items-stretch gap-4 py-8 sm:gap-6 sm:py-10 lg:grid-cols-2 lg:gap-8" variants={listVar} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
           {items.map((it) => (
             <Card key={it.label} {...it} />

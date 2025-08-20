@@ -46,7 +46,7 @@ const TrailBlazer = () => {
             </div>
 
             {/* Main content */}
-            <div className="relative z-10 px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 max-w-7xl mx-auto">
+            <div className="relative z-10 px-4 py-8 sm:px-6 sm:py-12  md:py-16  max-w-7xl mx-auto">
                 {/* Top tagline */}
                 <motion.div variants={itemVariants} className="">
                     <p className="text-white text-lg sm:text-xl md:text-2xl font-bold leading-[1.1] max-w-xs sm:max-w-sm md:max-w-md">
@@ -107,7 +107,7 @@ const TrailBlazer = () => {
 
                         {/* Apply Now button */}
                         <motion.button
-                            className="bg-[#FF990A] text-[#0D1318] px-6 py-2.5 sm:px-7 sm:py-3 md:px-8 md:py-3 rounded-lg font-semibold text-xs sm:text-sm tracking-wider hover:bg-[#FF990A]/90 transition-colors duration-200 flex items-center gap-2 w-fit"
+                            className="bg-[#FF990A] text-[#0D1318] px-6 py-2.5 sm:px-7 sm:py-3  md:py-3 rounded-lg font-semibold text-xs sm:text-sm tracking-wider hover:bg-[#FF990A]/90 transition-colors duration-200 flex items-center gap-2 w-fit"
                             whileHover={{ scale: 1.02, y: -1 }}
                             whileTap={{ scale: 0.98 }}
                         >

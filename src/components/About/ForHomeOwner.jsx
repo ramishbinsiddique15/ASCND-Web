@@ -47,7 +47,7 @@ const ForHomeOwner = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
         >
-            <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8">
+            <div className="mx-auto max-w-[100rem] px-4 sm:px-6 ">
                 <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 shadow-sm border border-gray-100">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
                         
