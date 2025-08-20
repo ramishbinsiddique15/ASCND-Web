@@ -140,35 +140,35 @@ const Card = ({ icon, label, title, body, image }) => {
 
     return (
         <motion.article
-            className="h-full overflow-hidden rounded-2xl border border-[#0D1318]/10 bg-white"
+            className="h-full overflow-hidden rounded-xl border border-[#0D1318]/10 bg-white sm:rounded-2xl"
             variants={localCardVar}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3, margin: '0px 0px -12% 0px' }}
         >
-            <div className="grid h-full grid-cols-1 md:grid-cols-[2fr_1fr]">
+            <div className="grid h-full grid-cols-1 lg:grid-cols-[2fr_1fr]">
                 {/* Content */}
-                <motion.div className="flex h-full flex-col p-6 bg-[#0D1318]" variants={contentVar}>
-                    <motion.div className="mb-6 flex items-center gap-3" variants={localTextVar}>
-                        <img src={icon} alt="" className="h-7 w-7 md:h-8 md:w-8" />
-                        <span className="text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#F6F6F4] md:text-[14px]">
+                <motion.div className="flex h-full flex-col p-4 bg-[#0D1318] sm:p-5 md:p-6" variants={contentVar}>
+                    <motion.div className="mb-4 flex items-center gap-2 sm:mb-5 sm:gap-3 md:mb-6" variants={localTextVar}>
+                        <img src={icon} alt="" className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" />
+                        <span className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#F6F6F4] sm:text-[12px] md:text-[13px] lg:text-[14px]">
                             {label}
                         </span>
                     </motion.div>
                     <div className="mt-auto">
-                    <motion.h3 variants={localTextVar} className="text-4xl leading-[1.1] text-[#F6F6F4] ">
+                    <motion.h3 variants={localTextVar} className="text-2xl leading-[1.1] text-[#F6F6F4] sm:text-3xl md:text-4xl">
                         {title}
                     </motion.h3>
-                    <motion.p variants={localTextVar} className="mt-4 max-w-2xl text-[15px] leading-7 text-[#F6F6F4] md:text-[16px]">
+                    <motion.p variants={localTextVar} className="mt-3 max-w-2xl text-[14px] leading-6 text-[#F6F6F4] sm:mt-4 sm:text-[15px] sm:leading-7 md:text-[16px]">
                         {body}
                     </motion.p>
                     </div>
                     {/* Bottom CTA section anchored */}
                     <div className="">
-                        <motion.div className="mt-6 border-t border-[#F6F6F4] origin-left" variants={dividerVar} />
-                        <motion.div className="mt-5" variants={localTextVar}>
+                        <motion.div className="mt-4 border-t border-[#F6F6F4] origin-left sm:mt-5 md:mt-6" variants={dividerVar} />
+                        <motion.div className="mt-3 sm:mt-4 md:mt-5" variants={localTextVar}>
                             <motion.button
-                                className="inline-flex items-center justify-between gap-2 rounded-md bg-[#F6F6F4] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0D1318] transition hover:bg-[#F6F6F4]/90 sm:px-7 sm:py-3.5 md:text-[12px]"
+                                className="inline-flex items-center justify-between gap-2 rounded-md bg-[#F6F6F4] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0D1318] transition hover:bg-[#F6F6F4]/90 sm:px-5 sm:py-2.5 sm:text-[11px] md:px-6 md:py-3 md:text-[12px] lg:px-7 lg:py-3.5"
                                 whileHover={{ scale: 1.02, y: -1 }}
                                 whileTap={{ scale: 0.98 }}
                             >
@@ -179,7 +179,7 @@ const Card = ({ icon, label, title, body, image }) => {
                     </div>
                 </motion.div>
                 {/* Image */}
-                <div className="relative h-52 overflow-hidden md:h-full md:rounded-r-2xl">
+                <div className="relative h-48 overflow-hidden sm:h-52 md:h-56 lg:h-full lg:rounded-r-2xl">
                     <motion.img
                         src={image}
                         alt=""
@@ -195,8 +195,8 @@ const Card = ({ icon, label, title, body, image }) => {
 const ContractorServices = () => {
     return (
         <motion.section className="w-full" variants={sectionFade} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}>
-            <div className="mx-auto max-w-[100rem] px-4 md:px-8">
-                <motion.div className="grid grid-cols-1 items-stretch gap-6 py-10 md:grid-cols-2 md:gap-7 lg:gap-8" variants={listVar} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+            <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8 lg:px-12">
+                <motion.div className="grid grid-cols-1 items-stretch gap-4 py-8 sm:gap-6 sm:py-10 md:grid-cols-2 md:gap-6 md:py-12 lg:gap-8 lg:py-14" variants={listVar} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
                     {items.map((it) => (
                         <Card key={it.label} {...it} />
                     ))}

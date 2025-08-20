@@ -146,40 +146,40 @@ const Card = ({ icon, label, title, body, image }) => {
       whileInView="show"
       viewport={{ once: true, amount: 0.3, margin: '0px 0px -12% 0px' }}
     >
-      <div className="grid h-full grid-cols-1 md:grid-cols-[2fr_1fr]">
+      <div className="grid h-full grid-cols-1 lg:grid-cols-[2fr_1fr]">
         {/* Content */}
-        <motion.div className="flex h-full flex-col p-6 sm:p-8 md:p-10" variants={contentVar}>
-          <motion.div className="mb-6 flex items-center gap-3" variants={localTextVar}>
-            <img src={icon} alt="" className="h-7 w-7 md:h-8 md:w-8" />
-            <span className="text-[13px] font-extrabold uppercase tracking-[0.16em] text-[#0b0c0e] md:text-[14px]">
+        <motion.div className="flex h-full flex-col p-4 sm:p-6 md:p-8 lg:p-10" variants={contentVar}>
+          <motion.div className="mb-4 flex items-center gap-2 sm:mb-6 sm:gap-3" variants={localTextVar}>
+            <img src={icon} alt="" className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" />
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#0b0c0e] sm:text-[13px] md:text-[14px]">
               {label}
             </span>
           </motion.div>
           <div className="mt-auto">
-          <motion.h3 variants={localTextVar} className=" leading-[1.1] text-[#0b0c0e] text-4xl">
+          <motion.h3 variants={localTextVar} className="leading-[1.1] text-[#0b0c0e] text-2xl sm:text-3xl md:text-4xl">
             {title}
           </motion.h3>
-          <motion.p variants={localTextVar} className="mt-4 max-w-2xl text-[15px] leading-7 text-[#0D1318]/70 md:text-[16px]">
+          <motion.p variants={localTextVar} className="mt-3 max-w-2xl text-[14px] leading-6 text-[#0D1318]/70 sm:mt-4 sm:text-[15px] sm:leading-7 md:text-[16px]">
             {body}
           </motion.p>
           </div>
           {/* Bottom CTA section anchored */}
           <div className="">
-            <motion.div className="mt-6 border-t border-[#0D1318]/15 origin-left" variants={dividerVar} />
-            <motion.div className="mt-5" variants={localTextVar}>
+            <motion.div className="mt-4 border-t border-[#0D1318]/15 origin-left sm:mt-6" variants={dividerVar} />
+            <motion.div className="mt-4 sm:mt-5" variants={localTextVar}>
               <motion.button
-                className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#0D1318]/90 sm:px-7 sm:py-3.5 md:text-[12px]"
+                className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#0D1318]/90 sm:px-6 sm:py-3 sm:text-[11px] md:px-7 md:py-3.5 md:text-[12px]"
                 whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <span>Learn How</span>
-                <img src={doubleArrow} alt="" />
+                <img src={doubleArrow} alt="" className="h-3 sm:h-4" />
               </motion.button>
             </motion.div>
           </div>
         </motion.div>
         {/* Image */}
-        <div className="relative h-52 overflow-hidden md:h-full md:rounded-r-2xl">
+        <div className="relative h-48 overflow-hidden sm:h-52 lg:h-full lg:rounded-r-2xl">
           <motion.img
             src={image}
             alt=""
@@ -195,8 +195,8 @@ const Card = ({ icon, label, title, body, image }) => {
 const Services = () => {
   return (
     <motion.section className="w-full" variants={sectionFade} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}>
-      <div className="mx-auto max-w-[100rem] px-4 md:px-8">
-        <motion.div className="grid grid-cols-1 items-stretch gap-6 py-10 md:grid-cols-2 md:gap-7 lg:gap-8" variants={listVar} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8 lg:px-12">
+        <motion.div className="grid grid-cols-1 items-stretch gap-4 py-8 sm:gap-6 sm:py-10 lg:grid-cols-2 lg:gap-8" variants={listVar} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
           {items.map((it) => (
             <Card key={it.label} {...it} />
           ))}

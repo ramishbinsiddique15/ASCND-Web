@@ -29,32 +29,31 @@ const HomeHero = () => {
         <motion.section
             className="w-full"
             initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.35 }}
+            animate="show"
         >
-            <div className="mx-auto max-w-[100rem] px-4 md:px-8">
+            <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8 lg:px-12">
                 {/* Content grid */}
                 <motion.div
-                    className="grid grid-cols-1 items-stretch gap-8 pb-8 pt-10 md:grid-cols-12 md:gap-14 md:pb-10 md:pt-14 md:min-h-[380px] lg:min-h-[460px] lg:gap-24 lg:pt-16"
+                    className="grid grid-cols-1 items-stretch gap-6 pb-6 pt-8 sm:gap-8 sm:pb-8 sm:pt-10 md:grid-cols-12 md:gap-14 md:pb-10 md:pt-14 md:min-h-[380px] lg:min-h-[460px] lg:gap-24 lg:pt-16"
                     variants={container}
                 >
                     {/* Left: Tag + Headline */}
                     <motion.div className="md:col-span-7 flex h-full flex-col justify-end md:pr-6 lg:pr-10" variants={container}>
-                        <motion.span variants={fadeUp} className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] md:text-[11px]">
+                        <motion.span variants={fadeUp} className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] sm:px-3 sm:text-[10px] md:text-[11px]">
                             ASCND HOME SERVICES
                         </motion.span>
-                        <h2 className="mt-4 font-extrabold leading-[0.98] text-[#0b0c0e] md:mt-5 text-6xl">
-                            <motion.span variants={fadeUp} className="block whitespace-nowrap">One Platform.</motion.span>
-                            <motion.span variants={fadeUp} className="block whitespace-nowrap">Every Upgrade.</motion.span>
+                        <h2 className="mt-3 font-extrabold leading-[0.98] text-[#0b0c0e] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl">
+                            <motion.span variants={fadeUp} className="block">One Platform.</motion.span>
+                            <motion.span variants={fadeUp} className="block">Every Upgrade.</motion.span>
                         </h2>
                     </motion.div>
 
                     {/* Right: Copy */}
-                    <motion.div className="md:col-span-5 flex h-full flex-col justify-end md:pl-6 lg:pl-10" variants={container}>
-                        <motion.p variants={fadeUp} className="text-base font-semibold leading-relaxed text-[#0D1318] sm:text-lg md:text-xl">
+                    <motion.div className="md:col-span-5 flex h-full flex-col justify-end mt-6 md:mt-0 md:pl-6 lg:pl-10" variants={container}>
+                        <motion.p variants={fadeUp} className="text-sm font-semibold leading-relaxed text-[#0D1318] sm:text-base md:text-lg lg:text-xl">
                             At ASCND, we make home upgrades easy. From solar panels to garage flooring, we handle the hard stuff so you can enjoy fast timelines, beautiful results, and real savings—without the usual contractor headaches.
                         </motion.p>
-                        <motion.p variants={fadeUp} className="mt-4 text-sm leading-7 text-[#0D1318]/70 sm:text-base">
+                        <motion.p variants={fadeUp} className="mt-3 text-xs leading-6 text-[#0D1318]/70 sm:mt-4 sm:text-sm sm:leading-7 md:text-base">
                             Whether you’re going solar, installing turf, or redoing your garage, ASCND lets you bundle home improvements with speed and simplicity. No need to juggle multiple contractors. We bring it all under one roof.
                         </motion.p>
                     </motion.div>

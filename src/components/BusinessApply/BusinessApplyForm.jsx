@@ -153,24 +153,24 @@ const BusinessApplyForm = () => {
 
     return (
         <motion.section
-            className="w-full bg-gray-50 py-16 md:py-24"
+            className="w-full bg-gray-50 py-8 sm:py-12 md:py-16 lg:py-24"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
         >
-            <div className="mx-auto max-w-[100rem] px-4 md:px-8">
-                <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start" variants={container}>
+            <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8">
+                <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start" variants={container}>
 
                     {/* Left Side - Text Content */}
-                    <motion.div className="space-y-6" variants={slideLeft}>
+                    <motion.div className="space-y-4 sm:space-y-5 md:space-y-6" variants={slideLeft}>
                         <motion.div variants={fadeUp}>
-                            <span className="inline-block px-4 py-2 bg-white text-[#FF4C16] text-sm font-semibold uppercase tracking-wider border-2 border-[#FF4C16] rounded">
+                            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white text-[#FF4C16] text-xs sm:text-sm font-semibold uppercase tracking-wider border-2 border-[#FF4C16] rounded">
                                 APPLY TO ASCND
                             </span>
                         </motion.div>
 
                         <motion.h1
-                            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0D1318] leading-[0.8]"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0D1318] leading-[0.8]"
                             variants={fadeUp}
                         >
                             <motion.span variants={fadeUp} className="block">Let's work</motion.span>
@@ -189,19 +189,19 @@ const BusinessApplyForm = () => {
 
                     {/* Right Side - Form */}
                     <motion.div
-                        className="bg-white rounded-2xl border border-[#4B5361] shadow-lg p-6"
+                        className="bg-white rounded-xl sm:rounded-2xl border border-[#4B5361] shadow-lg p-4 sm:p-5 md:p-6"
                         variants={slideRight}
                     >
                         <motion.h2
-                            className="text-xl font-semibold text-[#0D1318] mb-6"
+                            className="text-lg sm:text-xl font-semibold text-[#0D1318] mb-4 sm:mb-5 md:mb-6"
                             variants={fadeUp}
                         >
                             Contact Information
                         </motion.h2>
 
-                        <motion.form className="space-y-4" variants={container}>
+                        <motion.form className="space-y-3 sm:space-y-4" variants={container}>
                             {/* Name Fields */}
-                            <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-4" variants={fadeUp}>
+                            <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4" variants={fadeUp}>
                                 <div>
                                     <input
                                         type="text"
@@ -257,7 +257,7 @@ const BusinessApplyForm = () => {
 
                             {/* Address Section */}
                             <motion.div variants={fadeUp}>
-                                <h3 className="text-lg font-semibold text-[#0D1318] mb-4">Address<span className="text-[#FF4C16]">*</span></h3>
+                                <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">Address<span className="text-[#FF4C16]">*</span></h3>
                                 
                                 {/* Country */}
                                 <div className="mb-4">
@@ -295,7 +295,7 @@ const BusinessApplyForm = () => {
                                 </div>
 
                                 {/* City, State, Zip */}
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                                     <input
                                         type="text"
                                         placeholder="CITY*"
@@ -322,8 +322,8 @@ const BusinessApplyForm = () => {
 
                             {/* Role Selection */}
                             <motion.div variants={fadeUp}>
-                                <h3 className="text-lg font-semibold text-[#0D1318] mb-4">What role are you interested in?<span className="text-[#FF4C16]">*</span></h3>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">What role are you interested in?<span className="text-[#FF4C16]">*</span></h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                                     {roleOptions.map((option) => (
                                         <label key={option} className="cursor-pointer">
                                             <div className={`flex items-center gap-3 px-4 py-3 rounded-lg border transition-all ${role === option
@@ -695,12 +695,12 @@ const BusinessApplyForm = () => {
 
                                 <motion.button
                                     type="submit"
-                                    className="cursor-pointer w-full bg-[#0D1318] text-white py-4 px-6 rounded-lg uppercase tracking-wider hover:bg-[#0D1318]/90 transition-all flex items-center justify-center gap-2 text-xs"
+                                    className="cursor-pointer w-full bg-[#0D1318] text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg uppercase tracking-wider hover:bg-[#0D1318]/90 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
                                     SUBMIT MY APPLICATION
-                                    <img src={doubleArrow} alt="" />
+                                    <img src={doubleArrow} alt="" className="w-3 h-3 sm:w-4 sm:h-4" />
                                 </motion.button>
                             </motion.div>
                         </motion.form>

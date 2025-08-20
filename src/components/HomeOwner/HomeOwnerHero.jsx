@@ -39,31 +39,30 @@ const HomeOwnerHero = () => {
         <motion.section
             className="w-full"
             initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.35 }}
+            animate="show"
         >
             <motion.img 
                 src={bg} 
-                className='absolute right-0 -z-50 w-[40%]' 
+                className='absolute right-0 -z-50 w-[60%] sm:w-[50%] md:w-[45%] lg:w-[40%]' 
                 alt=""
                 variants={backgroundVar}
             />
 
-            <div className="mx-auto max-w-[100rem] px-4 md:px-8">
+            <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8 lg:px-12">
                 {/* Content grid */}
                 <motion.div
-                    className="grid grid-cols-1 items-stretch gap-8 pb-8 pt-10 md:grid-cols-12 md:gap-14 md:pb-10 md:pt-14 md:min-h-[380px] lg:min-h-[460px] lg:gap-24 lg:pt-16"
+                    className="grid grid-cols-1 items-stretch gap-6 pb-6 pt-8 sm:gap-8 sm:pb-8 sm:pt-10 md:grid-cols-12 md:gap-14 md:pb-10 md:pt-14 md:min-h-[380px] lg:min-h-[460px] lg:gap-24 lg:pt-16"
                     variants={container}
                 >
                     {/* Left: Tag + Headline */}
-                    <motion.div className="md:col-span-7 flex h-full flex-col md:pr-6 lg:pr-10 pt-10" variants={container}>
-                        <motion.span variants={fadeUp} className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] md:text-[11px]">
+                    <motion.div className="md:col-span-7 flex h-full flex-col md:pr-6 lg:pr-10 pt-6 sm:pt-8 md:pt-10" variants={container}>
+                        <motion.span variants={fadeUp} className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] sm:px-3 sm:text-[10px] md:text-[11px]">
                             ASCND HOME SERVICES
                         </motion.span>
-                        <h2 className="mt-4 font-extrabold leading-[0.98] text-[#0b0c0e] md:mt-5 text-7xl">
-                            <motion.span variants={fadeUp} className="block whitespace-nowrap">Turn projects into</motion.span>
-                            <motion.span variants={fadeUp} className="block whitespace-nowrap">progress and progress</motion.span>
-                            <motion.span variants={fadeUp} className="block whitespace-nowrap">into equity.</motion.span>
+                        <h2 className="mt-3 font-extrabold leading-[0.98] text-[#0b0c0e] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+                            <motion.span variants={fadeUp} className="block">Turn projects into</motion.span>
+                            <motion.span variants={fadeUp} className="block">progress and progress</motion.span>
+                            <motion.span variants={fadeUp} className="block">into equity.</motion.span>
                         </h2>
                     </motion.div>
 

@@ -40,8 +40,8 @@ const groups = [
   {
     title: 'ASCND YOUR HOME',
     items: [
-      { text: 'Home Services', path: '/home-owner' },
-      { text: 'Why ASCND your home?', path: '/home-owner#why' },
+      { text: 'Home Services', path: '/home' },
+      { text: 'Why ASCND your home?', path: '/home#why' },
       { text: 'Homeowner Growth Model', path: '/home-owner#model' },
       { text: 'Request a Quote', path: '/request-quote' },
     ],
@@ -69,21 +69,21 @@ const Pill = ({ title, items }) => {
   return (
     <motion.div className="" variants={fadeUp}>
       {/* Flat, full-width header bar */}
-      <div className="mb-4 w-full  bg-[#E6E6E6] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0D1318] sm:text-[12px]">
+      <div className="mb-3 w-full bg-[#E6E6E6] px-2 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0D1318] sm:mb-4 sm:px-3 sm:py-2 sm:text-[11px] md:text-[12px]">
         {title}
       </div>
-      <ul className="grid gap-2 px-0 pb-1 text-white/90 sm:gap-2.5">
+      <ul className="grid gap-1.5 px-0 pb-1 text-white/90 sm:gap-2 md:gap-2.5">
         {items.map((item, idx) => {
           const isActive = location.pathname === item.path || 
                           (item.path.includes('#') && location.pathname === item.path.split('#')[0]);
           
           return (
-            <li key={item.text} className="flex items-center gap-4">
+            <li key={item.text} className="flex items-center gap-3 sm:gap-4">
               <Link 
                 to={item.path}
-                className="flex items-center gap-4 text-[12px] uppercase tracking-[0.14em] hover:text-white transition-colors"
+                className="flex items-center gap-3 text-[11px] uppercase tracking-[0.14em] hover:text-white transition-colors sm:gap-4 sm:text-[12px]"
               >
-                <span className={`inline-block size-[10px] rounded-full ${
+                <span className={`inline-block size-[8px] rounded-full sm:size-[10px] ${
                   isActive ? 'bg-white' : 'border border-white/70'
                 }`} />
                 <span className="truncate">{item.text}</span>
@@ -110,26 +110,26 @@ const Footer = () => {
         alt="ASCND background"
         className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-top"
       />
-      <motion.div className="mx-auto grid min-h-[100vh] max-w-[100rem] grid-rows-[1fr_auto] px-3 pb-3 pt-6 sm:px-6 md:px-8 lg:px-10" variants={container}>
+      <motion.div className="mx-auto grid min-h-[60vh] sm:min-h-[80vh] md:min-h-[100vh] max-w-[100rem] grid-rows-[1fr_auto] px-3 pb-3 pt-4 sm:px-6 sm:pt-6 md:px-8 lg:px-10" variants={container}>
         {/* Row 1: all primary content starts after ~half height */}
-        <motion.section className="relative pt-[36vh] sm:pt-[42vh] md:pt-[48vh] lg:pt-[50vh]" variants={container}>
+        <motion.section className="relative pt-[20vh] sm:pt-[30vh] md:pt-[36vh] lg:pt-[42vh] xl:pt-[50vh]" variants={container}>
           {/* Logo then divider */}
           {/* Logo row with right-aligned social icons */}
           <motion.div className="mb-3 flex items-center justify-between sm:mb-4" variants={fadeUp}>
             <div className="flex items-center gap-2">
-              <img src={logo} alt="ASCND" className="h-6 w-auto sm:h-7 md:h-8" />
+              <img src={logo} alt="ASCND" className="h-5 w-auto sm:h-6 md:h-7 lg:h-8" />
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
-              <a href="#" aria-label="Discord" className="grid size-9 place-items-center rounded-full bg-white text-[#FF4C16] shadow-md transition hover:bg-white/90 sm:size-10"><FaDiscord className="size-5" /></a>
-              <a href="#" aria-label="Instagram" className="grid size-9 place-items-center rounded-full bg-white text-[#FF4C16] shadow-md transition hover:bg-white/90 sm:size-10"><FaInstagram className="size-5" /></a>
-              <a href="#" aria-label="LinkedIn" className="grid size-9 place-items-center rounded-full bg-white text-[#FF4C16] shadow-md transition hover:bg-white/90 sm:size-10"><FaLinkedin className="size-5" /></a>
+              <a href="#" aria-label="Discord" className="grid size-8 place-items-center rounded-full bg-white text-[#FF4C16] shadow-md transition hover:bg-white/90 sm:size-9 md:size-10"><FaDiscord className="size-4 sm:size-5" /></a>
+              <a href="#" aria-label="Instagram" className="grid size-8 place-items-center rounded-full bg-white text-[#FF4C16] shadow-md transition hover:bg-white/90 sm:size-9 md:size-10"><FaInstagram className="size-4 sm:size-5" /></a>
+              <a href="#" aria-label="LinkedIn" className="grid size-8 place-items-center rounded-full bg-white text-[#FF4C16] shadow-md transition hover:bg-white/90 sm:size-9 md:size-10"><FaLinkedin className="size-4 sm:size-5" /></a>
             </div>
           </motion.div>
-          <motion.div className="mb-6 h-[2px] w-full bg-white/70 origin-left sm:mb-8" variants={dividerVar} />
+          <motion.div className="mb-4 h-[2px] w-full bg-white/70 origin-left sm:mb-6 md:mb-8" variants={dividerVar} />
 
           {/* Headline */}
           <motion.h2
-            className="max-w-5xl text-7xl  font-extrabold leading-tighter tracking-tighter"
+            className="max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tighter tracking-tighter"
             style={{ textShadow: '0 2px 0 rgba(0,0,0,.65), 0 18px 40px rgba(0,0,0,.55)' }}
             variants={fadeUp}
           >
@@ -139,9 +139,9 @@ const Footer = () => {
           </motion.h2>
 
           {/* Pills inside a double-bordered container */}
-          <motion.div className="mt-6 rounded-3xl border border-white p-3 sm:mt-8" variants={fadeUp}>
-            <div className="p-2 sm:p-3">
-              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 md:grid-cols-3" >
+          <motion.div className="mt-4 rounded-2xl border border-white p-2 sm:mt-6 sm:rounded-3xl sm:p-3 md:mt-8" variants={fadeUp}>
+            <div className="p-1 sm:p-2 md:p-3">
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3" >
                 {groups.map((g) => (
                   <Pill key={g.title} title={g.title} items={g.items} />
                 ))}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import BusinessHero from '../../components/Business/BusinessHero'
@@ -9,7 +9,13 @@ import TrailBlazer from '../../components/Business/TrailBlazer.jsx'
 import BusinessWhy from '../../components/Business/BusinessWhy.jsx'
 import BusinessQuote from '../../components/Business/BusinessQuote.jsx'
 import Contact from '../../components/Home/Contact.jsx'
+
 const Business = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <>
       <Navbar />

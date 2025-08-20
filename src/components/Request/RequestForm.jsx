@@ -103,7 +103,7 @@ const RequestForm = () => {
 
     // Empty cells for days before the first day of the month
     for (let i = 0; i < firstDay; i++) {
-      days.push(<div key={`empty-${i}`} className="w-10 h-10"></div>);
+      days.push(<div key={`empty-${i}`} className="w-8 h-8 sm:w-10 sm:h-10"></div>);
     }
 
     // Days of the month
@@ -118,7 +118,7 @@ const RequestForm = () => {
           key={day}
           type="button"
           onClick={() => handleDateSelect(dateString)}
-          className={`w-10 h-10 text-sm font-medium rounded-lg transition-all ${
+          className={`w-8 h-8 sm:w-10 sm:h-10 text-xs sm:text-sm font-medium rounded-lg transition-all ${
             isSelected
               ? 'bg-[#FF4C16] text-white'
               : isInRange
@@ -136,24 +136,23 @@ const RequestForm = () => {
 
   return (
     <motion.section
-      className="w-full bg-gray-50 py-16 md:py-24"
+      className="w-full bg-gray-50 py-8 sm:py-12 md:py-16 lg:py-24"
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.35 }}
+      animate="show"
     >
-      <div className="mx-auto max-w-[100rem] px-4 md:px-8">
-        <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start" variants={container}>
+      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8">
+        <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start" variants={container}>
           
           {/* Left Side - Text Content */}
-          <motion.div className="space-y-6" variants={slideLeft}>
+          <motion.div className="space-y-4 sm:space-y-5 md:space-y-6" variants={slideLeft}>
             <motion.div variants={fadeUp}>
-              <span className="inline-block px-4 py-2 bg-white text-[#FF4C16] text-sm font-semibold uppercase tracking-wider border-2 border-[#FF4C16] rounded">
+              <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white text-[#FF4C16] text-xs sm:text-sm font-semibold uppercase tracking-wider border-2 border-[#FF4C16] rounded">
                 REQUEST A QUOTE
               </span>
             </motion.div>
             
             <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0D1318] leading-[0.8]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0D1318] leading-[0.8]"
               variants={fadeUp}
             >
               <motion.span variants={fadeUp} className="block">Looking to</motion.span>
@@ -161,11 +160,11 @@ const RequestForm = () => {
               <motion.span variants={fadeUp} className="block">home?</motion.span>
             </motion.h1>
             
-            <motion.div className="space-y-4 text-gray-600" variants={fadeUp}>
-              <p className="text-lg">
+            <motion.div className="space-y-3 sm:space-y-4 text-gray-600" variants={fadeUp}>
+              <p className="text-sm sm:text-base md:text-lg">
                 ASCND makes it easy to enhance your space with premium improvements—fast timelines, expert installers, and zero pressure.
               </p>
-              <p className="text-lg">
+              <p className="text-sm sm:text-base md:text-lg">
                 Whether you're ready to go solar, finally get turf in the backyard, or refresh your garage floor, we've got you covered.
               </p>
             </motion.div>
@@ -173,31 +172,31 @@ const RequestForm = () => {
 
           {/* Right Side - Form */}
           <motion.div 
-            className="bg-white rounded-2xl border border-[#4B5361] shadow-lg p-6"
+            className="bg-white rounded-xl sm:rounded-2xl border border-[#4B5361] shadow-lg p-4 sm:p-5 md:p-6"
             variants={slideRight}
           >
             <motion.h2 
-              className="text-xl font-semibold text-[#0D1318] mb-6"
+              className="text-lg sm:text-xl font-semibold text-[#0D1318] mb-4 sm:mb-5 md:mb-6"
               variants={fadeUp}
             >
               Contact Information
             </motion.h2>
 
-            <motion.form className="space-y-6" variants={container}>
+            <motion.form className="space-y-4 sm:space-y-5 md:space-y-6" variants={container}>
               {/* Name Fields */}
-              <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-4" variants={fadeUp}>
+              <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4" variants={fadeUp}>
                 <div>
                   <input
                     type="text"
                     placeholder="FIRST NAME*"
-                    className="w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-[#0D1318] placeholder-[#0D1318]/60 focus:outline-none focus:border-[#FF4C16] focus:border-2"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-[#B0B8C7] rounded-lg text-xs sm:text-sm font-semibold tracking-wider text-[#0D1318] placeholder-[#0D1318]/60 focus:outline-none focus:border-[#FF4C16] focus:border-2"
                   />
                 </div>
                 <div>
                   <input
                     type="text"
                     placeholder="LAST NAME*"
-                    className="w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-[#0D1318] placeholder-[#0D1318]/60 focus:outline-none focus:border-[#FF4C16] focus:border-2"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-[#B0B8C7] rounded-lg text-xs sm:text-sm font-semibold tracking-wider text-[#0D1318] placeholder-[#0D1318]/60 focus:outline-none focus:border-[#FF4C16] focus:border-2"
                   />
                 </div>
               </motion.div>
@@ -207,15 +206,15 @@ const RequestForm = () => {
                 <input
                   type="email"
                   placeholder="EMAIL ADDRESS*"
-                  className="w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-[#0D1318] placeholder-[#0D1318]/60 focus:outline-none focus:border-[#FF4C16] focus:border-2"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-[#B0B8C7] rounded-lg text-xs sm:text-sm font-semibold tracking-wider text-[#0D1318] placeholder-[#0D1318]/60 focus:outline-none focus:border-[#FF4C16] focus:border-2"
                 />
-                <div className="mt-3 bg-[#E4E6E9] rounded-lg border border-[#B0B8C7] px-4 py-3">
-                  <label className="flex items-center gap-3 cursor-pointer">
+                <div className="mt-3 bg-[#E4E6E9] rounded-lg border border-[#B0B8C7] px-3 sm:px-4 py-2.5 sm:py-3">
+                  <label className="flex items-center gap-2 sm:gap-3 cursor-pointer">
                     <input 
                       type="checkbox" 
-                      className="w-5 h-5 text-[#0D1318] bg-white border-2 border-gray-400 cursor-pointer accent-[#FF4C16] rounded-md" 
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-[#0D1318] bg-white border-2 border-gray-400 cursor-pointer accent-[#FF4C16] rounded-md" 
                     />
-                    <span className="text-sm font-medium text-[#0D1318]">Subscribe to news & updates</span>
+                    <span className="text-xs sm:text-sm font-medium text-[#0D1318]">Subscribe to news & updates</span>
                   </label>
                 </div>
               </motion.div>
@@ -225,17 +224,17 @@ const RequestForm = () => {
                 <input
                   type="tel"
                   placeholder="PHONE NUMBER*"
-                  className="w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-[#0D1318] placeholder-[#0D1318]/60 focus:outline-none focus:border-[#FF4C16] focus:border-2"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-[#B0B8C7] rounded-lg text-xs sm:text-sm font-semibold tracking-wider text-[#0D1318] placeholder-[#0D1318]/60 focus:outline-none focus:border-[#FF4C16] focus:border-2"
                 />
               </motion.div>
 
               {/* Services */}
               <motion.div variants={fadeUp}>
-                <h3 className="text-lg font-semibold text-[#0D1318] mb-4">What services are you interested in?</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">What services are you interested in?</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
                   {services.map((service) => (
                     <label key={service} className="cursor-pointer">
-                      <div className={`flex items-center gap-3 px-4 py-3 rounded-lg border transition-all ${
+                      <div className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border transition-all ${
                         selectedServices.includes(service)
                           ? 'bg-[#FF4C16] border-[#FF4C16]'
                           : 'bg-[#F3F4F6] border-[#B0B8C7] hover:border-[#FF4C16]'
@@ -247,17 +246,17 @@ const RequestForm = () => {
                             onChange={() => handleServiceToggle(service)}
                             className="sr-only"
                           />
-                          <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${
+                          <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded border-2 flex items-center justify-center transition-all ${
                             selectedServices.includes(service)
                               ? 'bg-white border-white'
                               : 'bg-white border-[#FF4C16]'
                           }`}>
                             {selectedServices.includes(service) && (
-                              <div className="w-2 h-2 bg-[#FF4C16] rounded-full"></div>
+                              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF4C16] rounded-full"></div>
                             )}
                           </div>
                         </div>
-                        <span className={`text-sm font-medium transition-all ${
+                        <span className={`text-xs sm:text-sm font-medium transition-all ${
                           selectedServices.includes(service)
                             ? 'text-white'
                             : 'text-[#0D1318]'
@@ -272,7 +271,7 @@ const RequestForm = () => {
 
               {/* Preferred Date */}
               <motion.div variants={fadeUp}>
-                <h3 className="text-lg font-semibold text-[#0D1318] mb-4">Preferred date timeframe</h3>
+                <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">Preferred date timeframe</h3>
                 <div className="relative">
                   <input
                     type="text"
@@ -286,13 +285,13 @@ const RequestForm = () => {
                     placeholder="MM/DD/YYYY ➝ MM/DD/YYYY"
                     readOnly
                     onClick={() => setIsCalendarOpen(!isCalendarOpen)}
-                    className="w-full px-4 py-3 pr-12 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-[#0D1318] placeholder-[#0D1318]/60 focus:outline-none focus:border-[#FF4C16] focus:border-2 cursor-pointer"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-10 sm:pr-12 border border-[#B0B8C7] rounded-lg text-xs sm:text-sm font-semibold tracking-wider text-[#0D1318] placeholder-[#0D1318]/60 focus:outline-none focus:border-[#FF4C16] focus:border-2 cursor-pointer"
                   />
                   <div 
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                    className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
                     onClick={() => setIsCalendarOpen(!isCalendarOpen)}
                   >
-                    <img src={calendar} alt="" />
+                    <img src={calendar} alt="" className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   
                   {isCalendarOpen && (
@@ -301,7 +300,7 @@ const RequestForm = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 right-0 mt-2 bg-white border border-[#B0B8C7] rounded-lg shadow-lg z-20 p-4"
+                      className="absolute top-full left-0 right-0 mt-2 bg-white border border-[#B0B8C7] rounded-lg shadow-lg z-20 p-3 sm:p-4"
                     >
                       {/* Calendar Header */}
                       <div className="flex items-center justify-between mb-4">
@@ -322,7 +321,7 @@ const RequestForm = () => {
                           </svg>
                         </button>
                         
-                        <h4 className="text-lg font-semibold text-[#0D1318]">
+                        <h4 className="text-base sm:text-lg font-semibold text-[#0D1318]">
                           {monthNames[currentMonth]} {currentYear}
                         </h4>
                         
@@ -359,7 +358,7 @@ const RequestForm = () => {
                       {/* Days of week */}
                       <div className="grid grid-cols-7 gap-1 mb-2">
                         {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(day => (
-                          <div key={day} className="w-10 h-8 flex items-center justify-center text-xs font-medium text-[#0D1318]/60">
+                          <div key={day} className="w-8 h-6 sm:w-10 sm:h-8 flex items-center justify-center text-xs font-medium text-[#0D1318]/60">
                             {day}
                           </div>
                         ))}
@@ -401,8 +400,8 @@ const RequestForm = () => {
 
               {/* Budget */}
               <motion.div variants={fadeUp}>
-                <h3 className="text-lg font-semibold text-[#0D1318] mb-4">What is your budget?</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">What is your budget?</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
                   {budgetOptions.map((option) => (
                     <label key={option} className="flex items-center space-x-2 cursor-pointer">
                       <input
@@ -413,7 +412,7 @@ const RequestForm = () => {
                         onChange={(e) => setBudget(e.target.value)}
                         className="sr-only"
                       />
-                      <div className={`w-full px-4 py-3 rounded-lg border text-center text-sm transition-all ${
+                      <div className={`w-full px-2 sm:px-3 md:px-4 py-2.5 sm:py-3 rounded-lg border text-center text-xs sm:text-sm transition-all ${
                         budget === option
                           ? 'bg-[#0D1318] text-white border-[#0D1318]'
                           : 'bg-white text-[#0D1318] border-[#B0B8C7] hover:border-[#0D1318]'
@@ -427,18 +426,18 @@ const RequestForm = () => {
 
               {/* How did you hear about us */}
               <motion.div variants={fadeUp}>
-                <h3 className="text-lg font-semibold text-[#0D1318] mb-4">How did you hear about us?</h3>
+                <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">How did you hear about us?</h3>
                 <div className="relative">
                   <button
                     type="button"
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="cursor-pointer w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-left bg-white focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
+                    className="cursor-pointer w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-[#B0B8C7] rounded-lg text-xs sm:text-sm font-semibold tracking-wider text-left bg-white focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
                   >
                     <span className={hearAbout ? 'text-[#0D1318]' : 'text-[#0D1318]/60'}>
                       {hearAbout ? hearAboutOptions.find(option => option.value === hearAbout)?.label : 'SELECT AN OPTION'}
                     </span>
                     <svg 
-                      className={`w-4 h-4 text-[#0D1318] transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} 
+                      className={`w-3 h-3 sm:w-4 sm:h-4 text-[#0D1318] transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} 
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
@@ -460,7 +459,7 @@ const RequestForm = () => {
                           key={option.value}
                           type="button"
                           onClick={() => handleDropdownSelect(option)}
-                          className="cursor-pointer w-full px-4 py-3 text-left text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-white transition-all border-b border-gray-100 last:border-b-0"
+                          className="cursor-pointer w-full px-3 sm:px-4 py-2.5 sm:py-3 text-left text-xs sm:text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-white transition-all border-b border-gray-100 last:border-b-0"
                         >
                           {option.label}
                         </button>
@@ -475,30 +474,30 @@ const RequestForm = () => {
                 <textarea
                   rows={4}
                   placeholder="MESSAGE*"
-                  className="w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-[#0D1318] placeholder-[#0D1318]/60 focus:outline-none focus:border-[#FF4C16] focus:border-2 resize-none"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-[#B0B8C7] rounded-lg text-xs sm:text-sm font-semibold tracking-wider text-[#0D1318] placeholder-[#0D1318]/60 focus:outline-none focus:border-[#FF4C16] focus:border-2 resize-none"
                 />
               </motion.div>
 
              
               {/* Privacy Policy and Submit */}
               <motion.div variants={fadeUp}>
-                <p className="text-xs text-gray-600 mb-4 leading-relaxed">
+                <p className="text-xs text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                   We send periodic news and updates to our subscribers. Check the box above to sign up. You can unsubscribe at any time. For more info please review our{' '}
                   <a href="#" className="text-[#FF4C16] underline">Privacy Policy</a>.
                   <br />
                   By clicking submit, you consent to allow ASCND to store and process the info you submitted in order to provide the content requested.
                 </p>
-                 <hr className='border-t border-[#4B5361] mb-5'/>
+                 <hr className='border-t border-[#4B5361] mb-4 sm:mb-5'/>
 
                 
                 <motion.button
                   type="submit"
-                  className="cursor-pointer w-full bg-[#0D1318] text-white py-4 px-6 rounded-lg font-semibold uppercase tracking-wider hover:bg-[#0D1318]/90 transition-all flex items-center justify-center gap-2"
+                  className="cursor-pointer w-full bg-[#0D1318] text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-semibold uppercase tracking-wider hover:bg-[#0D1318]/90 transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   SUBMIT
-                  <img src={doubleArrow} alt="" />
+                  <img src={doubleArrow} alt="" className="w-3 h-3 sm:w-4 sm:h-4" />
                 </motion.button>
               </motion.div>
             </motion.form>

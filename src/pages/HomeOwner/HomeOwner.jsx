@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import HomeOwnerHero from '../../components/HomeOwner/HomeOwnerHero'
@@ -9,16 +9,23 @@ import HomeOwnerQuote from '../../components/HomeOwner/HomeOwnerQuote'
 import Contact from '../../components/Home/Contact'
 
 const HomeOwner = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+  }, [])
+
+
   return (
     <>
-    <Navbar/>
-    <HomeOwnerHero/>
-    <Grow/>
-    <Path/>
-    <Model/>
-    <HomeOwnerQuote/>
-    <Contact/>
-    <Footer/>
+      <Navbar />
+      <HomeOwnerHero />
+      <Grow />
+      <Path />
+      <Model />
+      <HomeOwnerQuote />
+      <Contact />
+      <Footer />
     </>
   )
 }

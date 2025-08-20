@@ -34,7 +34,7 @@ const Heights = () => {
 
   return (
     <motion.section 
-      className="relative w-full min-h-screen overflow-hidden pt-44 pb-72"
+      className="relative w-full min-h-screen overflow-hidden pt-20 sm:pt-32 md:pt-36 lg:pt-44 pb-16 sm:pb-32 md:pb-48 lg:pb-72"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
@@ -45,7 +45,7 @@ const Heights = () => {
         <img 
           src={heights} 
           alt="Mountain landscape" 
-          className="w-full h-full grayscale"
+          className="w-full h-full object-cover object-center grayscale"
         />
       </div>
 
@@ -63,25 +63,25 @@ const Heights = () => {
 
       {/* Content overlay */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-8 md:px-12 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             
             {/* Left side - Logo and heading */}
-            <motion.div className="text-white" variants={itemVariants}>
+            <motion.div className="text-white text-center md:text-left" variants={itemVariants}>
               {/* Logo */}
-              <motion.div className="mb-6" variants={logoVariants}>
-                <img src={logo} alt="ASCND Logo" className="w-16 h-16 md:w-20 md:h-20" />
+              <motion.div className="mb-4 sm:mb-5 md:mb-6 flex justify-center md:justify-start" variants={logoVariants}>
+                <img src={logo} alt="ASCND Logo" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20" />
               </motion.div>
 
               {/* Divider line after logo */}
               <motion.hr 
-                className="border-t-2 border-white w-full mb-8" 
+                className="border-t-2 border-white w-full mb-6 sm:mb-7 md:mb-8" 
                 variants={itemVariants}
               />
 
               {/* Main heading */}
               <motion.h1 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
                 variants={itemVariants}
               >
                 Reaching
@@ -91,16 +91,16 @@ const Heights = () => {
             </motion.div>
 
             {/* Right side - Description text */}
-            <motion.div className="text-white space-y-6" variants={itemVariants}>
+            <motion.div className="text-white space-y-4 sm:space-y-5 md:space-y-6 text-center md:text-left" variants={itemVariants}>
               <motion.p 
-                className="text-lg md:text-xl leading-relaxed font-medium"
+                className="text-base sm:text-lg md:text-xl leading-relaxed font-medium"
                 variants={itemVariants}
               >
                 To help people rise. In their homes. In their businesses. In their lives.
               </motion.p>
               
               <motion.p 
-                className="text-base md:text-lg leading-relaxed opacity-90"
+                className="text-sm sm:text-base md:text-lg leading-relaxed opacity-90"
                 variants={itemVariants}
               >
                 We remove the complexity, the slowdowns, and the gatekeepers—and replace them with ownership, clarity, and profit.
@@ -112,7 +112,7 @@ const Heights = () => {
       </div>
 
       {/* Bottom gradient overlay for better text contrast */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/40 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-24 md:h-32 bg-gradient-to-t from-black/40 to-transparent" />
     </motion.section>
   )
 }

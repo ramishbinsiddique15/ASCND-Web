@@ -23,10 +23,10 @@ const RequestQuote = () => {
     : { hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 160, damping: 24 } } };
 
   return (
-    <div className="relative  w-[60%] mx-auto h-screen" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}>
-      <motion.div className="absolute inset-0 flex items-center justify-center flex-col text-center px-4" variants={containerVar} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.5 }}>
-        <motion.img src={logo} alt="ASCND Logo" className="h-6 w-auto md:h-7" variants={itemVar} />
-        <motion.h1 className="text-4xl md:text-5xl font-bold text-[#0D1318] leading-tighter tracking-tighter" variants={itemVar}>
+    <div className="relative w-full max-w-4xl mx-auto min-h-[60vh] sm:min-h-screen px-4 sm:px-6" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}>
+      <motion.div className="absolute inset-0 flex items-center justify-center flex-col text-center px-4 sm:px-6" variants={containerVar} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.5 }}>
+        <motion.img src={logo} alt="ASCND Logo" className="h-5 w-auto sm:h-6 md:h-7" variants={itemVar} />
+        <motion.h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0D1318] leading-tighter tracking-tighter" variants={itemVar}>
           Smart upgrades that improve<br />
           your home and strengthen<br />
           your investment </motion.h1>

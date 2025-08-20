@@ -90,18 +90,18 @@ const Welcome = () => {
                 </motion.div>
                 
                 <motion.div 
-                    className="flex gap-4"
+                    className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-md px-4 sm:px-0"
                     variants={buttonVar}
                 >
                     <motion.button 
-                        className="px-8 py-3 bg-white text-black  rounded-md hover:bg-gray-100 transition-colors"
+                        className="px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 bg-white text-black rounded-md hover:bg-gray-100 transition-colors text-sm sm:text-base font-medium flex-1 sm:flex-none whitespace-nowrap"
                         whileHover={{ scale: 1.02, y: -1 }}
                         whileTap={{ scale: 0.98 }}
                     >
                         ASCND YOUR HOME
                     </motion.button>
                     <motion.button 
-                        className="px-8 py-3 bg-[#FF4C16] text-white  rounded-md hover:bg-[#FF4C16]/90 transition-colors"
+                        className="px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 bg-[#FF4C16] text-white rounded-md hover:bg-[#FF4C16]/90 transition-colors text-sm sm:text-base font-medium flex-1 sm:flex-none whitespace-nowrap"
                         whileHover={{ scale: 1.02, y: -1 }}
                         whileTap={{ scale: 0.98 }}
                     >

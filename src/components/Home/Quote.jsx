@@ -23,16 +23,16 @@ const Quote = () => {
     : { hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 160, damping: 24 } } };
 
   return (
-    <div className="relative  w-[60%] mx-auto h-screen" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}>
-      <motion.div className="absolute inset-0 flex items-center justify-center flex-col text-center px-4" variants={containerVar} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.5 }}>
-        <motion.img src={logo} alt="ASCND Logo" className="h-6 w-auto md:h-7" variants={itemVar} />
-        <motion.h1 className="text-4xl md:text-5xl font-bold text-black leading-tighter tracking-tighter" variants={itemVar}>
+    <div className="relative w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto h-screen" style={{ backgroundImage: `url(${bg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}>
+      <motion.div className="absolute inset-0 flex items-center justify-center flex-col text-center px-4 sm:px-6 md:px-8" variants={containerVar} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.5 }}>
+        <motion.img src={logo} alt="ASCND Logo" className="h-5 sm:h-6 w-auto md:h-7" variants={itemVar} />
+        <motion.h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tighter tracking-tighter" variants={itemVar}>
           Every home is different.<br />
           Every homeowner has a vision.<br />
           We take the time to understand yours and <span className="text-[#FF4C16]">bring it to life.</span>
         </motion.h1>
          <motion.button
-                className="mt-5 cursor-pointer inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#0D1318]/90 sm:px-7 sm:py-3.5 md:text-[12px]"
+                className="mt-5 cursor-pointer inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5 text-[10px] sm:px-6 sm:py-3 sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#0D1318]/90 md:px-7 md:py-3.5 md:text-[12px]"
                 whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.98 }}
                 variants={itemVar}

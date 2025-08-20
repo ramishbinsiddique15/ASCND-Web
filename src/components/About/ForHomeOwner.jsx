@@ -41,22 +41,22 @@ const ForHomeOwner = () => {
 
     return (
         <motion.section 
-            className="w-full bg-gray-50 py-16 md:py-24"
+            className="w-full bg-gray-50 py-8 sm:py-12 md:py-16 lg:py-24"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
         >
-            <div className="mx-auto max-w-[100rem] px-4 md:px-8">
-                <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="mx-auto max-w-[100rem] px-4 sm:px-6 md:px-8">
+                <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 shadow-sm border border-gray-100">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
                         
                         {/* Left side - Content */}
-                        <motion.div variants={itemVariants} className="space-y-6">
+                        <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
                             {/* Tag */}
                             <motion.span 
                                 variants={itemVariants}
-                                className="inline-block rounded-sm border-2 border-[#FF4C16] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] md:text-[11px]"
+                                className="inline-block rounded-sm border-2 border-[#FF4C16] px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] md:text-[11px]"
                             >
                                 FOR HOMEOWNERS
                             </motion.span>
@@ -64,7 +64,7 @@ const ForHomeOwner = () => {
                             {/* Main heading */}
                             <motion.h2 
                                 variants={itemVariants}
-                                className="text-[32px] md:text-[40px] font-bold text-[#0D1318] leading-[1]"
+                                className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-bold text-[#0D1318] leading-[1.1] sm:leading-[1]"
                             >
                                 We help you ASCND your home—with expert installation across a curated set of{' '}
                                 <span className="text-[#FF4C16]">essential services</span>
@@ -73,7 +73,7 @@ const ForHomeOwner = () => {
                             {/* Description */}
                             <motion.p 
                                 variants={itemVariants}
-                                className="text-[#0D1318]/70 text-sm leading-relaxed max-w-md"
+                                className="text-[#0D1318]/70 text-xs sm:text-sm leading-relaxed max-w-md"
                             >
                                 No bloated sales process. No pressure. Just quality, speed, and transparency.
                             </motion.p>
@@ -81,120 +81,177 @@ const ForHomeOwner = () => {
                             {/* Learn More button */}
                             <motion.button
                                 variants={itemVariants}
-                                className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#0D1318]/90 sm:px-7 sm:py-3.5 md:text-[12px]"
+                                className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 sm:px-6 py-2.5 sm:py-3 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#0D1318]/90 md:px-7 md:py-3.5 md:text-[12px]"
                                 whileHover={{ scale: 1.02, y: -1 }}
                                 whileTap={{ scale: 0.98 }}
                             >
                                 <span>Learn More</span>
-                                <img src={doubleArrow} alt="" />
+                                <img src={doubleArrow} alt="" className="w-3 h-3 sm:w-4 sm:h-4" />
                             </motion.button>
                         </motion.div>
 
                         {/* Right side - Service icons grid */}
                         <motion.div 
                             variants={itemVariants}
-                            className="space-y-4"
+                            className="space-y-3 sm:space-y-4"
                         >
-                            {/* First row - 4 items */}
-                            <div className="grid grid-cols-4 gap-4">
-                                {services.slice(0, 4).map((service, index) => (
-                                    <motion.div
-                                        key={service.label}
-                                        variants={itemVariants}
-                                        className="relative aspect-square"
-                                        whileHover={{ scale: 1.05 }}
-                                    >
-                                        {/* Border element */}
-                                        <div 
-                                            className={`absolute inset-0 ${
-                                                service.isActive 
-                                                    ? 'bg-[#FF4C16]' 
-                                                    : 'bg-[#B0B8C7]'
-                                            }`}
-                                            style={{
-                                                clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
-                                            }}
-                                        />
-                                        
-                                        {/* Content element */}
-                                        <div 
-                                            className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
-                                                service.isActive 
-                                                    ? 'bg-[#FF4C16] text-white shadow-lg' 
-                                                    : 'bg-white text-[#0D1318] hover:bg-gray-50'
-                                            }`}
-                                            style={{
-                                                clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
-                                                margin: service.isActive ? '0' : '1px'
-                                            }}
+                            {/* Mobile: Single column layout, Tablet+: Original layout */}
+                            <div className="block sm:hidden">
+                                {/* Mobile: All items in a single column grid */}
+                                <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto">
+                                    {services.map((service, index) => (
+                                        <motion.div
+                                            key={service.label}
+                                            variants={itemVariants}
+                                            className="relative aspect-square"
+                                            whileHover={{ scale: 1.05 }}
                                         >
-                                            {/* Icon */}
-                                            <div className="mb-3">
-                                                <img 
-                                                    src={service.icon} 
-                                                    alt={service.label} 
-                                                    className="w-8 h-8"
-                                                />
-                                            </div>
+                                            {/* Border element */}
+                                            <div 
+                                                className={`absolute inset-0 ${
+                                                    service.isActive 
+                                                        ? 'bg-[#FF4C16]' 
+                                                        : 'bg-[#B0B8C7]'
+                                                }`}
+                                                style={{
+                                                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
+                                                }}
+                                            />
                                             
-                                            {/* Label */}
-                                            <span className="text-[9px] font-bold uppercase tracking-wider text-center leading-tight px-2">
-                                                {service.label}
-                                            </span>
-                                        </div>
-                                    </motion.div>
-                                ))}
+                                            {/* Content element */}
+                                            <div 
+                                                className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
+                                                    service.isActive 
+                                                        ? 'bg-[#FF4C16] text-white shadow-lg' 
+                                                        : 'bg-white text-[#0D1318] hover:bg-gray-50'
+                                                }`}
+                                                style={{
+                                                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
+                                                    margin: service.isActive ? '0' : '1px'
+                                                }}
+                                            >
+                                                {/* Icon */}
+                                                <div className="mb-2">
+                                                    <img 
+                                                        src={service.icon} 
+                                                        alt={service.label} 
+                                                        className="w-6 h-6"
+                                                    />
+                                                </div>
+                                                
+                                                {/* Label */}
+                                                <span className="text-[8px] font-bold uppercase tracking-wider text-center leading-tight px-2">
+                                                    {service.label}
+                                                </span>
+                                            </div>
+                                        </motion.div>
+                                    ))}
+                                </div>
                             </div>
-                            
-                            {/* Second row - 3 items right aligned */}
-                            <div className="flex gap-4 justify-end">
-                                {services.slice(4).map((service, index) => (
-                                    <motion.div
-                                        key={service.label}
-                                        variants={itemVariants}
-                                        className="relative aspect-square w-[calc(25%-0.75rem)]"
-                                        whileHover={{ scale: 1.05 }}
-                                    >
-                                        {/* Border element */}
-                                        <div 
-                                            className={`absolute inset-0 ${
-                                                service.isActive 
-                                                    ? 'bg-[#FF4C16]' 
-                                                    : 'bg-[#B0B8C7]'
-                                            }`}
-                                            style={{
-                                                clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
-                                            }}
-                                        />
-                                        
-                                        {/* Content element */}
-                                        <div 
-                                            className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
-                                                service.isActive 
-                                                    ? 'bg-[#FF4C16] text-white shadow-lg' 
-                                                    : 'bg-white text-[#0D1318] hover:bg-gray-50'
-                                            }`}
-                                            style={{
-                                                clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
-                                                margin: service.isActive ? '0' : '1px'
-                                            }}
+
+                            {/* Tablet and Desktop: Original layout */}
+                            <div className="hidden sm:block space-y-3 md:space-y-4">
+                                {/* First row - 4 items */}
+                                <div className="grid grid-cols-4 gap-3 md:gap-4">
+                                    {services.slice(0, 4).map((service, index) => (
+                                        <motion.div
+                                            key={service.label}
+                                            variants={itemVariants}
+                                            className="relative aspect-square"
+                                            whileHover={{ scale: 1.05 }}
                                         >
-                                            {/* Icon */}
-                                            <div className="mb-3">
-                                                <img 
-                                                    src={service.icon} 
-                                                    alt={service.label} 
-                                                    className="w-8 h-8"
-                                                />
-                                            </div>
+                                            {/* Border element */}
+                                            <div 
+                                                className={`absolute inset-0 ${
+                                                    service.isActive 
+                                                        ? 'bg-[#FF4C16]' 
+                                                        : 'bg-[#B0B8C7]'
+                                                }`}
+                                                style={{
+                                                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
+                                                }}
+                                            />
                                             
-                                            {/* Label */}
-                                            <span className="text-[9px] font-bold uppercase tracking-wider text-center leading-tight px-2">
-                                                {service.label}
-                                            </span>
-                                        </div>
-                                    </motion.div>
-                                ))}
+                                            {/* Content element */}
+                                            <div 
+                                                className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
+                                                    service.isActive 
+                                                        ? 'bg-[#FF4C16] text-white shadow-lg' 
+                                                        : 'bg-white text-[#0D1318] hover:bg-gray-50'
+                                                }`}
+                                                style={{
+                                                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
+                                                    margin: service.isActive ? '0' : '1px'
+                                                }}
+                                            >
+                                                {/* Icon */}
+                                                <div className="mb-2 md:mb-3">
+                                                    <img 
+                                                        src={service.icon} 
+                                                        alt={service.label} 
+                                                        className="w-6 h-6 md:w-8 md:h-8"
+                                                    />
+                                                </div>
+                                                
+                                                {/* Label */}
+                                                <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-wider text-center leading-tight px-2">
+                                                    {service.label}
+                                                </span>
+                                            </div>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                                
+                                {/* Second row - 3 items right aligned */}
+                                <div className="flex gap-3 md:gap-4 justify-end">
+                                    {services.slice(4).map((service, index) => (
+                                        <motion.div
+                                            key={service.label}
+                                            variants={itemVariants}
+                                            className="relative aspect-square w-[calc(25%-0.75rem)]"
+                                            whileHover={{ scale: 1.05 }}
+                                        >
+                                            {/* Border element */}
+                                            <div 
+                                                className={`absolute inset-0 ${
+                                                    service.isActive 
+                                                        ? 'bg-[#FF4C16]' 
+                                                        : 'bg-[#B0B8C7]'
+                                                }`}
+                                                style={{
+                                                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
+                                                }}
+                                            />
+                                            
+                                            {/* Content element */}
+                                            <div 
+                                                className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
+                                                    service.isActive 
+                                                        ? 'bg-[#FF4C16] text-white shadow-lg' 
+                                                        : 'bg-white text-[#0D1318] hover:bg-gray-50'
+                                                }`}
+                                                style={{
+                                                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
+                                                    margin: service.isActive ? '0' : '1px'
+                                                }}
+                                            >
+                                                {/* Icon */}
+                                                <div className="mb-2 md:mb-3">
+                                                    <img 
+                                                        src={service.icon} 
+                                                        alt={service.label} 
+                                                        className="w-6 h-6 md:w-8 md:h-8"
+                                                    />
+                                                </div>
+                                                
+                                                {/* Label */}
+                                                <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-wider text-center leading-tight px-2">
+                                                    {service.label}
+                                                </span>
+                                            </div>
+                                        </motion.div>
+                                    ))}
+                                </div>
                             </div>
                         </motion.div>
                     </div>
