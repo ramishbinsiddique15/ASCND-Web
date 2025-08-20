@@ -58,7 +58,7 @@ const Navbar = () => {
 
           {/* Buttons row */}
           <motion.div className="flex min-w-0 flex-nowrap items-center gap-1.5 whitespace-nowrap sm:gap-2 lg:gap-4" variants={rowStagger}>
-            <MotionLink to="/home" className={outlineBtn + ' basis-0 grow min-w-[92px] max-w-[260px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <MotionLink to="/home-owner" className={outlineBtn + ' basis-0 grow min-w-[92px] max-w-[260px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <span className="truncate">
                 <span className="hidden xl:inline">ASCND YOUR HOME</span>
                 <span className="hidden lg:inline xl:hidden">YOUR HOME</span>
@@ -66,7 +66,7 @@ const Navbar = () => {
               </span>
               <img src={arrow} alt="" />
             </MotionLink>
-            <MotionLink to="/home" className={outlineBtn + ' basis-0 grow min-w-[92px] max-w-[260px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <MotionLink to="/business" className={outlineBtn + ' basis-0 grow min-w-[92px] max-w-[260px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <span className="truncate">
                 <span className="hidden xl:inline">ASCND YOUR BUSINESS</span>
                 <span className="hidden lg:inline xl:hidden">YOUR BUSINESS</span>
@@ -74,10 +74,10 @@ const Navbar = () => {
               </span>
               <img src={arrow} alt="" />
             </MotionLink>
-            <MotionLink to="/home" className={outlineBtn + ' justify-center basis-0 grow min-w-[92px] max-w-[220px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <MotionLink to="/about" className={outlineBtn + ' justify-center basis-0 grow min-w-[92px] max-w-[220px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <span className="truncate">ABOUT US</span>
             </MotionLink>
-            <MotionLink to="/home" className={darkBtn + ' basis-0 grow min-w-[92px] max-w-[280px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <MotionLink to="/request-quote" className={darkBtn + ' basis-0 grow min-w-[92px] max-w-[280px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <span className="truncate">
                 <span className="hidden xl:inline">REQUEST A QUOTE</span>
                 <span className="lg:hidden xl:hidden">QUOTE</span>
@@ -85,7 +85,7 @@ const Navbar = () => {
               </span>
               <img src={request} alt="Request" className="h-3 w-auto sm:h-3.5 md:h-4" />
             </MotionLink>
-            <MotionLink to="/home" className={orangeBtn + ' basis-0 grow min-w-[92px] max-w-[200px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <MotionLink to="/business-apply" className={orangeBtn + ' basis-0 grow min-w-[92px] max-w-[200px]'} variants={btnItem} whileHover={{ y: -1, scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <span className="truncate">APPLY</span>
               <img src={apply} alt="Apply" className="h-3 w-auto sm:h-3.5 md:h-4" />
             </MotionLink>

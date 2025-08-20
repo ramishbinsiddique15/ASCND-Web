@@ -81,9 +81,21 @@ const Banner = () => {
   {/* Left Side: Buttons */}
   <motion.div className="flex flex-1 flex-wrap items-center gap-3 md:gap-4" variants={heroContainer}>
       {["I'M A HOMEOWNER", "SECURE YOUR BUSINESS", "ABOUT US", "PRODUCTS & QUOTES", "APPLY"].map((label, index) => {
-      if (label === "I'M A HOMEOWNER" || label === "SECURE YOUR BUSINESS") {
+      if (label === "I'M A HOMEOWNER") {
         return (
-        <MotionLink to="/home" role="button" variants={buttonItem}
+        <MotionLink to="/home-owner" role="button" variants={buttonItem}
+            key={label}
+            className="group flex flex-1 min-w-0 items-center justify-between gap-3 rounded-lg border-2 border-white/80 bg-transparent px-2 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 sm:px-4 sm:py-2 sm:text-[11px] md:px-5 md:py-3 md:text-[12px] lg:px-6 lg:py-4 lg:text-[13px] h-12"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <span className="truncate">{label.substring(0, 6) + '...'}</span>
+            <img src={doubleArrow} alt="" />
+        </MotionLink>
+        );
+      } else if (label === "SECURE YOUR BUSINESS") {
+        return (
+        <MotionLink to="/business" role="button" variants={buttonItem}
             key={label}
             className="group flex flex-1 min-w-0 items-center justify-between gap-3 rounded-lg border-2 border-white/80 bg-transparent px-2 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 sm:px-4 sm:py-2 sm:text-[11px] md:px-5 md:py-3 md:text-[12px] lg:px-6 lg:py-4 lg:text-[13px] h-12"
             whileHover={{ scale: 1.03 }}
@@ -95,7 +107,7 @@ const Banner = () => {
         );
       } else if (label === "ABOUT US") {
         return (
-        <MotionLink to="/home" role="button" variants={buttonItem}
+        <MotionLink to="/about" role="button" variants={buttonItem}
             key={label}
             className="group flex flex-1 min-w-0 items-center justify-center gap-3 rounded-lg border-2 border-white/80 bg-transparent px-2 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 sm:px-4 sm:py-2 sm:text-[11px] md:px-5 md:py-3 md:text-[12px] lg:px-6 lg:py-4 lg:text-[13px] h-12"
             whileHover={{ scale: 1.03 }}
@@ -106,7 +118,7 @@ const Banner = () => {
         );
       } else if (label === "PRODUCTS & QUOTES") {
         return (
-        <MotionLink to="/home" role="button" variants={buttonItem}
+        <MotionLink to="/request-quote" role="button" variants={buttonItem}
             key={label}
             className="group flex flex-1 min-w-0 items-center justify-between gap-3 rounded-lg border-2 border-white/80 bg-transparent px-2 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 sm:px-4 sm:py-2 sm:text-[11px] md:px-5 md:py-3 md:text-[12px] lg:px-6 lg:py-4 lg:text-[13px] h-12"
             whileHover={{ scale: 1.03 }}
@@ -118,7 +130,7 @@ const Banner = () => {
         );
       } else if (label === "APPLY") {
         return (
-        <MotionLink to="/home" role="button" variants={buttonItem}
+        <MotionLink to="/business-apply" role="button" variants={buttonItem}
             key={label}
             className="group flex flex-1 min-w-0 items-center justify-between gap-3 rounded-lg border-2 border-white/80 bg-transparent px-2 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 sm:px-4 sm:py-2 sm:text-[11px] md:px-5 md:py-3 md:text-[12px] lg:px-6 lg:py-4 lg:text-[13px] h-12"
             whileHover={{ scale: 1.03 }}
