@@ -7,6 +7,8 @@ import Quote from '../../components/Home/Quote';
 import Contact from '../../components/Home/Contact';
 import Footer from '../../components/Footer/Footer';
 
+// comment
+
 const Home = () => {
 
   useEffect(() => {
