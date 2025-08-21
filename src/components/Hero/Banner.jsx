@@ -65,11 +65,12 @@ const Banner = () => {
       transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
     />
       {/* Left-aligned headline with logo above */}
-      <motion.div className="absolute top-1/2 -translate-y-1/2 px-4 text-left sm:px-6 lg:px-8" variants={heroContainer} initial="hidden" animate="visible">
+      <motion.div className="absolute top-1/2 md:top-auto md:bottom-[calc(4rem+30px)] px-4 text-left sm:px-6 lg:px-8"
+ variants={heroContainer} initial="hidden" animate="visible">
         <motion.div className="mb-3 sm:mb-4" variants={lineItem}>
           <img src={logo} alt="ASCND Logo" className="h-[35px] sm:h-[42px] lg:h-[50px]" />
         </motion.div>
-        <h1 className="max-w-[60rem] text-[28px] font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-[38px] md:text-[48px] lg:text-[76px]">
+        <h1 className="max-w-[60rem] text-[28px] font-extrabold leading-[0.8] tracking-[-0.02em] sm:text-[38px] md:text-[48px] lg:text-[76px]">
           <motion.span className="block" variants={lineItem}>Advanced Strategies</motion.span>
           <motion.span className="block" variants={lineItem}>in Construction</motion.span>
           <motion.span className="block" variants={lineItem}>&amp; National Distribution</motion.span>
