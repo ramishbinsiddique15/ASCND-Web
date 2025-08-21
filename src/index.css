@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Thin Italic.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Light Italic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Medium Italic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Semibold Italic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Bold Italic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Extrabold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Extrabold Italic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Heavy.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VisbyCF";
+  src: url("./assets/Font/VisbyCF-Heavy Italic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@theme {
+  --font-visby: "VisbyCF", sans-serif;
+}
+body {
+  font-family: var(--font-visby) !important;
+
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden !important;
+}
