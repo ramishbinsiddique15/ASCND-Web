@@ -49,7 +49,7 @@ const Summit = () => {
       <div className="relative z-10 px-4 py-8 sm:px-6 sm:py-12  md:py-16  max-w-7xl mx-auto">
         {/* Top tagline */}
         <motion.div variants={itemVariants} className="">
-          <p className="text-white text-lg sm:text-xl md:text-2xl font-bold leading-[1.1] max-w-full sm:max-w-md">
+          <p className="text-white text-lg sm:text-xl md:text-2xl font-bold leading-[0.8] max-w-full sm:max-w-md">
             Earn like an installer—
             <br />
             without becoming one
@@ -60,7 +60,7 @@ const Summit = () => {
 
         {/* Main heading */}
         <motion.div variants={itemVariants} className="mb-4 sm:mb-5 md:mb-6">
-          <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">Summit Program</h1>
+          <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.8]">Summit Program</h1>
         </motion.div>
 
         <motion.div variants={itemVariants} className="w-full h-0.5 bg-white mb-8 sm:mb-10 md:mb-12"></motion.div>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import power from '../../assets/img/learn.jpg';
-import comfort from '../../assets/img/turn.jpg';
-import protect from '../../assets/img/local.jpg';
-import plug from "../../assets/img/plug.jpg";
-import trade from "../../assets/img/trade.jpg";
+import learn from '../../assets/img/learn.jpg';
+import turn from '../../assets/img/turn.jpg';
+import local from '../../assets/img/local.jpg';
+import plug from '../../assets/img/plug.jpg';
+import trade from '../../assets/img/trade.jpg';
 import doubleArrowWhite from '../../assets/icons/double-arrow-white.png';
 
 // Animation variants
@@ -40,14 +40,14 @@ const GradientWord = ({ children }) => (
 const Pill = ({ label }) => (
   <motion.span
     variants={pillVar}
-    className="inline-block rounded-full border-2 border-[#0D1318] bg-white px-2.5 py-1 text-[10px] font-semibold text-[#0D1318] shadow-sm sm:px-3 sm:py-1.5 sm:text-[11px] md:px-3.5 md:text-[12px]"
+    className="inline-block rounded-full border-2 border-[#0D1318] bg-white px-2.5 py-1 text-[12px] font-semibold text-[#0D1318] shadow-sm sm:px-3 sm:py-1.5 sm:text-[11px] md:px-3.5 md:text-[14px]"
   >
     {label}
   </motion.span>
 );
 
-const bevel =200; /* adjust to match the slope length in your image */
-const CLIP_DIAG = `polygon(
+const bevel = 200; /* adjust to match the slope length in your image */
+const CLIP_DIAG_LEFT_TO_RIGHT = `polygon(
   0 0,
   calc(100% - ${bevel}px) 0,
   100% ${bevel}px,
@@ -55,9 +55,16 @@ const CLIP_DIAG = `polygon(
   ${bevel}px 100%,
   0 calc(100% - ${bevel}px)
 )`;
+const CLIP_DIAG_RIGHT_TO_LEFT = `polygon(
+  ${bevel}px 0,
+  100% 0,
+  100% calc(100% - ${bevel}px),
+  calc(100% - ${bevel}px) 100%,
+  0 100%,
+  0 ${bevel}px
+)`;
 
-
-const WhyItem = ({ image, clip = CLIP_DIAG, headingTop, headingBottom, gradientWord, body, pills }) => (
+const WhyItem = ({ image, clip = CLIP_DIAG_LEFT_TO_RIGHT, headingTop, headingBottom, gradientWord, body, pills, index }) => (
   <motion.div
     className="grid grid-cols-1 items-stretch gap-4 sm:gap-6 md:grid-cols-12 md:gap-8 lg:gap-10"
     initial="hidden"
@@ -72,7 +79,7 @@ const WhyItem = ({ image, clip = CLIP_DIAG, headingTop, headingBottom, gradientW
           src={image}
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-center"
-          style={{ clipPath: clip, WebkitClipPath: clip }}
+          style={{ clipPath: index % 2 === 0 ? CLIP_DIAG_RIGHT_TO_LEFT : CLIP_DIAG_LEFT_TO_RIGHT, WebkitClipPath: index % 2 === 0 ? CLIP_DIAG_RIGHT_TO_LEFT : CLIP_DIAG_LEFT_TO_RIGHT }}
         />
       </div>
     </motion.div>
@@ -80,9 +87,38 @@ const WhyItem = ({ image, clip = CLIP_DIAG, headingTop, headingBottom, gradientW
     {/* Text */}
     <motion.div className="w-full md:col-span-7 h-full md:pl-4 lg:pl-6 xl:pl-10 flex flex-col justify-end pb-4 sm:pb-6 md:pb-8" variants={textVar}>
       <h3 className="text-[24px] font-extrabold leading-[1.02] text-[#0b0c0e] sm:text-[28px] md:text-[36px] lg:text-[44px] xl:text-[52px]">
-        {headingTop} <GradientWord>{gradientWord}</GradientWord>
-        <br />
-        {headingBottom}
+        {index === 0 ? (
+          <>
+            Learn the Trade.
+            <br />
+            <GradientWord>{gradientWord} the Company.</GradientWord>
+          </>
+        ) : index === 1 ? (
+          <>
+            Turn Side Jobs Into
+            <br />
+            <GradientWord>{gradientWord} Business.</GradientWord>
+          </>
+        ) : index === 2 ? (
+          <>
+            <GradientWord>{headingTop}</GradientWord>
+            <br />
+            in
+            Multiple Trades.
+          </>
+        ) : index === 3 ? (
+          <>
+            A Plug-and-Play
+            <br />
+            <GradientWord>{gradientWord} Growth.</GradientWord>
+          </>
+        ) : (
+          <>
+            <GradientWord>{headingTop}</GradientWord> to
+            <br />
+            Start a Trades Business.
+          </>
+        )}
       </h3>
       <p className="mt-3 text-[13px] leading-6 font-semibold tracking-tight text-[#636E80] sm:mt-4 sm:text-[14px] sm:leading-7 md:text-[14.5px]">
         {body}
@@ -115,7 +151,7 @@ const ContractorWhy = () => {
           transition={{ type: 'spring', stiffness: 130, damping: 22 }}
           className="pb-3 pt-3 sm:pb-4 sm:pt-4 md:pb-5 md:pt-5"
         >
-          <h2 className="text-[28px] font-extrabold leading-tight text-[#0b0c0e] sm:text-[36px] md:text-[60px] lg:text-[72px] xl:text-8xl">
+          <h2 className="text-[28px] font-extrabold leading-[0.8] text-[#0b0c0e] sm:text-[36px] md:text-[60px] lg:text-[72px] xl:text-8xl">
             Why ASCND?
           </h2>
           <div className="mt-2 border-t border-black/15 sm:mt-3" />
@@ -123,74 +159,82 @@ const ContractorWhy = () => {
 
         <div className="flex flex-col gap-12 py-4 sm:gap-14 sm:py-6 md:gap-16 md:py-8 lg:gap-20 lg:py-10">
           <WhyItem
-            image={power}
-            headingTop=""
-            gradientWord="Speed matters."
-            headingBottom="We don’t waste time."
-            body="Most homeowners wait weeks (or months) just to get started. ASCND has streamlined operations to eliminate delays—so you can start your project right away and enjoy it sooner.."
+            image={learn}
+            headingTop="Learn the Trade."
+            gradientWord="Launch"
+            headingBottom="the Company."
+            body="We don’t just help you sell—we help you become the installer. Whether you’re new to solar or want to add epoxy, turf, HVAC, or lighting to your service offerings, ASCND gives you:"
             pills={[
-              'Lightning-fast quotes',
-              'Pre-vetted contractor',
-              'Direct project management',
-              'Clear communication from start to finish',
+              'Hands-on training and onboarding',
+              'Project-ready customers in your area',
+              'Licensing and compliance guidance',
+              'Access to tools, tech, and systems',
+              'Support staff to help you grow',
             ]}
+            index={0}
           />
 
           <WhyItem
-            image={comfort}
-            headingTop="Better Pricing."
-            gradientWord="No Games."
-            headingBottom=""
-            body="We don’t believe in bloated quotes or shady change orders. Our pricing is transparent, competitive, and built to protect your wallet— and your trust."
+            image={turn}
+            headingTop="Turn Side Jobs Into"
+            gradientWord="a Scalable"
+            headingBottom="Business."
+            body="You can start in one vertical—like epoxy or solar—and expand into others when you’re ready. Tired of bouncing between gig work or subcontracting? We help you:"
             pills={[
-              'Price-matched offers',
-              'Bundled project discounts',
-              'Financing options available',
-              'No hidden fees or surprise charges',
+              'Go from crew to company',
+              'Handle quoting, scheduling, and fulfillment',
+              'Get paid fast—no waiting 30/60/90',
+              'Win repeat and referral business',
             ]}
+            index={1}
           />
 
           <WhyItem
-            image={protect}
-            headingTop=""
-            gradientWord="Trusted Work."
-            headingBottom="Real Results."
-            body="We work with licensed, vetted professionals who meet our standards of quality and professionalism. From design to final walkthrough, our project team guides every step of the way."
+            image={local}
+            headingTop="Become the Local Pro"
+            headingBottom="in Multiple Trades."
+            body="You can operate as the installer, sell through our network, or build your own team. The business is yours. We just help you build it. We’ll help you set up a branded, full-service operation in:"
             pills={[
-              'Full warranties',
-              'Reliable materials',
-              'Clean, efficient installs',
-              'Local contractor partnerships',
+              'Solar Installations',
+              'Roof Replacements',
+              'HVAC Install & Repair',
+              'Garage Epoxy Flooring',
+              'Turf & Artificial Grass',
+              'Permanent Lighting',
+              'Blinds & Window Treatments',
             ]}
+            index={2}
           />
 
-          {/* New items using remaining images */}
           <WhyItem
             image={plug}
-            headingTop=""
-            gradientWord="Plug in and grow."
-            headingBottom="We connect you with demand."
-            body="Tap into ASCND’s pipeline of ready-to-go installs and use our tools to quote, schedule, and deliver—so you can focus on the work."
+            headingTop="A Plug-and-Play"
+            gradientWord="System for"
+            headingBottom="Growth."
+            body="No need to figure it all out alone. You’ll be plugged into a proven system. Launching a business is hard. So we simplified it. ASCND gives you:"
             pills={[
-              'Leads in your area',
-              'Tools and systems',
-              'Scheduling support',
-              'Scale with confidence',
+              'Proposal tools & quoting platforms',
+              'Project management dashboards',
+              'Payment tracking and installer pay',
+              'AI chat support (Everest) and contractor guidance',
+              'Access to appointments and customer leads (Robinhood Home)',
             ]}
+            index={3}
           />
 
           <WhyItem
             image={trade}
-            headingTop="Train with Pros."
-            gradientWord="Own your future."
-            headingBottom=""
-            body="Get hands-on training, mentorship, and clear pathways to grow from crew to company owner—on your timeline."
+            headingTop="The Fastest Way to"
+            gradientWord="Start a"
+            headingBottom="Trades Business."
+            body="Just like the other sections in this accordion dropdown, this little section needs some additional copy to live in this place that is formatted to end with something to lead into the pill items below:"
             pills={[
-              'Real jobsite training',
-              'Compliance guidance',
-              'Business playbooks',
-              'Community & referrals',
+              'Launch with little or no capital',
+              'Operate legally in your state with our licensing support',
+              'Tap into jobs and active demand',
+              'Grow with confidence under the ASCND brand—or white-label your own',
             ]}
+            index={4}
           />
         </div>
       </div>

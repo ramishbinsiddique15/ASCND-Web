@@ -37,7 +37,7 @@ const GradientWord = ({ children }) => (
 const Pill = ({ label }) => (
   <motion.span
     variants={pillVar}
-    className="inline-block rounded-full border-2 border-[#0D1318] bg-white px-2.5 py-1 text-[10px] font-semibold text-[#0D1318] shadow-sm sm:px-3.5 sm:py-1.5 sm:text-[12px]"
+    className="inline-block rounded-full border-2 border-[#0D1318] bg-white px-2.5 py-1 text-[12px] font-semibold text-[#0D1318] shadow-sm sm:px-3.5 sm:py-1.5 sm:text-[14px]"
   >
     {label}
   </motion.span>
@@ -89,7 +89,7 @@ const Why = () => {
           transition={{ type: 'spring', stiffness: 130, damping: 22 }}
           className="pb-3 pt-3 sm:pb-4 sm:pt-4"
         >
-          <h2 className="text-[28px] font-extrabold leading-tight text-[#0b0c0e] sm:text-[36px] md:text-[44px] lg:text-[64px] xl:text-8xl">
+          <h2 className="text-[28px] font-extrabold leading-[0.8] text-[#0b0c0e] sm:text-[36px] md:text-[44px] lg:text-[64px] xl:text-8xl">
             Why ASCND?
           </h2>
           <div className="mt-2 border-t border-black/15 sm:mt-3" />

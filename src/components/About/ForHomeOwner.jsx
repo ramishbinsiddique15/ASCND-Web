@@ -64,7 +64,7 @@ const ForHomeOwner = () => {
                             {/* Main heading */}
                             <motion.h2 
                                 variants={itemVariants}
-                                className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-bold text-[#0D1318] leading-[1.1] sm:leading-[1]"
+                                className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-bold text-[#0D1318] leading-[0.8] sm:leading-[1]"
                             >
                                 We help you ASCND your home—with expert installation across a curated set of{' '}
                                 <span className="text-[#FF4C16]">essential services</span>
@@ -140,7 +140,7 @@ const ForHomeOwner = () => {
                                                 </div>
                                                 
                                                 {/* Label */}
-                                                <span className="text-[8px] font-bold uppercase tracking-wider text-center leading-tight px-2">
+                                                <span className="text-[8px] font-bold uppercase tracking-wider text-center leading-[0.8] px-2">
                                                     {service.label}
                                                 </span>
                                             </div>
@@ -194,7 +194,7 @@ const ForHomeOwner = () => {
                                                 </div>
                                                 
                                                 {/* Label */}
-                                                <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-wider text-center leading-tight px-2">
+                                                <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-wider text-center leading-[0.8] px-2">
                                                     {service.label}
                                                 </span>
                                             </div>
@@ -245,7 +245,7 @@ const ForHomeOwner = () => {
                                                 </div>
                                                 
                                                 {/* Label */}
-                                                <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-wider text-center leading-tight px-2">
+                                                <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-wider text-center leading-[0.8] px-2">
                                                     {service.label}
                                                 </span>
                                             </div>

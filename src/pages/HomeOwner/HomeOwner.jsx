@@ -12,7 +12,7 @@ const HomeOwner = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
+    document.title = 'ASCND - For Homeowners';
   }, [])
 
 

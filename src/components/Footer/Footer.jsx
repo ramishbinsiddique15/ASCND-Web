@@ -129,7 +129,7 @@ const Footer = () => {
 
           {/* Headline */}
           <motion.h2
-            className="max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tighter tracking-tighter"
+            className="max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[0.8] tracking-tighter"
             style={{ textShadow: '0 2px 0 rgba(0,0,0,.65), 0 18px 40px rgba(0,0,0,.55)' }}
             variants={fadeUp}
           >

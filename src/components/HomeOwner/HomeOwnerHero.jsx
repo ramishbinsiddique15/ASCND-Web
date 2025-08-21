@@ -55,11 +55,11 @@ const HomeOwnerHero = () => {
                     variants={container}
                 >
                     {/* Left: Tag + Headline */}
-                    <motion.div className="md:col-span-7 flex h-full flex-col md:pr-6 lg:pr-10 pt-6 sm:pt-8 md:pt-10" variants={container}>
+                    <motion.div className="md:col-span-10 flex h-full flex-col md:pr-6 lg:pr-10 pt-6 sm:pt-8 md:pt-10" variants={container}>
                         <motion.span variants={fadeUp} className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] sm:px-3 sm:text-[10px] md:text-[11px]">
                             ASCND HOME SERVICES
                         </motion.span>
-                        <h2 className="mt-3 font-extrabold leading-[0.98] text-[#0b0c0e] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+                        <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0b0c0e] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
                             <motion.span variants={fadeUp} className="block">Turn projects into</motion.span>
                             <motion.span variants={fadeUp} className="block">progress and progress</motion.span>
                             <motion.span variants={fadeUp} className="block">into equity.</motion.span>

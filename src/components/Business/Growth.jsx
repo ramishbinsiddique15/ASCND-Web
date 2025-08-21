@@ -5,12 +5,12 @@ import grow from '../../assets/img/growth.jpg';
 // Image clip path to match the reference screenshot - angled top-left corner
 const bevel =200;
 const IMAGE_CLIP = `polygon(
-  0 0,
-  calc(100% - ${bevel}px) 0,
-  100% ${bevel}px,
-  100% 100%,
-  ${bevel}px 100%,
-  0 calc(100% - ${bevel}px)
+  ${bevel}px 0,
+  100% 0,
+  100% calc(100% - ${bevel}px),
+  calc(100% - ${bevel}px) 100%,
+  0 100%,
+  0 ${bevel}px
 )`;
 
 const containerVariants = {
@@ -57,7 +57,7 @@ const Growth = () => {
                   <br /><span className="text-[#FF4C16]"> we give you a clear</span>
                   <br /><span className="text-[#FF4C16]"> path to grow in it.</span>
                 </h3>
-                <p className="mt-3 ml-auto w-[70%] text-[12px] font-semibold tracking-tight text-[#0D1318]/70 leading-tight sm:mt-4 sm:w-[65%] sm:text-[13px] md:w-[60%] md:text-[14px] lg:text-[15px]">
+                <p className="mt-3 ml-auto w-[70%] text-[12px] font-semibold tracking-tight text-[#0D1318]/70 leading-[0.8] sm:mt-4 sm:w-[65%] sm:text-[13px] md:w-[60%] md:text-[14px] lg:text-[15px]">
                   At ASCND, we believe that smart home upgrades don’t just improve your space today; they build long-term value,
                   efficiency, and comfort.
                 </p>

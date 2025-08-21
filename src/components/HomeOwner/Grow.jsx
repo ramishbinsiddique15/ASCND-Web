@@ -56,7 +56,7 @@ const Grow = () => {
                   <br /> grow with you, not
                   <br /> work against you.
                 </h3>
-                <p className="mt-3 ml-auto w-[70%] text-[12px] font-semibold tracking-tight text-[#0D1318]/70 leading-tight sm:mt-4 sm:w-[65%] sm:text-[13px] md:w-[60%] md:text-[14px] lg:text-[15px]">
+                <p className="mt-3 ml-auto w-[70%] text-[12px] font-semibold tracking-tight text-[#0D1318]/70 leading-[0.8] sm:mt-4 sm:w-[65%] sm:text-[13px] md:w-[60%] md:text-[14px] lg:text-[15px]">
                   At ASCND, we believe that smart home upgrades don’t just improve your space today; they build long-term value,
                   efficiency, and comfort.
                 </p>

@@ -69,7 +69,7 @@ const items = [
     label: 'EPOXY FLOORING',
     title: 'Garage goals, delivered.',
     body:
-      'We install seamless, high-gloss epoxy flooring that’s durable, beautiful, and easy to maintain. Perfect for garage upgrades or show-stopping interiors.',
+      'We offer seamless, high-gloss epoxy flooring designed for durability, style, and easy upkeep. Whether it’s for a garage upgrade or a standout interior, our floors give you lasting quality.',
     image: garage,
   },
   {
@@ -112,31 +112,31 @@ const Card = ({ icon, label, title, body, image }) => {
   const localCardVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.1 } } }
     : {
-        hidden: { y: 12, opacity: 0 },
-        show: {
-          y: 0,
-          opacity: 1,
-          transition: { type: 'spring', stiffness: 140, damping: 22, mass: 0.7 }
-        }
-      };
+      hidden: { y: 12, opacity: 0 },
+      show: {
+        y: 0,
+        opacity: 1,
+        transition: { type: 'spring', stiffness: 140, damping: 22, mass: 0.7 }
+      }
+    };
 
   const localTextVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.1 } } }
     : {
-        hidden: { y: 10, opacity: 0 },
-        show: {
-          y: 0,
-          opacity: 1,
-          transition: { type: 'spring', stiffness: 160, damping: 24, mass: 0.6 }
-        }
-      };
+      hidden: { y: 10, opacity: 0 },
+      show: {
+        y: 0,
+        opacity: 1,
+        transition: { type: 'spring', stiffness: 160, damping: 24, mass: 0.6 }
+      }
+    };
 
   const localImageVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.1 } } }
     : {
-        hidden: { scale: 1.02, opacity: 0.9 },
-        show: { scale: 1, opacity: 1, transition: { type: 'spring', stiffness: 120, damping: 20 } }
-      };
+      hidden: { scale: 1.02, opacity: 0.9 },
+      show: { scale: 1, opacity: 1, transition: { type: 'spring', stiffness: 120, damping: 20 } }
+    };
 
   return (
     <motion.article
@@ -148,25 +148,31 @@ const Card = ({ icon, label, title, body, image }) => {
     >
       <div className="grid h-full grid-cols-1 lg:grid-cols-[2fr_1fr]">
         {/* Content */}
-        <motion.div className="flex h-full flex-col p-4 sm:p-6 md:p-8 lg:p-10" variants={contentVar}>
-          <motion.div className="mb-4 flex items-center gap-2 sm:mb-6 sm:gap-3" variants={localTextVar}>
+        <motion.div className="flex h-full flex-col justify-between p-4 sm:p-6 md:p-8 lg:p-10" variants={contentVar}>
+          {/* Top section - Label */}
+          <motion.div className="flex items-center gap-2 sm:gap-3 mb-32" variants={localTextVar}>
             <img src={icon} alt="" className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" />
             <span className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#0b0c0e] sm:text-[13px] md:text-[14px]">
               {label}
             </span>
           </motion.div>
-          <div className="mt-auto">
-          <motion.h3 variants={localTextVar} className="leading-[1.1] text-[#0b0c0e] text-2xl sm:text-3xl md:text-4xl">
-            {title}
-          </motion.h3>
-          <motion.p variants={localTextVar} className="mt-3 max-w-2xl text-[14px] leading-6 text-[#0D1318]/70 sm:mt-4 sm:text-[15px] sm:leading-7 md:text-[16px]">
-            {body}
-          </motion.p>
+
+          {/* Middle section - Title (bottom-aligned across cards) */}
+          <div className="flex flex-col justify-end w-fit">
+            <motion.h3 variants={localTextVar} className="leading-[0.8] text-[#0b0c0e] text-2xl sm:text-3xl md:text-4xl">
+              {title}
+            </motion.h3>
           </div>
-          {/* Bottom CTA section anchored */}
-          <div className="">
-            <motion.div className="mt-4 border-t border-[#0D1318]/15 origin-left sm:mt-6" variants={dividerVar} />
-            <motion.div className="mt-4 sm:mt-5" variants={localTextVar}>
+
+          {/* Bottom section - Description, divider, and CTA */}
+          <div className="space-y-4 sm:space-y-6">
+            <motion.p variants={localTextVar} className="max-w-2xl text-[14px] leading-6 text-[#0D1318]/70 sm:text-[15px] sm:leading-7 md:text-[16px] pt-5">
+              {body}
+            </motion.p>
+            
+            <motion.div className="border-t border-[#0D1318]/15 origin-left" variants={dividerVar} />
+            
+            <motion.div variants={localTextVar}>
               <motion.button
                 className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#0D1318]/90 sm:px-6 sm:py-3 sm:text-[11px] md:px-7 md:py-3.5 md:text-[12px]"
                 whileHover={{ scale: 1.02, y: -1 }}

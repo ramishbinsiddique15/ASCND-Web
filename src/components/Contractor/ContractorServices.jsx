@@ -69,7 +69,7 @@ const items = [
         label: 'EPOXY FLOORING',
         title: 'Quick installs. Big margins.',
         body:
-            'Epoxy is one of the fastest-growing home upgrades. We handle install logistics, materials, and timelines—so you can focus on selling and scaling..',
+            'We make epoxy flooring projects simple from start to finish. Get expert installation, premium materials, and reliable scheduling—without the stress. No delays. No hassles. Just seamless floors and lasting value.',
         image: garage,
     },
     {
@@ -148,25 +148,31 @@ const Card = ({ icon, label, title, body, image }) => {
         >
             <div className="grid h-full grid-cols-1 lg:grid-cols-[2fr_1fr]">
                 {/* Content */}
-                <motion.div className="flex h-full flex-col p-4 bg-[#0D1318] sm:p-5 md:p-6" variants={contentVar}>
-                    <motion.div className="mb-4 flex items-center gap-2 sm:mb-5 sm:gap-3 md:mb-6" variants={localTextVar}>
+                <motion.div className="flex h-full flex-col justify-between p-4 bg-[#0D1318] sm:p-5 md:p-6" variants={contentVar}>
+                    {/* Top section - Label */}
+                    <motion.div className="flex items-center gap-2 sm:gap-3" variants={localTextVar}>
                         <img src={icon} alt="" className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" />
                         <span className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#F6F6F4] sm:text-[12px] md:text-[13px] lg:text-[14px]">
                             {label}
                         </span>
                     </motion.div>
-                    <div className="mt-auto">
-                    <motion.h3 variants={localTextVar} className="text-2xl leading-[1.1] text-[#F6F6F4] sm:text-3xl md:text-4xl">
-                        {title}
-                    </motion.h3>
-                    <motion.p variants={localTextVar} className="mt-3 max-w-2xl text-[14px] leading-6 text-[#F6F6F4] sm:mt-4 sm:text-[15px] sm:leading-7 md:text-[16px]">
-                        {body}
-                    </motion.p>
+
+                    {/* Middle section - Title (bottom-aligned across cards) */}
+                    <div className="flex-1 flex flex-col justify-end mt-32">
+                        <motion.h3 variants={localTextVar} className="text-2xl leading-[0.8] text-[#F6F6F4] sm:text-3xl md:text-4xl">
+                            {title}
+                        </motion.h3>
                     </div>
-                    {/* Bottom CTA section anchored */}
-                    <div className="">
-                        <motion.div className="mt-4 border-t border-[#F6F6F4] origin-left sm:mt-5 md:mt-6" variants={dividerVar} />
-                        <motion.div className="mt-3 sm:mt-4 md:mt-5" variants={localTextVar}>
+
+                    {/* Bottom section - Description, divider, and CTA */}
+                    <div className="space-y-4 sm:space-y-6">
+                        <motion.p variants={localTextVar} className="max-w-2xl text-[14px] leading-6 text-[#F6F6F4] sm:text-[15px] sm:leading-7 md:text-[16px] pt-5">
+                            {body}
+                        </motion.p>
+                        
+                        <motion.div className="border-t border-[#F6F6F4] origin-left" variants={dividerVar} />
+                        
+                        <motion.div variants={localTextVar}>
                             <motion.button
                                 className="inline-flex items-center justify-between gap-2 rounded-md bg-[#F6F6F4] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0D1318] transition hover:bg-[#F6F6F4]/90 sm:px-5 sm:py-2.5 sm:text-[11px] md:px-6 md:py-3 md:text-[12px] lg:px-7 lg:py-3.5"
                                 whileHover={{ scale: 1.02, y: -1 }}

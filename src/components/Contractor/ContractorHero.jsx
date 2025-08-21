@@ -42,7 +42,7 @@ const ContractorHero = () => {
                         <motion.span variants={fadeUp} className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] sm:px-3 sm:text-[10px] md:text-[11px]">
                             CONTRACTOR SERVICES
                         </motion.span>
-                        <h2 className="mt-3 font-extrabold leading-[0.98] text-[#0b0c0e] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl">
+                        <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0b0c0e] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl">
                             <motion.span variants={fadeUp} className="block md:whitespace-normal xl:whitespace-nowrap">Start Something.</motion.span>
                             <motion.span variants={fadeUp} className="block md:whitespace-normal xl:whitespace-nowrap">Bigger. Build Your</motion.span>
                             <motion.span variants={fadeUp} className="block md:whitespace-normal xl:whitespace-nowrap">Own Installation</motion.span>

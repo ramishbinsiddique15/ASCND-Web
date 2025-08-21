@@ -49,7 +49,7 @@ const TrailBlazer = () => {
             <div className="relative z-10 px-4 py-8 sm:px-6 sm:py-12  md:py-16  max-w-7xl mx-auto">
                 {/* Top tagline */}
                 <motion.div variants={itemVariants} className="">
-                    <p className="text-white text-lg sm:text-xl md:text-2xl font-bold leading-[1.1] max-w-xs sm:max-w-sm md:max-w-md">
+                    <p className="text-white text-lg sm:text-xl md:text-2xl font-bold leading-[0.8] max-w-xs sm:max-w-sm md:max-w-md">
                         Be first to market.Lock your
                         <br />
                         postion. Get paid on every
@@ -60,7 +60,7 @@ const TrailBlazer = () => {
 
                 {/* Main heading */}
                 <motion.div variants={itemVariants} className="mb-6">
-                    <h1 className="text-[#FF990A] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">Trailblazer Program</h1>
+                    <h1 className="text-[#FF990A] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.8]">Trailblazer Program</h1>
                 </motion.div>
 
                 <motion.div variants={itemVariants} className="w-full h-0.5 bg-[#FF990A] mb-8 sm:mb-10 md:mb-12"></motion.div>

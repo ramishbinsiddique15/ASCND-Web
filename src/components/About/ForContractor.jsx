@@ -61,7 +61,7 @@ const ForContractor = () => {
                   FOR CONTRACTORS & SALES PROFESSIONALS
                 </div>
                 
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold leading-tight mb-4 sm:mb-5 md:mb-6">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold leading-[0.8] mb-4 sm:mb-5 md:mb-6">
                   We help ambitious professionals build{" "}
                   <span className="text-[#FF4C16]">real careers</span> and offer a clear path
                   from sales rep to full installer ownership in multiple trades.
@@ -94,7 +94,7 @@ const ForContractor = () => {
                 <img src={training} alt="Training & tools" className="absolute inset-0 w-full h-full object-cover" />
                  <div className="absolute inset-0 bg-[#FF4C16] mix-blend-multiply opacity-100  rounded-2xl" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 sm:p-4 md:p-5 z-10">
-                  <h3 className="text-white text-sm sm:text-base md:text-lg font-semibold leading-tight">Training & tools</h3>
+                  <h3 className="text-white text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">Training & tools</h3>
                 </div>
               </motion.div>
 
@@ -105,7 +105,7 @@ const ForContractor = () => {
               >
                 <img src={fast} alt="Fast, consistent fulfillment" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 sm:p-4 md:p-5 z-10">
-                  <h3 className="text-[#4B5361] text-sm sm:text-base md:text-lg font-semibold leading-tight">Fast, consistent fulfillment</h3>
+                  <h3 className="text-[#4B5361] text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">Fast, consistent fulfillment</h3>
                 </div>
               </motion.div>
 
@@ -116,7 +116,7 @@ const ForContractor = () => {
               >
                 <img src={marketing} alt="Marketing & lead gen support" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 sm:p-4 md:p-5 z-10">
-                  <h3 className="text-[#4B5361] text-sm sm:text-base md:text-lg font-semibold leading-tight">Marketing & lead gen support</h3>
+                  <h3 className="text-[#4B5361] text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">Marketing & lead gen support</h3>
                 </div>
               </motion.div>
 
@@ -127,7 +127,7 @@ const ForContractor = () => {
               >
                 <img src={installation} alt="Installation ownership" className="absolute inset-0 w-full h-full object-cover grayscale opacity-40" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 sm:p-4 md:p-5 z-10">
-                  <h3 className="text-[#4B5361] text-sm sm:text-base md:text-lg font-semibold leading-tight">Installation ownership without the back-end burden</h3>
+                  <h3 className="text-[#4B5361] text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">Installation ownership without the back-end burden</h3>
                 </div>
               </motion.div>
             </div>

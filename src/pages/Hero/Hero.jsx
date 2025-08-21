@@ -5,6 +5,7 @@ const Hero = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = 'ASCND - Welcome';
   }, [])
 
   return (

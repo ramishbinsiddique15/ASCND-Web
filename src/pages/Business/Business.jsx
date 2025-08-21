@@ -14,6 +14,7 @@ const Business = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = 'ASCND - Business Solutions';
   }, [])
 
   return (

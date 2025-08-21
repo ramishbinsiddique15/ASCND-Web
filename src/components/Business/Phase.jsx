@@ -198,7 +198,7 @@ const Phase = () => {
             
             {/* Content overlay */}
             <div className="relative z-10 p-4 sm:p-6 md:p-8">
-              <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[56px] font-bold text-[#0D1318] leading-tight mb-4 sm:mb-5 md:mb-6">
+              <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[56px] font-bold text-[#0D1318] leading-[0.8] mb-4 sm:mb-5 md:mb-6">
                 The ASCND <br/> Growth Model
               </h2>
               <p className="text-[#4A5568] text-sm sm:text-base md:text-lg mb-6 sm:mb-7 md:mb-8 max-w-full sm:max-w-md">

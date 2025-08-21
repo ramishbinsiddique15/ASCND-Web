@@ -56,7 +56,7 @@ const Contact = () => {
               {/* content */}
               <div className="relative grid grid-cols-1 items-end gap-4 px-4 pb-4 pt-3 sm:px-5 sm:pb-5 sm:pt-4 md:px-6 md:pb-6 md:min-h-[260px] h-full z-50">
                 <div className=" self-end">
-                  <motion.h3 className="text-[20px] sm:text-[24px] font-extrabold leading-[1.1] text-white md:text-[28px] lg:text-[32px]" variants={fadeUp}>
+                  <motion.h3 className="text-[20px] sm:text-[24px] font-extrabold leading-[0.8] text-white md:text-[28px] lg:text-[32px]" variants={fadeUp}>
                     Subscribe to follow
                     <br /> along with our latest
                     <br /> news & updates.

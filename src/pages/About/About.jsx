@@ -13,6 +13,7 @@ const About = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = 'ASCND - About Us';
   }, [])
 
   return (

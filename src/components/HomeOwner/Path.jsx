@@ -52,7 +52,7 @@ const Path = () => {
 
             {/* Right: Text Content */}
             <motion.div variants={itemVariants} className="px-4 pt-8 sm:px-6 sm:pt-12  md:pt-16  lg:pt-20 w-[85%] sm:w-[80%] md:w-[75%] ml-auto z-50 pb-6 sm:pb-8 flex items-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px]">
-              <h2 className="text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] xl:text-[48px] font-extrabold leading-[0.85] sm:leading-[0.8] text-[#0b0c0e]">
+              <h2 className="z-10 text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] xl:text-[48px] font-extrabold leading-[0.85] sm:leading-[0.8] text-[#0b0c0e]">
                 We've designed{' '}
                 <span className="text-[#105CE9]">a clear path for homeowners to elevate their home</span>{' '}
                 step-by-step—whether you're just getting started or ready to transform it all.
@@ -89,14 +89,14 @@ const Path = () => {
             <hr className='border-t border-white mb-3 sm:mb-4'/>
 
             {/* Pill buttons */}
-            <div className="space-y-1.5 sm:space-y-2 space-x-0 sm:space-x-2">
-              <div className="inline-block border-2 border-white rounded-full px-2.5 py-1 text-[11px] sm:text-sm font-medium mb-1.5 sm:mb-0">
+            <div className="flex flex-wrap gap-2">
+              <div className="inline-block border-2 border-white rounded-full px-2.5 py-1 text-[11px] sm:text-sm font-medium  sm:mb-0">
                 Slash utility bills
               </div>
-              <div className="inline-block border-2 border-white rounded-full px-2.5 py-1 text-[11px] sm:text-sm font-medium mb-1.5 sm:mb-0">
+              <div className="inline-block border-2 border-white rounded-full px-2.5 py-1 text-[11px] sm:text-sm font-medium  sm:mb-0">
                 Improve energy efficiency
               </div>
-              <div className="inline-block border-2 border-white rounded-full px-2.5 py-1 text-[11px] sm:text-sm font-medium mb-1.5 sm:mb-0">
+              <div className="inline-block border-2 border-white rounded-full px-2.5 py-1 text-[11px] sm:text-sm font-medium  sm:mb-0">
                 Increase appraisal value
               </div>
               <div className="inline-block border-2 border-white rounded-full px-2.5 py-1 text-[11px] sm:text-sm font-medium">
@@ -125,14 +125,14 @@ const Path = () => {
             <hr className='border-t border-[#105CE9] mb-3 sm:mb-4'/>
 
             {/* Pill buttons */}
-            <div className="space-y-1">
-              <div className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9] mb-1.5">
+            <div className="flex flex-wrap gap-2">
+              <div className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9] ">
                 Boost curb appeal
               </div>
-              <div className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9] mb-1.5">
+              <div className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9] ">
                 Modernize your living space
               </div>
-              <div className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9] mb-1.5">
+              <div className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9] ">
                 Create low-maintenance beauty
               </div>
               <div className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9]">
@@ -160,11 +160,11 @@ const Path = () => {
             <hr className='border-t border-[#105CE9] mb-3 sm:mb-4' />
 
             {/* Pill buttons */}
-            <div className="space-y-1">
-              <div className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9] mb-1.5">
+            <div className="flex flex-wrap gap-2">
+              <div className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9] ">
                 Increase privacy and efficiency
               </div>
-              <div className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9] mb-1.5">
+              <div className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9] ">
                 Add comfort and daily convenience
               </div>
               <div className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9]">
