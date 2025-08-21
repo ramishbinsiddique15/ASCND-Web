@@ -2,122 +2,134 @@
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Thin.otf") format("opentype");
+  src: url("/fonts/VisbyCF-Thin.otf") format("opentype");
   font-weight: 100;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Thin Italic.otf") format("opentype");
+  src: url("/fonts/VisbyCF-ThinOblique.otf") format("opentype");
   font-weight: 100;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Light.otf") format("opentype");
+  src: url("/fonts/VisbyCF-Light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Light Italic.otf") format("opentype");
+  src: url("/fonts/VisbyCF-LightOblique.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Regular.otf") format("opentype");
+  src: url("/fonts/VisbyCF-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Italic.otf") format("opentype");
+  src: url("/fonts/VisbyCF-RegularOblique.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Medium.otf") format("opentype");
+  src: url("/fonts/VisbyCF-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Medium Italic.otf") format("opentype");
+  src: url("/fonts/VisbyCF-MediumOblique.otf") format("opentype");
   font-weight: 500;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Semibold.otf") format("opentype");
+  src: url("/fonts/VisbyCF-DemiBold.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Semibold Italic.otf") format("opentype");
+  src: url("/fonts/VisbyCF-DemiBoldOblique.otf") format("opentype");
   font-weight: 600;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Bold.otf") format("opentype");
+  src: url("/fonts/VisbyCF-Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Bold Italic.otf") format("opentype");
+  src: url("/fonts/VisbyCF-BoldOblique.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Extrabold.otf") format("opentype");
+  src: url("/fonts/VisbyCF-ExtraBold.otf") format("opentype");
   font-weight: 800;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Extrabold Italic.otf") format("opentype");
+  src: url("/fonts/VisbyCF-ExtraBoldOblique.otf") format("opentype");
   font-weight: 800;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Heavy.otf") format("opentype");
+  src: url("/fonts/VisbyCF-Heavy.otf") format("opentype");
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VisbyCF";
-  src: url("./assets/Font/VisbyCF-Heavy Italic.otf") format("opentype");
+  src: url("/fonts/VisbyCF-HeavyOblique.otf") format("opentype");
   font-weight: 900;
   font-style: italic;
+  font-display: swap;
 }
 
-@theme {
-  --font-visby: "VisbyCF", sans-serif;
-}
 body {
-  font-family: var(--font-visby) !important;
-
+  font-family: "VisbyCF", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
