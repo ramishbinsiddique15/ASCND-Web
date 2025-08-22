@@ -588,19 +588,14 @@ const Banner = () => {
               { label: "ABOUT US", route: "/about", icon: null, hasIcon: false, key: "about" },
               { label: "QUOTES", route: "/request-quote", icon: request, hasIcon: true, key: "quotes" },
               { label: "APPLY", route: "/business-apply", icon: apply, hasIcon: true, key: "apply" },
+              { label: "Sign In", route: "#", icon: doubleArrow, hasIcon: true, key: "signin" },
+              { label: "Sign Up", route: "https://otopilot.io/sign-up", icon: doubleArrow, hasIcon: true, key: "signup" },
             ].map(({ label, route, icon, hasIcon, key }, index) => (
               <MotionLink
-                to={route}
-                role="button"
-                variants={buttonItem}
-                key={label}
+                to={route} role="button" variants={buttonItem} key={label}
                 className={`group relative flex items-center ${hasIcon ? "justify-between" : "justify-center"} gap-2 lg:gap-2 xl:gap-3 rounded-lg border-2 border-white/80 bg-transparent px-2 lg:px-3 xl:px-4 2xl:px-6 py-3 xl:py-4 text-[9px] lg:text-[10px] xl:text-[11px] 2xl:text-[13px] font-semibold uppercase tracking-[0.1em] lg:tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 h-10 xl:h-11 2xl:h-12 whitespace-nowrap overflow-hidden`}
-                whileHover={buttonHover}
-                whileTap={buttonTap}
-                onMouseEnter={() => setActiveButton(key)}
-                onMouseLeave={() => setActiveButton(null)}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                whileHover={buttonHover} whileTap={buttonTap} onMouseEnter={() => setActiveButton(key)} onMouseLeave={() => setActiveButton(null)}
+                initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
                 transition={{
                   delay: 1.8 + index * 0.1,
                   duration: 0.6,

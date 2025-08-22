@@ -398,7 +398,7 @@ const Footer = () => {
           <span>© ASCND Industries, 2025</span>
           <motion.a
             className="underline"
-            href="#"
+            href="/privacy-policy"
             whileHover={{
               color: "#ffffff",
               textDecorationColor: "#ffffff",

@@ -5,6 +5,7 @@ import Contractor from './pages/Contractor/Contractor';
 import HomeOwner from './pages/HomeOwner/HomeOwner';
 import Business from './pages/Business/Business';
 import About from './pages/About/About';
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import Request from './pages/Request/Request';
 import BusinessApply from './pages/BusinessApply/BusinessApply';
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/request-quote" element={<Request />} />
         <Route path="/business-apply" element={<BusinessApply />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </BrowserRouter>
   );
