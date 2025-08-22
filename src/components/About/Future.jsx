@@ -1,56 +1,92 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import future from "../../assets/img/future.png";
+"use client"
+import { motion, useReducedMotion } from "framer-motion"
+import future from "../../assets/img/future.png"
 
 const Future = () => {
-  // Animation variants
-  const container = {
-    hidden: { opacity: 1 },
-    show: { 
-      opacity: 1, 
-      transition: { delayChildren: 0.2, staggerChildren: 0.1 } 
-    }
-  };
+  const prefersReduced = useReducedMotion()
 
-  const textVariants = {
-    hidden: { y: 30, opacity: 0 },
-    show: { 
-      y: 0, 
-      opacity: 1, 
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
-    }
-  };
+  const containerVar = prefersReduced
+    ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
+    : {
+        hidden: { opacity: 0, y: 50, scale: 0.9 },
+        show: {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          transition: {
+            when: "beforeChildren",
+            staggerChildren: 0.15,
+            type: "spring",
+            stiffness: 100,
+            damping: 20,
+            duration: 0.8,
+          },
+        },
+      }
+
+  const textVar = prefersReduced
+    ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
+    : {
+        hidden: {
+          opacity: 0,
+          y: 30,
+          rotateX: 45,
+          filter: "blur(8px)",
+          scale: 0.95,
+        },
+        show: {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          filter: "blur(0px)",
+          scale: 1,
+          transition: {
+            type: "spring",
+            stiffness: 80,
+            damping: 18,
+            duration: 1.5,
+          },
+        },
+      }
+
+  const backgroundVar = prefersReduced
+    ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
+    : {
+        hidden: { opacity: 0, scale: 1.1, filter: "blur(10px)" },
+        show: {
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+          transition: {
+            type: "spring",
+            stiffness: 60,
+            damping: 25,
+            duration: 2.0,
+          },
+        },
+      }
 
   return (
-  <motion.section
-  style={{
-    backgroundImage: `url(${future})`,
-    backgroundColor: "#0D1318",
-    backgroundBlendMode: "overlay",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
-  className="relative w-full h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center overflow-hidden"
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: true, amount: 0.3 }}
-  variants={container}
->
-
-      {/* Background image */}
-      {/* <div className="absolute inset-0">
-        <img 
-          src={future} 
-          alt="Future background" 
-          className="w-full h-full object-cover"
-        />
-      </div> */}
-
+    <motion.section
+      style={{
+        backgroundImage: `url(${future})`,
+        backgroundColor: "#0D1318",
+        backgroundBlendMode: "overlay",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      className="relative w-full h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center overflow-hidden"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={backgroundVar}
+    >
       {/* Content */}
-      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
-        <motion.h1 
+      <motion.div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6" variants={containerVar}>
+        <motion.h1
           className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.8]"
-          variants={textVariants}
+          variants={textVar}
+          style={{ perspective: "1000px" }}
         >
           We're not
           <br />
@@ -62,7 +98,7 @@ const Future = () => {
             of fulfillment.
           </span>
         </motion.h1>
-      </div>
+      </motion.div>
     </motion.section>
   )
 }

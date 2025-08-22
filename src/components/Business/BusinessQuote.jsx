@@ -1,11 +1,13 @@
 "use client"
 import { motion, useReducedMotion } from "framer-motion"
+import { Link } from "react-router-dom"
 import quote from "../../assets/icons/quote.png"
 import logo from "../../assets/icons/logo.png"
 import doubleArrow from "../../assets/icons/double-arrow.png"
 
 const BusinessQuote = () => {
   const prefersReduced = useReducedMotion()
+  const MotionLink = motion(Link)
 
   const containerVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
@@ -146,7 +148,8 @@ const BusinessQuote = () => {
               </h1>
             </motion.div>
 
-            <motion.button
+            <MotionLink
+              to="/business-apply"
               className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3 lg:px-7 lg:py-3.5 text-[10px] sm:text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-[#0D1318]/90 hover:shadow-lg hover:shadow-[#0D1318]/30"
               whileHover={{
                 scale: 1.05,
@@ -156,6 +159,7 @@ const BusinessQuote = () => {
               }}
               whileTap={{ scale: 0.95 }}
               variants={buttonVar}
+              aria-label="Apply to ASCND"
             >
               <span>Apply Today</span>
               <motion.img
@@ -165,7 +169,7 @@ const BusinessQuote = () => {
                 whileHover={{ x: 3 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
               />
-            </motion.button>
+            </MotionLink>
           </motion.div>
         </div>
       </div>

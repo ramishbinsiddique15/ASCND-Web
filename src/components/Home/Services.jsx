@@ -1,5 +1,6 @@
 "use client"
 import { motion, useReducedMotion } from "framer-motion"
+import { Link } from "react-router-dom"
 import solar from "../../assets/icons/solar.png"
 import epoxy from "../../assets/icons/epoxy.png"
 import roofing from "../../assets/icons/roofing.png"
@@ -191,6 +192,7 @@ const items = [
 
 const Card = ({ icon, label, title, body, image }) => {
   const prefersReduced = useReducedMotion()
+  const MotionLink = motion(Link)
 
   const localCardVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.1 } } }
@@ -327,7 +329,8 @@ const Card = ({ icon, label, title, body, image }) => {
             <motion.div className="border-t border-[#0D1318]/15 origin-left" variants={dividerVar} />
 
             <motion.div variants={localTextVar}>
-              <motion.button
+              <MotionLink
+                to="/request-quote"
                 className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition-colors duration-300 sm:px-6 sm:py-3 sm:text-[11px] md:px-7 md:py-3.5 md:text-[12px] overflow-hidden relative"
                 whileHover={{
                   scale: 1.05,
@@ -341,6 +344,7 @@ const Card = ({ icon, label, title, body, image }) => {
                   y: 0,
                   transition: { duration: 0.1 },
                 }}
+                aria-label={`Go to request a quote`}
               >
                 <motion.span whileHover={{ x: 2 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
                   Learn How
@@ -355,7 +359,7 @@ const Card = ({ icon, label, title, body, image }) => {
                     transition: { type: "spring", stiffness: 400, damping: 25 },
                   }}
                 />
-              </motion.button>
+              </MotionLink>
             </motion.div>
           </div>
         </motion.div>
