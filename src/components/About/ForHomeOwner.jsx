@@ -1,264 +1,407 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import solar from "../../assets/icons/solar-white.png";
-import epoxy from "../../assets/icons/epoxy.png";
-import roofing from "../../assets/icons/roofing.png";
-import hvac from "../../assets/icons/hvac.png";
-import turf from "../../assets/icons/turf.png";
-import lighting from "../../assets/icons/lighting.png";
-import windows from "../../assets/icons/windows.png";
+"use client"
+import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
+import solar from "../../assets/icons/solar-white.png"
+import epoxy from "../../assets/icons/epoxy.png"
+import roofing from "../../assets/icons/roofing.png"
+import hvac from "../../assets/icons/hvac.png"
+import turf from "../../assets/icons/turf.png"
+import lighting from "../../assets/icons/lighting.png"
+import windows from "../../assets/icons/windows.png"
 
-import doubleArrow from "../../assets/icons/double-arrow.png";
+import doubleArrow from "../../assets/icons/double-arrow.png"
 
-// Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 }
-  }
-};
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+}
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+const tagVariant = {
+  hidden: {
+    opacity: 0,
+    rotateX: -90,
+    scale: 0.8,
+    filter: "blur(10px)",
+  },
+  visible: {
+    opacity: 1,
+    rotateX: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+      mass: 1.2,
+      duration: 1.2,
+    },
+  },
+}
+
+const wordVariant = {
+  hidden: {
+    opacity: 0,
+    rotateY: -15,
+    filter: "blur(8px)",
+    scale: 0.9,
+  },
+  visible: {
+    opacity: 1,
+    rotateY: 0,
+    filter: "blur(0px)",
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      damping: 12,
+      mass: 0.8,
+      duration: 1.0,
+    },
+  },
+}
+
+const textVariant = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+    filter: "blur(6px)",
+    scale: 0.95,
+  },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-};
+    filter: "blur(0px)",
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+      mass: 1.0,
+      duration: 0.8,
+    },
+  },
+}
+
+const buttonVariant = {
+  hidden: {
+    opacity: 0,
+    rotateX: 30,
+    scale: 0.8,
+    filter: "blur(5px)",
+  },
+  visible: {
+    opacity: 1,
+    rotateX: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      type: "spring",
+      stiffness: 150,
+      damping: 10,
+      mass: 0.6,
+      duration: 0.9,
+    },
+  },
+}
+
+const serviceVariant = {
+  hidden: {
+    opacity: 0,
+    rotateY: 25,
+    rotateX: -15,
+    scale: 0.8,
+    filter: "blur(12px)",
+  },
+  visible: {
+    opacity: 1,
+    rotateY: 0,
+    rotateX: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      damping: 12,
+      mass: 0.9,
+      duration: 1.1,
+    },
+  },
+}
 
 const ForHomeOwner = () => {
-    const services = [
-        { icon: solar, label: 'SOLAR ENERGY', isActive: true },
-        { icon: epoxy, label: 'EPOXY FLOORING' },
-        { icon: roofing, label: 'ROOFING' },
-        { icon: hvac, label: 'HVAC' },
-        { icon: turf, label: 'TURF' },
-        { icon: lighting, label: 'PERMANENT LIGHTING' },
-        { icon: windows, label: 'WINDOW COVERINGS' }
-    ];
+  const services = [
+    { icon: solar, label: "SOLAR ENERGY", isActive: true },
+    { icon: epoxy, label: "EPOXY FLOORING" },
+    { icon: roofing, label: "ROOFING" },
+    { icon: hvac, label: "HVAC" },
+    { icon: turf, label: "TURF" },
+    { icon: lighting, label: "PERMANENT LIGHTING" },
+    { icon: windows, label: "WINDOW COVERINGS" },
+  ]
+  const MotionLink = motion(Link)
 
-    return (
-        <motion.section 
-            className="w-full bg-gray-50 py-8 sm:py-12 md:py-16 lg:py-24"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-        >
-            <div className="mx-auto max-w-[100rem] px-4 sm:px-6 ">
-                <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 shadow-sm border border-gray-100">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+  return (
+    <motion.section
+      className="w-full bg-gray-50 py-8 sm:py-12 md:py-16 lg:py-24"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 ">
+        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 shadow-sm border border-gray-100">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+            {/* Left side - Content */}
+            <motion.div variants={containerVariants} className="space-y-4 sm:space-y-6">
+              {/* Tag */}
+              <motion.span
+                variants={tagVariant}
+                className="inline-block rounded-sm border-2 border-[#FF4C16] px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] md:text-[11px]"
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                FOR HOMEOWNERS
+              </motion.span>
+
+              {/* Main heading */}
+              <motion.h2
+                variants={containerVariants}
+                className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-bold text-[#0D1318] leading-[0.8] sm:leading-[1]"
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                {[
+                  "We",
+                  "help",
+                  "you",
+                  "ASCND",
+                  "your",
+                  "home—with",
+                  "expert",
+                  "installation",
+                  "across",
+                  "a",
+                  "curated",
+                  "set",
+                  "of",
+                ].map((word, index) => (
+                  <motion.span
+                    key={index}
+                    variants={wordVariant}
+                    className="inline-block mr-2"
+                    style={{ transformStyle: "preserve-3d" }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+                <motion.span
+                  variants={wordVariant}
+                  className="text-[#FF4C16] inline-block"
+                  style={{ transformStyle: "preserve-3d" }}
+                >
+                  essential services
+                </motion.span>
+              </motion.h2>
+
+              {/* Description */}
+              <motion.p
+                variants={textVariant}
+                className="text-[#0D1318]/70 text-xs sm:text-sm leading-relaxed max-w-md"
+              >
+                No bloated sales process. No pressure. Just quality, speed, and transparency.
+              </motion.p>
+
+              {/* Learn More button */}
+              <MotionLink
+                to="/home-owner"
+                variants={buttonVariant}
+                className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 sm:px-6 py-2.5 sm:py-3 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#0D1318]/90 md:px-7 md:py-3.5 md:text-[12px]"
+                whileHover={{
+                  scale: 1.05,
+                  y: -2,
+                  boxShadow: "0 8px 25px rgba(13, 19, 24, 0.3)",
+                  transition: { duration: 0.2 },
+                }}
+                whileTap={{ scale: 0.98 }}
+                aria-label="Learn more for homeowners"
+              >
+                <span>Learn More</span>
+                <motion.img src={doubleArrow} alt="" className="w-3 h-3 sm:w-4 sm:h-4" whileHover={{ x: 2 }} />
+              </MotionLink>
+            </motion.div>
+
+            {/* Right side - Service icons grid */}
+            <motion.div variants={containerVariants} className="space-y-3 sm:space-y-4">
+              {/* Mobile: Single column layout, Tablet+: Original layout */}
+              <div className="block sm:hidden">
+                {/* Mobile: All items in a single column grid */}
+                <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto">
+                  {services.map((service, index) => (
+                    <motion.div
+                      key={service.label}
+                      variants={serviceVariant}
+                      className="relative aspect-square"
+                      whileHover={{
+                        scale: 1.08,
+                        rotateY: 5,
                         
-                        {/* Left side - Content */}
-                        <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
-                            {/* Tag */}
-                            <motion.span 
-                                variants={itemVariants}
-                                className="inline-block rounded-sm border-2 border-[#FF4C16] px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] md:text-[11px]"
-                            >
-                                FOR HOMEOWNERS
-                            </motion.span>
-                            
-                            {/* Main heading */}
-                            <motion.h2 
-                                variants={itemVariants}
-                                className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-bold text-[#0D1318] leading-[0.8] sm:leading-[1]"
-                            >
-                                We help you ASCND your home—with expert installation across a curated set of{' '}
-                                <span className="text-[#FF4C16]">essential services</span>
-                            </motion.h2>
-                            
-                            {/* Description */}
-                            <motion.p 
-                                variants={itemVariants}
-                                className="text-[#0D1318]/70 text-xs sm:text-sm leading-relaxed max-w-md"
-                            >
-                                No bloated sales process. No pressure. Just quality, speed, and transparency.
-                            </motion.p>
-                            
-                            {/* Learn More button */}
-                            <motion.button
-                                variants={itemVariants}
-                                className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 sm:px-6 py-2.5 sm:py-3 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#0D1318]/90 md:px-7 md:py-3.5 md:text-[12px]"
-                                whileHover={{ scale: 1.02, y: -1 }}
-                                whileTap={{ scale: 0.98 }}
-                            >
-                                <span>Learn More</span>
-                                <img src={doubleArrow} alt="" className="w-3 h-3 sm:w-4 sm:h-4" />
-                            </motion.button>
+                        transition: { duration: 0.3 },
+                      }}
+                      style={{ transformStyle: "preserve-3d" }}
+                    >
+                      {/* Border element */}
+                      <div
+                        className={`absolute inset-0 ${service.isActive ? "bg-[#FF4C16]" : "bg-[#B0B8C7]"}`}
+                        style={{
+                          clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
+                        }}
+                      />
+
+                      {/* Content element */}
+                      <div
+                        className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
+                          service.isActive
+                            ? "bg-[#FF4C16] text-white shadow-lg"
+                            : "bg-white text-[#0D1318] hover:bg-gray-50"
+                        }`}
+                        style={{
+                          clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
+                          margin: service.isActive ? "0" : "1px",
+                        }}
+                      >
+                        {/* Icon */}
+                        <motion.div className="mb-2" whileHover={{ scale: 1.1, rotate: 5 }}>
+                          <img src={service.icon || "/placeholder.svg"} alt={service.label} className="w-6 h-6" />
                         </motion.div>
 
-                        {/* Right side - Service icons grid */}
-                        <motion.div 
-                            variants={itemVariants}
-                            className="space-y-3 sm:space-y-4"
-                        >
-                            {/* Mobile: Single column layout, Tablet+: Original layout */}
-                            <div className="block sm:hidden">
-                                {/* Mobile: All items in a single column grid */}
-                                <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto">
-                                    {services.map((service, index) => (
-                                        <motion.div
-                                            key={service.label}
-                                            variants={itemVariants}
-                                            className="relative aspect-square"
-                                            whileHover={{ scale: 1.05 }}
-                                        >
-                                            {/* Border element */}
-                                            <div 
-                                                className={`absolute inset-0 ${
-                                                    service.isActive 
-                                                        ? 'bg-[#FF4C16]' 
-                                                        : 'bg-[#B0B8C7]'
-                                                }`}
-                                                style={{
-                                                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
-                                                }}
-                                            />
-                                            
-                                            {/* Content element */}
-                                            <div 
-                                                className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
-                                                    service.isActive 
-                                                        ? 'bg-[#FF4C16] text-white shadow-lg' 
-                                                        : 'bg-white text-[#0D1318] hover:bg-gray-50'
-                                                }`}
-                                                style={{
-                                                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
-                                                    margin: service.isActive ? '0' : '1px'
-                                                }}
-                                            >
-                                                {/* Icon */}
-                                                <div className="mb-2">
-                                                    <img 
-                                                        src={service.icon} 
-                                                        alt={service.label} 
-                                                        className="w-6 h-6"
-                                                    />
-                                                </div>
-                                                
-                                                {/* Label */}
-                                                <span className="text-[8px] font-bold uppercase tracking-wider text-center leading-[0.8] px-2">
-                                                    {service.label}
-                                                </span>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Tablet and Desktop: Original layout */}
-                            <div className="hidden sm:block space-y-3 md:space-y-4">
-                                {/* First row - 4 items */}
-                                <div className="grid grid-cols-4 gap-3 md:gap-4">
-                                    {services.slice(0, 4).map((service, index) => (
-                                        <motion.div
-                                            key={service.label}
-                                            variants={itemVariants}
-                                            className="relative aspect-square"
-                                            whileHover={{ scale: 1.05 }}
-                                        >
-                                            {/* Border element */}
-                                            <div 
-                                                className={`absolute inset-0 ${
-                                                    service.isActive 
-                                                        ? 'bg-[#FF4C16]' 
-                                                        : 'bg-[#B0B8C7]'
-                                                }`}
-                                                style={{
-                                                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
-                                                }}
-                                            />
-                                            
-                                            {/* Content element */}
-                                            <div 
-                                                className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
-                                                    service.isActive 
-                                                        ? 'bg-[#FF4C16] text-white shadow-lg' 
-                                                        : 'bg-white text-[#0D1318] hover:bg-gray-50'
-                                                }`}
-                                                style={{
-                                                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
-                                                    margin: service.isActive ? '0' : '1px'
-                                                }}
-                                            >
-                                                {/* Icon */}
-                                                <div className="mb-2 md:mb-3">
-                                                    <img 
-                                                        src={service.icon} 
-                                                        alt={service.label} 
-                                                        className="w-6 h-6 md:w-8 md:h-8"
-                                                    />
-                                                </div>
-                                                
-                                                {/* Label */}
-                                                <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-wider text-center leading-[0.8] px-2">
-                                                    {service.label}
-                                                </span>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                                
-                                {/* Second row - 3 items right aligned */}
-                                <div className="flex gap-3 md:gap-4 justify-end">
-                                    {services.slice(4).map((service, index) => (
-                                        <motion.div
-                                            key={service.label}
-                                            variants={itemVariants}
-                                            className="relative aspect-square w-[calc(25%-0.75rem)]"
-                                            whileHover={{ scale: 1.05 }}
-                                        >
-                                            {/* Border element */}
-                                            <div 
-                                                className={`absolute inset-0 ${
-                                                    service.isActive 
-                                                        ? 'bg-[#FF4C16]' 
-                                                        : 'bg-[#B0B8C7]'
-                                                }`}
-                                                style={{
-                                                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
-                                                }}
-                                            />
-                                            
-                                            {/* Content element */}
-                                            <div 
-                                                className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
-                                                    service.isActive 
-                                                        ? 'bg-[#FF4C16] text-white shadow-lg' 
-                                                        : 'bg-white text-[#0D1318] hover:bg-gray-50'
-                                                }`}
-                                                style={{
-                                                    clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
-                                                    margin: service.isActive ? '0' : '1px'
-                                                }}
-                                            >
-                                                {/* Icon */}
-                                                <div className="mb-2 md:mb-3">
-                                                    <img 
-                                                        src={service.icon} 
-                                                        alt={service.label} 
-                                                        className="w-6 h-6 md:w-8 md:h-8"
-                                                    />
-                                                </div>
-                                                
-                                                {/* Label */}
-                                                <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-wider text-center leading-[0.8] px-2">
-                                                    {service.label}
-                                                </span>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
+                        {/* Label */}
+                        <span className="text-[8px] font-bold uppercase tracking-wider text-center leading-[0.8] px-2">
+                          {service.label}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
-            </div>
-        </motion.section>
-    )
+              </div>
+
+              {/* Tablet and Desktop: Original layout */}
+              <div className="hidden sm:block space-y-3 md:space-y-4">
+                {/* First row - 4 items */}
+                <div className="grid grid-cols-4 gap-3 md:gap-4">
+                  {services.slice(0, 4).map((service, index) => (
+                    <motion.div
+                      key={service.label}
+                      variants={serviceVariant}
+                      className="relative aspect-square"
+                      whileHover={{
+                        scale: 1.08,
+                        rotateY: 5,
+                        
+                        transition: { duration: 0.3 },
+                      }}
+                      style={{ transformStyle: "preserve-3d" }}
+                    >
+                      {/* Border element */}
+                      <div
+                        className={`absolute inset-0 ${service.isActive ? "bg-[#FF4C16]" : "bg-[#B0B8C7]"}`}
+                        style={{
+                          clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
+                        }}
+                      />
+
+                      {/* Content element */}
+                      <div
+                        className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
+                          service.isActive
+                            ? "bg-[#FF4C16] text-white shadow-lg"
+                            : "bg-white text-[#0D1318] hover:bg-gray-50"
+                        }`}
+                        style={{
+                          clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
+                          margin: service.isActive ? "0" : "1px",
+                        }}
+                      >
+                        {/* Icon */}
+                        <motion.div className="mb-2 md:mb-3" whileHover={{ scale: 1.1, rotate: 5 }}>
+                          <img
+                            src={service.icon || "/placeholder.svg"}
+                            alt={service.label}
+                            className="w-6 h-6 md:w-8 md:h-8"
+                          />
+                        </motion.div>
+
+                        {/* Label */}
+                        <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-wider text-center leading-[0.8] px-2">
+                          {service.label}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Second row - 3 items right aligned */}
+                <div className="flex gap-3 md:gap-4 justify-end">
+                  {services.slice(4).map((service, index) => (
+                    <motion.div
+                      key={service.label}
+                      variants={serviceVariant}
+                      className="relative aspect-square w-[calc(25%-0.75rem)]"
+                      whileHover={{
+                        scale: 1.08,
+                        rotateY: 5,
+                        
+                        transition: { duration: 0.3 },
+                      }}
+                      style={{ transformStyle: "preserve-3d" }}
+                    >
+                      {/* Border element */}
+                      <div
+                        className={`absolute inset-0 ${service.isActive ? "bg-[#FF4C16]" : "bg-[#B0B8C7]"}`}
+                        style={{
+                          clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
+                        }}
+                      />
+
+                      {/* Content element */}
+                      <div
+                        className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
+                          service.isActive
+                            ? "bg-[#FF4C16] text-white shadow-lg"
+                            : "bg-white text-[#0D1318] hover:bg-gray-50"
+                        }`}
+                        style={{
+                          clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
+                          margin: service.isActive ? "0" : "1px",
+                        }}
+                      >
+                        {/* Icon */}
+                        <motion.div className="mb-2 md:mb-3" whileHover={{ scale: 1.1, rotate: 5 }}>
+                          <img
+                            src={service.icon || "/placeholder.svg"}
+                            alt={service.label}
+                            className="w-6 h-6 md:w-8 md:h-8"
+                          />
+                        </motion.div>
+
+                        {/* Label */}
+                        <span className="text-[8px] md:text-[9px] font-bold uppercase tracking-wider text-center leading-[0.8] px-2">
+                          {service.label}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </motion.section>
+  )
 }
 
 export default ForHomeOwner

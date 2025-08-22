@@ -1,5 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import summit from "../../assets/img/summit.png"
 import polymer from "../../assets/img/polymer.png"
 import doubleArrow from "../../assets/icons/double-arrow-blue.png"
@@ -292,7 +293,11 @@ const Summit = () => {
               loading="lazy"
             />
 
-            <motion.button
+            {(() => {
+              const MotionLink = motion(Link)
+              return (
+            <MotionLink
+              to="/business-apply"
               variants={buttonVariants}
               className="bg-white text-blue-600 px-6 py-2.5 sm:px-7 sm:py-3  md:py-3 rounded-lg font-semibold text-xs sm:text-sm tracking-wider hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2 w-fit"
               whileHover={{
@@ -311,7 +316,7 @@ const Summit = () => {
                 className="w-3 h-3 sm:w-4 sm:h-4"
                 whileHover={{ x: 3, transition: { duration: 0.2 } }}
               />
-            </motion.button>
+            </MotionLink>)})()}
           </motion.div>
         </div>
       </div>

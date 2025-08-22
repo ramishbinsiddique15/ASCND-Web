@@ -1,11 +1,13 @@
 "use client"
 import { motion, useReducedMotion } from "framer-motion"
+import { Link } from "react-router-dom"
 import bg from "../../assets/icons/bg.png"
 import logo from "../../assets/icons/logo.png"
 import doubleArrow from "../../assets/icons/double-arrow.png"
 
 const Quote = () => {
   const prefersReduced = useReducedMotion()
+  const MotionLink = motion(Link)
 
   const containerVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
@@ -135,7 +137,8 @@ const Quote = () => {
           We take the time to understand yours and <span className="text-[#FF4C16]">bring it to life.</span>
         </motion.h1>
 
-        <motion.button
+        <MotionLink
+          to="/about"
           className="mt-5 cursor-pointer inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5 text-[10px] sm:px-6 sm:py-3 sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-[#0D1318]/90 md:px-7 md:py-3.5 md:text-[12px] hover:shadow-lg hover:shadow-[#0D1318]/30"
           whileHover={{
             scale: 1.05,
@@ -145,6 +148,7 @@ const Quote = () => {
           }}
           whileTap={{ scale: 0.95 }}
           variants={buttonVar}
+          aria-label="Learn how - About ASCND"
         >
           <span>Learn How</span>
           <motion.img
@@ -153,7 +157,7 @@ const Quote = () => {
             whileHover={{ x: 3 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
           />
-        </motion.button>
+        </MotionLink>
       </motion.div>
     </div>
   )

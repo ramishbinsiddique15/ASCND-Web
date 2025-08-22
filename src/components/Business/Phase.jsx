@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { Link } from "react-router-dom"
 
 import phaseBg from "../../assets/img/phase-bg.png"
 import logoOrange from "../../assets/icons/orange-logo.png"
@@ -15,6 +16,7 @@ import phase from "../../assets/img/phase.png"
 
 const Phase = () => {
   const [expandedPhase, setExpandedPhase] = useState("01")
+  const MotionLink = motion(Link)
 
   const phases = [
     {
@@ -338,7 +340,7 @@ const Phase = () => {
             <motion.img
               src={phase}
               alt="Business owner"
-              className="absolute right-0 opacity-40 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96
+              className="absolute overflow-hidden right-0 opacity-40 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96
                          [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]
                          [mask-repeat:no-repeat] [mask-size:100%]"
               initial={{ scale: 1.2, opacity: 0, filter: "blur(8px)" }}
@@ -374,7 +376,8 @@ const Phase = () => {
                 We turn tradespeople into business owners, and business owners into builders of empires.
               </motion.p>
 
-              <motion.button
+              <MotionLink
+                to="/business-apply"
                 className="inline-flex items-center justify-between gap-2 rounded-md border-2 border-[#0d1318] px-4 py-2.5 text-[10px] sm:px-5 sm:py-3 sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0d1318] hover:text-white transition hover:bg-[#0D1318] md:px-6 md:py-3 md:text-[12px]"
                 whileHover={{
                   scale: 1.05,
@@ -386,6 +389,7 @@ const Phase = () => {
                 initial={{ opacity: 0, y: 20, filter: "blur(3px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ delay: 0.8, type: "spring", stiffness: 120 }}
+                aria-label="Apply to ASCND"
               >
                 <span>Apply Now</span>
                 <motion.img
@@ -394,7 +398,7 @@ const Phase = () => {
                   whileHover={{ x: 3 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 />
-              </motion.button>
+              </MotionLink>
             </div>
           </motion.div>
         </div>

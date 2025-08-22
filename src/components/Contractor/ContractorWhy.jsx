@@ -1,5 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import learn from "../../assets/img/learn.jpg"
 import turn from "../../assets/img/turn.jpg"
 import local from "../../assets/img/local.jpg"
@@ -146,6 +147,8 @@ const WhyItem = ({
   pills,
   index,
 }) => (
+  // Motion-enabled Router Link for CTA
+  
   <motion.div
     className="grid grid-cols-1 items-stretch gap-4 sm:gap-6 md:grid-cols-12 md:gap-8 lg:gap-10"
     initial="hidden"
@@ -226,32 +229,39 @@ const WhyItem = ({
           <Pill key={p} label={p} />
         ))}
       </motion.div>
-      <motion.button
-        className="w-fit mt-4 inline-flex items-center gap-2 rounded-md bg-[#FF4C16] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#e74312] sm:mt-5 sm:px-5 sm:py-2.5 sm:text-[11px] md:text-[12px]"
-        variants={pillVar}
-        whileHover={{
-          scale: 1.05,
-          y: -3,
-          backgroundColor: "#e74312",
-          boxShadow: "0 8px 25px rgba(255, 76, 22, 0.4)",
-          transition: { type: "spring", stiffness: 400, damping: 25 },
-        }}
-        whileTap={{
-          scale: 0.98,
-          transition: { type: "spring", stiffness: 400, damping: 25 },
-        }}
-      >
-        Apply Now
-        <motion.img
-          src={doubleArrowWhite}
-          alt=""
-          className="h-2.5 w-2.5 sm:h-3 sm:w-3"
-          whileHover={{
-            x: 2,
-            transition: { type: "spring", stiffness: 400, damping: 25 },
-          }}
-        />
-      </motion.button>
+      {(() => {
+        const MotionLink = motion(Link)
+        return (
+          <MotionLink
+            to="/business-apply"
+            className="w-fit mt-4 inline-flex items-center gap-2 rounded-md bg-[#FF4C16] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#e74312] sm:mt-5 sm:px-5 sm:py-2.5 sm:text-[11px] md:text-[12px]"
+            variants={pillVar}
+            whileHover={{
+              scale: 1.05,
+              y: -3,
+              backgroundColor: "#e74312",
+              boxShadow: "0 8px 25px rgba(255, 76, 22, 0.4)",
+              transition: { type: "spring", stiffness: 400, damping: 25 },
+            }}
+            whileTap={{
+              scale: 0.98,
+              transition: { type: "spring", stiffness: 400, damping: 25 },
+            }}
+            aria-label="Apply to ASCND"
+          >
+            Apply Now
+            <motion.img
+              src={doubleArrowWhite}
+              alt=""
+              className="h-2.5 w-2.5 sm:h-3 sm:w-3"
+              whileHover={{
+                x: 2,
+                transition: { type: "spring", stiffness: 400, damping: 25 },
+              }}
+            />
+          </MotionLink>
+        )
+      })()}
     </motion.div>
   </motion.div>
 )

@@ -583,10 +583,10 @@ const Banner = () => {
             variants={heroContainer}
           >
             {[
-              { label: "HOMEOWNER", route: "/home-owner", icon: doubleArrow, hasIcon: true, key: "homeowner" },
-              { label: "BUSINESS", route: "/business", icon: doubleArrow, hasIcon: true, key: "business" },
+              { label: "I'M A HOMEOWNER", route: "/home-owner", icon: doubleArrow, hasIcon: true, key: "homeowner" },
+              { label: "ASCND YOUR BUSINESS", route: "/business", icon: doubleArrow, hasIcon: true, key: "business" },
               { label: "ABOUT US", route: "/about", icon: null, hasIcon: false, key: "about" },
-              { label: "QUOTES", route: "/request-quote", icon: request, hasIcon: true, key: "quotes" },
+              { label: "REQUEST A QUOTE", route: "/request-quote", icon: request, hasIcon: true, key: "quotes" },
               { label: "APPLY", route: "/business-apply", icon: apply, hasIcon: true, key: "apply" },
             ].map(({ label, route, icon, hasIcon, key }, index) => (
               <MotionLink
