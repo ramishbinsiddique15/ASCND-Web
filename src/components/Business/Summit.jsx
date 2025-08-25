@@ -171,7 +171,7 @@ const Summit = () => {
       {/* Gradient overlay that stays blue */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#105CE9]/50 to-[#105CE9]" />
 
-      <div className="absolute top-20 sm:top-32 md:top-44 -right-48 sm:-right-64 md:-right-80 lg:-right-96">
+      <div className="hidden md:block absolute top-20 sm:top-32 md:top-44 -right-48 sm:-right-64 md:-right-80 lg:-right-96">
         <img
           src={polymer || "/placeholder.svg"}
           alt="Geometric shapes"

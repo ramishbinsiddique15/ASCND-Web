@@ -215,7 +215,7 @@ const TrailBlazer = () => {
       />
 
       <motion.div
-        className="absolute top-20 sm:top-32 md:top-44 -right-48 sm:-right-64 md:-right-80 lg:-right-96"
+        className="hidden md:block absolute top-20 sm:top-32 md:top-44 -right-48 sm:-right-64 md:-right-80 lg:-right-96"
         variants={shapesImageVariants}
         style={{ transformStyle: "preserve-3d" }}
         whileHover={{
