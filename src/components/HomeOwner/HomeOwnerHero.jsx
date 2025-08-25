@@ -118,7 +118,7 @@ const floatingElement = {
 
 const HomeOwnerHero = () => {
   return (
-    <motion.section className="w-full relative overflow-hidden" initial="hidden" animate="show">
+    <motion.section className="w-full relative " initial="hidden" animate="show">
       <motion.div
         className="absolute top-10 right-10 w-32 h-32 rounded-full bg-gradient-to-br from-[#FF4C16]/10 to-transparent"
         variants={floatingElement}

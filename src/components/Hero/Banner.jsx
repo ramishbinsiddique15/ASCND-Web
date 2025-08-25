@@ -248,15 +248,20 @@ const Banner = () => {
           {/* Buttons Row 1 */}
           <motion.div
             className="flex items-center gap-2 border-t pt-4 border-t-white"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ delay: 2, duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 0.5, ease: "easeOut" }}
           >
             <MotionLink
               to="/home-owner"
               role="button"
-              variants={buttonItem}
-              className="group flex flex-1 items-center justify-between gap-2 rounded-lg border-2 border-white/80 bg-transparent px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10"
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+              }}
+              initial="hidden"
+              animate="visible"
+              className="group flex flex-1 items-center justify-between gap-2 rounded-lg border-2 border-white/80 bg-transparent px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 z-10"
               whileHover={buttonHover}
               whileTap={buttonTap}
               onMouseEnter={() => setActiveButton("homeowner")}
@@ -279,8 +284,13 @@ const Banner = () => {
             <MotionLink
               to="/business"
               role="button"
-              variants={buttonItem}
-              className="group flex flex-1 items-center justify-between gap-2 rounded-lg border-2 border-white/80 bg-transparent px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10"
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+              }}
+              initial="hidden"
+              animate="visible"
+              className="group flex flex-1 items-center justify-between gap-2 rounded-lg border-2 border-white/80 bg-transparent px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 z-10"
               whileHover={buttonHover}
               whileTap={buttonTap}
               onMouseEnter={() => setActiveButton("business")}
@@ -303,12 +313,22 @@ const Banner = () => {
           </motion.div>
 
           {/* Buttons Row 2 */}
-          <div className="flex items-center gap-2">
+          <motion.div
+            className="flex items-center gap-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.7, duration: 0.5, ease: "easeOut" }}
+          >
             <MotionLink
               to="/about"
               role="button"
-              variants={buttonItem}
-              className="group flex flex-1 items-center justify-center rounded-lg border-2 border-white/80 bg-transparent px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10"
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+              }}
+              initial="hidden"
+              animate="visible"
+              className="group flex flex-1 items-center justify-center rounded-lg border-2 border-white/80 bg-transparent px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 z-10"
               whileHover={buttonHover}
               whileTap={buttonTap}
             >
@@ -317,8 +337,13 @@ const Banner = () => {
             <MotionLink
               to="/request-quote"
               role="button"
-              variants={buttonItem}
-              className="group flex flex-1 items-center justify-between gap-2 rounded-lg border-2 border-white/80 bg-transparent px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10"
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+              }}
+              initial="hidden"
+              animate="visible"
+              className="group flex flex-1 items-center justify-between gap-2 rounded-lg border-2 border-white/80 bg-transparent px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 z-10"
               whileHover={buttonHover}
               whileTap={buttonTap}
               onMouseEnter={() => setActiveButton("quotes")}
@@ -341,8 +366,13 @@ const Banner = () => {
             <MotionLink
               to="/business-apply"
               role="button"
-              variants={buttonItem}
-              className="group flex flex-1 items-center justify-between gap-2 rounded-lg border-2 border-white/80 bg-transparent px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10"
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+              }}
+              initial="hidden"
+              animate="visible"
+              className="group flex flex-1 items-center justify-between gap-2 rounded-lg border-2 border-white/80 bg-transparent px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 z-10"
               whileHover={buttonHover}
               whileTap={buttonTap}
               onMouseEnter={() => setActiveButton("apply")}
@@ -362,14 +392,14 @@ const Banner = () => {
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
               />
             </MotionLink>
-          </div>
+          </motion.div>
 
           {/* Social Icons */}
           <motion.div
             className="flex items-center justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.5, duration: 0.6 }}
+            transition={{ delay: 2, duration: 0.6, ease: "easeOut" }}
           >
             {[
               { Icon: FaDiscord, label: "Discord", color: "#5865F2" },
@@ -380,23 +410,20 @@ const Banner = () => {
                 key={label}
                 href="#"
                 aria-label={label}
-                className="grid size-10 place-items-center rounded-full bg-white text-gray-900 shadow-md transition-all duration-200"
-                variants={socialItem}
+                className="grid size-10 place-items-center rounded-full bg-white text-gray-900 shadow-md transition-all duration-200 z-10"
+                variants={{
+                  hidden: { scale: 0.2, opacity: 0 },
+                  visible: { scale: 1, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+                }}
+                initial="hidden"
+                animate="visible"
                 whileHover={{
                   ...socialHover,
                   backgroundColor: color,
                   color: "white",
                 }}
                 whileTap={socialTap}
-                initial={{ rotate: -90, scale: 0 }}
-                animate={{ rotate: 0, scale: 1 }}
-                transition={{
-                  delay: 2.7 + index * 0.1,
-                  duration: 0.8,
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 15,
-                }}
+                transition={{ delay: 2.2 + index * 0.1 }}
               >
                 <Icon className="size-4" />
               </motion.a>
@@ -592,10 +619,17 @@ const Banner = () => {
               { label: "Sign Up", route: "https://otopilot.io/sign-up", icon: doubleArrow, hasIcon: true, key: "signup" },
             ].map(({ label, route, icon, hasIcon, key }, index) => (
               <MotionLink
-                to={route} role="button" variants={buttonItem} key={label}
+                to={route}
+                role="button"
+                variants={buttonItem}
+                key={label}
                 className={`group relative flex items-center ${hasIcon ? "justify-between" : "justify-center"} gap-2 lg:gap-2 xl:gap-3 rounded-lg border-2 border-white/80 bg-transparent px-2 lg:px-3 xl:px-4 2xl:px-6 py-3 xl:py-4 text-[9px] lg:text-[10px] xl:text-[11px] 2xl:text-[13px] font-semibold uppercase tracking-[0.1em] lg:tracking-[0.15em] text-white transition-all duration-200 hover:border-white hover:bg-white/10 h-10 xl:h-11 2xl:h-12 whitespace-nowrap overflow-hidden`}
-                whileHover={buttonHover} whileTap={buttonTap} onMouseEnter={() => setActiveButton(key)} onMouseLeave={() => setActiveButton(null)}
-                initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
+                whileHover={buttonHover}
+                whileTap={buttonTap}
+                onMouseEnter={() => setActiveButton(key)}
+                onMouseLeave={() => setActiveButton(null)}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{
                   delay: 1.8 + index * 0.1,
                   duration: 0.6,
