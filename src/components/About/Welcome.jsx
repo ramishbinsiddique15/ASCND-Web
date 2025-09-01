@@ -201,7 +201,7 @@ const Welcome = () => {
         >
           <MotionLink
             to="/home-owner"
-            className="px-4 sm:px-6  py-2.5 sm:py-3 bg-white text-black rounded-md hover:bg-gray-100 transition-colors text-sm sm:text-base font-medium flex-1 sm:flex-none whitespace-nowrap"
+            className="px-4 sm:px-6  py-2.5 sm:py-3 bg-[#F6F6F4] text-black rounded-md hover:bg-gray-100 transition-colors text-sm sm:text-base font-medium flex-1 sm:flex-none whitespace-nowrap"
             whileHover={{
               scale: 1.05,
               y: -3,
@@ -215,7 +215,7 @@ const Welcome = () => {
           </MotionLink>
           <MotionLink
             to="/business"
-            className="px-4 sm:px-6  py-2.5 sm:py-3 bg-[#FF4C16] text-white rounded-md hover:bg-[#FF4C16]/90 transition-colors text-sm sm:text-base font-medium flex-1 sm:flex-none whitespace-nowrap"
+            className="px-4 sm:px-6  py-2.5 sm:py-3 bg-[#FF4C16] text-[#F6F6F4] rounded-md hover:bg-[#FF4C16]/90 transition-colors text-sm sm:text-base font-medium flex-1 sm:flex-none whitespace-nowrap"
             whileHover={{
               scale: 1.05,
               y: -3,

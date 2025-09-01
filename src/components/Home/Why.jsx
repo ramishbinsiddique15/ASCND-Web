@@ -1,106 +1,65 @@
-"use client"
 import { motion } from "framer-motion"
 import power from "../../assets/img/speed.jpg"
 import comfort from "../../assets/img/pricing.jpg"
 import protect from "../../assets/img/work.jpg"
 
-// Animation variants
+// Animation variants (simplified)
 const container = {
-  hidden: { opacity: 1 },
+  hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
       delayChildren: 0.2,
-      staggerChildren: 0.15,
-      duration: 0.8,
+      staggerChildren: 0.1,
+      duration: 0.5,
     },
   },
 }
 
 const imgVar = {
-  hidden: {
-    x: -60,
-    opacity: 0,
-    scale: 0.8,
-    rotateY: -15,
-    filter: "blur(10px)",
-  },
+  hidden: { x: -20, opacity: 0 },
   show: {
     x: 0,
     opacity: 1,
-    scale: 1,
-    rotateY: 0,
-    filter: "blur(0px)",
     transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 20,
-      duration: 1.2,
+      duration: 0.5,
+      ease: "easeOut",
     },
   },
 }
 
 const textVar = {
-  hidden: {
-    x: 60,
-    opacity: 0,
-    scale: 0.95,
-    filter: "blur(8px)",
-  },
+  hidden: { x: 20, opacity: 0 },
   show: {
     x: 0,
     opacity: 1,
-    scale: 1,
-    filter: "blur(0px)",
     transition: {
-      type: "spring",
-      stiffness: 120,
-      damping: 22,
-      duration: 1.0,
+      duration: 0.5,
+      ease: "easeOut",
     },
   },
 }
 
 const pillVar = {
-  hidden: {
-    y: 30,
-    opacity: 0,
-    scale: 0.8,
-    rotateX: 20,
-  },
+  hidden: { y: 20, opacity: 0 },
   show: {
     y: 0,
     opacity: 1,
-    scale: 1,
-    rotateX: 0,
     transition: {
-      type: "spring",
-      stiffness: 140,
-      damping: 25,
-      duration: 0.8,
+      duration: 0.5,
+      ease: "easeOut",
     },
   },
 }
 
 const headingVar = {
-  hidden: {
-    y: 40,
-    opacity: 0,
-    scale: 0.9,
-    rotateX: 10,
-    filter: "blur(12px)",
-  },
+  hidden: { y: 20, opacity: 0 },
   show: {
     y: 0,
     opacity: 1,
-    scale: 1,
-    rotateX: 0,
-    filter: "blur(0px)",
     transition: {
-      type: "spring",
-      stiffness: 110,
-      damping: 20,
-      duration: 1.4,
+      duration: 0.5,
+      ease: "easeOut",
     },
   },
 }
@@ -117,7 +76,13 @@ const GradientWord = ({ children }) => (
 const Pill = ({ label }) => (
   <motion.span
     variants={pillVar}
-    className="inline-block rounded-full border-2 border-[#0D1318] bg-white px-2.5 py-1 text-[12px] font-semibold text-[#0D1318] shadow-sm sm:px-3.5 sm:py-1.5 sm:text-[14px]"
+    className="inline-block rounded-full border-[2px] border-[#0D1318] bg-[#F6F6F4] px-2.5 py-1 text-[#0D1318] sm:px-3.5 sm:py-1.5 
+    text-[14px] leading-[20px]
+sm:text-[16px] sm:leading-[24px]
+md:text-[18px] md:leading-[28px]
+2xl:text-[18px] 2xl:leading-[26px]
+1821:text-[20px] 1821:leading-[28px] font-[600]
+    "
   >
     {label}
   </motion.span>
@@ -130,30 +95,18 @@ const WhyItem = ({ image, headingTop, headingBottom, gradientWord, body, pills }
     whileInView="show"
     viewport={{ once: true, amount: 0.2, margin: "0px 0px -15% 0px" }}
     variants={container}
-    whileHover={{
-      scale: 1.02,
-      transition: { duration: 0.3, ease: "easeOut" },
-    }}
   >
     {/* Image */}
     <motion.div
       className="lg:col-span-5"
       variants={imgVar}
-      whileHover={{
-        scale: 1.05,
-        rotateY: 2,
-        transition: { duration: 0.4, ease: "easeOut" },
-      }}
     >
-      <div className="relative h-48 overflow-hidden rounded-xl sm:h-56 sm:rounded-2xl lg:h-[360px] xl:h-[766px] shadow-lg">
+      <div className="relative h-48 overflow-hidden rounded-xl sm:h-56 sm:rounded-2xl lg:h-[360px] xl:h-[766px]">
         <motion.img
           src={image}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
-          whileHover={{
-            scale: 1.1,
-            transition: { duration: 0.6, ease: "easeOut" },
-          }}
+          variants={imgVar}
         />
       </div>
     </motion.div>
@@ -161,7 +114,16 @@ const WhyItem = ({ image, headingTop, headingBottom, gradientWord, body, pills }
     {/* Text */}
     <motion.div className="lg:col-span-7 h-full lg:pl-6 xl:pl-10 flex flex-col justify-end lg:pb-32" variants={textVar}>
       <motion.h3
-        className="text-[24px] font-extrabold leading-[1.02] text-[#0b0c0e] sm:text-[30px] md:text-[36px] lg:text-[44px] xl:text-[52px]"
+        className="font-extrabold text-[#0D1318] 
+        sm:text-[36px] sm:leading-[29px]
+md:text-[44px] md:leading-[36px]
+lg:text-[52px] lg:leading-[42px]
+xl:text-[59px] xl:leading-[48px]
+2xl:text-[69px] 2xl:leading-[56px]
+1821:text-[79px] 1821:leading-[64px]
+
+    tracking-[-0.04em]
+        "
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
@@ -169,8 +131,8 @@ const WhyItem = ({ image, headingTop, headingBottom, gradientWord, body, pills }
           hidden: {},
           show: {
             transition: {
-              staggerChildren: 0.08,
-              delayChildren: 0.3,
+              staggerChildren: 0.05,
+              delayChildren: 0.2,
             },
           },
         }}
@@ -178,8 +140,8 @@ const WhyItem = ({ image, headingTop, headingBottom, gradientWord, body, pills }
         {headingTop && (
           <motion.span
             variants={{
-              hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
-              show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6 } },
+              hidden: { opacity: 0, y: 10 },
+              show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
             }}
           >
             {headingTop}{" "}
@@ -187,8 +149,8 @@ const WhyItem = ({ image, headingTop, headingBottom, gradientWord, body, pills }
         )}
         <motion.span
           variants={{
-            hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
-            show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6 } },
+            hidden: { opacity: 0, y: 10 },
+            show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
           }}
         >
           <GradientWord>{gradientWord}</GradientWord>
@@ -198,8 +160,8 @@ const WhyItem = ({ image, headingTop, headingBottom, gradientWord, body, pills }
             <br />
             <motion.span
               variants={{
-                hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
-                show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6 } },
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
               }}
             >
               {headingBottom}
@@ -209,16 +171,17 @@ const WhyItem = ({ image, headingTop, headingBottom, gradientWord, body, pills }
       </motion.h3>
 
       <motion.p
-        className="mt-3 text-[13px] leading-6 font-semibold tracking-tight text-[#636E80] sm:mt-4 sm:text-[14px] sm:leading-7 md:text-[14.5px]"
-        initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        viewport={{ once: true }}
-        transition={{
-          delay: 0.6,
-          duration: 0.8,
-          type: "spring",
-          stiffness: 120,
-          damping: 20,
+        className="mt-3 text-[#636E80] sm:mt-4 
+        text-[14px] leading-[20px]
+sm:text-[16px] sm:leading-[24px]
+md:text-[18px] md:leading-[28px]
+2xl:text-[18px] 2xl:leading-[26px]
+1821:text-[20px] 1821:leading-[28px] font-[600]
+tracking-[-0.02em]
+        "
+        variants={{
+          hidden: { opacity: 0, y: 10 },
+          show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
         }}
       >
         {body}
@@ -230,8 +193,8 @@ const WhyItem = ({ image, headingTop, headingBottom, gradientWord, body, pills }
           hidden: {},
           show: {
             transition: {
-              staggerChildren: 0.1,
-              delayChildren: 0.8,
+              staggerChildren: 0.05,
+              delayChildren: 0.4,
             },
           },
         }}
@@ -239,24 +202,8 @@ const WhyItem = ({ image, headingTop, headingBottom, gradientWord, body, pills }
         whileInView="show"
         viewport={{ once: true }}
       >
-        {pills.map((p, index) => (
-          <motion.span
-            key={p}
-            variants={pillVar}
-            className="inline-block rounded-full border-2 border-[#0D1318] bg-white px-2.5 py-1 text-[12px] font-semibold text-[#0D1318] shadow-sm sm:px-3.5 sm:py-1.5 sm:text-[14px]"
-            whileHover={{
-              scale: 1.05,
-              backgroundColor: "#0D1318",
-              color: "#ffffff",
-              transition: { duration: 0.2 },
-            }}
-            style={{
-              transformOrigin: "center",
-              cursor: "default",
-            }}
-          >
-            {p}
-          </motion.span>
+        {pills.map((p) => (
+          <Pill key={p} label={p} />
         ))}
       </motion.div>
     </motion.div>
@@ -274,17 +221,25 @@ const Why = () => {
           variants={headingVar}
           className="pb-3 pt-3 sm:pb-4 sm:pt-4"
         >
-          <h2 className="text-[28px] font-extrabold leading-[0.8] text-[#0b0c0e] sm:text-[36px] md:text-[44px] lg:text-[64px] xl:text-8xl">
+          <h2 className="font-extrabold text-[#0D1318] 
+          text-4xl       
+          sm:text-5xl
+          md:text-6xl
+          lg:text-7xl
+          xl:text-[120px]
+          2xl:text-[150px]
+          1821:text-[169px]
+          tracking-[-0.06em]"
+          >
             Why ASCND?
           </h2>
           <motion.div
-            className="mt-2 border-t border-black/15 sm:mt-3"
+            className="mt-2 border-t border-[#B0B8C7] border-[1px] sm:mt-3"
             initial={{ scaleX: 0, opacity: 0 }}
             whileInView={{ scaleX: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{
-              delay: 0.4,
-              duration: 0.8,
+              duration: 0.5,
               ease: "easeOut",
             }}
             style={{ transformOrigin: "left" }}
@@ -296,19 +251,19 @@ const Why = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
           <WhyItem
             image={power}
             headingTop=""
             gradientWord="Speed matters."
             headingBottom="We don’t waste time."
-            body="Most homeowners wait weeks (or months) just to get started. ASCND has streamlined operations to eliminate delays—so you can start your project right away and enjoy it sooner.."
+            body="Most homeowners wait weeks (or months) just to get started. ASCND has streamlined operations to eliminate delays—so you can start your project right away and enjoy it sooner."
             pills={[
               "Lightning-fast quotes",
               "Pre-vetted contractor",
               "Direct project management",
-              "Clear communication from start to finish",
+              "Clear communication from start to finish"
             ]}
           />
 
@@ -322,7 +277,7 @@ const Why = () => {
               "Price-matched offers",
               "Bundled project discounts",
               "Financing options available",
-              "No hidden fees or surprise charges",
+              "No hidden fees or surprise charges"
             ]}
           />
 
@@ -336,7 +291,7 @@ const Why = () => {
               "Full warranties",
               "Reliable materials",
               "Clean, efficient installs",
-              "Local contractor partnerships",
+              "Local contractor partnerships"
             ]}
           />
         </motion.div>

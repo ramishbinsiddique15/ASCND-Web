@@ -203,7 +203,7 @@ const RequestForm = () => {
           onClick={() => handleDateSelect(dateString)}
           className={`w-8 h-8 sm:w-10 sm:h-10 text-xs sm:text-sm font-medium rounded-lg transition-all ${
             isSelected
-              ? "bg-[#FF4C16] text-white shadow-lg shadow-[#FF4C16]/30"
+              ? "bg-[#FF4C16] text-[#F6F6F4] shadow-lg shadow-[#FF4C16]/30"
               : isInRange
                 ? "bg-[#FF4C16]/20 text-[#FF4C16]"
                 : "text-[#0D1318] hover:bg-gray-100"
@@ -267,7 +267,7 @@ const RequestForm = () => {
           <motion.div className="space-y-4 sm:space-y-5 md:space-y-6" variants={slideLeft}>
             <motion.div variants={fadeUp}>
               <motion.span
-                className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white text-[#FF4C16] text-xs sm:text-sm font-semibold uppercase tracking-wider border-2 border-[#FF4C16] rounded relative overflow-hidden"
+                className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-[#F6F6F4] text-[#FF4C16] text-xs sm:text-sm font-semibold uppercase tracking-wider border-2 border-[#FF4C16] rounded relative overflow-hidden"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0 8px 25px rgba(255, 76, 22, 0.2)",
@@ -317,7 +317,7 @@ const RequestForm = () => {
 
           {/* Right Side - Form */}
           <motion.div
-            className="bg-white rounded-xl sm:rounded-2xl border border-[#4B5361] shadow-lg p-4 sm:p-5 md:p-6 relative overflow-hidden"
+            className="bg-[#F6F6F4] rounded-xl sm:rounded-2xl border border-[#4B5361] shadow-lg p-4 sm:p-5 md:p-6 relative overflow-hidden"
             variants={slideRight}
             whileHover={{
               boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
@@ -388,7 +388,7 @@ const RequestForm = () => {
                   <label className="flex items-center gap-2 sm:gap-3 cursor-pointer">
                     <motion.input
                       type="checkbox"
-                      className="w-4 h-4 sm:w-5 sm:h-5 text-[#0D1318] bg-white border-2 border-gray-400 cursor-pointer accent-[#FF4C16] rounded-md"
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-[#0D1318] bg-[#F6F6F4] border-2 border-gray-400 cursor-pointer accent-[#FF4C16] rounded-md"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     />
@@ -449,7 +449,7 @@ const RequestForm = () => {
                           />
                           <div
                             className={`w-4 h-4 sm:w-5 sm:h-5 rounded border-2 flex items-center justify-center transition-all ${
-                              selectedServices.includes(service) ? "bg-white border-white" : "bg-white border-[#FF4C16]"
+                              selectedServices.includes(service) ? "bg-[#F6F6F4] border-[#F6F6F4]" : "bg-[#F6F6F4] border-[#FF4C16]"
                             }`}
                           >
                             {selectedServices.includes(service) && (
@@ -459,7 +459,7 @@ const RequestForm = () => {
                         </div>
                         <span
                           className={`text-xs sm:text-sm font-medium transition-all ${
-                            selectedServices.includes(service) ? "text-white" : "text-[#0D1318]"
+                            selectedServices.includes(service) ? "text-[#F6F6F4]" : "text-[#0D1318]"
                           }`}
                         >
                           {service}
@@ -511,7 +511,7 @@ const RequestForm = () => {
                       animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
                       exit={{ opacity: 0, y: -20, scale: 0.95, filter: "blur(5px)" }}
                       transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                      className="absolute top-full left-0 right-0 mt-2 bg-white border border-[#B0B8C7] rounded-lg shadow-xl z-20 p-3 sm:p-4"
+                      className="absolute top-full left-0 right-0 mt-2 bg-[#F6F6F4] border border-[#B0B8C7] rounded-lg shadow-xl z-20 p-3 sm:p-4"
                     >
                       {/* Calendar Header */}
                       <div className="flex items-center justify-between mb-4">
@@ -596,7 +596,7 @@ const RequestForm = () => {
                             setIsCalendarOpen(false)
                             setSelectingStart(true)
                           }}
-                          className="flex-1 px-3 py-2 text-sm font-medium text-white bg-[#FF4C16] rounded-lg hover:bg-[#FF4C16]/90"
+                          className="flex-1 px-3 py-2 text-sm font-medium text-[#F6F6F4] bg-[#FF4C16] rounded-lg hover:bg-[#FF4C16]/90"
                         >
                           Done
                         </button>
@@ -629,8 +629,8 @@ const RequestForm = () => {
                       <motion.div
                         className={`w-full px-2 sm:px-3 md:px-4 py-2.5 sm:py-3 rounded-lg border text-center text-xs sm:text-sm transition-all ${
                           budget === option
-                            ? "bg-[#0D1318] text-white border-[#0D1318] shadow-lg shadow-[#0D1318]/20"
-                            : "bg-white text-[#0D1318] border-[#B0B8C7] hover:border-[#0D1318]"
+                            ? "bg-[#0D1318] text-[#F6F6F4] border-[#0D1318] shadow-lg shadow-[#0D1318]/20"
+                            : "bg-[#F6F6F4] text-[#0D1318] border-[#B0B8C7] hover:border-[#0D1318]"
                         }`}
                         whileHover={{
                           scale: 1.02,
@@ -656,7 +656,7 @@ const RequestForm = () => {
                   <motion.button
                     type="button"
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="cursor-pointer w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-[#B0B8C7] rounded-lg text-xs sm:text-sm font-semibold tracking-wider text-left bg-white focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
+                    className="cursor-pointer w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-[#B0B8C7] rounded-lg text-xs sm:text-sm font-semibold tracking-wider text-left bg-[#F6F6F4] focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
                     whileHover={{
                       scale: 1.01,
                       boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)",
@@ -687,14 +687,14 @@ const RequestForm = () => {
                       animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
                       exit={{ opacity: 0, y: -15, scale: 0.95, filter: "blur(5px)" }}
                       transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                      className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#B0B8C7] rounded-lg shadow-xl z-10 max-h-60 overflow-y-auto"
+                      className="absolute top-full left-0 right-0 mt-1 bg-[#F6F6F4] border border-[#B0B8C7] rounded-lg shadow-xl z-10 max-h-60 overflow-y-auto"
                     >
                       {hearAboutOptions.map((option, index) => (
                         <motion.button
                           key={option.value}
                           type="button"
                           onClick={() => handleDropdownSelect(option)}
-                          className="cursor-pointer w-full px-3 sm:px-4 py-2.5 sm:py-3 text-left text-xs sm:text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-white transition-all border-b border-gray-100 last:border-b-0"
+                          className="cursor-pointer w-full px-3 sm:px-4 py-2.5 sm:py-3 text-left text-xs sm:text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-[#F6F6F4] transition-all border-b border-gray-100 last:border-b-0"
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.05 }}
@@ -743,7 +743,7 @@ const RequestForm = () => {
 
                 <motion.button
                   type="submit"
-                  className="cursor-pointer w-full bg-[#0D1318] text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-semibold uppercase tracking-wider hover:bg-[#0D1318]/90 transition-all flex items-center justify-center gap-2 text-sm sm:text-base relative overflow-hidden"
+                  className="cursor-pointer w-full bg-[#0D1318] text-[#F6F6F4] py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-semibold uppercase tracking-wider hover:bg-[#0D1318]/90 transition-all flex items-center justify-center gap-2 text-sm sm:text-base relative overflow-hidden"
                   whileHover={{
                     scale: 1.02,
                     boxShadow: "0 15px 35px rgba(13, 19, 24, 0.3)",

@@ -132,7 +132,7 @@ const ForContractor = () => {
         <div className="flex flex-col lg:flex-row items-stretch gap-4 sm:gap-5">
           {/* Left side - Dark section with content */}
           <motion.div className="flex-1" variants={itemVariants}>
-            <div className="relative bg-[#0D1318] rounded-xl p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 text-white h-full flex flex-col justify-center">
+            <div className="relative bg-[#0D1318] rounded-xl p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 text-[#F6F6F4] h-full flex flex-col justify-center">
               <motion.img
                 src={contractor}
                 alt=""
@@ -148,7 +148,7 @@ const ForContractor = () => {
               {/* Content */}
               <div className="relative z-10 max-w-md lg:max-w-lg">
                 <motion.div
-                  className="inline-block border border-white px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 text-[9px] sm:text-[10px] md:text-xs font-semibold uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 rounded"
+                  className="inline-block border border-[#F6F6F4] px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 text-[9px] sm:text-[10px] md:text-xs font-semibold uppercase tracking-wider mb-4 sm:mb-6 md:mb-8 rounded"
                   variants={tagVariants}
                   style={{ transformStyle: "preserve-3d" }}
                 >
@@ -272,7 +272,7 @@ const ForContractor = () => {
                 {(() => { const MotionLink = motion(Link); return (
                 <MotionLink
                   to="/contractor"
-                  className="inline-flex items-center justify-between gap-2 rounded-md bg-white px-4 sm:px-5 md:px-7 py-2.5 sm:py-3 md:py-3.5 text-[10px] sm:text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.18em] text-[#FF4C16] transition"
+                  className="inline-flex items-center justify-between gap-2 rounded-md bg-[#F6F6F4] px-4 sm:px-5 md:px-7 py-2.5 sm:py-3 md:py-3.5 text-[10px] sm:text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.25em] text-[#FF4C16] transition"
                   variants={{
                     hidden: {
                       rotateX: 30,
@@ -331,7 +331,7 @@ const ForContractor = () => {
                 />
                 <div className="absolute inset-0 bg-[#FF4C16] mix-blend-multiply opacity-100  rounded-2xl" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 sm:p-4 md:p-5 z-10">
-                  <h3 className="text-white text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">
+                  <h3 className="text-[#F6F6F4] text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">
                     Training & tools
                   </h3>
                 </div>

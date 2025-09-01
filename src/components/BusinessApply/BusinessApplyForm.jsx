@@ -223,7 +223,7 @@ const BusinessApplyForm = () => {
           <motion.div className="space-y-4 sm:space-y-5 md:space-y-6" variants={slideLeft}>
             <motion.div variants={fadeUp}>
               <motion.span
-                className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white text-[#FF4C16] text-xs sm:text-sm font-semibold uppercase tracking-wider border-2 border-[#FF4C16] rounded relative overflow-hidden"
+                className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-[#F6F6F4] text-[#FF4C16] text-xs sm:text-sm font-semibold uppercase tracking-wider border-2 border-[#FF4C16] rounded relative overflow-hidden"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0 8px 25px rgba(255, 76, 22, 0.2)",
@@ -270,7 +270,7 @@ const BusinessApplyForm = () => {
 
           {/* Right Side - Form */}
           <motion.div
-            className="bg-white rounded-xl sm:rounded-2xl border border-[#4B5361] shadow-lg p-4 sm:p-5 md:p-6 relative overflow-hidden"
+            className="bg-[#F6F6F4] rounded-xl sm:rounded-2xl border border-[#4B5361] shadow-lg p-4 sm:p-5 md:p-6 relative overflow-hidden"
             variants={slideRight}
             whileHover={{
               boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
@@ -349,7 +349,7 @@ const BusinessApplyForm = () => {
                       type="checkbox"
                       checked={subscribeToUpdates}
                       onChange={(e) => setSubscribeToUpdates(e.target.checked)}
-                      className="w-5 h-5 text-[#0D1318] bg-white border-2 border-gray-400 cursor-pointer accent-[#FF4C16] rounded-md"
+                      className="w-5 h-5 text-[#0D1318] bg-[#F6F6F4] border-2 border-gray-400 cursor-pointer accent-[#FF4C16] rounded-md"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     />
@@ -385,7 +385,7 @@ const BusinessApplyForm = () => {
                   <motion.select
                     value={country}
                     onChange={(e) => setCountry(e.target.value)}
-                    className="w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-[#0D1318] focus:outline-none focus:border-[#FF4C16] focus:border-2 bg-white transition-all"
+                    className="w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-[#0D1318] focus:outline-none focus:border-[#FF4C16] focus:border-2 bg-[#F6F6F4] transition-all"
                     whileFocus={{
                       scale: 1.02,
                       boxShadow: "0 8px 25px rgba(255, 76, 22, 0.15)",
@@ -489,7 +489,7 @@ const BusinessApplyForm = () => {
                         className={`flex items-center gap-3 px-4 py-3 rounded-lg border transition-all ${
                           role === option
                             ? "bg-[#FF4C16] border-[#FF4C16] shadow-lg shadow-[#FF4C16]/20"
-                            : "bg-white border-[#B0B8C7] hover:border-[#FF4C16]"
+                            : "bg-[#F6F6F4] border-[#B0B8C7] hover:border-[#FF4C16]"
                         }`}
                         whileHover={{
                           scale: 1.02,
@@ -510,7 +510,7 @@ const BusinessApplyForm = () => {
                           />
                           <div
                             className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all ${
-                              role === option ? "bg-white border-white" : "bg-white border-[#FF4C16]"
+                              role === option ? "bg-[#F6F6F4] border-[#F6F6F4]" : "bg-[#F6F6F4] border-[#FF4C16]"
                             }`}
                           >
                             {role === option && <div className="w-2 h-2 bg-[#FF4C16] rounded-full"></div>}
@@ -518,7 +518,7 @@ const BusinessApplyForm = () => {
                         </div>
                         <span
                           className={`text-sm font-medium transition-all ${
-                            role === option ? "text-white" : "text-[#0D1318]"
+                            role === option ? "text-[#F6F6F4]" : "text-[#0D1318]"
                           }`}
                         >
                           {option}
@@ -538,7 +538,7 @@ const BusinessApplyForm = () => {
                   <motion.button
                     type="button"
                     onClick={() => setIsExperienceDropdownOpen(!isExperienceDropdownOpen)}
-                    className="cursor-pointer w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-left bg-white focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
+                    className="cursor-pointer w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-left bg-[#F6F6F4] focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
                     whileHover={{
                       scale: 1.01,
                       boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)",
@@ -567,14 +567,14 @@ const BusinessApplyForm = () => {
                       animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
                       exit={{ opacity: 0, y: -15, scale: 0.95, filter: "blur(5px)" }}
                       transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                      className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#B0B8C7] rounded-lg shadow-xl z-10"
+                      className="absolute top-full left-0 right-0 mt-1 bg-[#F6F6F4] border border-[#B0B8C7] rounded-lg shadow-xl z-10"
                     >
                       {experienceOptions.map((option, index) => (
                         <motion.button
                           key={option}
                           type="button"
                           onClick={() => handleDropdownSelect("experience", option)}
-                          className="cursor-pointer w-full px-4 py-3 text-left text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-white transition-all border-b border-gray-100 last:border-b-0"
+                          className="cursor-pointer w-full px-4 py-3 text-left text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-[#F6F6F4] transition-all border-b border-gray-100 last:border-b-0"
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.05 }}
@@ -618,7 +618,7 @@ const BusinessApplyForm = () => {
                     <motion.button
                       type="button"
                       onClick={() => setIsYearsDropdownOpen(!isYearsDropdownOpen)}
-                      className="cursor-pointer w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-left bg-white focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
+                      className="cursor-pointer w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-left bg-[#F6F6F4] focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
                       whileHover={{
                         scale: 1.01,
                         boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)",
@@ -647,14 +647,14 @@ const BusinessApplyForm = () => {
                         animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
                         exit={{ opacity: 0, y: -15, scale: 0.95, filter: "blur(5px)" }}
                         transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                        className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#B0B8C7] rounded-lg shadow-xl z-10"
+                        className="absolute top-full left-0 right-0 mt-1 bg-[#F6F6F4] border border-[#B0B8C7] rounded-lg shadow-xl z-10"
                       >
                         {yearsOptions.map((option, index) => (
                           <motion.button
                             key={option}
                             type="button"
                             onClick={() => handleDropdownSelect("years", option)}
-                            className="cursor-pointer w-full px-4 py-3 text-left text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-white transition-all border-b border-gray-100 last:border-b-0"
+                            className="cursor-pointer w-full px-4 py-3 text-left text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-[#F6F6F4] transition-all border-b border-gray-100 last:border-b-0"
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.05 }}
@@ -682,7 +682,7 @@ const BusinessApplyForm = () => {
                   <motion.button
                     type="button"
                     onClick={() => setIsTeamDropdownOpen(!isTeamDropdownOpen)}
-                    className="cursor-pointer w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-left bg-white focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
+                    className="cursor-pointer w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-left bg-[#F6F6F4] focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
                     whileHover={{
                       scale: 1.01,
                       boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)",
@@ -711,14 +711,14 @@ const BusinessApplyForm = () => {
                       animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
                       exit={{ opacity: 0, y: -15, scale: 0.95, filter: "blur(5px)" }}
                       transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                      className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#B0B8C7] rounded-lg shadow-xl z-10"
+                      className="absolute top-full left-0 right-0 mt-1 bg-[#F6F6F4] border border-[#B0B8C7] rounded-lg shadow-xl z-10"
                     >
                       {teamOptions.map((option, index) => (
                         <motion.button
                           key={option}
                           type="button"
                           onClick={() => handleDropdownSelect("team", option)}
-                          className="cursor-pointer w-full px-4 py-3 text-left text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-white transition-all border-b border-gray-100 last:border-b-0"
+                          className="cursor-pointer w-full px-4 py-3 text-left text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-[#F6F6F4] transition-all border-b border-gray-100 last:border-b-0"
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.05 }}
@@ -813,7 +813,7 @@ const BusinessApplyForm = () => {
                   <motion.button
                     type="button"
                     onClick={() => setIsLicensedDropdownOpen(!isLicensedDropdownOpen)}
-                    className="cursor-pointer w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-left bg-white focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
+                    className="cursor-pointer w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-left bg-[#F6F6F4] focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
                     whileHover={{
                       scale: 1.01,
                       boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)",
@@ -842,14 +842,14 @@ const BusinessApplyForm = () => {
                       animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
                       exit={{ opacity: 0, y: -15, scale: 0.95, filter: "blur(5px)" }}
                       transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                      className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#B0B8C7] rounded-lg shadow-xl z-10"
+                      className="absolute top-full left-0 right-0 mt-1 bg-[#F6F6F4] border border-[#B0B8C7] rounded-lg shadow-xl z-10"
                     >
                       {licensedOptions.map((option, index) => (
                         <motion.button
                           key={option}
                           type="button"
                           onClick={() => handleDropdownSelect("licensed", option)}
-                          className="cursor-pointer w-full px-4 py-3 text-left text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-white transition-all border-b border-gray-100 last:border-b-0"
+                          className="cursor-pointer w-full px-4 py-3 text-left text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-[#F6F6F4] transition-all border-b border-gray-100 last:border-b-0"
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.05 }}
@@ -894,7 +894,7 @@ const BusinessApplyForm = () => {
                   <motion.button
                     type="button"
                     onClick={() => setIsHearAboutDropdownOpen(!isHearAboutDropdownOpen)}
-                    className="cursor-pointer w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-left bg-white focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
+                    className="cursor-pointer w-full px-4 py-3 border border-[#B0B8C7] rounded-lg text-sm font-semibold tracking-wider text-left bg-[#F6F6F4] focus:outline-none focus:border-[#FF4C16] focus:border-2 flex items-center justify-between transition-all"
                     whileHover={{
                       scale: 1.01,
                       boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)",
@@ -923,14 +923,14 @@ const BusinessApplyForm = () => {
                       animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
                       exit={{ opacity: 0, y: -15, scale: 0.95, filter: "blur(5px)" }}
                       transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                      className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#B0B8C7] rounded-lg shadow-xl z-10"
+                      className="absolute top-full left-0 right-0 mt-1 bg-[#F6F6F4] border border-[#B0B8C7] rounded-lg shadow-xl z-10"
                     >
                       {hearAboutOptions.map((option, index) => (
                         <motion.button
                           key={option}
                           type="button"
                           onClick={() => handleDropdownSelect("hearAbout", option)}
-                          className="cursor-pointer w-full px-4 py-3 text-left text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-white transition-all border-b border-gray-100 last:border-b-0"
+                          className="cursor-pointer w-full px-4 py-3 text-left text-sm font-semibold tracking-wider text-[#0D1318] hover:bg-[#FF4C16] hover:text-[#F6F6F4] transition-all border-b border-gray-100 last:border-b-0"
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.05 }}
@@ -962,7 +962,7 @@ const BusinessApplyForm = () => {
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg border transition-all ${
                       agreeToTerms
                         ? "bg-[#FF4C16] border-[#FF4C16] shadow-lg shadow-[#FF4C16]/20"
-                        : "bg-white border-[#B0B8C7] hover:border-[#FF4C16]"
+                        : "bg-[#F6F6F4] border-[#B0B8C7] hover:border-[#FF4C16]"
                     }`}
                     whileHover={{
                       scale: 1.02,
@@ -980,14 +980,14 @@ const BusinessApplyForm = () => {
                       />
                       <div
                         className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${
-                          agreeToTerms ? "bg-white border-white" : "bg-white border-[#FF4C16]"
+                          agreeToTerms ? "bg-[#F6F6F4] border-[#F6F6F4]" : "bg-[#F6F6F4] border-[#FF4C16]"
                         }`}
                       >
                         {agreeToTerms && <div className="w-2 h-2 bg-[#FF4C16] rounded-full"></div>}
                       </div>
                     </div>
                     <span
-                      className={`text-sm font-medium transition-all ${agreeToTerms ? "text-white" : "text-[#0D1318]"}`}
+                      className={`text-sm font-medium transition-all ${agreeToTerms ? "text-[#F6F6F4]" : "text-[#0D1318]"}`}
                     >
                       I Agree
                     </span>
@@ -996,7 +996,7 @@ const BusinessApplyForm = () => {
 
                 <motion.button
                   type="submit"
-                  className="cursor-pointer w-full bg-[#0D1318] text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg uppercase tracking-wider hover:bg-[#0D1318]/90 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm relative overflow-hidden"
+                  className="cursor-pointer w-full bg-[#0D1318] text-[#F6F6F4] py-3 sm:py-4 px-4 sm:px-6 rounded-lg uppercase tracking-wider hover:bg-[#0D1318]/90 transition-all flex items-center justify-center gap-2 text-xs sm:text-sm relative overflow-hidden"
                   whileHover={{
                     scale: 1.02,
                     boxShadow: "0 15px 35px rgba(13, 19, 24, 0.3)",

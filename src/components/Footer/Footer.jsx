@@ -194,23 +194,14 @@ const Pill = ({ title, items }) => {
     <motion.div
       className=""
       variants={pillAnimation}
-      whileHover={{
-        scale: 1.02,
-        y: -2,
-        transition: { duration: 0.3, ease: "easeOut" },
-      }}
     >
       {/* Flat, full-width header bar */}
       <motion.div
-        className="mb-3 w-full bg-[#E6E6E6] px-2 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0D1318] sm:mb-4 sm:px-3 sm:py-2 sm:text-[11px] md:text-[12px]"
-        whileHover={{
-          backgroundColor: "#ffffff",
-          transition: { duration: 0.3 },
-        }}
+        className="mb-3 w-full bg-[#D9D9D9] px-2 py-1.5 text-[11px] font-[700] uppercase tracking-[0.25em] text-[#0D1318] sm:mb-4 sm:px-3 sm:py-2 "
       >
         {title}
       </motion.div>
-      <ul className="grid gap-1.5 px-0 pb-1 text-white/90 sm:gap-2 md:gap-2.5">
+      <ul className="grid gap-1.5 px-0 pb-1 text-[#F6F6F4]/90 sm:gap-2 md:gap-2.5">
         {items.map((item, idx) => {
           const isActive =
             location.pathname === item.path ||
@@ -220,24 +211,15 @@ const Pill = ({ title, items }) => {
             <motion.li
               key={item.text}
               className="flex items-center gap-3 sm:gap-4"
-              whileHover={{
-                x: 4,
-                transition: { duration: 0.2, ease: "easeOut" },
-              }}
             >
               <Link
                 to={item.path}
-                className="flex items-center gap-3 text-[11px] uppercase tracking-[0.14em] hover:text-white transition-colors sm:gap-4 sm:text-[12px]"
+                className="flex items-center gap-3 text-[11px] uppercase tracking-[0.25em] font-[700] hover:text-[#F6F6F4] transition-colors sm:gap-4 "
               >
                 <motion.span
                   className={`inline-block size-[8px] rounded-full sm:size-[10px] ${
-                    isActive ? "bg-white" : "border border-white/70"
+                    isActive ? "bg-[#F6F6F4]" : "border border-[#F6F6F4]/70"
                   }`}
-                  whileHover={{
-                    scale: 1.3,
-                    backgroundColor: "#ffffff",
-                    transition: { duration: 0.2 },
-                  }}
                 />
                 <span className="truncate">{item.text}</span>
               </Link>
@@ -277,7 +259,7 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="relative isolate w-full overflow-hidden rounded-t-2xl text-white"
+      className="relative isolate w-full overflow-hidden rounded-t-2xl text-[#F6F6F4]"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
@@ -307,58 +289,44 @@ const Footer = () => {
               <motion.a
                 href="#"
                 aria-label="Discord"
-                className="grid size-8 place-items-center rounded-full bg-white text-[#FF4C16] shadow-md transition hover:bg-white/90 sm:size-9 md:size-10"
-                whileHover={{
-                  scale: 1.15,
-                  backgroundColor: "#5865F2",
-                  color: "#ffffff",
-                  y: -2,
-                  boxShadow: "0 8px 25px rgba(88, 101, 242, 0.4)",
-                  transition: { duration: 0.3, ease: "easeOut" },
-                }}
+                className="grid size-10 place-items-center rounded-full bg-[#F6F6F4] text-[#FF4C16] hover:bg-[#FF4C16] hover:text-[#F6F6F4] shadow-md transition-colors duration-200 sm:size-10 md:size-11"
                 whileTap={{ scale: 0.95 }}
               >
-                <FaDiscord className="size-4 sm:size-5" />
+                <FaDiscord className="size-4 sm:size-4 md:size-5" />
               </motion.a>
               <motion.a
                 href="#"
                 aria-label="Instagram"
-                className="grid size-8 place-items-center rounded-full bg-white text-[#FF4C16] shadow-md transition hover:bg-white/90 sm:size-9 md:size-10"
-                whileHover={{
-                  scale: 1.15,
-                  background: "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
-                  color: "#ffffff",
-                  y: -2,
-                  boxShadow: "0 8px 25px rgba(225, 48, 108, 0.4)",
-                  transition: { duration: 0.3, ease: "easeOut" },
-                }}
+                className="grid size-10 place-items-center rounded-full bg-[#F6F6F4] text-[#FF4C16] hover:bg-[#FF4C16] hover:text-[#F6F6F4] shadow-md transition-colors duration-200 sm:size-10 md:size-11"
                 whileTap={{ scale: 0.95 }}
               >
-                <FaInstagram className="size-4 sm:size-5" />
+                <FaInstagram className="size-4 sm:size-4 md:size-5" />
               </motion.a>
               <motion.a
                 href="#"
                 aria-label="LinkedIn"
-                className="grid size-8 place-items-center rounded-full bg-white text-[#FF4C16] shadow-md transition hover:bg-white/90 sm:size-9 md:size-10"
-                whileHover={{
-                  scale: 1.15,
-                  backgroundColor: "#0077B5",
-                  color: "#ffffff",
-                  y: -2,
-                  boxShadow: "0 8px 25px rgba(0, 119, 181, 0.4)",
-                  transition: { duration: 0.3, ease: "easeOut" },
-                }}
+                className="grid size-10 place-items-center rounded-full bg-[#F6F6F4] text-[#FF4C16] hover:bg-[#FF4C16] hover:text-[#F6F6F4] shadow-md transition-colors duration-200 sm:size-10 md:size-11"
                 whileTap={{ scale: 0.95 }}
               >
-                <FaLinkedin className="size-4 sm:size-5" />
+                <FaLinkedin className="size-4 sm:size-4 md:size-5" />
               </motion.a>
             </motion.div>
           </motion.div>
-          <motion.div className="mb-4 h-[2px] w-full bg-white/70 origin-left sm:mb-6 md:mb-8" variants={dividerVar} />
+          <motion.div className="mb-4 h-[2px] w-full bg-[#F6F6F4]/70 origin-left sm:mb-6 md:mb-8" variants={dividerVar} />
 
           {/* Headline */}
           <motion.h2
-            className="max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[0.8] tracking-tighter"
+            className="max-w-5xl font-[800]
+       text-3xl leading-8
+sm:text-4xl sm:leading-10
+md:text-5xl md:leading-[48px]
+lg:text-6xl lg:leading-[56px]
+xl:text-[72px] xl:leading-[64px]
+2xl:text-[90px] 2xl:leading-[72px]
+1821:text-[102px] 1821:leading-[80px]
+
+tracking-[-0.04em]
+            "
             style={{ textShadow: "0 2px 0 rgba(0,0,0,.65), 0 18px 40px rgba(0,0,0,.55)" }}
             variants={headlineAnimation}
           >
@@ -369,13 +337,8 @@ const Footer = () => {
 
           {/* Pills inside a double-bordered container */}
           <motion.div
-            className="mt-4 rounded-2xl border border-white p-2 sm:mt-6 sm:rounded-3xl sm:p-3 md:mt-8"
+            className="mt-4 rounded-2xl border border-[#F6F6F4] p-2 sm:mt-6 sm:rounded-3xl sm:p-3 md:mt-8"
             variants={pillContainerAnimation}
-            whileHover={{
-              borderColor: "rgba(255, 255, 255, 0.8)",
-              boxShadow: "0 0 30px rgba(255, 255, 255, 0.1)",
-              transition: { duration: 0.3 },
-            }}
           >
             <div className="p-1 sm:p-2 md:p-3">
               <motion.div
@@ -392,29 +355,19 @@ const Footer = () => {
 
         {/* Row 2: Bottom bar pinned to bottom */}
         <motion.div
-          className="mt-6 flex items-center gap-10 border-t border-white pt-3 text-[11px] text-white sm:mt-8 sm:pt-4 sm:text-[12px]"
+          className="mt-6 flex items-center gap-10 border-t border-[#F6F6F4] pt-3 text-[11px] text-[#F6F6F4] sm:mt-8 sm:pt-4 font-[600]"
           variants={fadeUp}
         >
           <span>© ASCND Industries, 2025</span>
           <motion.a
             className="underline"
             href="/privacy-policy"
-            whileHover={{
-              color: "#ffffff",
-              textDecorationColor: "#ffffff",
-              transition: { duration: 0.2 },
-            }}
           >
             Privacy Policy
           </motion.a>
           <motion.a
             className="underline"
             href="#"
-            whileHover={{
-              color: "#ffffff",
-              textDecorationColor: "#ffffff",
-              transition: { duration: 0.2 },
-            }}
           >
             Cookies
           </motion.a>

@@ -116,7 +116,7 @@ const Model = () => {
           {/* Content */}
           <div className="relative px-4 py-8 sm:px-6 sm:py-10  md:py-12  lg:py-16 h-full z-10 flex flex-col justify-between">
             <motion.h3
-              className="font-extrabold leading-[0.8] text-white text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[56px] max-w-full sm:max-w-2xl"
+              className="font-extrabold leading-[0.8] text-[#F6F6F4] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[56px] max-w-full sm:max-w-2xl"
               variants={headingVariant}
               style={{ transformStyle: "preserve-3d" }}
             >
@@ -133,7 +133,7 @@ const Model = () => {
             >
               {/* Build equity card */}
               <motion.div
-                className="rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white flex items-center gap-3 sm:gap-4"
+                className="rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-[#F6F6F4] flex items-center gap-3 sm:gap-4"
                 variants={cardVariant}
                 whileHover={{
                   scale: 1.02,
@@ -144,7 +144,7 @@ const Model = () => {
                 style={{ transformStyle: "preserve-3d" }}
               >
                 <motion.div
-                  className="bg-white rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
+                  className="bg-[#F6F6F4] rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
                   whileHover={{
                     scale: 1.1,
                     rotate: 5,
@@ -157,14 +157,14 @@ const Model = () => {
                     className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
                   />
                 </motion.div>
-                <span className="text-white text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">
+                <span className="text-[#F6F6F4] text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">
                   Build equity with each upgrade
                 </span>
               </motion.div>
 
               {/* Reduce monthly costs card */}
               <motion.div
-                className="rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white flex items-center gap-3 sm:gap-4"
+                className="rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-[#F6F6F4] flex items-center gap-3 sm:gap-4"
                 variants={cardVariant}
                 whileHover={{
                   scale: 1.02,
@@ -175,7 +175,7 @@ const Model = () => {
                 style={{ transformStyle: "preserve-3d" }}
               >
                 <motion.div
-                  className="bg-white rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
+                  className="bg-[#F6F6F4] rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
                   whileHover={{
                     scale: 1.1,
                     rotate: 5,
@@ -188,14 +188,14 @@ const Model = () => {
                     className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
                   />
                 </motion.div>
-                <span className="text-white text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">
+                <span className="text-[#F6F6F4] text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">
                   Reduce monthly costs across utilities and maintenance
                 </span>
               </motion.div>
 
               {/* Unlock financing card */}
               <motion.div
-                className="rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white flex items-center gap-3 sm:gap-4"
+                className="rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-[#F6F6F4] flex items-center gap-3 sm:gap-4"
                 variants={cardVariant}
                 whileHover={{
                   scale: 1.02,
@@ -206,7 +206,7 @@ const Model = () => {
                 style={{ transformStyle: "preserve-3d" }}
               >
                 <motion.div
-                  className="bg-white rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
+                  className="bg-[#F6F6F4] rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
                   whileHover={{
                     scale: 1.1,
                     rotate: 5,
@@ -219,14 +219,14 @@ const Model = () => {
                     className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
                   />
                 </motion.div>
-                <span className="text-white text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">
+                <span className="text-[#F6F6F4] text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">
                   Unlock financing options that make big improvements accessible
                 </span>
               </motion.div>
 
               {/* Fast installations card */}
               <motion.div
-                className="rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-white flex items-center gap-3 sm:gap-4"
+                className="rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-[#F6F6F4] flex items-center gap-3 sm:gap-4"
                 variants={cardVariant}
                 whileHover={{
                   scale: 1.02,
@@ -237,7 +237,7 @@ const Model = () => {
                 style={{ transformStyle: "preserve-3d" }}
               >
                 <motion.div
-                  className="bg-white rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
+                  className="bg-[#F6F6F4] rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
                   whileHover={{
                     scale: 1.1,
                     rotate: 5,
@@ -250,7 +250,7 @@ const Model = () => {
                     className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
                   />
                 </motion.div>
-                <span className="text-white text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">
+                <span className="text-[#F6F6F4] text-sm sm:text-base md:text-lg font-semibold leading-[0.8]">
                   Enjoy fast, high-quality installations by top-tier local pros
                 </span>
               </motion.div>

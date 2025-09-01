@@ -155,14 +155,14 @@ const ForHomeOwner = () => {
       viewport={{ once: true, amount: 0.2 }}
     >
       <div className="mx-auto max-w-[100rem] px-4 sm:px-6 ">
-        <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 shadow-sm border border-gray-100">
+        <div className="bg-[#F6F6F4] rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 shadow-sm border border-gray-100">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             {/* Left side - Content */}
             <motion.div variants={containerVariants} className="space-y-4 sm:space-y-6">
               {/* Tag */}
               <motion.span
                 variants={tagVariant}
-                className="inline-block rounded-sm border-2 border-[#FF4C16] px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] md:text-[11px]"
+                className="inline-block rounded-sm border-2 border-[#FF4C16] px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.25em] text-[#FF4C16] md:text-[11px]"
                 style={{ transformStyle: "preserve-3d" }}
               >
                 FOR HOMEOWNERS
@@ -219,7 +219,7 @@ const ForHomeOwner = () => {
               <MotionLink
                 to="/home-owner"
                 variants={buttonVariant}
-                className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 sm:px-6 py-2.5 sm:py-3 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#0D1318]/90 md:px-7 md:py-3.5 md:text-[12px]"
+                className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 sm:px-6 py-2.5 sm:py-3 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.25em] text-[#F6F6F4] transition hover:bg-[#0D1318]/90 md:px-7 md:py-3.5 md:text-[12px]"
                 whileHover={{
                   scale: 1.05,
                   y: -2,
@@ -265,8 +265,8 @@ const ForHomeOwner = () => {
                       <div
                         className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
                           service.isActive
-                            ? "bg-[#FF4C16] text-white shadow-lg"
-                            : "bg-white text-[#0D1318] hover:bg-gray-50"
+                            ? "bg-[#FF4C16] text-[#F6F6F4] shadow-lg"
+                            : "bg-[#F6F6F4] text-[#0D1318] hover:bg-gray-50"
                         }`}
                         style={{
                           clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
@@ -317,8 +317,8 @@ const ForHomeOwner = () => {
                       <div
                         className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
                           service.isActive
-                            ? "bg-[#FF4C16] text-white shadow-lg"
-                            : "bg-white text-[#0D1318] hover:bg-gray-50"
+                            ? "bg-[#FF4C16] text-[#F6F6F4] shadow-lg"
+                            : "bg-[#F6F6F4] text-[#0D1318] hover:bg-gray-50"
                         }`}
                         style={{
                           clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
@@ -370,8 +370,8 @@ const ForHomeOwner = () => {
                       <div
                         className={`relative flex flex-col items-center justify-center h-full transition-all duration-300 ${
                           service.isActive
-                            ? "bg-[#FF4C16] text-white shadow-lg"
-                            : "bg-white text-[#0D1318] hover:bg-gray-50"
+                            ? "bg-[#FF4C16] text-[#F6F6F4] shadow-lg"
+                            : "bg-[#F6F6F4] text-[#0D1318] hover:bg-gray-50"
                         }`}
                         style={{
                           clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",

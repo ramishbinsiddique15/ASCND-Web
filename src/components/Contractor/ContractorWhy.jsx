@@ -1,92 +1,70 @@
 "use client"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import learn from "../../assets/img/learn.jpg"
-import turn from "../../assets/img/turn.jpg"
-import local from "../../assets/img/local.jpg"
-import plug from "../../assets/img/plug.jpg"
-import trade from "../../assets/img/trade.jpg"
-import doubleArrowWhite from "../../assets/icons/double-arrow-white.png"
+import learn from "../../assets/img/learn.svg"
+import turn from "../../assets/img/turn.svg"
+import local from "../../assets/img/local.svg"
+import plug from "../../assets/img/plug.svg"
+import trade from "../../assets/img/trade.svg"
+import doubleArrowWhite from "../../assets/icons/double-arrow-white.svg"
 
-// Animation variants
+// Animation variants (simplified)
 const container = {
-  hidden: { opacity: 1 },
+  hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
       delayChildren: 0.2,
-      staggerChildren: 0.15,
+      staggerChildren: 0.1,
+      duration: 0.5,
     },
   },
 }
 
 const imgVar = {
-  hidden: {
-    x: -60,
-    opacity: 0,
-    rotateY: -15,
-    scale: 0.9,
-    filter: "blur(10px)",
-  },
+  hidden: { x: -20, opacity: 0 },
   show: {
     x: 0,
     opacity: 1,
-    rotateY: 0,
-    scale: 1,
-    filter: "blur(0px)",
     transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 20,
-      mass: 1.2,
-      duration: 1.2,
+      duration: 0.5,
+      ease: "easeOut",
     },
   },
 }
 
 const textVar = {
-  hidden: {
-    x: 60,
-    opacity: 0,
-    rotateY: 15,
-    scale: 0.95,
-    filter: "blur(8px)",
-  },
+  hidden: { x: 20, opacity: 0 },
   show: {
     x: 0,
     opacity: 1,
-    rotateY: 0,
-    scale: 1,
-    filter: "blur(0px)",
     transition: {
-      type: "spring",
-      stiffness: 120,
-      damping: 22,
-      mass: 1,
-      duration: 1.1,
+      duration: 0.5,
+      ease: "easeOut",
     },
   },
 }
 
 const pillVar = {
-  hidden: {
-    y: 30,
-    opacity: 0,
-    rotateX: 20,
-    scale: 0.8,
-    filter: "blur(6px)",
-  },
+  hidden: { y: 20, opacity: 0 },
   show: {
     y: 0,
     opacity: 1,
-    rotateX: 0,
-    scale: 1,
-    filter: "blur(0px)",
     transition: {
-      type: "spring",
-      stiffness: 140,
-      damping: 25,
-      duration: 0.8,
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+}
+
+const headingVar = {
+  hidden: { y: 20, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
     },
   },
 }
@@ -103,43 +81,20 @@ const GradientWord = ({ children }) => (
 const Pill = ({ label }) => (
   <motion.span
     variants={pillVar}
-    whileHover={{
-      scale: 1.05,
-      backgroundColor: "#0D1318",
-      color: "#ffffff",
-      transition: { duration: 0.2 },
-    }}
-    className="inline-block rounded-full border-2 border-[#0D1318] bg-white px-2.5 py-1 text-[12px] font-semibold text-[#0D1318] shadow-sm sm:px-3 sm:py-1.5 sm:text-[11px] md:px-3.5 md:text-[14px]"
-    style={{
-      transformOrigin: "center",
-      cursor: "default",
-    }}
+    className="inline-block rounded-full border-[2px] border-[#0D1318] bg-[#F6F6F4] px-2.5 py-1 text-[#0D1318] sm:px-3.5 sm:py-1.5 
+    text-[14px] leading-[20px]
+sm:text-[16px] sm:leading-[24px]
+md:text-[18px] md:leading-[28px]
+2xl:text-[18px] 2xl:leading-[26px]
+1821:text-[20px] 1821:leading-[28px] font-[600]
+    "
   >
     {label}
   </motion.span>
 )
 
-const bevel = 200 /* adjust to match the slope length in your image */
-const CLIP_DIAG_LEFT_TO_RIGHT = `polygon(
-  0 0,
-  calc(100% - ${bevel}px) 0,
-  100% ${bevel}px,
-  100% 100%,
-  ${bevel}px 100%,
-  0 calc(100% - ${bevel}px)
-)`
-const CLIP_DIAG_RIGHT_TO_LEFT = `polygon(
-  ${bevel}px 0,
-  100% 0,
-  100% calc(100% - ${bevel}px),
-  calc(100% - ${bevel}px) 100%,
-  0 100%,
-  0 ${bevel}px
-)`
-
 const WhyItem = ({
   image,
-  clip = CLIP_DIAG_LEFT_TO_RIGHT,
   headingTop,
   headingBottom,
   gradientWord,
@@ -150,81 +105,219 @@ const WhyItem = ({
   // Motion-enabled Router Link for CTA
   
   <motion.div
-    className="grid grid-cols-1 items-stretch gap-4 sm:gap-6 md:grid-cols-12 md:gap-8 lg:gap-10"
+    className="grid grid-cols-1 items-stretch gap-4 sm:gap-6 lg:grid-cols-12 lg:gap-10"
     initial="hidden"
     whileInView="show"
-    viewport={{ once: true, amount: 0.3, margin: "0px 0px -10% 0px" }}
+    viewport={{ once: true, amount: 0.2, margin: "0px 0px -15% 0px" }}
     variants={container}
   >
     {/* Image */}
     <motion.div
-      className="md:col-span-5"
+      className="lg:col-span-5"
       variants={imgVar}
-      whileHover={{
-        scale: 1.02,
-        rotateY: index % 2 === 0 ? 2 : -2,
-        transition: { type: "spring", stiffness: 300, damping: 30 },
-      }}
     >
-      <div className="relative h-48 overflow-hidden rounded-xl sm:h-56 sm:rounded-2xl md:h-[320px] lg:h-[400px] xl:h-[460px]">
+      <div className="relative h-48 overflow-hidden rounded-xl sm:h-56 sm:rounded-2xl lg:h-[360px] xl:h-[766px]">
         <motion.img
           src={image}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-center"
-          style={{
-            clipPath: index % 2 === 0 ? CLIP_DIAG_RIGHT_TO_LEFT : CLIP_DIAG_LEFT_TO_RIGHT,
-            WebkitClipPath: index % 2 === 0 ? CLIP_DIAG_RIGHT_TO_LEFT : CLIP_DIAG_LEFT_TO_RIGHT,
-          }}
-          whileHover={{
-            scale: 1.1,
-            transition: { type: "spring", stiffness: 200, damping: 25 },
-          }}
+          className="absolute inset-0 h-full w-full object-cover"
+          variants={imgVar}
         />
       </div>
     </motion.div>
 
     {/* Text */}
-    <motion.div
-      className="w-full md:col-span-7 h-full md:pl-4 lg:pl-6 xl:pl-10 flex flex-col justify-end pb-4 sm:pb-6 md:pb-8"
-      variants={textVar}
-    >
-      <h3 className="text-[24px] font-extrabold leading-[1.02] text-[#0b0c0e] sm:text-[28px] md:text-[36px] lg:text-[44px] xl:text-[52px]">
+    <motion.div className="lg:col-span-7 h-full lg:pl-6 xl:pl-10 flex flex-col justify-end lg:pb-32" variants={textVar}>
+      <motion.h3
+        className="font-extrabold text-[#0D1318] 
+        sm:text-[36px] sm:leading-[29px]
+md:text-[44px] md:leading-[36px]
+lg:text-[52px] lg:leading-[42px]
+xl:text-[59px] xl:leading-[48px]
+2xl:text-[69px] 2xl:leading-[56px]
+1821:text-[79px] 1821:leading-[64px]
+
+    tracking-[-0.04em]
+        "
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          show: {
+            transition: {
+              staggerChildren: 0.05,
+              delayChildren: 0.2,
+            },
+          },
+        }}
+      >
         {index === 0 ? (
           <>
-            Learn the Trade.
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              Learn the Trade.{" "}
+            </motion.span>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              <GradientWord>Launch</GradientWord>
+            </motion.span>
             <br />
-            <GradientWord>{gradientWord} the Company.</GradientWord>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              the Company.
+            </motion.span>
           </>
         ) : index === 1 ? (
           <>
-            Turn Side Jobs Into
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              Turn Side Jobs Into{" "}
+            </motion.span>
             <br />
-            <GradientWord>{gradientWord} Business.</GradientWord>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              <GradientWord>a Scalable</GradientWord>
+            </motion.span>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              {" "}Business.
+            </motion.span>
           </>
         ) : index === 2 ? (
           <>
-            <GradientWord>{headingTop}</GradientWord>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              <GradientWord>Become the Local Pro</GradientWord>
+            </motion.span>
             <br />
-            in Multiple Trades.
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              in Multiple Trades.
+            </motion.span>
           </>
         ) : index === 3 ? (
           <>
-            A Plug-and-Play
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              A Plug-and-Play{" "}
+            </motion.span>
             <br />
-            <GradientWord>{gradientWord} Growth.</GradientWord>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              <GradientWord>System for</GradientWord>
+            </motion.span>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              {" "}Growth.
+            </motion.span>
           </>
         ) : (
           <>
-            <GradientWord>{headingTop}</GradientWord> to
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              <GradientWord>The Fastest Way</GradientWord>
+            </motion.span>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              {" "}to{" "}
+            </motion.span>
             <br />
-            Start a Trades Business.
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+              }}
+            >
+              Start a Trades Business.
+            </motion.span>
           </>
         )}
-      </h3>
-      <p className="mt-3 text-[13px] leading-6 font-semibold tracking-tight text-[#636E80] sm:mt-4 sm:text-[14px] sm:leading-7 md:text-[14.5px]">
+      </motion.h3>
+      <motion.p
+        className="mt-3 text-[#636E80] sm:mt-4 
+        text-[14px] leading-[20px]
+sm:text-[16px] sm:leading-[24px]
+md:text-[18px] md:leading-[28px]
+2xl:text-[18px] 2xl:leading-[26px]
+1821:text-[20px] 1821:leading-[28px] font-[600]
+tracking-[-0.02em]
+        "
+        variants={{
+          hidden: { opacity: 0, y: 10 },
+          show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+        }}
+      >
         {body}
-      </p>
-      <motion.div className="mt-4 flex flex-wrap gap-2 sm:mt-5 sm:gap-2.5" variants={container}>
+      </motion.p>
+
+      <motion.div
+        className="mt-4 flex flex-wrap gap-2 sm:mt-5 sm:gap-2.5"
+        variants={{
+          hidden: {},
+          show: {
+            transition: {
+              staggerChildren: 0.05,
+              delayChildren: 0.4,
+            },
+          },
+        }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
         {pills.map((p) => (
           <Pill key={p} label={p} />
         ))}
@@ -234,30 +327,15 @@ const WhyItem = ({
         return (
           <MotionLink
             to="/business-apply"
-            className="w-fit mt-4 inline-flex items-center gap-2 rounded-md bg-[#FF4C16] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#e74312] sm:mt-5 sm:px-5 sm:py-2.5 sm:text-[11px] md:text-[12px]"
+            className="w-fit mt-4 inline-flex items-center gap-2 rounded-md bg-[#FF4C16] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#F6F6F4] hover:bg-[#e74312] sm:mt-5 sm:px-5 sm:py-2.5 sm:text-[11px] md:text-[12px] transition-colors duration-300"
             variants={pillVar}
-            whileHover={{
-              scale: 1.05,
-              y: -3,
-              backgroundColor: "#e74312",
-              boxShadow: "0 8px 25px rgba(255, 76, 22, 0.4)",
-              transition: { type: "spring", stiffness: 400, damping: 25 },
-            }}
-            whileTap={{
-              scale: 0.98,
-              transition: { type: "spring", stiffness: 400, damping: 25 },
-            }}
             aria-label="Apply to ASCND"
           >
             Apply Now
-            <motion.img
+            <img
               src={doubleArrowWhite}
               alt=""
-              className="h-2.5 w-2.5 sm:h-3 sm:w-3"
-              whileHover={{
-                x: 2,
-                transition: { type: "spring", stiffness: 400, damping: 25 },
-              }}
+              className="flex-shrink-0"
             />
           </MotionLink>
         )
@@ -272,56 +350,50 @@ const ContractorWhy = () => {
       <div className="mx-auto max-w-[100rem] px-4 sm:px-6  ">
         {/* Heading */}
         <motion.div
-          initial={{
-            y: 40,
-            opacity: 0,
-            rotateX: -15,
-            scale: 0.95,
-            filter: "blur(10px)",
-          }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-            rotateX: 0,
-            scale: 1,
-            filter: "blur(0px)",
-          }}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true, amount: 0.6 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            mass: 1.2,
-            duration: 1.2,
-          }}
-          className="pb-3 pt-3 sm:pb-4 sm:pt-4 md:pb-5 md:pt-5"
+          variants={headingVar}
+          className="pb-3 pt-3 sm:pb-4 sm:pt-4"
         >
-          <h2 className="text-[28px] font-extrabold leading-[0.8] text-[#0b0c0e] sm:text-[36px] md:text-[60px] lg:text-[72px] xl:text-8xl">
+          <h2 className="font-extrabold text-[#0D1318] 
+          text-4xl       
+          sm:text-5xl
+          md:text-6xl
+          lg:text-7xl
+          xl:text-[120px]
+          2xl:text-[150px]
+          1821:text-[169px]
+          tracking-[-0.06em]"
+          >
             Why ASCND?
           </h2>
           <motion.div
-            className="mt-2 border-t border-black/15 sm:mt-3"
+            className="mt-2 border-t border-[#B0B8C7] border-[1px] sm:mt-3"
             initial={{ scaleX: 0, opacity: 0 }}
             whileInView={{ scaleX: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{
-              delay: 0.3,
-              type: "spring",
-              stiffness: 120,
-              damping: 25,
-              duration: 0.8,
+              duration: 0.5,
+              ease: "easeOut",
             }}
             style={{ transformOrigin: "left" }}
           />
         </motion.div>
 
-        <div className="flex flex-col gap-12 py-4 sm:gap-14 sm:py-6 md:gap-16 md:py-8 lg:gap-20 lg:py-10">
+                <motion.div
+          className="flex flex-col gap-8 py-4 sm:gap-10 sm:py-6 md:gap-14 md:py-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <WhyItem
             image={learn}
             headingTop="Learn the Trade."
             gradientWord="Launch"
             headingBottom="the Company."
-            body="We don’t just help you sell—we help you become the installer. Whether you’re new to solar or want to add epoxy, turf, HVAC, or lighting to your service offerings, ASCND gives you:"
+            body="We don't just help you sell—we help you become the installer. Whether you're new to solar or want to add epoxy, turf, HVAC, or lighting to your service offerings, ASCND gives you:"
             pills={[
               "Hands-on training and onboarding",
               "Project-ready customers in your area",
@@ -337,7 +409,7 @@ const ContractorWhy = () => {
             headingTop="Turn Side Jobs Into"
             gradientWord="a Scalable"
             headingBottom="Business."
-            body="You can start in one vertical—like epoxy or solar—and expand into others when you’re ready. Tired of bouncing between gig work or subcontracting? We help you:"
+            body="You can start in one vertical—like epoxy or solar—and expand into others when you're ready. Tired of bouncing between gig work or subcontracting? We help you:"
             pills={[
               "Go from crew to company",
               "Handle quoting, scheduling, and fulfillment",
@@ -351,7 +423,7 @@ const ContractorWhy = () => {
             image={local}
             headingTop="Become the Local Pro"
             headingBottom="in Multiple Trades."
-            body="You can operate as the installer, sell through our network, or build your own team. The business is yours. We just help you build it. We’ll help you set up a branded, full-service operation in:"
+            body="You can operate as the installer, sell through our network, or build your own team. The business is yours. We just help you build it. We'll help you set up a branded, full-service operation in:"
             pills={[
               "Solar Installations",
               "Roof Replacements",
@@ -369,7 +441,7 @@ const ContractorWhy = () => {
             headingTop="A Plug-and-Play"
             gradientWord="System for"
             headingBottom="Growth."
-            body="No need to figure it all out alone. You’ll be plugged into a proven system. Launching a business is hard. So we simplified it. ASCND gives you:"
+            body="No need to figure it all out alone. You'll be plugged into a proven system. Launching a business is hard. So we simplified it. ASCND gives you:"
             pills={[
               "Proposal tools & quoting platforms",
               "Project management dashboards",
@@ -394,7 +466,7 @@ const ContractorWhy = () => {
             ]}
             index={4}
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   )

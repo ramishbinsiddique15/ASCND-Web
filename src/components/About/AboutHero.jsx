@@ -174,7 +174,7 @@ const AboutHero = () => {
           <motion.div className="md:col-span-7 flex h-full flex-col justify-end md:pr-6 lg:pr-10" variants={container}>
             <motion.span
               variants={tagVariant}
-              className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] sm:px-3 sm:text-[10px] md:text-[11px]"
+              className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.25em] text-[#FF4C16] sm:px-3 sm:text-[14px] md:text-[14px]"
               style={{
                 transformOrigin: "center",
                 transformStyle: "preserve-3d",
@@ -182,7 +182,7 @@ const AboutHero = () => {
             >
               ABOUT ASCND
             </motion.span>
-            <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0b0c0e] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+            <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0D1318] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
               <motion.span
                 variants={wordVariant}
                 className="block whitespace-nowrap"

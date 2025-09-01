@@ -82,7 +82,7 @@ const Future = () => {
       variants={backgroundVar}
     >
       {/* Content */}
-      <motion.div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6" variants={containerVar}>
+      <motion.div className="relative z-10 text-center text-[#F6F6F4] max-w-4xl mx-auto px-6" variants={containerVar}>
         <motion.h1
           className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.8]"
           variants={textVar}

@@ -83,22 +83,22 @@ const dividerVar = {
 const backgroundVar = {
   hidden: {
     opacity: 0,
-    x: 50,
+    y: -50,
     scale: 0.9,
-    filter: "blur(5px)",
+    filter: "blur(8px)",
   },
   show: {
     opacity: 1,
-    x: 0,
+    y: 0,
     scale: 1,
     filter: "blur(0px)",
     transition: {
-      duration: 1.2,
+      duration: 1.8,
       ease: [0.16, 1, 0.3, 1],
       delay: 0.6,
       type: "spring",
       damping: 30,
-      stiffness: 150,
+      stiffness: 100,
     },
   },
 }
@@ -149,7 +149,7 @@ const HomeOwnerHero = () => {
 
       <motion.img
         src={bg}
-        className="absolute right-0 -z-50 w-[60%] sm:w-[50%] md:w-[45%] lg:w-[40%]"
+        className="absolute right-0 z-50 w-[60%] sm:w-[50%] md:w-[45%] lg:w-[40%]"
         alt=""
         variants={backgroundVar}
       />
@@ -162,12 +162,12 @@ const HomeOwnerHero = () => {
         >
           {/* Left: Tag + Headline */}
           <motion.div
-            className="md:col-span-10 flex h-full flex-col md:pr-6 lg:pr-10 pt-6 sm:pt-8 md:pt-10"
+            className="md:col-span-full flex h-full flex-col md:pr-6 lg:pr-10 pt-6 sm:pt-8 md:pt-10"
             variants={container}
           >
             <motion.span
               variants={tagVariant}
-              className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] sm:px-3 sm:text-[10px] md:text-[11px]"
+              className="w-fit text-center rounded-sm border-2 border-[#FF4C16] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.25em] text-[#FF4C16] sm:px-3 sm:text-[14px] md:text-[14px] flex items-center justify-center mb-5"
               style={{
                 transformOrigin: "center",
                 transformStyle: "preserve-3d",
@@ -175,7 +175,16 @@ const HomeOwnerHero = () => {
             >
               ASCND HOME SERVICES
             </motion.span>
-            <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0b0c0e] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+            <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0D1318]
+    text-4xl       
+    sm:text-5xl
+    md:text-6xl
+    lg:text-7xl
+    xl:text-[120px]
+    2xl:text-[150px]
+    1821:text-[169px]
+    tracking-[-0.06em]
+">
               <motion.span
                 variants={wordVariant}
                 className="block"
@@ -212,7 +221,7 @@ const HomeOwnerHero = () => {
           {/* Right: Copy */}
         </motion.div>
 
-        <motion.div className="border-t border-[#0D1318] origin-left relative overflow-hidden" variants={dividerVar}>
+        <motion.div className="border-t border-[#0D1318] origin-left relative " variants={dividerVar}>
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FF4C16]/30 to-transparent"
             initial={{ x: "-100%", scaleY: 0 }}

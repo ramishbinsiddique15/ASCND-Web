@@ -137,7 +137,7 @@ const HomeOwnerQuote = () => {
         </motion.h1>
         <MotionLink
           to="/request-quote"
-          className="mt-5 cursor-pointer inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5 text-[10px] sm:px-6 sm:py-3 sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-[#0D1318]/90 md:px-7 md:py-3.5 md:text-[12px] hover:shadow-lg hover:shadow-[#0D1318]/30"
+          className="mt-5 cursor-pointer inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5 text-[10px] sm:px-6 sm:py-3 sm:text-[11px] font-semibold uppercase tracking-[0.25em] text-[#F6F6F4] transition-all duration-300 hover:bg-[#0D1318]/90 md:px-7 md:py-3.5 md:text-[12px] hover:shadow-lg hover:shadow-[#0D1318]/30"
           whileHover={{
             scale: 1.05,
             y: -3,

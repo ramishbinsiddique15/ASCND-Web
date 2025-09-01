@@ -1,9 +1,9 @@
 "use client"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import summit from "../../assets/img/summit.png"
+import summit from "../../assets/img/summit.svg"
 import polymer from "../../assets/img/polymer.png"
-import doubleArrow from "../../assets/icons/double-arrow-blue.png"
+import doubleArrow from "../../assets/icons/double-arrow-blue.svg"
 import logo from "../../assets/icons/logo.png"
 
 const containerVariants = {
@@ -168,9 +168,6 @@ const Summit = () => {
         style={{ backgroundImage: `url(${summit})` }}
       ></div>
 
-      {/* Gradient overlay that stays blue */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#105CE9]/50 to-[#105CE9]" />
-
       <div className="hidden md:block absolute top-20 sm:top-32 md:top-44 -right-48 sm:-right-64 md:-right-80 lg:-right-96">
         <img
           src={polymer || "/placeholder.svg"}
@@ -180,9 +177,9 @@ const Summit = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 px-4 py-8 sm:px-6 sm:py-12  md:py-16  max-w-7xl mx-auto">
+      <div className="relative z-10 px-4 py-8 sm:px-6 sm:py-12  md:py-16  max-w-[100rem] mx-auto">
         <motion.div variants={taglineVariants} className="" style={{ transformStyle: "preserve-3d" }}>
-          <p className="text-white text-lg sm:text-xl md:text-2xl font-bold leading-[0.8] max-w-full sm:max-w-md">
+          <p className="text-[#F6F6F4] text-lg sm:text-xl md:text-2xl font-bold leading-[0.8] max-w-full sm:max-w-md">
             Earn like an installer—
             <br />
             without becoming one
@@ -196,14 +193,14 @@ const Summit = () => {
           className="mb-4 sm:mb-5 md:mb-6"
           style={{ transformStyle: "preserve-3d" }}
         >
-          <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.8]">
+          <h1 className="text-[#F6F6F4] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.8]">
             Summit Program
           </h1>
         </motion.div>
 
         <motion.div
           variants={dividerVariants}
-          className="w-full h-0.5 bg-white mb-8 sm:mb-10 md:mb-12"
+          className="w-full h-0.5 bg-[#F6F6F4] mb-8 sm:mb-10 md:mb-12"
           style={{ transformOrigin: "left center" }}
         ></motion.div>
 
@@ -212,20 +209,13 @@ const Summit = () => {
           <motion.div variants={containerVariants} className="space-y-3 sm:space-y-4 w-full lg:w-auto">
             <motion.div
               variants={pillVariants}
-              className="border-2 border-white rounded-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 w-fit"
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "#ffffff",
-                transition: { duration: 0.2 },
-              }}
+              className="border-2 border-[#F6F6F4] rounded-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 w-fit"
+              
               style={{ transformStyle: "preserve-3d", cursor: "default" }}
             >
               <motion.p
-                className="text-white text-sm sm:text-base font-medium"
-                whileHover={{
-                  color: "#105CE9",
-                  transition: { duration: 0.2 },
-                }}
+                className="text-[#F6F6F4] text-sm sm:text-base font-medium"
+                
               >
                 Keep 100% of your commission + % of install margin
               </motion.p>
@@ -233,20 +223,13 @@ const Summit = () => {
 
             <motion.div
               variants={pillVariants}
-              className="border-2 border-white rounded-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 w-fit"
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "#ffffff",
-                transition: { duration: 0.2 },
-              }}
+              className="border-2 border-[#F6F6F4] rounded-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 w-fit"
+              
               style={{ transformStyle: "preserve-3d", cursor: "default" }}
             >
               <motion.p
-                className="text-white text-sm sm:text-base font-medium"
-                whileHover={{
-                  color: "#105CE9",
-                  transition: { duration: 0.2 },
-                }}
+                className="text-[#F6F6F4] text-sm sm:text-base font-medium"
+                
               >
                 Maintain control while we handle fulfillment
               </motion.p>
@@ -254,20 +237,13 @@ const Summit = () => {
 
             <motion.div
               variants={pillVariants}
-              className="border-2 border-white rounded-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 w-fit"
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "#ffffff",
-                transition: { duration: 0.2 },
-              }}
+              className="border-2 border-[#F6F6F4] rounded-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 w-fit"
+              
               style={{ transformStyle: "preserve-3d", cursor: "default" }}
             >
               <motion.p
-                className="text-white text-sm sm:text-base font-medium"
-                whileHover={{
-                  color: "#105CE9",
-                  transition: { duration: 0.2 },
-                }}
+                className="text-[#F6F6F4] text-sm sm:text-base font-medium"
+                
               >
                 Works across all ASCND trades
               </motion.p>
@@ -299,11 +275,9 @@ const Summit = () => {
             <MotionLink
               to="/business-apply"
               variants={buttonVariants}
-              className="bg-white text-blue-600 px-6 py-2.5 sm:px-7 sm:py-3  md:py-3 rounded-lg font-semibold text-xs sm:text-sm tracking-wider hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2 w-fit"
+              className="bg-[#F6F6F4] text-blue-600 px-6 py-2.5 sm:px-20 sm:py-3  md:py-3 rounded-lg font-semibold text-xs sm:text-sm  hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2 w-fit text-[14px] tracking-[0.25em]"
               whileHover={{
-                scale: 1.05,
-                y: -3,
-                boxShadow: "0 8px 25px rgba(255, 255, 255, 0.3)",
+                scale: 1.01,
                 transition: { duration: 0.2 },
               }}
               whileTap={{ scale: 0.98 }}

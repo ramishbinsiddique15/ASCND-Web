@@ -1,10 +1,10 @@
 "use client"
 import { motion } from "framer-motion"
 import path from "../../assets/img/path.png"
-import logoWhite from "../../assets/icons/white-logo.png"
-import logoBlue from "../../assets/icons/logo-blue.png"
+import logoWhite from "../../assets/icons/white-logo.svg"
+import logoBlue from "../../assets/icons/logo-blue.svg"
 import blueBullet from "../../assets/icons/blue-bullet.png"
-import whiteBullet from "../../assets/icons/white-bullet.png"
+import whiteBullet from "../../assets/icons/white-bullet.svg"
 
 const containerVariants = {
   hidden: {},
@@ -172,13 +172,8 @@ const Path = () => {
       <div className="mx-auto max-w-[100rem] px-4 sm:px-6">
         {/* Header Section - Exact match to image */}
         <motion.div
-          className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-white"
+          className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-[#F6F6F4]"
           variants={headerVariants}
-          whileHover={{
-            scale: 1.02,
-            boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-            transition: { duration: 0.3 },
-          }}
         >
           <div className="relative items-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px]">
             {/* Left: People Image */}
@@ -200,7 +195,16 @@ const Path = () => {
               variants={textVariants}
               className="px-4 pt-8 sm:px-6 sm:pt-12 md:pt-16 lg:pt-20 w-[85%] sm:w-[80%] md:w-[75%] ml-auto z-50 pb-6 sm:pb-8 flex items-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px]"
             >
-              <h2 className="z-10 text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] xl:text-[48px] font-extrabold leading-[0.85] sm:leading-[0.8] text-[#0b0c0e]">
+              <h2 className="z-10  text-[#0D1318]
+              sm:text-[36px] sm:leading-[29px]
+md:text-[44px] md:leading-[36px]
+lg:text-[52px] lg:leading-[42px]
+xl:text-[59px] xl:leading-[48px]
+2xl:text-[69px] 2xl:leading-[56px]
+1821:text-[79px] 1821:leading-[64px]
+                font-[800]
+    tracking-[-0.04em]
+              ">
                 We've designed <span className="text-[#105CE9]">a clear path for homeowners to elevate their home</span>{" "}
                 step-by-step—whether you're just getting started or ready to transform it all.
               </h2>
@@ -220,30 +224,47 @@ const Path = () => {
           {/* Phase 01 */}
           <motion.div
             variants={cardVariants}
-            className="bg-[#105CE9] rounded-2xl p-4 sm:p-6 text-white relative overflow-hidden min-h-[380px] sm:min-h-[400px] flex flex-col"
-            whileHover={{
-              scale: 1.05,
-              rotateY: 5,
-              boxShadow: "0 25px 50px rgba(16, 92, 233, 0.3)",
-              transition: { duration: 0.3 },
-            }}
+            className="bg-[#105CE9] rounded-2xl p-4 sm:p-6 text-[#F6F6F4] relative overflow-hidden min-h-[380px] sm:min-h-[400px] flex flex-col"
             style={{ transformStyle: "preserve-3d" }}
           >
             {/* Logo */}
             <div className="flex items-center gap-2 mb-16 sm:mb-24 md:mb-32">
               <img src={whiteBullet || "/placeholder.svg"} alt="" className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest">PHASE 01</span>
-              <img src={logoWhite || "/placeholder.svg"} alt="ASCND Logo" className="w-5 h-5 sm:w-6 sm:h-6 ml-auto" />
+              <span className="text-[16px] leading-[24px]
+sm:text-[18px] sm:leading-[28px]
+md:text-[20px] md:leading-[32px]
+lg:text-[24px] lg:leading-[36px]
+xl:text-[30px] xl:leading-[32px]
+2xl:text-[30px] 2xl:leading-[36px]
+1821:text-[30px] 1821:leading-[36px]
+tracking-[-0.02em] font-[700]">PHASE 01</span>
+              <img src={logoWhite || "/placeholder.svg"} alt="ASCND Logo" className="w-5 h-5 sm:w-8 sm:h-8 ml-auto" />
             </div>
 
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 h-auto sm:h-[28px] flex items-end">
+            <h3 className="mb-3 sm:mb-4 h-auto sm:h-[28px] flex items-end
+            text-[16px] leading-[24px]
+sm:text-[18px] sm:leading-[28px]
+md:text-[20px] md:leading-[32px]
+lg:text-[24px] lg:leading-[36px]
+xl:text-[32px] xl:leading-[40px]
+2xl:text-[38px] 2xl:leading-[48px]
+1821:text-[45px] 1821:leading-[48px]
+font-[600]
+tracking-[-0.02em]
+            ">
               Start with the Essentials
             </h3>
-            <p className="text-[11px] sm:text-xs mb-3 sm:mb-4 opacity-75 h-auto sm:h-[48px] leading-relaxed">
+            <p className="mb-3 sm:mb-4 h-auto 
+            text-[14px] leading-[20px]
+sm:text-[16px] sm:leading-[24px]
+md:text-[18px] md:leading-[28px]
+2xl:text-[18px] 2xl:leading-[26px]
+1821:text-[20px] 1821:leading-[28px] font-[600]
+            ">
               Begin by upgrading the systems that matter most—solar, HVAC, and roofing. These core improvements:
             </p>
 
-            <hr className="border-t border-white mb-3 sm:mb-4" />
+            <hr className="border-t border-[#F6F6F4] mb-3 sm:mb-4" />
 
             {/* Pill buttons */}
             <motion.div className="flex flex-wrap gap-2" variants={containerVariants}>
@@ -256,12 +277,13 @@ const Path = () => {
                 <motion.div
                   key={index}
                   variants={pillVariants}
-                  className="inline-block border-2 border-white rounded-full px-2.5 py-1 text-[11px] sm:text-sm font-medium"
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "rgba(255,255,255,0.1)",
-                    transition: { duration: 0.2 },
-                  }}
+                  className="inline-block border-2 border-[#F6F6F4] rounded-full px-2.5 py-1 
+                  text-[11px] leading-[20px]
+sm:text-[11px] sm:leading-[24px]
+md:text-[12px] md:leading-[28px]
+2xl:text-[14px] 2xl:leading-[26px]
+1821:text-[16px] 1821:leading-[28px] font-[600]
+                  "
                 >
                   {text}
                 </motion.div>
@@ -273,24 +295,34 @@ const Path = () => {
           <motion.div
             variants={cardVariants}
             className="bg-[#E4E6E9] rounded-2xl p-4 sm:p-6 border-none relative overflow-hidden min-h-[380px] sm:min-h-[400px] flex flex-col"
-            whileHover={{
-              scale: 1.05,
-              rotateY: -5,
-              boxShadow: "0 25px 50px rgba(16, 92, 233, 0.2)",
-              transition: { duration: 0.3 },
-            }}
             style={{ transformStyle: "preserve-3d" }}
           >
             {/* Logo */}
             <div className="flex items-center gap-2 mb-16 sm:mb-24 md:mb-32">
               <img src={blueBullet || "/placeholder.svg"} alt="" className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#105CE9]">
+              <span className="text-[16px] leading-[24px]
+sm:text-[18px] sm:leading-[28px]
+md:text-[20px] md:leading-[32px]
+lg:text-[24px] lg:leading-[36px]
+xl:text-[30px] xl:leading-[32px]
+2xl:text-[30px] 2xl:leading-[36px]
+1821:text-[30px] 1821:leading-[36px]
+tracking-[-0.02em] font-[700] text-[#105CE9]">
                 PHASE 02
               </span>
-              <img src={logoBlue || "/placeholder.svg"} alt="ASCND Logo" className="w-5 h-5 sm:w-6 sm:h-6 ml-auto" />
+              <img src={logoBlue || "/placeholder.svg"} alt="ASCND Logo" className="w-5 h-5 sm:w-8 sm:h-8 ml-auto" />
             </div>
 
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#105CE9] h-auto sm:h-[28px] flex items-end">
+            <h3 className="text-[#105CE9] mb-3 sm:mb-4 h-auto sm:h-[28px] flex items-end
+            text-[16px] leading-[24px]
+sm:text-[18px] sm:leading-[28px]
+md:text-[20px] md:leading-[32px]
+lg:text-[24px] lg:leading-[36px]
+xl:text-[32px] xl:leading-[40px]
+2xl:text-[38px] 2xl:leading-[48px]
+1821:text-[45px] 1821:leading-[48px]
+font-[600]
+tracking-[-0.02em]">
               Expand Your Living Experience
             </h3>
             <p className="text-[11px] sm:text-xs mb-3 sm:mb-4 text-[#105CE9] h-auto sm:h-[48px] leading-relaxed">
@@ -312,12 +344,6 @@ const Path = () => {
                   key={index}
                   variants={pillVariants}
                   className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9]"
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "#105CE9",
-                    color: "#ffffff",
-                    transition: { duration: 0.2 },
-                  }}
                 >
                   {text}
                 </motion.div>
@@ -329,24 +355,34 @@ const Path = () => {
           <motion.div
             variants={cardVariants}
             className="bg-[#E4E6E9] rounded-2xl p-4 sm:p-6 border-none relative overflow-hidden min-h-[380px] sm:min-h-[400px] flex flex-col sm:col-span-2 lg:col-span-1"
-            whileHover={{
-              scale: 1.05,
-              rotateY: 5,
-              boxShadow: "0 25px 50px rgba(16, 92, 233, 0.2)",
-              transition: { duration: 0.3 },
-            }}
             style={{ transformStyle: "preserve-3d" }}
           >
             {/* Logo */}
             <div className="flex items-center gap-2 mb-16 sm:mb-24 md:mb-32">
               <img src={blueBullet || "/placeholder.svg"} alt="" className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#105CE9]">
+              <span className="text-[16px] leading-[24px]
+sm:text-[18px] sm:leading-[28px]
+md:text-[20px] md:leading-[32px]
+lg:text-[24px] lg:leading-[36px]
+xl:text-[30px] xl:leading-[32px]
+2xl:text-[30px] 2xl:leading-[36px]
+1821:text-[30px] 1821:leading-[36px]
+tracking-[-0.02em] font-[700] text-[#105CE9]">
                 PHASE 03
               </span>
-              <img src={logoBlue || "/placeholder.svg"} alt="ASCND Logo" className="w-5 h-5 sm:w-6 sm:h-6 ml-auto" />
+              <img src={logoBlue || "/placeholder.svg"} alt="ASCND Logo" className="w-5 h-5 sm:w-8 sm:h-8 ml-auto" />
             </div>
 
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#105CE9] h-auto sm:h-[28px] flex items-end">
+            <h3 className="text-[#105CE9] mb-3 sm:mb-4 h-auto sm:h-[28px] flex items-end
+            text-[16px] leading-[24px]
+sm:text-[18px] sm:leading-[28px]
+md:text-[20px] md:leading-[32px]
+lg:text-[24px] lg:leading-[36px]
+xl:text-[32px] xl:leading-[40px]
+2xl:text-[38px] 2xl:leading-[48px]
+1821:text-[45px] 1821:leading-[48px]
+font-[600]
+tracking-[-0.02em]">
               Customize & Complete Your Space
             </h3>
             <p className="text-[11px] sm:text-xs mb-3 sm:mb-4 text-[#105CE9] h-auto sm:h-[48px] leading-relaxed">
@@ -366,12 +402,6 @@ const Path = () => {
                   key={index}
                   variants={pillVariants}
                   className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9]"
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "#105CE9",
-                    color: "#ffffff",
-                    transition: { duration: 0.2 },
-                  }}
                 >
                   {text}
                 </motion.div>

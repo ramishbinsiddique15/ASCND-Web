@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme{
+   --breakpoint-1821: 113.8125rem;
+}
+
 @font-face {
   font-family: "VisbyCF";
   src: url("/fonts/VisbyCF-Thin.otf") format("opentype");

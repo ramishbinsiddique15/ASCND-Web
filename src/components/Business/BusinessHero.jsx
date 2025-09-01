@@ -149,7 +149,7 @@ const BusinessHero = () => {
 
       <motion.img
         src={bg}
-        className="absolute right-0 -z-50 w-[60%] sm:w-[50%] md:w-[45%] lg:w-[40%]"
+        className="absolute right-0 z-50 w-[60%] sm:w-[50%] md:w-[45%] lg:w-[40%]"
         alt=""
         variants={backgroundVar}
       />
@@ -167,7 +167,7 @@ const BusinessHero = () => {
           >
             <motion.span
               variants={tagVariant}
-              className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#FF4C16] sm:px-3 sm:text-[10px] md:text-[11px]"
+              className="w-fit text-center rounded-sm border-2 border-[#FF4C16] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.25em] text-[#FF4C16] sm:px-3 sm:text-[14px] md:text-[14px] flex items-center justify-center mb-5"
               style={{
                 transformOrigin: "center",
                 transformStyle: "preserve-3d",
@@ -175,7 +175,16 @@ const BusinessHero = () => {
             >
               ASCND GROWTH MODEL
             </motion.span>
-            <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0b0c0e] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem]">
+            <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0D1318]
+    text-4xl       
+    sm:text-5xl
+    md:text-6xl
+    lg:text-7xl
+    xl:text-[120px]
+    2xl:text-[150px]
+    1821:text-[169px]
+    tracking-[-0.06em]
+">
               <motion.span
                 variants={wordVariant}
                 className="block"

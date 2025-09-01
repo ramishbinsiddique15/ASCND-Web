@@ -150,7 +150,7 @@ const BusinessQuote = () => {
 
             <MotionLink
               to="/business-apply"
-              className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3 lg:px-7 lg:py-3.5 text-[10px] sm:text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-[#0D1318]/90 hover:shadow-lg hover:shadow-[#0D1318]/30"
+              className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3 lg:px-7 lg:py-3.5 text-[10px] sm:text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.25em] text-[#F6F6F4] transition-all duration-300 hover:bg-[#0D1318]/90 hover:shadow-lg hover:shadow-[#0D1318]/30"
               whileHover={{
                 scale: 1.05,
                 y: -3,

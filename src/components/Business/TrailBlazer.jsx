@@ -231,9 +231,9 @@ const TrailBlazer = () => {
         />
       </motion.div>
 
-      <div className="relative z-10 px-4 py-8 sm:px-6 sm:py-12  md:py-16  max-w-7xl mx-auto">
+      <div className="relative z-10 px-4 py-8 sm:px-6 sm:py-12  md:py-16  max-w-[100rem] mx-auto">
         <motion.div variants={taglineVariants} className="" style={{ transformStyle: "preserve-3d" }}>
-          <p className="text-white text-lg sm:text-xl md:text-2xl font-bold leading-[0.8] max-w-xs sm:max-w-sm md:max-w-md">
+          <p className="text-[#F6F6F4] text-lg sm:text-xl md:text-2xl font-bold leading-[0.8] max-w-xs sm:max-w-sm md:max-w-md">
             Be first to market.Lock your
             <br />
             postion. Get paid on every

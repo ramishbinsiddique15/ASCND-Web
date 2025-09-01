@@ -153,10 +153,10 @@ const Heights = () => {
 
       {/* Content overlay */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6   w-full">
+        <div className="max-w-[100rem] mx-auto px-4 sm:px-6   w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             {/* Left side - Logo and heading */}
-            <motion.div className="text-white text-center md:text-left" variants={itemVariants}>
+            <motion.div className="text-[#F6F6F4] text-center md:text-left" variants={itemVariants}>
               <motion.div
                 className="mb-4 sm:mb-5 md:mb-6 flex justify-center md:justify-start"
                 variants={logoVariants}
@@ -175,7 +175,7 @@ const Heights = () => {
               </motion.div>
 
               <motion.hr
-                className="border-t-2 border-white w-full mb-6 sm:mb-7 md:mb-8 origin-left"
+                className="border-t-2 border-[#F6F6F4] w-full mb-6 sm:mb-7 md:mb-8 origin-left"
                 variants={dividerVariants}
                 style={{ transformOrigin: "left center" }}
               />
@@ -197,7 +197,7 @@ const Heights = () => {
 
             {/* Right side - Description text */}
             <motion.div
-              className="text-white space-y-4 sm:space-y-5 md:space-y-6 text-center md:text-left"
+              className="text-[#F6F6F4] space-y-4 sm:space-y-5 md:space-y-6 text-center md:text-left"
               variants={itemVariants}
             >
               <motion.p className="text-base sm:text-lg md:text-xl leading-relaxed font-medium" variants={itemVariants}>

@@ -37,7 +37,7 @@ const Content = () => {
 
                     {/* Right: Copy */}
                     <motion.div className="md:col-span-10 flex h-full flex-col justify-end mt-6 md:mt-0 md:pl-6 lg:pl-10" variants={container}>
-                        <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0b0c0e] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+                        <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0D1318] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
                             <motion.span variants={fadeUp} className="block whitespace-nowrap">OTOPILOT LLC PRIVACY POLICY</motion.span>
                         </h2>
                         <br></br>
