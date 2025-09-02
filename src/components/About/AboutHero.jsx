@@ -164,7 +164,7 @@ const AboutHero = () => {
         }}
       />
 
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6  ">
+      <div className="mx-auto  px-4 sm:px-6  ">
         {/* Content grid */}
         <motion.div
           className="grid grid-cols-1 items-stretch gap-6 pb-6 pt-8 sm:gap-8 sm:pb-8 sm:pt-10 md:grid-cols-12 md:gap-14 md:pb-10 md:pt-14 md:min-h-[380px] lg:min-h-[460px] lg:gap-24 lg:pt-16"
@@ -174,7 +174,7 @@ const AboutHero = () => {
           <motion.div className="md:col-span-7 flex h-full flex-col justify-end md:pr-6 lg:pr-10" variants={container}>
             <motion.span
               variants={tagVariant}
-              className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.25em] text-[#FF4C16] sm:px-3 sm:text-[14px] md:text-[14px]"
+              className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] py-1 font-semibold uppercase tracking-[0.25em] text-[#FF4C16] text-[9px] sm:text-[14px] md:text-[14px] px-4"
               style={{
                 transformOrigin: "center",
                 transformStyle: "preserve-3d",
@@ -182,10 +182,19 @@ const AboutHero = () => {
             >
               ABOUT ASCND
             </motion.span>
-            <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0D1318] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+            <h2 className="mt-3 font-extrabold text-[#0D1318] sm:mt-4 md:mt-5 
+            text-[30px] leading-[32px]
+sm:text-[36px] sm:leading-[40px]
+md:text-[48px] md:leading-[48px]
+lg:text-[60px] lg:leading-[56px]
+xl:text-[72px] xl:leading-[64px]
+2xl:text-[90px] 2xl:leading-[72px]
+1821:text-[102px] 1821:leading-[80px]
+tracking-[-0.04em]
+            ">
               <motion.span
                 variants={wordVariant}
-                className="block whitespace-nowrap"
+                className="block"
                 style={{
                   transformOrigin: "left center",
                   transformStyle: "preserve-3d",
@@ -195,7 +204,7 @@ const AboutHero = () => {
               </motion.span>
               <motion.span
                 variants={wordVariant}
-                className="block whitespace-nowrap"
+                className="block"
                 style={{
                   transformOrigin: "left center",
                   transformStyle: "preserve-3d",
@@ -205,7 +214,7 @@ const AboutHero = () => {
               </motion.span>
               <motion.span
                 variants={wordVariant}
-                className="block whitespace-nowrap"
+                className="block"
                 style={{
                   transformOrigin: "left center",
                   transformStyle: "preserve-3d",
@@ -223,14 +232,29 @@ const AboutHero = () => {
           >
             <motion.p
               variants={textVariant}
-              className="text-sm font-semibold leading-relaxed text-[#0D1318] sm:text-base md:text-lg lg:text-xl"
+              className="font-bold text-[#0D1318] 
+              text-[16px] leading-[24px]
+sm:text-[18px] sm:leading-[28px]
+md:text-[20px] md:leading-[32px]
+lg:text-[24px] lg:leading-[36px]
+xl:text-[30px] xl:leading-[32px]
+2xl:text-[30px] 2xl:leading-[36px]
+1821:text-[30px] 1821:leading-[36px]
+tracking-[-0.02em]
+              "
             >
               ASCND was built with a single belief: Everyone should have the power to improve their space - without the
               bottlenecks, middlemen, or outdated models.
             </motion.p>
             <motion.p
               variants={textVariant}
-              className="mt-3 text-xs leading-6 text-[#0D1318]/70 sm:mt-4 sm:text-sm sm:leading-7 md:text-base"
+              className="mt-3 text-[#636E80] sm:mt-4 
+              text-[14px] leading-[20px]
+sm:text-[16px] sm:leading-[24px]
+md:text-[18px] md:leading-[28px]
+2xl:text-[18px] 2xl:leading-[26px]
+1821:text-[20px] 1821:leading-[28px] font-[600]
+              "
             >
               We're a new kind of home improvement company—one that empowers homeowners to take control of their
               upgrades and contractors to take control of their business - and in turn, provide a quality experience for

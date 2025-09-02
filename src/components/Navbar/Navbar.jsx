@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate, useLocation } from "react-router-dom"
 import { FaInstagram, FaLinkedin, FaDiscord, FaBars, FaTimes, FaChevronDown } from "react-icons/fa"
 import logo from "../../assets/icons/logo.svg"
 import request from "../../assets/icons/request-white.svg"
@@ -49,16 +49,37 @@ const mobileMenuItem = {
 }
 
 const baseBtn =
-  "group inline-flex items-center justify-center gap-2 rounded-md border-2 px-4 py-2 text-[9px] font-semibold uppercase tracking-[0.25em] transition-all duration-200 h-9 sm:px-5 sm:py-2 sm:text-[10px] sm:h-10 md:px-6 md:py-2 md:text-[11px] md:h-11 lg:px-7 lg:py-3 lg:text-[11px] lg:h-12 leading-none"
+  "group inline-flex items-center justify-center gap-2 rounded-md border-2 px-4 py-2 text-[9px] font-semibold uppercase tracking-[0.25em] transition-all duration-200 h-9 sm:px-5 sm:py-2 sm:text-[10px] sm:h-10 md:px-6 md:py-2 md:text-[11px] md:h-11 lg:px-7 lg:py-3 lg:text-[11px] lg:h-12 leading-none cursor-pointer"
 
-const outlineBtn = `${baseBtn} border-[#0D1318] bg-transparent text-[#0D1318] hover:bg-[#0D1318]/[0.04] hover:scale-105`
-const darkBtn = `${baseBtn} border-transparent bg-[#0D1318] text-[#F6F6F4] hover:bg-[#0D1318]/90 hover:scale-105`
-const orangeBtn = `${baseBtn} border-transparent bg-[#FF4C16] text-[#F6F6F4] hover:bg-[#e74312] hover:scale-105`
+const outlineBtn = `${baseBtn} border-[#0D1318] bg-transparent text-[#0D1318] `
+const darkBtn = `${baseBtn} border-transparent bg-[#0D1318] text-[#F6F6F4]`
+const orangeBtn = `${baseBtn} border-transparent bg-[#FF4C16] text-[#F6F6F4] `
 
-const mobileMenuBtn = "w-full flex items-center justify-center gap-3 rounded-md border-2 px-4 py-3 text-sm font-semibold uppercase tracking-[0.25em] transition-all duration-200 leading-none"
-const mobileOutlineBtn = `${mobileMenuBtn} border-[#0D1318]/20 bg-transparent text-[#0D1318] hover:bg-[#0D1318]/5 hover:scale-105`
-const mobileDarkBtn = `${mobileMenuBtn} border-transparent bg-[#0D1318] text-[#F6F6F4] hover:bg-[#0D1318]/90 hover:scale-105`
-const mobileOrangeBtn = `${mobileMenuBtn} border-transparent bg-[#FF4C16] text-[#F6F6F4] hover:bg-[#e74312] hover:scale-105`
+const mobileMenuBtn = "w-full flex items-center justify-center gap-3 rounded-md border-2 px-4 py-3 text-sm font-semibold uppercase tracking-[0.25em] transition-all duration-200 leading-none cursor-pointer text-center"
+const mobileOutlineBtn = `${mobileMenuBtn} border-[#0D1318]/20 bg-transparent text-[#0D1318] hover:bg-[#0D1318]/5 text-center`
+const mobileDarkBtn = `${mobileMenuBtn} border-transparent bg-[#0D1318] text-[#F6F6F4] text-center`
+const mobileOrangeBtn = `${mobileMenuBtn} border-transparent bg-[#FF4C16] text-[#F6F6F4] hover:bg-[#e74312] text-center`
+
+const ScrollHandler = () => {
+  const { pathname, state } = useLocation()
+
+  useEffect(() => {
+    // Scroll to top for specific routes
+    const scrollToTopRoutes = ['/about', '/request-quote', '/business-apply', '/home-owner']
+    if (scrollToTopRoutes.includes(pathname)) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+    // Handle anchor link scrolling
+    else if (state?.scrollTo) {
+      const element = document.getElementById(state.scrollTo)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+  }, [pathname, state])
+
+  return null
+}
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -66,6 +87,16 @@ const Navbar = () => {
   const [isBusinessDropdownOpen, setIsBusinessDropdownOpen] = useState(false)
   const homeDropdownRef = useRef(null)
   const businessDropdownRef = useRef(null)
+  const navigate = useNavigate()
+
+  const handleNavigation = (path) => {
+    if (path.includes('#')) {
+      const [route, hash] = path.split('#')
+      navigate(route, { state: { scrollTo: hash } })
+    } else {
+      navigate(path)
+    }
+  }
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen)
   const toggleHomeDropdown = () => {
@@ -96,6 +127,7 @@ const Navbar = () => {
 
   return (
     <header className="w-full relative">
+      <ScrollHandler />
       <motion.nav
         className="w-full bg-[#F6F6F4] px-4 py-2 text-[#0D1318] sm:px-6 md:py-3 relative z-50"
         variants={navReveal}
@@ -109,9 +141,8 @@ const Navbar = () => {
           animate="visible"
         >
           <motion.div
-            className="flex items-center gap-2 pr-2 md:gap-3 md:pr-4"
+            className="flex items-center gap-2 pr-2 md:gap-3 md:pr-4 cursor-pointer"
             variants={logoItem}
-            whileHover={{ scale: 1.02 }}
           >
             <img src={logo || "/placeholder.svg"} alt="ASCND" className="h-6 w-auto md:h-7" />
           </motion.div>
@@ -119,9 +150,8 @@ const Navbar = () => {
           <div className="flex-1 lg:hidden" />
           <motion.button
             onClick={toggleMobileMenu}
-            className="lg:hidden p-2 text-[#0D1318] hover:bg-[#0D1318]/5 rounded-md transition-colors duration-200"
+            className="lg:hidden p-2 text-[#0D1318] hover:bg-[#0D1318]/5 rounded-md transition-colors duration-200 cursor-pointer"
             variants={btnItem}
-            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             {isMobileMenuOpen ? <FaTimes className="size-5" /> : <FaBars className="size-5" />}
@@ -134,10 +164,9 @@ const Navbar = () => {
               <div className="relative" ref={homeDropdownRef}>
                 <MotionLink
                   to="#"
-                  className={`${outlineBtn} items-center`}
+                  className={`${outlineBtn} items-center cursor-pointer`}
                   variants={btnItem}
                   onClick={toggleHomeDropdown}
-                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <span className="flex items-center leading-none">
@@ -159,44 +188,52 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute left-0 mt-2 w-64 z-10 bg-[#F6F6F4]"
+                      className="absolute left-0 mt-2 w-64 z-[9999] shadow-lg border border-[#0D1318]/10 rounded-md"
                     >
-                      <ul className="space-y-2">
+                      <ul className="space-y-2 p-2">
                         <li>
-                          <Link
-                            to="/home"
-                            className={`${outlineBtn} w-full justify-center`}
-                            onClick={() => setIsHomeDropdownOpen(false)}
+                          <button
+                            onClick={() => {
+                              handleNavigation("/home#services")
+                              setIsHomeDropdownOpen(false)
+                            }}
+                            className={`${outlineBtn} w-full justify-center bg-white`}
                           >
                             HOME SERVICES
-                          </Link>
+                          </button>
                         </li>
                         <li>
-                          <Link
-                            to="/home#why"
-                            className={`${outlineBtn} w-full justify-center`}
-                            onClick={() => setIsHomeDropdownOpen(false)}
+                          <button
+                            onClick={() => {
+                              handleNavigation("/home#why")
+                              setIsHomeDropdownOpen(false)
+                            }}
+                            className={`${outlineBtn} w-full justify-center bg-white`}
                           >
                             WHY ASCND YOUR HOME?
-                          </Link>
+                          </button>
                         </li>
                         <li>
-                          <Link
-                            to="/home-owner#model"
-                            className={`${outlineBtn} w-full justify-center`}
-                            onClick={() => setIsHomeDropdownOpen(false)}
+                          <button
+                            onClick={() => {
+                              handleNavigation("/home-owner")
+                              setIsHomeDropdownOpen(false)
+                            }}
+                            className={`${outlineBtn} w-full justify-center bg-white`}
                           >
                             HOMEOWNER GROWTH MODEL
-                          </Link>
+                          </button>
                         </li>
                         <li>
-                          <Link
-                            to="/request-quote"
-                            className={`${outlineBtn} w-full justify-center`}
-                            onClick={() => setIsHomeDropdownOpen(false)}
+                          <button
+                            onClick={() => {
+                              handleNavigation("/request-quote")
+                              setIsHomeDropdownOpen(false)
+                            }}
+                            className={`${outlineBtn} w-full justify-center bg-white`}
                           >
                             REQUEST A QUOTE
-                          </Link>
+                          </button>
                         </li>
                       </ul>
                     </motion.div>
@@ -207,10 +244,9 @@ const Navbar = () => {
               <div className="relative" ref={businessDropdownRef}>
                 <MotionLink
                   to="#"
-                  className={`${outlineBtn} items-center`}
+                  className={`${outlineBtn} items-center cursor-pointer`}
                   variants={btnItem}
                   onClick={toggleBusinessDropdown}
-                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <span className="flex items-center leading-none">
@@ -232,44 +268,52 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute left-0 mt-2 w-64 z-10 bg-[#F6F6F4]"
+                      className="absolute left-0 mt-2 w-64 z-[9999] shadow-lg border border-[#0D1318]/10 rounded-md"
                     >
-                      <ul className="space-y-2">
+                      <ul className="space-y-2 p-2">
                         <li>
-                          <Link
-                            to="/business"
-                            className={`${outlineBtn} w-full justify-center`}
-                            onClick={() => setIsBusinessDropdownOpen(false)}
+                          <button
+                            onClick={() => {
+                              handleNavigation("/contractor#contractorservices")
+                              setIsBusinessDropdownOpen(false)
+                            }}
+                            className={`${outlineBtn} w-full justify-center bg-white`}
                           >
                             CONTRACTOR SERVICES
-                          </Link>
+                          </button>
                         </li>
                         <li>
-                          <Link
-                            to="/business#why"
-                            className={`${outlineBtn} w-full justify-center`}
-                            onClick={() => setIsBusinessDropdownOpen(false)}
+                          <button
+                            onClick={() => {
+                              handleNavigation("/contractor#contractorwhy")
+                              setIsBusinessDropdownOpen(false)
+                            }}
+                            className={`${outlineBtn} w-full justify-center bg-white`}
                           >
                             WHY ASCND YOUR BUSINESS?
-                          </Link>
+                          </button>
                         </li>
                         <li>
-                          <Link
-                            to="/business#growth"
-                            className={`${outlineBtn} w-full justify-center`}
-                            onClick={() => setIsBusinessDropdownOpen(false)}
+                          <button
+                            onClick={() => {
+                              handleNavigation("/business")
+                              setIsBusinessDropdownOpen(false)
+                            }}
+                            className={`${outlineBtn} w-full justify-center bg-white`}
                           >
                             GROWTH MODEL
-                          </Link>
+                          </button>
                         </li>
                         <li>
-                          <Link
-                            to="/business-apply"
-                            className={`${outlineBtn} w-full justify-center`}
-                            onClick={() => setIsBusinessDropdownOpen(false)}
+                          <button
+                            onClick={() => {
+                              handleNavigation("/business-apply")
+                              setIsBusinessDropdownOpen(false)
+                            }}
+                            className={`${outlineBtn} w-full justify-center bg-white`}
                           >
                             APPLY TO ASCND
-                          </Link>
+                          </button>
                         </li>
                       </ul>
                     </motion.div>
@@ -277,21 +321,19 @@ const Navbar = () => {
                 </AnimatePresence>
               </div>
 
-              <MotionLink
-                to="/about"
-                className={outlineBtn + " justify-center"}
+              <motion.button
+                onClick={() => handleNavigation("/about")}
+                className={outlineBtn + " justify-center cursor-pointer"}
                 variants={btnItem}
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <span>ABOUT US</span>
-              </MotionLink>
+              </motion.button>
 
-              <MotionLink
-                to="/request-quote"
-                className={`${darkBtn} items-center`}
+              <motion.button
+                onClick={() => handleNavigation("/request-quote")}
+                className={`${darkBtn} items-center cursor-pointer`}
                 variants={btnItem}
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <span className="flex items-center">REQUEST QUOTE</span>
@@ -299,15 +341,13 @@ const Navbar = () => {
                   src={request}
                   alt="Request"
                   className=" flex-shrink-0"
-                  whileHover={{ scale: 1.05 }}
                 />
-              </MotionLink>
+              </motion.button>
 
-              <MotionLink
-                to="/business-apply"
-                className={`${orangeBtn} items-center`}
+              <motion.button
+                onClick={() => handleNavigation("/business-apply")}
+                className={`${orangeBtn} items-center cursor-pointer`}
                 variants={btnItem}
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <span className="flex items-center">APPLY</span>
@@ -315,9 +355,8 @@ const Navbar = () => {
                   src={apply}
                   alt="Apply"
                   className=" flex-shrink-0"
-                  whileHover={{ scale: 1.05 }}
                 />
-              </MotionLink>
+              </motion.button>
             </motion.div>
 
             <motion.div
@@ -326,7 +365,6 @@ const Navbar = () => {
             >
               <motion.span
                 variants={socialItem}
-                whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="cursor-pointer"
               >
@@ -334,7 +372,6 @@ const Navbar = () => {
               </motion.span>
               <motion.span
                 variants={socialItem}
-                whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="cursor-pointer"
               >
@@ -342,7 +379,6 @@ const Navbar = () => {
               </motion.span>
               <motion.span
                 variants={socialItem}
-                whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="cursor-pointer"
               >
@@ -356,7 +392,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="lg:hidden fixed inset-0 z-40 bg-black/50"
+            className="lg:hidden fixed inset-0 z-[9998] bg-black/50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -368,7 +404,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-[#F6F6F4] shadow-xl z-50 overflow-y-auto"
+            className="lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-[#F6F6F4] z-[9999] overflow-y-auto shadow-xl"
             variants={mobileMenu}
             initial="hidden"
             animate="visible"
@@ -378,8 +414,7 @@ const Navbar = () => {
               <div className="flex justify-end mb-6">
                 <motion.button
                   onClick={toggleMobileMenu}
-                  className="p-2 text-[#0D1318] hover:bg-[#0D1318]/5 rounded-md transition-colors duration-200"
-                  whileHover={{ scale: 1.05 }}
+                  className="p-2 text-[#0D1318] hover:bg-[#0D1318]/5 rounded-md transition-colors duration-200 cursor-pointer"
                   whileTap={{ scale: 0.95 }}
                 >
                   <FaTimes className="size-5" />
@@ -387,16 +422,15 @@ const Navbar = () => {
               </div>
 
               <motion.div className="flex items-center gap-3 mb-8" variants={mobileMenuItem}>
-                <motion.img src={logo} alt="ASCND" className="h-8 w-auto" whileHover={{ scale: 1.02 }} />
+                <motion.img src={logo} alt="ASCND" className="h-8 w-auto" />
               </motion.div>
 
               <motion.div className="space-y-4" variants={rowStagger}>
                 <motion.div variants={mobileMenuItem}>
                   <MotionLink
                     to="#"
-                    className={`${mobileOutlineBtn} items-center`}
+                    className={`${mobileOutlineBtn} items-center cursor-pointer`}
                     onClick={toggleHomeDropdown}
-                    whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <span className="flex items-center">ASCND YOUR HOME</span>
@@ -416,34 +450,42 @@ const Navbar = () => {
                         exit={{ opacity: 0, y: -10 }}
                         className="mt-2 space-y-2"
                       >
-                        <Link
-                          to="/home"
+                        <button
+                          onClick={() => {
+                            handleNavigation("/home#services")
+                            toggleMobileMenu()
+                          }}
                           className={`${mobileOutlineBtn} justify-center`}
-                          onClick={toggleMobileMenu}
                         >
                           HOME SERVICES
-                        </Link>
-                        <Link
-                          to="/home#why"
+                        </button>
+                        <button
+                          onClick={() => {
+                            handleNavigation("/home#why")
+                            toggleMobileMenu()
+                          }}
                           className={`${mobileOutlineBtn} justify-center`}
-                          onClick={toggleMobileMenu}
                         >
                           WHY ASCND YOUR HOME?
-                        </Link>
-                        <Link
-                          to="/home-owner#model"
+                        </button>
+                        <button
+                          onClick={() => {
+                            handleNavigation("/home-owner")
+                            toggleMobileMenu()
+                          }}
                           className={`${mobileOutlineBtn} justify-center`}
-                          onClick={toggleMobileMenu}
                         >
                           HOMEOWNER GROWTH MODEL
-                        </Link>
-                        <Link
-                          to="/request-quote"
+                        </button>
+                        <button
+                          onClick={() => {
+                            handleNavigation("/request-quote")
+                            toggleMobileMenu()
+                          }}
                           className={`${mobileOutlineBtn} justify-center`}
-                          onClick={toggleMobileMenu}
                         >
                           REQUEST A QUOTE
-                        </Link>
+                        </button>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -452,9 +494,8 @@ const Navbar = () => {
                 <motion.div variants={mobileMenuItem}>
                   <MotionLink
                     to="#"
-                    className={`${mobileOutlineBtn} items-center`}
+                    className={`${mobileOutlineBtn} items-center cursor-pointer`}
                     onClick={toggleBusinessDropdown}
-                    whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <span className="flex items-center">ASCND YOUR BUSINESS</span>
@@ -474,57 +515,67 @@ const Navbar = () => {
                         exit={{ opacity: 0, y: -10 }}
                         className="mt-2 space-y-2"
                       >
-                        <Link
-                          to="/business"
+                        <button
+                          onClick={() => {
+                            handleNavigation("/contractor#contractorservices")
+                            toggleMobileMenu()
+                          }}
                           className={`${mobileOutlineBtn} justify-center`}
-                          onClick={toggleMobileMenu}
                         >
                           CONTRACTOR SERVICES
-                        </Link>
-                        <Link
-                          to="/business#why"
+                        </button>
+                        <button
+                          onClick={() => {
+                            handleNavigation("/contractor#contractorwhy")
+                            toggleMobileMenu()
+                          }}
                           className={`${mobileOutlineBtn} justify-center`}
-                          onClick={toggleMobileMenu}
                         >
                           WHY ASCND YOUR BUSINESS?
-                        </Link>
-                        <Link
-                          to="/business#growth"
+                        </button>
+                        <button
+                          onClick={() => {
+                            handleNavigation("/business")
+                            toggleMobileMenu()
+                          }}
                           className={`${mobileOutlineBtn} justify-center`}
-                          onClick={toggleMobileMenu}
                         >
                           GROWTH MODEL
-                        </Link>
-                        <Link
-                          to="/business-apply"
+                        </button>
+                        <button
+                          onClick={() => {
+                            handleNavigation("/business-apply")
+                            toggleMobileMenu()
+                          }}
                           className={`${mobileOutlineBtn} justify-center`}
-                          onClick={toggleMobileMenu}
                         >
                           APPLY TO ASCND
-                        </Link>
+                        </button>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </motion.div>
 
                 <motion.div variants={mobileMenuItem}>
-                  <MotionLink
-                    to="/about"
-                    className={mobileOutlineBtn + " justify-center"}
-                    onClick={toggleMobileMenu}
-                    whileHover={{ scale: 1.02 }}
+                  <motion.button
+                    onClick={() => {
+                      handleNavigation("/about")
+                      toggleMobileMenu()
+                    }}
+                    className={mobileOutlineBtn + " justify-center cursor-pointer"}
                     whileTap={{ scale: 0.98 }}
                   >
                     <span>ABOUT US</span>
-                  </MotionLink>
+                  </motion.button>
                 </motion.div>
 
                 <motion.div variants={mobileMenuItem}>
-                  <MotionLink
-                    to="/request-quote"
-                    className={`${mobileDarkBtn} items-center`}
-                    onClick={toggleMobileMenu}
-                    whileHover={{ scale: 1.02 }}
+                  <motion.button
+                    onClick={() => {
+                      handleNavigation("/request-quote")
+                      toggleMobileMenu()
+                    }}
+                    className={`${mobileDarkBtn} items-center cursor-pointer`}
                     whileTap={{ scale: 0.98 }}
                   >
                     <span className="flex items-center">REQUEST A QUOTE</span>
@@ -532,17 +583,17 @@ const Navbar = () => {
                       src={request} 
                       alt="Request" 
                       className="h-5 w-5 flex-shrink-0" 
-                      whileHover={{ scale: 1.05 }} 
                     />
-                  </MotionLink>
+                  </motion.button>
                 </motion.div>
 
                 <motion.div variants={mobileMenuItem}>
-                  <MotionLink
-                    to="/business-apply"
-                    className={`${mobileOrangeBtn} items-center`}
-                    onClick={toggleMobileMenu}
-                    whileHover={{ scale: 1.02 }}
+                  <motion.button
+                    onClick={() => {
+                      handleNavigation("/business-apply")
+                      toggleMobileMenu()
+                    }}
+                    className={`${mobileOrangeBtn} items-center cursor-pointer`}
                     whileTap={{ scale: 0.98 }}
                   >
                     <span className="flex items-center">APPLY</span>
@@ -550,9 +601,8 @@ const Navbar = () => {
                       src={apply} 
                       alt="Apply" 
                       className="h-5 w-5 flex-shrink-0" 
-                      whileHover={{ scale: 1.05 }} 
                     />
-                  </MotionLink>
+                  </motion.button>
                 </motion.div>
               </motion.div>
 
@@ -561,24 +611,21 @@ const Navbar = () => {
                 <div className="flex items-center gap-6">
                   <motion.a
                     href="#"
-                    className="text-[#0D1318] hover:text-[#FF4C16] transition-colors duration-200"
-                    whileHover={{ scale: 1.1 }}
+                    className="text-[#0D1318] hover:text-[#FF4C16] transition-colors duration-200 cursor-pointer"
                     whileTap={{ scale: 0.95 }}
                   >
                     <FaLinkedin className="size-6" />
                   </motion.a>
                   <motion.a
                     href="#"
-                    className="text-[#0D1318] hover:text-[#FF4C16] transition-colors duration-200"
-                    whileHover={{ scale: 1.1 }}
+                    className="text-[#0D1318] hover:text-[#FF4C16] transition-colors duration-200 cursor-pointer"
                     whileTap={{ scale: 0.95 }}
                   >
                     <FaInstagram className="size-6" />
                   </motion.a>
                   <motion.a
                     href="#"
-                    className="text-[#0D1318] hover:text-[#FF4C16] transition-colors duration-200"
-                    whileHover={{ scale: 1.1 }}
+                    className="text-[#0D1318] hover:text-[#FF4C16] transition-colors duration-200 cursor-pointer"
                     whileTap={{ scale: 0.95 }}
                   >
                     <FaDiscord className="size-6" />

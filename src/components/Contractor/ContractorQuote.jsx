@@ -66,7 +66,7 @@ const ContractorQuote = () => {
 
   return (
     <div
-      className="relative w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto h-screen"
+      className="relative w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto h-screen mt-28"
       style={{
         backgroundImage: `url(${bg})`,
         backgroundRepeat: "no-repeat",
@@ -86,15 +86,11 @@ const ContractorQuote = () => {
           alt="ASCND Logo"
           className="h-5 sm:h-6 w-auto md:h-7"
           variants={logoVar}
-          whileHover={{
-            scale: 1.1,
-            rotateY: 10,
-            transition: { type: "spring", stiffness: 300, damping: 20 },
-          }}
+          
         />
 
         <motion.h1
-          className="mt-10 font-[700] text-black
+          className="mt-10 font-[700] text-[#0D1318]
           text-3xl leading-8
 sm:text-4xl sm:leading-10
 md:text-5xl md:leading-[48px]

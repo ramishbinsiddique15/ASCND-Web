@@ -2,9 +2,9 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import summit from "../../assets/img/trailblazer.png"
-import polymer from "../../assets/img/shapes.png"
-import doubleArrow from "../../assets/icons/double-arrow-black.png"
-import logo from "../../assets/icons/logo-gold.png"
+import polymer from "../../assets/img/shapes.svg"
+import doubleArrow from "../../assets/icons/double-arrow-black.svg"
+import logo from "../../assets/icons/logo-gold.svg"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -13,98 +13,57 @@ const containerVariants = {
     transition: {
       staggerChildren: 0.15,
       delayChildren: 0.1,
+      duration: 0.8,
+      ease: "easeOut",
     },
   },
 }
 
 const taglineVariants = {
-  hidden: {
-    opacity: 0,
-    rotateX: 45,
-    scale: 0.9,
-    filter: "blur(10px)",
-    y: 60,
-  },
+  hidden: { y: 20, opacity: 0 },
   visible: {
-    opacity: 1,
-    rotateX: 0,
-    scale: 1,
-    filter: "blur(0px)",
     y: 0,
+    opacity: 1,
     transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 15,
-      mass: 1.2,
-      duration: 1.2,
+      duration: 0.8,
+      ease: "easeOut",
     },
   },
 }
 
 const headingVariants = {
-  hidden: {
-    opacity: 0,
-    rotateY: -25,
-    scale: 0.8,
-    filter: "blur(15px)",
-    x: -80,
-  },
+  hidden: { x: -20, opacity: 0 },
   visible: {
-    opacity: 1,
-    rotateY: 0,
-    scale: 1,
-    filter: "blur(0px)",
     x: 0,
+    opacity: 1,
     transition: {
-      type: "spring",
-      stiffness: 80,
-      damping: 12,
-      mass: 1.5,
-      duration: 1.4,
+      duration: 0.8,
+      ease: "easeOut",
     },
   },
 }
 
 const dividerVariants = {
-  hidden: {
-    scaleX: 0,
-    rotateZ: -5,
-    filter: "blur(5px)",
-  },
+  hidden: { scaleX: 0, opacity: 0 },
   visible: {
     scaleX: 1,
-    rotateZ: 0,
-    filter: "blur(0px)",
+    opacity: 1,
     transition: {
-      type: "spring",
-      stiffness: 120,
-      damping: 20,
-      duration: 1.0,
+      duration: 0.8,
+      ease: "easeOut",
       delay: 0.3,
     },
   },
 }
 
 const pillVariants = {
-  hidden: {
-    opacity: 0,
-    rotateX: 20,
-    scale: 0.9,
-    filter: "blur(8px)",
-    y: 40,
-  },
+  hidden: { y: 20, opacity: 0 },
   visible: {
-    opacity: 1,
-    rotateX: 0,
-    scale: 1,
-    filter: "blur(0px)",
     y: 0,
+    opacity: 1,
     transition: {
-      type: "spring",
-      stiffness: 90,
-      damping: 14,
-      mass: 1.1,
-      duration: 1.1,
+      duration: 0.8,
+      ease: "easeOut",
     },
   },
 }
@@ -114,17 +73,15 @@ const logoVariants = {
     opacity: 0,
     rotateY: -180,
     scale: 0.5,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
     rotateY: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       type: "spring",
       stiffness: 100,
-      damping: 15,
+      damping: 20,
       mass: 1.3,
       duration: 1.3,
     },
@@ -132,43 +89,27 @@ const logoVariants = {
 }
 
 const buttonVariants = {
-  hidden: {
-    opacity: 0,
-    rotateX: 30,
-    scale: 0.8,
-    filter: "blur(5px)",
-  },
+  hidden: { y: 20, opacity: 0 },
   visible: {
+    y: 0,
     opacity: 1,
-    rotateX: 0,
-    scale: 1,
-    filter: "blur(0px)",
     transition: {
-      type: "spring",
-      stiffness: 110,
-      damping: 18,
-      mass: 1.0,
-      duration: 1.0,
+      duration: 0.8,
+      ease: "easeOut",
     },
   },
 }
 
 const backgroundImageVariants = {
   hidden: {
-    scale: 1.1,
-    filter: "blur(8px)",
-    opacity: 0.8,
+    opacity: 0,
   },
   visible: {
-    scale: 1,
-    filter: "blur(0px)",
     opacity: 1,
     transition: {
-      type: "spring",
-      stiffness: 60,
-      damping: 20,
-      mass: 1.8,
-      duration: 2.0,
+      duration: 2.5,
+      ease: "easeInOut",
+      delay: 0.8,
     },
   },
 }
@@ -176,23 +117,11 @@ const backgroundImageVariants = {
 const shapesImageVariants = {
   hidden: {
     opacity: 0,
-    scale: 0.7,
-    rotateZ: -15,
-    filter: "blur(12px)",
-    x: 100,
   },
   visible: {
     opacity: 1,
-    scale: 1,
-    rotateZ: 0,
-    filter: "blur(0px)",
-    x: 0,
     transition: {
-      type: "spring",
-      stiffness: 70,
-      damping: 18,
-      mass: 1.4,
-      duration: 1.6,
+      duration: 1.0,
       delay: 0.4,
     },
   },
@@ -201,12 +130,12 @@ const shapesImageVariants = {
 const TrailBlazer = () => {
   return (
     <motion.div
-      className="relative min-h-screen overflow-hidden pt-32 sm:pt-48 md:pt-64 lg:pt-72"
+      className="relative min-h-screen overflow-hidden pt-32 sm:pt-64 md:pt-72 lg:pt-96"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      style={{ perspective: "1000px" }}
+      viewport={{ once: true, amount: 0.1 }}
+      style={{ perspective: "1000px", backgroundColor: "#FF990A" }}
     >
       <motion.div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -214,36 +143,47 @@ const TrailBlazer = () => {
         variants={backgroundImageVariants}
       />
 
-      <motion.div
-        className="hidden md:block absolute top-20 sm:top-32 md:top-44 -right-48 sm:-right-64 md:-right-80 lg:-right-96"
-        variants={shapesImageVariants}
-        style={{ transformStyle: "preserve-3d" }}
-        whileHover={{
-          scale: 1.05,
-          rotateZ: 2,
-          transition: { duration: 0.3 },
-        }}
-      >
-        <img
-          src={polymer || "/placeholder.svg"}
-          alt="Geometric shapes"
-          className="w-[80%] sm:w-[70%] md:w-[60%] max-w-none"
-        />
-      </motion.div>
+      <div className="relative z-10 px-4 py-8 sm:px-6 sm:py-12 md:py-16 mx-auto">
+        <div className="flex items-end justify-between  mb-10">
+          <motion.div variants={taglineVariants} className=" flex-shrink-0 ">
+            <p className="text-[#FF990A]
+            text-[16px] leading-[16px]
+            sm:text-[18px] sm:leading-[18px]
+            md:text-[20px] md:leading-[20px]
+            lg:text-[24px] lg:leading-[24px]
+            xl:text-[32px] xl:leading-[32px]
+            2xl:text-[38px] 2xl:leading-[38px]
+            1821:text-[45px] 1821:leading-[45px]
+            font-[700]
+            tracking-[-0.02em]">
+              Be first to market.Lock your
+              <br />
+              postion. Get paid on every
+              <br />
+              deal in your region
+            </p>
+          </motion.div>
+            <motion.img
+            variants={shapesImageVariants}
+              src={polymer || "/placeholder.svg"}
+              alt="Geometric shapes"
+              className="hidden sm:block w-[40%] sm:w-[50%] md:w-[60%] max-w-none"
+            />
+        </div>
 
-      <div className="relative z-10 px-4 py-8 sm:px-6 sm:py-12  md:py-16  max-w-[100rem] mx-auto">
-        <motion.div variants={taglineVariants} className="" style={{ transformStyle: "preserve-3d" }}>
-          <p className="text-[#F6F6F4] text-lg sm:text-xl md:text-2xl font-bold leading-[0.8] max-w-xs sm:max-w-sm md:max-w-md">
-            Be first to market.Lock your
-            <br />
-            postion. Get paid on every
-            <br />
-            deal in your region
-          </p>
-        </motion.div>
-
-        <motion.div variants={headingVariants} className="mb-6" style={{ transformStyle: "preserve-3d" }}>
-          <h1 className="text-[#FF990A] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.8]">
+        <motion.div
+          variants={headingVariants}
+          className="mb-4 sm:mb-5 md:mb-6"
+        >
+          <h1 className="text-[#FF990A]
+          text-[36px] leading-[32px]
+          sm:text-[48px] sm:leading-[40px]
+          md:text-[60px] md:leading-[52px]
+          lg:text-[72px] lg:leading-[60px]
+          xl:text-[120px] xl:leading-[100px]
+          2xl:text-[150px] 2xl:leading-[124px]
+          1821:text-[169px] 1821:leading-[144px]
+          tracking-[-0.06em] font-[800]">
             Trailblazer Program
           </h1>
         </motion.div>
@@ -251,7 +191,7 @@ const TrailBlazer = () => {
         <motion.div
           variants={dividerVariants}
           className="w-full h-0.5 bg-[#FF990A] mb-8 sm:mb-10 md:mb-12"
-          style={{ transformOrigin: "left" }}
+          style={{ transformOrigin: "left center" }}
         ></motion.div>
 
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-0">
@@ -259,49 +199,43 @@ const TrailBlazer = () => {
             <motion.div
               variants={pillVariants}
               className="border-2 border-[#FF990A] rounded-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 w-fit"
-              style={{ transformStyle: "preserve-3d" }}
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "#FF990A",
-                color: "#0D1318",
-                transition: { duration: 0.2 },
-              }}
             >
-              <motion.p className="text-[#FF990A] text-sm sm:text-base font-medium" whileHover={{ color: "#0D1318" }}>
+              <p className="text-[#FF990A]
+                text-[14px] leading-[20px]
+                sm:text-[16px] sm:leading-[24px]
+                md:text-[18px] md:leading-[28px]
+                2xl:text-[18px] 2xl:leading-[26px]
+                1821:text-[20px] 1821:leading-[28px] font-[600]">
                 The first ASCND dealer in a state secures an override (or per-unit in non-solar trades)
-              </motion.p>
+              </p>
             </motion.div>
 
             <motion.div
               variants={pillVariants}
               className="border-2 border-[#FF990A] rounded-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 w-fit"
-              style={{ transformStyle: "preserve-3d" }}
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "#FF990A",
-                color: "#0D1318",
-                transition: { duration: 0.2 },
-              }}
             >
-              <motion.p className="text-[#FF990A] text-sm sm:text-base font-medium" whileHover={{ color: "#0D1318" }}>
+              <p className="text-[#FF990A]
+                text-[14px] leading-[20px]
+                sm:text-[16px] sm:leading-[24px]
+                md:text-[18px] md:leading-[28px]
+                2xl:text-[18px] 2xl:leading-[26px]
+                1821:text-[20px] 1821:leading-[28px] font-[600]">
                 Maintain control while we handle fulfillment
-              </motion.p>
+              </p>
             </motion.div>
 
             <motion.div
               variants={pillVariants}
               className="border-2 border-[#FF990A] rounded-full px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 w-fit"
-              style={{ transformStyle: "preserve-3d" }}
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "#FF990A",
-                color: "#0D1318",
-                transition: { duration: 0.2 },
-              }}
             >
-              <motion.p className="text-[#FF990A] text-sm sm:text-base font-medium" whileHover={{ color: "#0D1318" }}>
+              <p className="text-[#FF990A]
+                text-[14px] leading-[20px]
+                sm:text-[16px] sm:leading-[24px]
+                md:text-[18px] md:leading-[28px]
+                2xl:text-[18px] 2xl:leading-[26px]
+                1821:text-[20px] 1821:leading-[28px] font-[600]">
                 Works across all ASCND trades
-              </motion.p>
+              </p>
             </motion.div>
           </motion.div>
 
@@ -319,39 +253,23 @@ const TrailBlazer = () => {
                 imageRendering: "-webkit-optimize-contrast",
                 imageRendering: "optimize-contrast",
                 msInterpolationMode: "nearest-neighbor",
-                transformStyle: "preserve-3d",
               }}
               loading="lazy"
-              whileHover={{
-                scale: 1.1,
-                rotateY: 5,
-                boxShadow: "0 10px 30px rgba(255, 153, 10, 0.3)",
-                transition: { duration: 0.3 },
-              }}
             />
 
-            {(() => { const MotionLink = motion(Link); return (
-            <MotionLink
-              to="/business-apply"
-              variants={buttonVariants}
-              className="bg-[#FF990A] text-[#0D1318] px-6 py-2.5 sm:px-7 sm:py-3  md:py-3 rounded-lg font-semibold text-xs sm:text-sm tracking-wider hover:bg-[#FF990A]/90 transition-colors duration-200 flex items-center gap-2 w-fit"
-              style={{ transformStyle: "preserve-3d" }}
-              whileHover={{
-                scale: 1.05,
-                y: -3,
-                boxShadow: "0 10px 25px rgba(255, 153, 10, 0.4)",
-                transition: { duration: 0.2 },
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              APPLY NOW
-              <motion.img
-                src={doubleArrow || "/placeholder.svg"}
-                alt="Arrow"
-                className="w-3 h-3 sm:w-4 sm:h-4"
-                whileHover={{ x: 3 }}
-              />
-            </MotionLink> ); })()}
+            <motion.div variants={buttonVariants}>
+              <Link
+                to="/business-apply"
+                className="bg-[#FF990A] text-[#0D1318] px-6 py-2.5 sm:px-20 sm:py-3 md:py-3 rounded-lg font-semibold text-xs sm:text-sm transition-colors duration-200 flex items-center gap-2 w-fit text-[14px] tracking-[0.25em] leading-[22px]"
+              >
+                APPLY NOW
+                <img
+                  src={doubleArrow || "/placeholder.svg"}
+                  alt="Arrow"
+                  className="flex-shrink-0"
+                />
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </div>

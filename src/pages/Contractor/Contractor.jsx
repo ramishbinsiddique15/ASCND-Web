@@ -10,7 +10,7 @@ import Contact from '../../components/Home/Contact'
 const Contractor = () => {
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    
     document.title = 'ASCND - For Contractors';
   }, [])
 

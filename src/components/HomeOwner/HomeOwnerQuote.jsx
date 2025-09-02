@@ -1,9 +1,9 @@
 "use client"
 import { motion, useReducedMotion } from "framer-motion"
 import { Link } from "react-router-dom"
-import bg from "../../assets/icons/bg.png"
-import logo from "../../assets/icons/logo.png"
-import doubleArrow from "../../assets/icons/double-arrow.png"
+import bg from "../../assets/icons/bg.svg"
+import logo from "../../assets/icons/logo.svg"
+import doubleArrow from "../../assets/icons/double-arrow.svg"
 
 const HomeOwnerQuote = () => {
   const prefersReduced = useReducedMotion()
@@ -12,18 +12,14 @@ const HomeOwnerQuote = () => {
   const containerVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
     : {
-        hidden: { opacity: 0, y: 50, scale: 0.9 },
+        hidden: { opacity: 0, y: 20 },
         show: {
           opacity: 1,
           y: 0,
-          scale: 1,
           transition: {
+            duration: 0.5,
             when: "beforeChildren",
-            staggerChildren: 0.15,
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            duration: 0.8,
+            staggerChildren: 0.1,
           },
         },
       }
@@ -49,56 +45,28 @@ const HomeOwnerQuote = () => {
   const textVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
     : {
-        hidden: {
-          opacity: 0,
-          y: 30,
-          rotateX: 45,
-          filter: "blur(8px)",
-          scale: 0.95,
-        },
+        hidden: { opacity: 0, y: 20 },
         show: {
           opacity: 1,
           y: 0,
-          rotateX: 0,
-          filter: "blur(0px)",
-          scale: 1,
-          transition: {
-            type: "spring",
-            stiffness: 80,
-            damping: 18,
-            duration: 1.5,
-          },
+          transition: { duration: 0.5 },
         },
       }
 
   const buttonVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
     : {
-        hidden: {
-          opacity: 0,
-          y: 40,
-          scale: 0.8,
-          rotateX: 30,
-          filter: "blur(5px)",
-        },
+        hidden: { opacity: 0, y: 20 },
         show: {
           opacity: 1,
           y: 0,
-          scale: 1,
-          rotateX: 0,
-          filter: "blur(0px)",
-          transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            duration: 1.8,
-          },
+          transition: { duration: 0.5 },
         },
       }
 
   return (
     <div
-      className="relative w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto h-screen"
+      className="relative w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] mx-auto h-screen mt-28"
       style={{
         backgroundImage: `url(${bg})`,
         backgroundRepeat: "no-repeat",
@@ -118,14 +86,21 @@ const HomeOwnerQuote = () => {
           alt="ASCND Logo"
           className="h-5 sm:h-6 w-auto md:h-7"
           variants={logoVar}
-          whileHover={{
-            scale: 1.1,
-            rotateY: 10,
-            transition: { type: "spring", stiffness: 300, damping: 20 },
-          }}
+          
         />
         <motion.h1
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-[0.8] tracking-tighter"
+          className="mt-10 font-[700] text-[#0D1318]
+          text-3xl leading-8
+sm:text-4xl sm:leading-10
+md:text-5xl md:leading-[48px]
+lg:text-6xl lg:leading-[56px]
+xl:text-[44px] xl:leading-[36px]
+2xl:text-[64px] 2xl:leading-[52px]
+1821:text-[102px] 1821:leading-[80px]
+
+tracking-[-0.04em]
+
+          "
           variants={textVar}
           style={{ perspective: "1000px" }}
         >
@@ -137,14 +112,7 @@ const HomeOwnerQuote = () => {
         </motion.h1>
         <MotionLink
           to="/request-quote"
-          className="mt-5 cursor-pointer inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5 text-[10px] sm:px-6 sm:py-3 sm:text-[11px] font-semibold uppercase tracking-[0.25em] text-[#F6F6F4] transition-all duration-300 hover:bg-[#0D1318]/90 md:px-7 md:py-3.5 md:text-[12px] hover:shadow-lg hover:shadow-[#0D1318]/30"
-          whileHover={{
-            scale: 1.05,
-            y: -3,
-            boxShadow: "0 10px 25px rgba(13, 19, 24, 0.3)",
-            transition: { type: "spring", stiffness: 300, damping: 20 },
-          }}
-          whileTap={{ scale: 0.95 }}
+          className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5  font-[700] uppercase tracking-[0.25em] text-[#F6F6F4] transition-colors duration-300 sm:px-6 sm:py-3 text-[11px] md:px-7 md:py-3.5  overflow-hidden relative mt-5"
           variants={buttonVar}
           aria-label="Request a quote"
         >
@@ -152,8 +120,8 @@ const HomeOwnerQuote = () => {
           <motion.img
             src={doubleArrow}
             alt=""
-            whileHover={{ x: 3 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
+            className="flex-shrink-0"
           />
         </MotionLink>
       </motion.div>

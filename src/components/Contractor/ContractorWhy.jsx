@@ -2,9 +2,9 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import learn from "../../assets/img/learn.svg"
-import turn from "../../assets/img/turn.svg"
-import local from "../../assets/img/local.svg"
-import plug from "../../assets/img/plug.svg"
+import turn from "../../assets/img/turn.png"
+import local from "../../assets/img/local.png"
+import plug from "../../assets/img/plug.png"
 import trade from "../../assets/img/trade.svg"
 import doubleArrowWhite from "../../assets/icons/double-arrow-white.svg"
 
@@ -327,7 +327,7 @@ tracking-[-0.02em]
         return (
           <MotionLink
             to="/business-apply"
-            className="w-fit mt-4 inline-flex items-center gap-2 rounded-md bg-[#FF4C16] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#F6F6F4] hover:bg-[#e74312] sm:mt-5 sm:px-5 sm:py-2.5 sm:text-[11px] md:text-[12px] transition-colors duration-300"
+            className="w-fit mt-4 inline-flex items-center gap-2 rounded-md bg-[#FF4C16] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#F6F6F4]  sm:mt-5 sm:px-5 sm:py-2.5 sm:text-[11px] md:text-[12px] transition-colors duration-300"
             variants={pillVar}
             aria-label="Apply to ASCND"
           >
@@ -346,8 +346,8 @@ tracking-[-0.02em]
 
 const ContractorWhy = () => {
   return (
-    <section className="w-full">
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6  ">
+    <section className="w-full mt-28" id="contractorwhy">
+      <div className="mx-auto  px-4 sm:px-6  ">
         {/* Heading */}
         <motion.div
           initial="hidden"

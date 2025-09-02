@@ -1,6 +1,6 @@
 "use client"
 import { motion, useReducedMotion } from "framer-motion"
-import future from "../../assets/img/future.png"
+import future from "../../assets/img/future.svg"
 
 const Future = () => {
   const prefersReduced = useReducedMotion()
@@ -8,18 +8,17 @@ const Future = () => {
   const containerVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
     : {
-        hidden: { opacity: 0, y: 50, scale: 0.9 },
+        hidden: { opacity: 0, y: 20 },
         show: {
           opacity: 1,
           y: 0,
-          scale: 1,
           transition: {
             when: "beforeChildren",
-            staggerChildren: 0.15,
+            staggerChildren: 0.2,
             type: "spring",
             stiffness: 100,
             damping: 20,
-            duration: 0.8,
+            duration: 0.6,
           },
         },
       }
@@ -27,41 +26,15 @@ const Future = () => {
   const textVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
     : {
-        hidden: {
-          opacity: 0,
-          y: 30,
-          rotateX: 45,
-          filter: "blur(8px)",
-          scale: 0.95,
-        },
+        hidden: { opacity: 0, y: 20 },
         show: {
           opacity: 1,
           y: 0,
-          rotateX: 0,
-          filter: "blur(0px)",
-          scale: 1,
           transition: {
             type: "spring",
-            stiffness: 80,
-            damping: 18,
-            duration: 1.5,
-          },
-        },
-      }
-
-  const backgroundVar = prefersReduced
-    ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
-    : {
-        hidden: { opacity: 0, scale: 1.1, filter: "blur(10px)" },
-        show: {
-          opacity: 1,
-          scale: 1,
-          filter: "blur(0px)",
-          transition: {
-            type: "spring",
-            stiffness: 60,
-            damping: 25,
-            duration: 2.0,
+            stiffness: 100,
+            damping: 20,
+            duration: 0.6,
           },
         },
       }
@@ -70,23 +43,24 @@ const Future = () => {
     <motion.section
       style={{
         backgroundImage: `url(${future})`,
-        backgroundColor: "#0D1318",
-        backgroundBlendMode: "overlay",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
       className="relative w-full h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center overflow-hidden"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
-      variants={backgroundVar}
+      variants={containerVar}
     >
-      {/* Content */}
       <motion.div className="relative z-10 text-center text-[#F6F6F4] max-w-4xl mx-auto px-6" variants={containerVar}>
         <motion.h1
-          className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.8]"
+          className="text-[30px] leading-[32px]
+sm:text-[36px] sm:leading-[40px]
+md:text-[48px] md:leading-[48px]
+lg:text-[60px] lg:leading-[56px]
+xl:text-[72px] xl:leading-[64px]
+2xl:text-[90px] 2xl:leading-[72px]
+1821:text-[102px] 1821:leading-[80px]
+tracking-[-0.04em] font-[700]"
           variants={textVar}
-          style={{ perspective: "1000px" }}
         >
           We're not
           <br />

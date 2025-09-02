@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import path from "../../assets/img/path.png"
 import logoWhite from "../../assets/icons/white-logo.svg"
 import logoBlue from "../../assets/icons/logo-blue.svg"
-import blueBullet from "../../assets/icons/blue-bullet.png"
+import blueBullet from "../../assets/icons/blue-bullet.svg"
 import whiteBullet from "../../assets/icons/white-bullet.svg"
 
 const containerVariants = {
@@ -162,14 +162,14 @@ const pillVariants = {
 const Path = () => {
   return (
     <motion.section
-      className="bg-[#F5F7FA] py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32"
+      className="bg-[#F5F7FA] py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 mt-28"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       style={{ perspective: "1000px" }}
     >
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6">
+      <div className="mx-auto  px-4 sm:px-6">
         {/* Header Section - Exact match to image */}
         <motion.div
           className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-[#F6F6F4]"
@@ -193,9 +193,9 @@ const Path = () => {
             {/* Right: Text Content */}
             <motion.div
               variants={textVariants}
-              className="px-4 pt-8 sm:px-6 sm:pt-12 md:pt-16 lg:pt-20 w-[85%] sm:w-[80%] md:w-[75%] ml-auto z-50 pb-6 sm:pb-8 flex items-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px]"
+              className="px-4 pt-8 sm:px-6 sm:pt-12 md:pt-16 lg:pt-20 w-[85%] sm:w-[80%] md:w-[75%] ml-auto z-40 pb-6 sm:pb-8 flex items-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px]"
             >
-              <h2 className="z-10  text-[#0D1318]
+              <h2 className="z-10 text-[#0D1318] self-end
               sm:text-[36px] sm:leading-[29px]
 md:text-[44px] md:leading-[36px]
 lg:text-[52px] lg:leading-[42px]
@@ -325,7 +325,13 @@ font-[600]
 tracking-[-0.02em]">
               Expand Your Living Experience
             </h3>
-            <p className="text-[11px] sm:text-xs mb-3 sm:mb-4 text-[#105CE9] h-auto sm:h-[48px] leading-relaxed">
+            <p className="mb-3 sm:mb-4 text-[#105CE9] h-auto 
+            text-[14px] leading-[20px]
+sm:text-[16px] sm:leading-[24px]
+md:text-[18px] md:leading-[28px]
+2xl:text-[18px] 2xl:leading-[26px]
+1821:text-[20px] 1821:leading-[28px] font-[600]
+            ">
               Once the essentials are upgraded, elevate the experience with turf, epoxy flooring, and permanent
               lighting. These lifestyle upgrades:
             </p>
@@ -343,7 +349,13 @@ tracking-[-0.02em]">
                 <motion.div
                   key={index}
                   variants={pillVariants}
-                  className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9]"
+                  className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 
+                  text-[11px] leading-[20px]
+sm:text-[11px] sm:leading-[24px]
+md:text-[12px] md:leading-[28px]
+2xl:text-[14px] 2xl:leading-[26px]
+1821:text-[16px] 1821:leading-[28px] font-[600]
+                  text-[#105CE9]"
                 >
                   {text}
                 </motion.div>
@@ -385,7 +397,13 @@ font-[600]
 tracking-[-0.02em]">
               Customize & Complete Your Space
             </h3>
-            <p className="text-[11px] sm:text-xs mb-3 sm:mb-4 text-[#105CE9] h-auto sm:h-[48px] leading-relaxed">
+            <p className="mb-3 sm:mb-4 text-[#105CE9] h-auto 
+            text-[14px] leading-[20px]
+sm:text-[16px] sm:leading-[24px]
+md:text-[18px] md:leading-[28px]
+2xl:text-[18px] 2xl:leading-[26px]
+1821:text-[20px] 1821:leading-[28px] font-[600]
+            ">
               Finish with the details that make your home truly yours—like automated blinds, window treatments, or smart
               features. These finishing touches:
             </p>
@@ -401,7 +419,13 @@ tracking-[-0.02em]">
                 <motion.div
                   key={index}
                   variants={pillVariants}
-                  className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 text-[10px] sm:text-xs font-medium text-[#105CE9]"
+                  className="inline-block border-2 border-[#105CE9] rounded-full px-2.5 py-1 
+                  text-[11px] leading-[20px]
+sm:text-[11px] sm:leading-[24px]
+md:text-[12px] md:leading-[28px]
+2xl:text-[14px] 2xl:leading-[26px]
+1821:text-[16px] 1821:leading-[28px] font-[600]
+                  text-[#105CE9]"
                 >
                   {text}
                 </motion.div>

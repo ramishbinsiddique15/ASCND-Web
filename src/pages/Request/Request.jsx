@@ -7,7 +7,7 @@ import RequestQuote from '../../components/Request/RequestQuote'
 const Request = () => {
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    
     document.title = 'ASCND - Request Quote';
   }, [])
 

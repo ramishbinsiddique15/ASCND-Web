@@ -212,8 +212,8 @@ tracking-[-0.02em]
 
 const Why = () => {
   return (
-    <section id="why" className="w-full">
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6">
+    <section id="why" className="w-full mt-28">
+      <div className="mx-auto  px-4 sm:px-6">
         <motion.div
           initial="hidden"
           whileInView="show"

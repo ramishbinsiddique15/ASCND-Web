@@ -144,7 +144,7 @@ const HomeHero = () => {
         }}
       />
 
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6">
+      <div className="mx-auto  px-4 sm:px-6">
         {/* Content grid */}
         <motion.div
           className="grid grid-cols-1 items-stretch gap-6 pb-6 pt-8 sm:gap-8 sm:pb-8 sm:pt-10 md:grid-cols-12 md:gap-14 md:pb-10 md:pt-14 md:min-h-[380px] lg:min-h-[460px] lg:gap-24 lg:pt-16"
@@ -154,7 +154,7 @@ const HomeHero = () => {
           <motion.div className="md:col-span-7 flex h-full flex-col justify-end md:pr-6 lg:pr-10" variants={container}>
             <motion.span
               variants={tagVariant}
-              className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] px-2 py-1 font-semibold uppercase tracking-[0.25em] text-[#FF4C16] text-[9px] sm:text-[14px] md:text-[14px]"
+              className="w-fit inline-block rounded-sm border-2 border-[#FF4C16] py-1 font-semibold uppercase tracking-[0.25em] text-[#FF4C16] text-[9px] sm:text-[14px] md:text-[14px] px-4"
               style={{
                 transformOrigin: "center",
                 transformStyle: "preserve-3d",

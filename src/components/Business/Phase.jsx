@@ -110,13 +110,13 @@ const Phase = () => {
 
   return (
     <motion.section
-      className="w-full bg-[#F6F6F4]"
+      className="w-full bg-[#F6F6F4] overflow-x-hidden mt-28"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 lg:pl-8 lg:pr-4 py-8 sm:py-10 md:py-12 lg:py-16">
+      <div className="mx-auto  px-4 sm:px-6 lg:pl-8 lg:pr-4 py-8 sm:py-10 md:py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start">
           {/* Left side - Phase cards */}
           <motion.div className="space-y-3 sm:space-y-4" variants={cardVariants}>
@@ -171,7 +171,6 @@ const Phase = () => {
                       src={expandedPhase === phaseData.id ? logoOrange : logoWhite}
                       alt="ASCND Logo"
                       className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
-                      whileHover={{ rotate: 5 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     />
                   </div>
@@ -286,8 +285,7 @@ text-[#F6F6F4] font-[600] text-[14px] 2xl:text-[20px]"
               <MotionLink
                 to="/business-apply"
                 className="inline-flex items-center justify-between gap-2 rounded-md border-2 border-[#0d1318] px-4 py-2.5 sm:px-5 sm:py-3 sm:text-[11px] font-semibold uppercase tracking-[0.25em] text-[#0d1318] hover:text-[#F6F6F4] transition hover:bg-[#0D1318] md:px-6 md:py-3 text-[14px]"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
+                
                 aria-label="Apply to ASCND"
               >
                 <span>Apply Now</span>

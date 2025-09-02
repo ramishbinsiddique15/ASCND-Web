@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import bg from "../../assets/icons/background.png"
+import bg from "../../assets/icons/background.svg"
 
 const container = {
   hidden: { opacity: 0 },
@@ -149,15 +149,15 @@ const HomeOwnerHero = () => {
 
       <motion.img
         src={bg}
-        className="absolute right-0 z-50 w-[60%] sm:w-[50%] md:w-[45%] lg:w-[40%]"
+        className="absolute right-0 z-40 w-[60%] sm:w-[50%] md:w-[45%] lg:w-[40%]"
         alt=""
         variants={backgroundVar}
       />
 
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6  ">
+      <div className="mx-auto  px-4 sm:px-6  ">
         {/* Content grid */}
         <motion.div
-          className="grid grid-cols-1 items-stretch gap-6 pb-6 pt-8 sm:gap-8 sm:pb-8 sm:pt-10 md:grid-cols-12 md:gap-14 md:pb-10 md:pt-14 md:min-h-[380px] lg:min-h-[460px] lg:gap-24 lg:pt-16"
+          className="grid grid-cols-1 items-stretch gap-6 pb-6 pt-8 sm:gap-8 sm:pb-8 sm:pt-10 md:grid-cols-12 md:gap-14 md:pb-10 md:pt-14 md:min-h-[380px] lg:min-h-[460px] lg:gap-24 lg:pt-16 "
           variants={container}
         >
           {/* Left: Tag + Headline */}
@@ -175,15 +175,15 @@ const HomeOwnerHero = () => {
             >
               ASCND HOME SERVICES
             </motion.span>
-            <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0D1318]
-    text-4xl       
-    sm:text-5xl
-    md:text-6xl
-    lg:text-7xl
-    xl:text-[120px]
-    2xl:text-[150px]
-    1821:text-[169px]
-    tracking-[-0.06em]
+            <h2 className="z-40 mt-3 text-[#0D1318]
+              text-[36px] leading-[32px]
+              sm:text-[48px] sm:leading-[40px]
+              md:text-[60px] md:leading-[52px]
+              lg:text-[72px] lg:leading-[60px]
+              xl:text-[120px] xl:leading-[100px]
+              2xl:text-[150px] 2xl:leading-[124px]
+              1821:text-[169px] 1821:leading-[144px]
+              tracking-[-0.06em] font-[800]
 ">
               <motion.span
                 variants={wordVariant}

@@ -11,7 +11,7 @@ import Contact from '../../components/Home/Contact'
 const HomeOwner = () => {
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    
     document.title = 'ASCND - For Homeowners';
   }, [])
 

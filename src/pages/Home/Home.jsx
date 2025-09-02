@@ -12,7 +12,7 @@ import Footer from '../../components/Footer/Footer';
 const Home = () => {
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    
     document.title = 'ASCND - Home Improvement Solutions';
   }, [])
 

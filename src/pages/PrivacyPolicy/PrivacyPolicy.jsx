@@ -6,7 +6,7 @@ import Content from '../../components/PrivacyPolicy/Content.jsx'
 const PrivacyPolicy = () => {
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    
     document.title = 'ASCND - Privacy Policy';
   }, [])
 

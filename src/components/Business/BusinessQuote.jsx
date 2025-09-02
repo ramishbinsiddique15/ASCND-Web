@@ -1,9 +1,9 @@
 "use client"
 import { motion, useReducedMotion } from "framer-motion"
 import { Link } from "react-router-dom"
-import quote from "../../assets/icons/quote.png"
-import logo from "../../assets/icons/logo.png"
-import doubleArrow from "../../assets/icons/double-arrow.png"
+import quote from "../../assets/icons/quote.svg"
+import logo from "../../assets/icons/logo.svg"
+import doubleArrow from "../../assets/icons/double-arrow.svg"
 
 const BusinessQuote = () => {
   const prefersReduced = useReducedMotion()
@@ -12,18 +12,14 @@ const BusinessQuote = () => {
   const containerVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
     : {
-        hidden: { opacity: 0, y: 50, scale: 0.9 },
+        hidden: { opacity: 0, y: 20 },
         show: {
           opacity: 1,
           y: 0,
-          scale: 1,
           transition: {
+            duration: 0.5,
             when: "beforeChildren",
-            staggerChildren: 0.15,
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            duration: 0.8,
+            staggerChildren: 0.1,
           },
         },
       }
@@ -49,69 +45,32 @@ const BusinessQuote = () => {
   const textVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
     : {
-        hidden: {
-          opacity: 0,
-          y: 30,
-          rotateX: 45,
-          filter: "blur(8px)",
-          scale: 0.95,
-        },
+        hidden: { opacity: 0, y: 20 },
         show: {
           opacity: 1,
           y: 0,
-          rotateX: 0,
-          filter: "blur(0px)",
-          scale: 1,
-          transition: {
-            type: "spring",
-            stiffness: 80,
-            damping: 18,
-            duration: 1.5,
-          },
+          transition: { duration: 0.5 },
         },
       }
 
   const buttonVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
     : {
-        hidden: {
-          opacity: 0,
-          y: 40,
-          scale: 0.8,
-          rotateX: 30,
-          filter: "blur(5px)",
-        },
+        hidden: { opacity: 0, y: 20 },
         show: {
           opacity: 1,
           y: 0,
-          scale: 1,
-          rotateX: 0,
-          filter: "blur(0px)",
-          transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            duration: 1.8,
-          },
+          transition: { duration: 0.5 },
         },
       }
 
   return (
-    <div className="relative w-full bg-gray-100 py-12 sm:py-14 md:py-16 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
-      <motion.img
-        src={quote}
-        className="absolute -top-6 sm:-top-8 md:-top-10 right-0 w-48 sm:w-64 md:w-80 lg:w-96"
-        alt=""
-        initial={{ opacity: 0, y: -50, scale: 0.9 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-        viewport={{ once: true, amount: 0.2 }}
-      />
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 ">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 sm:gap-8 items-center">
+    <div className="relative w-full bg-[#F6F6F4] py-12 sm:py-14 md:py-16 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
+      <div className="mx-auto px-4 sm:px-6 max-w-7xl 1821:max-w-[150rem]">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-center">
           {/* Left side - Content */}
           <motion.div
-            className="space-y-4 sm:space-y-5 md:space-y-6"
+            className="space-y-4 sm:space-y-5 md:space-y-6 "
             variants={containerVar}
             initial="hidden"
             whileInView="show"
@@ -129,35 +88,83 @@ const BusinessQuote = () => {
               }}
             />
 
-            <motion.div className="space-y-2" variants={textVar} style={{ perspective: "1000px" }}>
-              <h1
-                className="text-[28px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] font-bold leading-[0.8]
-             bg-gradient-to-r from-[#0D1318] to-[#FF4C16] bg-clip-text text-transparent z-50"
+            <motion.h1
+              className="font-[700] text-[#0D1318]
+          text-3xl leading-8
+sm:text-4xl sm:leading-10
+md:text-5xl md:leading-[48px]
+lg:text-6xl lg:leading-[56px]
+xl:text-[74px] xl:leading-[55px]
+2xl:text-[74px] 2xl:leading-[55px]
+1821:text-[102px] 1821:leading-[80px]
+
+tracking-[-0.04em]
+
+          "
+              variants={textVar}
+              style={{ perspective: "1000px" }}
+            >
+              <span
+                style={{
+                  background: "linear-gradient(to right, rgba(13, 19, 24, 1) 20%, rgba(255, 76, 22, 1) 50%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
               >
                 Start as a setter.
-                <br />
+              </span>
+              <br />
+              <span
+                style={{
+                  background: "linear-gradient(to right, #0D1318 20%, #FF4C16 50%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 Close your own deals.
-                <br />
+              </span>
+              <br />
+              <span
+                style={{
+                  background: "linear-gradient(to right, #0D1318 20%, #FF4C16 50%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 Lead a team.
-                <br />
+              </span>
+              <br />
+              <span
+                style={{
+                  background: "linear-gradient(to right, #0D1318 20%, #FF4C16 50%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 Open your own dealership.
-                <br />
+              </span>
+              <br />
+              <span
+                style={{
+                  background: "linear-gradient(to right, #0D1318 20%, #FF4C16 50%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 Run your own installation business.
-                <br />
-                In turf. In solar. In anything.
-              </h1>
-            </motion.div>
+              </span>
+              <br />
+              In turf. In solar. In anything.
+            </motion.h1>
 
             <MotionLink
               to="/business-apply"
-              className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3 lg:px-7 lg:py-3.5 text-[10px] sm:text-[11px] md:text-[12px] font-semibold uppercase tracking-[0.25em] text-[#F6F6F4] transition-all duration-300 hover:bg-[#0D1318]/90 hover:shadow-lg hover:shadow-[#0D1318]/30"
-              whileHover={{
-                scale: 1.05,
-                y: -3,
-                boxShadow: "0 10px 25px rgba(13, 19, 24, 0.3)",
-                transition: { type: "spring", stiffness: 300, damping: 20 },
-              }}
-              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 py-2.5  font-[700] uppercase tracking-[0.25em] text-[#F6F6F4] transition-colors duration-300 sm:px-6 sm:py-3 text-[11px] md:px-7 md:py-3.5  overflow-hidden relative mt-5"
               variants={buttonVar}
               aria-label="Apply to ASCND"
             >
@@ -165,11 +172,25 @@ const BusinessQuote = () => {
               <motion.img
                 src={doubleArrow}
                 alt=""
-                className="w-3 h-3 sm:w-4 sm:h-4"
-                whileHover={{ x: 3 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                className="flex-shrink-0"
               />
             </MotionLink>
+          </motion.div>
+
+          {/* Right side - Quote Image */}
+          <motion.div
+            className="flex justify-center items-center lg:block"
+            initial={{ opacity: 0, y: -50, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <img
+              src={quote}
+              className="w-64 sm:w-80 lg:w-96 1821:w-[550px] lg:relative lg:-top-44 lg:right-32 1821:-top-60 1821:right-52"
+              alt=""
+            />
           </motion.div>
         </div>
       </div>

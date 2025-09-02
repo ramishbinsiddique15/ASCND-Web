@@ -288,13 +288,14 @@ md:text-[18px] md:leading-[28px]
 const Services = () => {
   return (
     <motion.section
-      className="w-full"
+    id="services"
+      className="w-full mt-10"
       variants={sectionFade}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
     >
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6">
+      <div className="mx-auto  px-4 sm:px-6">
         <motion.div
           className="grid grid-cols-1 items-stretch gap-4 py-8 sm:gap-6 sm:py-10 lg:grid-cols-2 lg:gap-8"
           variants={listVar}

@@ -228,7 +228,7 @@ tracking-[-0.04em]
                 key={label}
                 href="#"
                 aria-label={label}
-                className="grid size-10 place-items-center rounded-full bg-[#F6F6F4] text-[#FF4C16] hover:bg-[#FF4C16] hover:text-[#F6F6F4] shadow-md transition-colors duration-200"
+                className="grid size-10 place-items-center rounded-full bg-[#F6F6F4] text-[#FF4C16] hover:bg-[#FF4C16] hover:text-[#F6F6F4]  transition-colors duration-200"
               >
                 <Icon className="size-4 text-[#FF4C16] hover:text-[#F6F6F4]" />
               </a>
@@ -305,7 +305,7 @@ tracking-[-0.04em]
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="grid size-10 place-items-center rounded-full bg-[#F6F6F4] text-[#FF4C16] shadow-md transition-colors duration-200"
+                  className="grid size-10 place-items-center rounded-full bg-[#F6F6F4] text-[#FF4C16]  transition-colors duration-200"
                   variants={socialItem}
                   initial="hidden"
                   animate="visible"
@@ -369,7 +369,7 @@ tracking-[-0.04em]
                 key={label}
                 href="#"
                 aria-label={label}
-                className="grid size-10 xl:size-11 2xl:size-12 place-items-center rounded-full bg-[#F6F6F4] text-[#FF4C16] hover:bg-[#FF4C16] hover:text-[#F6F6F4] shadow-md transition-colors duration-200"
+                className="grid size-10 xl:size-11 2xl:size-12 place-items-center rounded-full bg-[#F6F6F4] text-[#FF4C16] hover:bg-[#FF4C16] hover:text-[#F6F6F4]  transition-colors duration-200"
                 variants={socialItem}
                 initial="hidden"
                 animate="visible"

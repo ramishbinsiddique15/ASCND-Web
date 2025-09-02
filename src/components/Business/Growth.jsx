@@ -37,7 +37,7 @@ const textVariants = {
 const Growth = () => {
   return (
     <motion.section
-      className="max-w-[100rem] mx-auto relative mt-10"
+      className=" mx-auto relative mt-28"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -49,7 +49,7 @@ const Growth = () => {
   alt="Growth background"
   className="absolute top-0 bottom-0 right-4 h-full z-0"
 />
-      <div className="mx-auto max-w-[100rem] px-4 sm:px-6 py-6 sm:py-8 md:py-10 lg:py-12 relative z-10">
+      <div className="mx-auto  px-4 sm:px-6 py-6 sm:py-8 md:py-10 lg:py-12 relative z-10">
         <div className="grid grid-cols-1 items-stretch gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           <motion.div
             className="relative z-10"

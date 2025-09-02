@@ -13,7 +13,7 @@ import Contact from '../../components/Home/Contact.jsx'
 const Business = () => {
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    
     document.title = 'ASCND - Business Solutions';
   }, [])
 
