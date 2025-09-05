@@ -49,13 +49,13 @@ const mobileMenuItem = {
 }
 
 const baseBtn =
-  "group inline-flex items-center justify-center gap-2 rounded-md border-2 px-4 py-2 text-[9px] font-semibold uppercase tracking-[0.25em] transition-all duration-200 h-9 sm:px-5 sm:py-2 sm:text-[10px] sm:h-10 md:px-6 md:py-2 md:text-[11px] md:h-11 lg:px-7 lg:py-3 lg:text-[11px] lg:h-12 leading-none cursor-pointer"
+  "group inline-flex items-center justify-center gap-2 rounded-md border-2 px-4 py-2 text-[9px] font-semibold uppercase tracking-[0.25em] transition-all duration-200 h-9 sm:px-5 sm:py-2 sm:text-[10px] sm:h-10 md:px-6 md:py-2 md:text-[11px] md:h-11 lg:px-7 lg:py-3 lg:text-[11px] lg:h-12 leading-none cursor-pointer whitespace-nowrap"
 
 const outlineBtn = `${baseBtn} border-[#0D1318] bg-transparent text-[#0D1318] `
 const darkBtn = `${baseBtn} border-transparent bg-[#0D1318] text-[#F6F6F4]`
 const orangeBtn = `${baseBtn} border-transparent bg-[#FF4C16] text-[#F6F6F4] `
 
-const mobileMenuBtn = "w-full flex items-center justify-center gap-3 rounded-md border-2 px-4 py-3 text-sm font-semibold uppercase tracking-[0.25em] transition-all duration-200 leading-none cursor-pointer text-center"
+const mobileMenuBtn = "w-full flex items-center justify-center gap-3 rounded-md border-2 px-4 py-3 text-sm font-semibold uppercase tracking-[0.25em] transition-all duration-200 leading-none cursor-pointer text-center whitespace-nowrap"
 const mobileOutlineBtn = `${mobileMenuBtn} border-[#0D1318]/20 bg-transparent text-[#0D1318] hover:bg-[#0D1318]/5 text-center`
 const mobileDarkBtn = `${mobileMenuBtn} border-transparent bg-[#0D1318] text-[#F6F6F4] text-center`
 const mobileOrangeBtn = `${mobileMenuBtn} border-transparent bg-[#FF4C16] text-[#F6F6F4] hover:bg-[#e74312] text-center`
@@ -188,7 +188,7 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute left-0 mt-2 w-64 z-[9999]  border border-[#0D1318]/10 rounded-md"
+                      className="absolute left-0 mt-2 w-64 z-[99999]  border border-[#0D1318]/10 rounded-md bg-[#F6F6F4]"
                     >
                       <ul className="space-y-2 ">
                         <li>
@@ -268,7 +268,7 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute left-0 mt-2 w-64 z-[9999]  border border-[#0D1318]/10 rounded-md"
+                      className="absolute left-0 mt-2 w-64 z-[99999]  border border-[#0D1318]/10 rounded-md bg-[#F6F6F4]"
                     >
                       <ul className="space-y-2">
                         <li>
