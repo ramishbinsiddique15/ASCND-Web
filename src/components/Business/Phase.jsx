@@ -123,7 +123,7 @@ const Phase = () => {
             {phases.map((phaseData, index) => (
               <motion.div
                 key={phaseData.id}
-                className={`relative overflow-hidden rounded-xl sm:rounded-2xl cursor-pointer transition-all duration-300 ${
+                className={`relative overflow-hidden rounded-[24px] cursor-pointer transition-all duration-300 ${
                   expandedPhase === phaseData.id ? "bg-[#0D1318]" : "bg-[#FF4C16]"
                 }`}
                 onClick={() => setExpandedPhase(expandedPhase === phaseData.id ? null : phaseData.id)}

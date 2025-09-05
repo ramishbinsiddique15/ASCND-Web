@@ -8,17 +8,14 @@ const Future = () => {
   const containerVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
     : {
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0 },
         show: {
           opacity: 1,
-          y: 0,
           transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.2,
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            duration: 0.6,
+            staggerChildren: 0.15,
+            delayChildren: 0.1,
+            duration: 0.8,
+            ease: "easeOut",
           },
         },
       }
@@ -26,30 +23,48 @@ const Future = () => {
   const textVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
     : {
-        hidden: { opacity: 0, y: 20 },
+        hidden: { y: 20, opacity: 0 },
         show: {
-          opacity: 1,
           y: 0,
+          opacity: 1,
           transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            duration: 0.6,
+            duration: 0.8,
+            ease: "easeOut",
           },
         },
       }
 
+  const backgroundImageVariants = {
+    hidden: {
+      opacity: 0,
+      rotate: -10,
+    },
+    show: {
+      opacity: 1,
+      rotate: 0,
+      transition: {
+        duration: 1.5,
+        ease: "easeInOut",
+        delay: 0.4,
+      },
+    },
+  }
+
   return (
     <motion.section
-      style={{
-        backgroundImage: `url(${future})`,
-      }}
       className="relative w-full h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center overflow-hidden"
+      style={{ backgroundColor: "#0D1318" }}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={containerVar}
     >
+      <motion.div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${future})` }}
+        variants={backgroundImageVariants}
+      />
+      
       <motion.div className="relative z-10 text-center text-[#F6F6F4] max-w-4xl mx-auto px-6" variants={containerVar}>
         <motion.h1
           className="text-[30px] leading-[32px]

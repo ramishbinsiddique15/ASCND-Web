@@ -15,14 +15,12 @@ const textVariants = {
     y: 60,
     rotateX: 45,
     scale: 0.9,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
     y: 0,
     rotateX: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.2,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -44,13 +42,47 @@ const Grow = () => {
       viewport={{ once: true, amount: 0.2 }}
       style={{ perspective: "1000px" }}
     >
+      {/* Desktop background image */}
       <img
   src={grow || "/placeholder.svg"}
   alt="Growth background"
-  className="absolute top-0 bottom-0 right-4 h-full z-0"
+  className="absolute top-0 bottom-0 right-4 h-full z-0 hidden sm:block"
 />
-      <div className="mx-auto  px-4 sm:px-6 py-6 sm:py-8 md:py-10 lg:py-12 relative z-10">
-        <div className="grid grid-cols-1 items-stretch gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
+      
+      <div className="mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-10 lg:py-12 relative z-10">
+        {/* Mobile layout - column stack */}
+        <div className="flex flex-col sm:hidden gap-6">
+          {/* Mobile image */}
+          <div className="w-full flex justify-center">
+            <img
+              src={grow || "/placeholder.svg"}
+              alt="Growth background"
+              className="w-96 object-contain"
+            />
+          </div>
+          
+          {/* Mobile text content */}
+          <motion.div
+            className="relative z-10"
+            variants={textVariants}
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            <div className="relative min-h-[240px] rounded-xl py-6">
+              <h3 className="font-extrabold leading-[0.85] text-[#0D1318] text-[28px] tracking-[-0.04em]">
+                Your home should
+                <br /> grow with you, not
+                <br /> work against you.
+              </h3>
+              <p className="mt-3 font-semibold text-[#0D1318]/70 leading-[28px] text-[20px] tracking-[0em]">
+                At ASCND, we believe that smart home upgrades don't just improve your space today; they build
+                long-term value, efficiency, and comfort.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+        
+        {/* Desktop layout - original grid */}
+        <div className="hidden sm:grid grid-cols-1 items-stretch gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           <motion.div
             className="relative z-10"
             variants={textVariants}

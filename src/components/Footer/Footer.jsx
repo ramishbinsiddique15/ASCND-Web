@@ -25,14 +25,12 @@ const fadeUp = {
     opacity: 0,
     rotateX: 15,
     scale: 0.95,
-    filter: "blur(10px)",
   },
   show: {
     y: 0,
     opacity: 1,
     rotateX: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.8,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -49,14 +47,12 @@ const logoAnimation = {
     opacity: 0,
     rotateY: -25,
     scale: 0.8,
-    filter: "blur(8px)",
   },
   show: {
     x: 0,
     opacity: 1,
     rotateY: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.9,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -73,14 +69,12 @@ const socialAnimation = {
     opacity: 0,
     rotateY: 25,
     scale: 0.7,
-    filter: "blur(6px)",
   },
   show: {
     x: 0,
     opacity: 1,
     rotateY: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.8,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -96,13 +90,11 @@ const dividerVar = {
     scaleX: 0,
     opacity: 0,
     rotateZ: -5,
-    filter: "blur(4px)",
   },
   show: {
     scaleX: 1,
     opacity: 1,
     rotateZ: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 1.2,
       ease: "easeOut",
@@ -120,14 +112,12 @@ const headlineAnimation = {
     opacity: 0,
     rotateX: 20,
     scale: 0.9,
-    filter: "blur(15px)",
   },
   show: {
     y: 0,
     opacity: 1,
     rotateX: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.0,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -145,14 +135,12 @@ const pillContainerAnimation = {
     opacity: 0,
     rotateX: 25,
     scale: 0.85,
-    filter: "blur(20px)",
   },
   show: {
     y: 0,
     opacity: 1,
     rotateX: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.1,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -170,14 +158,12 @@ const pillAnimation = {
     opacity: 0,
     rotateY: 15,
     scale: 0.9,
-    filter: "blur(8px)",
   },
   show: {
     y: 0,
     opacity: 1,
     rotateY: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.7,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -246,9 +232,18 @@ const ScrollHandler = () => {
 
   useEffect(() => {
     // Scroll to top for specific routes
-    const scrollToTopRoutes = ['/about', '/request-quote', '/business-apply', '/home-owner']
+    const scrollToTopRoutes = ['/about', '/request-quote', '/business-apply', '/home-owner', '/business-growth-model', '/home-owner-growth-model']
+    
     if (scrollToTopRoutes.includes(pathname)) {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      console.log('Scrolling to top for:', pathname)
+      // Force immediate scroll and then smooth scroll
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+      window.scrollTo(0, 0)
+      
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }, 100)
     }
     // Handle anchor link scrolling
     else if (state?.scrollTo) {
@@ -256,6 +251,8 @@ const ScrollHandler = () => {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
+    } else {
+      console.log('No scroll action taken for:', pathname)
     }
   }, [pathname, state])
 
@@ -271,7 +268,7 @@ const Footer = () => {
       items: [
         { text: "Home Services", path: "/home#services" },
         { text: "Why ASCND your home?", path: "/home#why" },
-        { text: "Homeowner Growth Model", path: "/home-owner" },
+        { text: "Homeowner Growth Model", path: "/home-owner-growth-model" },
         { text: "Request a Quote", path: "/request-quote" },
       ],
     },
@@ -280,7 +277,7 @@ const Footer = () => {
       items: [
         { text: "Contractor Services", path: "/contractor#contractorservices" },
         { text: "Why ASCND your business?", path: "/contractor#contractorwhy" },
-        { text: "Growth Model", path: "/business" },
+        { text: "Growth Model", path: "/business-growth-model" },
         { text: "Apply to ASCND", path: "/business-apply" },
       ],
     },
@@ -294,7 +291,7 @@ const Footer = () => {
     <>
       <ScrollHandler />
       <motion.footer
-        className="relative isolate w-full overflow-hidden rounded-t-2xl text-[#F6F6F4] mt-28"
+        className="relative isolate w-full overflow-hidden rounded-t-[24px] text-[#F6F6F4] mt-28"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
@@ -354,7 +351,7 @@ const Footer = () => {
               <br className="hidden md:block" /> & National Distribution
             </motion.h2>
             <motion.div
-              className="mt-4 rounded-2xl border border-[#F6F6F4] p-2 sm:mt-6 sm:rounded-3xl sm:p-3 md:mt-8"
+              className="mt-4 rounded-[24px] border border-[#F6F6F4] p-2 sm:mt-6 sm:p-3 md:mt-8"
               variants={pillContainerAnimation}
             >
               <div className="p-1 sm:p-2 md:p-3">

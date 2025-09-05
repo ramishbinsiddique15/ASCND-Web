@@ -27,12 +27,11 @@ const BusinessQuote = () => {
   const logoVar = prefersReduced
     ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
     : {
-        hidden: { opacity: 0, scale: 0.5, rotateY: -180, filter: "blur(10px)" },
+        hidden: { opacity: 0, scale: 0.5, rotateY: -180 },
         show: {
           opacity: 1,
           scale: 1,
           rotateY: 0,
-          filter: "blur(0px)",
           transition: {
             type: "spring",
             stiffness: 120,

@@ -20,14 +20,12 @@ const tagVariant = {
     opacity: 0,
     scale: 0.8,
     rotateX: -90,
-    filter: "blur(10px)",
   },
   show: {
     y: 0,
     opacity: 1,
     scale: 1,
     rotateX: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 1.2,
       ease: [0.16, 1, 0.3, 1],
@@ -44,14 +42,12 @@ const wordVariant = {
     opacity: 0,
     scale: 0.9,
     rotateY: -15,
-    filter: "blur(8px)",
   },
   show: {
     y: 0,
     opacity: 1,
     scale: 1,
     rotateY: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 1.4,
       ease: [0.16, 1, 0.3, 1],
@@ -67,13 +63,11 @@ const textVariant = {
     y: 50,
     opacity: 0,
     scale: 0.95,
-    filter: "blur(6px)",
   },
   show: {
     y: 0,
     opacity: 1,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.0,
       ease: [0.16, 1, 0.3, 1],
@@ -117,18 +111,14 @@ const floatingElement = {
 
 const imageVariant = {
   hidden: {
-    scale: 1.1,
-    filter: "blur(8px)",
-    opacity: 0.8,
+    opacity: 0,
   },
   show: {
-    scale: 1,
-    filter: "blur(0px)",
     opacity: 1,
     transition: {
-      duration: 1.8,
-      ease: [0.16, 1, 0.3, 1],
-      delay: 0.8,
+      duration: 0.8,
+      ease: "easeOut",
+      delay: 0.5,
     },
   },
 }
@@ -262,25 +252,10 @@ md:text-[18px] md:leading-[28px]
             </motion.p>
           </motion.div>
         </motion.div>
-
-        <motion.div className="border-t border-[#0D1318] origin-left relative overflow-hidden" variants={dividerVar}>
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FF4C16]/30 to-transparent"
-            initial={{ x: "-100%", scaleY: 0 }}
-            animate={{
-              x: "100%",
-              scaleY: [0, 2, 0],
-            }}
-            transition={{
-              duration: 2.5,
-              delay: 2,
-              ease: "easeInOut",
-            }}
-          />
-        </motion.div>
+         <motion.img src={about} alt="" className="w-full rounded-[24px]" variants={imageVariant} />
       </div>
 
-      <motion.img src={about} alt="" className="w-full" variants={imageVariant} />
+     
     </motion.section>
   )
 }

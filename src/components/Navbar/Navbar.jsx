@@ -188,16 +188,16 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute left-0 mt-2 w-64 z-[9999] shadow-lg border border-[#0D1318]/10 rounded-md"
+                      className="absolute left-0 mt-2 w-64 z-[9999]  border border-[#0D1318]/10 rounded-md"
                     >
-                      <ul className="space-y-2 p-2">
+                      <ul className="space-y-2 ">
                         <li>
                           <button
                             onClick={() => {
                               handleNavigation("/home#services")
                               setIsHomeDropdownOpen(false)
                             }}
-                            className={`${outlineBtn} w-full justify-center bg-white`}
+                            className={`${outlineBtn} w-full justify-center bg-[#F6F6F4]`}
                           >
                             HOME SERVICES
                           </button>
@@ -208,7 +208,7 @@ const Navbar = () => {
                               handleNavigation("/home#why")
                               setIsHomeDropdownOpen(false)
                             }}
-                            className={`${outlineBtn} w-full justify-center bg-white`}
+                            className={`${outlineBtn} w-full justify-center bg-[#F6F6F4]`}
                           >
                             WHY ASCND YOUR HOME?
                           </button>
@@ -216,10 +216,10 @@ const Navbar = () => {
                         <li>
                           <button
                             onClick={() => {
-                              handleNavigation("/home-owner")
+                              handleNavigation("/home-owner-growth-model")
                               setIsHomeDropdownOpen(false)
                             }}
-                            className={`${outlineBtn} w-full justify-center bg-white`}
+                            className={`${outlineBtn} w-full justify-center bg-[#F6F6F4]`}
                           >
                             HOMEOWNER GROWTH MODEL
                           </button>
@@ -230,7 +230,7 @@ const Navbar = () => {
                               handleNavigation("/request-quote")
                               setIsHomeDropdownOpen(false)
                             }}
-                            className={`${outlineBtn} w-full justify-center bg-white`}
+                            className={`${outlineBtn} w-full justify-center bg-[#F6F6F4]`}
                           >
                             REQUEST A QUOTE
                           </button>
@@ -268,16 +268,16 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute left-0 mt-2 w-64 z-[9999] shadow-lg border border-[#0D1318]/10 rounded-md"
+                      className="absolute left-0 mt-2 w-64 z-[9999]  border border-[#0D1318]/10 rounded-md"
                     >
-                      <ul className="space-y-2 p-2">
+                      <ul className="space-y-2">
                         <li>
                           <button
                             onClick={() => {
                               handleNavigation("/contractor#contractorservices")
                               setIsBusinessDropdownOpen(false)
                             }}
-                            className={`${outlineBtn} w-full justify-center bg-white`}
+                            className={`${outlineBtn} w-full justify-center bg-[#F6F6F4]`}
                           >
                             CONTRACTOR SERVICES
                           </button>
@@ -288,7 +288,7 @@ const Navbar = () => {
                               handleNavigation("/contractor#contractorwhy")
                               setIsBusinessDropdownOpen(false)
                             }}
-                            className={`${outlineBtn} w-full justify-center bg-white`}
+                            className={`${outlineBtn} w-full justify-center bg-[#F6F6F4]`}
                           >
                             WHY ASCND YOUR BUSINESS?
                           </button>
@@ -296,10 +296,10 @@ const Navbar = () => {
                         <li>
                           <button
                             onClick={() => {
-                              handleNavigation("/business")
+                              handleNavigation("/business-growth-model")
                               setIsBusinessDropdownOpen(false)
                             }}
-                            className={`${outlineBtn} w-full justify-center bg-white`}
+                            className={`${outlineBtn} w-full justify-center bg-[#F6F6F4]`}
                           >
                             GROWTH MODEL
                           </button>
@@ -310,7 +310,7 @@ const Navbar = () => {
                               handleNavigation("/business-apply")
                               setIsBusinessDropdownOpen(false)
                             }}
-                            className={`${outlineBtn} w-full justify-center bg-white`}
+                            className={`${outlineBtn} w-full justify-center bg-[#F6F6F4]`}
                           >
                             APPLY TO ASCND
                           </button>
@@ -404,7 +404,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-[#F6F6F4] z-[9999] overflow-y-auto shadow-xl"
+            className="lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-[#F6F6F4] z-[9999] overflow-y-auto "
             variants={mobileMenu}
             initial="hidden"
             animate="visible"
@@ -470,7 +470,7 @@ const Navbar = () => {
                         </button>
                         <button
                           onClick={() => {
-                            handleNavigation("/home-owner")
+                            handleNavigation("/home-owner-growth-model")
                             toggleMobileMenu()
                           }}
                           className={`${mobileOutlineBtn} justify-center`}
@@ -535,7 +535,7 @@ const Navbar = () => {
                         </button>
                         <button
                           onClick={() => {
-                            handleNavigation("/business")
+                            handleNavigation("/business-growth-model")
                             toggleMobileMenu()
                           }}
                           className={`${mobileOutlineBtn} justify-center`}

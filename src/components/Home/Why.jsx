@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
-import power from "../../assets/img/speed.jpg"
-import comfort from "../../assets/img/pricing.jpg"
-import protect from "../../assets/img/work.jpg"
+import power from "../../assets/img/speed.svg"
+import comfort from "../../assets/img/pricing.svg"
+import protect from "../../assets/img/protect.svg"
 
 // Animation variants (simplified)
 const container = {
@@ -101,18 +101,18 @@ const WhyItem = ({ image, headingTop, headingBottom, gradientWord, body, pills }
       className="lg:col-span-5"
       variants={imgVar}
     >
-      <div className="relative h-48 overflow-hidden rounded-xl sm:h-56 sm:rounded-2xl lg:h-[360px] xl:h-[766px]">
+      <div className="relative rounded-[24px]">
         <motion.img
           src={image}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          className="w-full h-auto rounded-[24px]"
           variants={imgVar}
         />
       </div>
     </motion.div>
 
     {/* Text */}
-    <motion.div className="lg:col-span-7 h-full lg:pl-6 xl:pl-10 flex flex-col justify-end lg:pb-32" variants={textVar}>
+    <motion.div className="lg:col-span-7 h-full lg:pl-6 xl:pl-10 flex flex-col justify-end lg:pb-22" variants={textVar}>
       <motion.h3
         className="font-extrabold text-[#0D1318] 
         sm:text-[36px] sm:leading-[29px]

@@ -20,14 +20,12 @@ const tagVariant = {
     opacity: 0,
     scale: 0.8,
     rotateX: -90,
-    filter: "blur(10px)",
   },
   show: {
     y: 0,
     opacity: 1,
     scale: 1,
     rotateX: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 1.2,
       ease: [0.16, 1, 0.3, 1],
@@ -44,14 +42,12 @@ const wordVariant = {
     opacity: 0,
     scale: 0.9,
     rotateY: -15,
-    filter: "blur(8px)",
   },
   show: {
     y: 0,
     opacity: 1,
     scale: 1,
     rotateY: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 1.4,
       ease: [0.16, 1, 0.3, 1],
@@ -85,13 +81,11 @@ const backgroundVar = {
     opacity: 0,
     y: -50,
     scale: 0.9,
-    filter: "blur(8px)",
   },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.8,
       ease: [0.16, 1, 0.3, 1],

@@ -2,10 +2,10 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import contractor from "../../assets/img/contractor-bg.svg"
-import training from "../../assets/img/training.svg"
-import fast from "../../assets/img/fast.jpg"
-import marketing from "../../assets/img/marketing.jpg"
-import installation from "../../assets/img/installation.jpg"
+import training from "../../assets/img/training.png"
+import fast from "../../assets/img/fast.svg"
+import marketing from "../../assets/img/marketing.svg"
+import installation from "../../assets/img/installation.svg"
 import doubleArrow from "../../assets/icons/double-arrow.svg"
 
 const ForContractor = () => {
@@ -89,7 +89,7 @@ const ForContractor = () => {
         <div className="flex flex-col lg:flex-row items-stretch gap-4 sm:gap-5">
           {/* Left side - Dark section with content */}
           <motion.div className="flex-1" variants={itemVariants}>
-            <div className="relative bg-[#0D1318] rounded-xl p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 text-[#F6F6F4] h-full flex flex-col justify-center">
+            <div className="relative bg-[#0D1318] rounded-[24px] p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 text-[#F6F6F4] h-full flex flex-col justify-center">
               <motion.img
                 src={contractor}
                 alt=""
@@ -155,7 +155,7 @@ md:text-[18px] md:leading-[28px]
           <motion.div className="flex-1" variants={itemVariants}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 h-full">
               <motion.div
-                className="relative rounded-xl overflow-hidden cursor-pointer min-h-[200px] sm:min-h-[150px]"
+                className="relative rounded-[24px] overflow-hidden cursor-pointer min-h-[200px] sm:min-h-[150px]"
                 variants={cardVariants}
               >
                 <img
@@ -163,7 +163,7 @@ md:text-[18px] md:leading-[28px]
                   alt="Training & tools"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-[#FF4C16] mix-blend-multiply opacity-100 rounded-2xl" />
+                {/* <div className="absolute inset-0 bg-[#FF4C16] mix-blend-multiply opacity-100 rounded-2xl" /> */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 sm:p-4 md:p-5 z-10">
                   <h3 className="text-[#F6F6F4] text-[16px] leading-[24px]
 sm:text-[18px] sm:leading-[28px]
@@ -179,13 +179,13 @@ tracking-[-0.02em] font-[700]">
               </motion.div>
 
               <motion.div
-                className="relative rounded-xl overflow-hidden cursor-pointer min-h-[200px] sm:min-h-[150px] bg-black/10"
+                className="relative rounded-[24px] overflow-hidden cursor-pointer min-h-[200px] sm:min-h-[150px] bg-black/10"
                 variants={cardVariants}
               >
                 <img
                   src={fast || "/placeholder.svg"}
                   alt="Fast, consistent fulfillment"
-                  className="absolute inset-0 w-full h-full object-cover grayscale opacity-40"
+                  className="absolute inset-0 w-full h-full object-cover "
                 />
                 <div className="absolute bottom-0 left-0 right-0  p-3 sm:p-4 md:p-5 z-10">
                   <h3 className="text-[#4B5361] text-[16px] leading-[24px]
@@ -202,13 +202,13 @@ tracking-[-0.02em] font-[700]">
               </motion.div>
 
               <motion.div
-                className="relative rounded-xl overflow-hidden cursor-pointer min-h-[200px] sm:min-h-[150px] bg-black/10"
+                className="relative rounded-[24px] overflow-hidden cursor-pointer min-h-[200px] sm:min-h-[150px] bg-black/10"
                 variants={cardVariants}
               >
                 <img
                   src={marketing || "/placeholder.svg"}
                   alt="Marketing & lead gen support"
-                  className="absolute inset-0 w-full h-full object-cover grayscale opacity-40"
+                  className="absolute inset-0 w-full h-full object-cover "
                 />
                 <div className="absolute bottom-0 left-0 right-0  p-3 sm:p-4 md:p-5 z-10">
                   <h3 className="text-[#4B5361] text-[16px] leading-[24px]
@@ -225,13 +225,13 @@ tracking-[-0.02em] font-[700]">
               </motion.div>
 
               <motion.div
-                className="relative rounded-xl overflow-hidden cursor-pointer min-h-[200px] sm:min-h-[150px] bg-black/10"
+                className="relative rounded-[24px] overflow-hidden cursor-pointer min-h-[200px] sm:min-h-[150px] bg-black/10"
                 variants={cardVariants}
               >
                 <img
                   src={installation || "/placeholder.svg"}
                   alt="Installation ownership"
-                  className="absolute inset-0 w-full h-full object-cover grayscale opacity-40"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-5 z-10">
                   <h3 className="text-[#4B5361] text-[16px] leading-[24px]

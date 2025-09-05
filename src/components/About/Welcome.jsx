@@ -79,14 +79,14 @@ const Welcome = () => {
           variants={fadeUp}
         >
           <MotionLink
-            to="/home-owner"
+            to="/home-owner-growth-model"
             className="px-4 sm:px-6 py-2.5 sm:py-3 bg-[#F6F6F4] text-[#0D1318] rounded-md  transition-colors text-[11px] font-[700] flex-1 sm:flex-none whitespace-nowrap tracking-[0.25em] leading-[16px]"
             variants={fadeUp}
           >
             ASCND YOUR HOME
           </MotionLink>
           <MotionLink
-            to="/business"
+            to="/business-growth-model"
             className="px-4 sm:px-6 py-2.5 sm:py-3 bg-[#FF4C16] text-[#F6F6F4] rounded-md  transition-colors text-[11px] font-[700] flex-1 sm:flex-none whitespace-nowrap tracking-[0.25em] leading-[16px]"
             variants={fadeUp}
           >

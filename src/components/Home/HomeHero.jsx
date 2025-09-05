@@ -18,14 +18,12 @@ const tagVariant = {
     opacity: 0,
     scale: 0.8,
     rotateX: -90,
-    filter: "blur(10px)",
   },
   show: {
     y: 0,
     opacity: 1,
     scale: 1,
     rotateX: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 1.2,
       ease: [0.16, 1, 0.3, 1],
@@ -42,14 +40,12 @@ const wordVariant = {
     opacity: 0,
     scale: 0.9,
     rotateY: -15,
-    filter: "blur(8px)",
   },
   show: {
     y: 0,
     opacity: 1,
     scale: 1,
     rotateY: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 1.4,
       ease: [0.16, 1, 0.3, 1],
@@ -65,13 +61,11 @@ const textVariant = {
     y: 50,
     opacity: 0,
     scale: 0.95,
-    filter: "blur(6px)",
   },
   show: {
     y: 0,
     opacity: 1,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.0,
       ease: [0.16, 1, 0.3, 1],
@@ -116,33 +110,7 @@ const floatingElement = {
 const HomeHero = () => {
   return (
     <motion.section className="w-full relative overflow-hidden" initial="hidden" animate="show">
-      <motion.div
-        className="absolute top-10 right-10 w-32 h-32 rounded-full bg-gradient-to-br from-[#FF4C16]/10 to-transparent"
-        variants={floatingElement}
-        animate={{
-          y: [0, -20, 0],
-          rotate: [0, 180, 360],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-20 left-10 w-24 h-24 rounded-full bg-gradient-to-br from-[#FF4C16]/5 to-transparent"
-        variants={floatingElement}
-        animate={{
-          y: [0, 15, 0],
-          rotate: [360, 180, 0],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-      />
+      
 
       <div className="mx-auto  px-4 sm:px-6">
         {/* Content grid */}

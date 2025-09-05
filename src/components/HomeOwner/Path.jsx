@@ -19,14 +19,12 @@ const headerVariants = {
     y: 60,
     rotateX: 25,
     scale: 0.9,
-    filter: "blur(12px)",
   },
   visible: {
     opacity: 1,
     y: 0,
     rotateX: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.2,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -44,14 +42,12 @@ const imageVariants = {
     x: -80,
     rotateY: -20,
     scale: 1.1,
-    filter: "blur(15px)",
   },
   visible: {
     opacity: 1,
     x: 0,
     rotateY: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.4,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -69,14 +65,12 @@ const textVariants = {
     x: 80,
     rotateY: 20,
     scale: 0.95,
-    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
     x: 0,
     rotateY: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.3,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -92,12 +86,10 @@ const dividerVariants = {
   hidden: {
     scaleX: 0,
     rotateZ: -2,
-    filter: "blur(3px)",
   },
   visible: {
     scaleX: 1,
     rotateZ: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 1.0,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -115,7 +107,6 @@ const cardVariants = {
     rotateX: 30,
     rotateY: -10,
     scale: 0.85,
-    filter: "blur(15px)",
   },
   visible: {
     opacity: 1,
@@ -123,7 +114,6 @@ const cardVariants = {
     rotateX: 0,
     rotateY: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.5,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -141,14 +131,12 @@ const pillVariants = {
     y: 20,
     rotateX: 15,
     scale: 0.9,
-    filter: "blur(5px)",
   },
   visible: {
     opacity: 1,
     y: 0,
     rotateX: 0,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 0.8,
       ease: [0.25, 0.46, 0.45, 0.94],
@@ -172,7 +160,7 @@ const Path = () => {
       <div className="mx-auto  px-4 sm:px-6">
         {/* Header Section - Exact match to image */}
         <motion.div
-          className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-[#F6F6F4]"
+          className="relative overflow-hidden bg-[#F6F6F4]"
           variants={headerVariants}
         >
           <div className="relative items-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px]">
@@ -224,7 +212,7 @@ xl:text-[59px] xl:leading-[48px]
           {/* Phase 01 */}
           <motion.div
             variants={cardVariants}
-            className="bg-[#105CE9] rounded-2xl p-4 sm:p-6 text-[#F6F6F4] relative overflow-hidden min-h-[380px] sm:min-h-[400px] flex flex-col"
+            className="bg-[#105CE9] rounded-[24px] p-4 sm:p-6 text-[#F6F6F4] relative overflow-hidden min-h-[380px] sm:min-h-[400px] flex flex-col"
             style={{ transformStyle: "preserve-3d" }}
           >
             {/* Logo */}
@@ -294,7 +282,7 @@ md:text-[12px] md:leading-[28px]
           {/* Phase 02 */}
           <motion.div
             variants={cardVariants}
-            className="bg-[#E4E6E9] rounded-2xl p-4 sm:p-6 border-none relative overflow-hidden min-h-[380px] sm:min-h-[400px] flex flex-col"
+            className="bg-[#E4E6E9] rounded-[24px] p-4 sm:p-6 border-none relative overflow-hidden min-h-[380px] sm:min-h-[400px] flex flex-col"
             style={{ transformStyle: "preserve-3d" }}
           >
             {/* Logo */}
@@ -366,7 +354,7 @@ md:text-[12px] md:leading-[28px]
           {/* Phase 03 */}
           <motion.div
             variants={cardVariants}
-            className="bg-[#E4E6E9] rounded-2xl p-4 sm:p-6 border-none relative overflow-hidden min-h-[380px] sm:min-h-[400px] flex flex-col sm:col-span-2 lg:col-span-1"
+            className="bg-[#E4E6E9] rounded-[24px] p-4 sm:p-6 border-none relative overflow-hidden min-h-[380px] sm:min-h-[400px] flex flex-col sm:col-span-2 lg:col-span-1"
             style={{ transformStyle: "preserve-3d" }}
           >
             {/* Logo */}

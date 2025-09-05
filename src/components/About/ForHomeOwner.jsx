@@ -157,7 +157,7 @@ md:text-[18px] md:leading-[28px]
 
               {/* Learn More button */}
               <MotionLink
-                to="/home-owner"
+                to="/home-owner-growth-model"
                 variants={buttonVariant}
                 className="inline-flex items-center justify-between gap-2 rounded-md bg-[#0D1318] px-4 sm:px-6 py-2.5 sm:py-3 text-[11px] font-[700] uppercase tracking-[0.25em] text-[#F6F6F4] transition  md:px-7 md:py-3.5"
                 aria-label="Learn more for homeowners"
@@ -209,7 +209,7 @@ md:text-[18px] md:leading-[28px]
                       </div>
 
                       {/* Label outside and below the shape */}
-                      <span className={`text-[14px] font-[700] uppercase tracking-[0.25em] text-center leading-[22px] px-1 ${
+                      <span className={`text-[10px] 1821:text-[14px] font-[700] uppercase tracking-[0.25em] text-center leading-[22px] px-1 ${
                         service.isActive ? 'text-[#FF4C16]' : 'text-[#0D1318]'
                       }`}>
                         {service.label}
@@ -259,7 +259,7 @@ md:text-[18px] md:leading-[28px]
                       </div>
 
                       {/* Label outside and below the shape */}
-                      <span className={`text-[10px] font-[700] uppercase tracking-[0.25em] text-center leading-[22px] px-1 ${
+                      <span className={`text-[10px] 1821:text-[14px] font-[700] uppercase tracking-[0.25em] text-center leading-[22px] px-1 ${
                         service.isActive ? 'text-[#FF4C16]' : 'text-[#0D1318]'
                       }`}>
                         {service.label}
@@ -306,7 +306,7 @@ md:text-[18px] md:leading-[28px]
                       </div>
 
                       {/* Label outside and below the shape */}
-                      <span className={`text-[8px] md:text-[9px] font-bold uppercase tracking-wider text-center leading-tight px-1 ${
+                      <span className={`text-[10px] 1821:text-[14px] font-[700] uppercase tracking-[0.25em] text-center leading-[22px] px-1 ${
                         service.isActive ? 'text-[#FF4C16]' : 'text-[#0D1318]'
                       }`}>
                         {service.label}

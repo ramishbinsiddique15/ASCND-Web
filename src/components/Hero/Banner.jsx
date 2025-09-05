@@ -119,7 +119,7 @@ const Banner = () => {
       >
         {[
           { label: "Sign In", route: "https://portal.ascnd.pro/", external: true },
-          { label: "Sign Up", route: "/sign-up", external: false },
+          { label: "Sign Up", route: "https://portal.ascnd.pro/sign-up", external: true },
         ].map(({ label, route, external }, index) => (
           <MotionLink
             key={label}
@@ -177,16 +177,16 @@ tracking-[-0.04em]
       >
         {/* Mobile Layout - Stacked, No Animations */}
         <div className="flex flex-col gap-4 md:hidden">
-          <div className="flex items-center gap-2 border-t pt-4 border-t-white">
+          <div className="flex items-center gap-2 border-t pt-4 border-t-[#F6F6F4]">
             <Link
-              to="/home-owner"
+              to="/home-owner-growth-model"
               role="button"
               className=" flex flex-1 items-center justify-center rounded-lg border-2 border-[#F6F6F4] bg-[#F6F6F4] px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#FF4C16] transition-all duration-200 hover:bg-[#FF4C16] hover:text-[#F6F6F4] hover:border-[#FF4C16] h-11"
             >
               HOMEOWNER
             </Link>
             <Link
-              to="/business"
+              to="/business-growth-model"
               role="button"
               className="flex flex-1 items-center justify-center rounded-lg border-2 border-[#F6F6F4] bg-[#F6F6F4] px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#FF4C16] transition-all duration-200 hover:bg-[#FF4C16] hover:text-[#F6F6F4] hover:border-[#FF4C16] h-11"
             >
@@ -237,7 +237,7 @@ tracking-[-0.04em]
         </div>
 
         {/* Tablet Layout - Two Rows */}
-        <div className="hidden md:flex lg:hidden flex-col gap-4 border-t pt-4 border-t-white">
+        <div className="hidden md:flex lg:hidden flex-col gap-4 border-t pt-4 border-t-[#F6F6F4]">
           <motion.div
             className="flex items-center gap-2"
             initial={{ opacity: 0 }}
@@ -245,7 +245,7 @@ tracking-[-0.04em]
             transition={{ delay: 0.5, duration: 0.4, ease: "easeOut" }}
           >
             <MotionLink
-              to="/home-owner"
+              to="/home-owner-growth-model"
               role="button"
               variants={buttonItem}
               className="flex flex-1 items-center justify-center rounded-lg border-2 border-[#F6F6F4] bg-[#F6F6F4] px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#FF4C16] transition-all duration-200 hover:bg-[#FF4C16] hover:text-[#F6F6F4] hover:border-[#FF4C16] h-11"
@@ -253,7 +253,7 @@ tracking-[-0.04em]
               HOMEOWNER
             </MotionLink>
             <MotionLink
-              to="/business"
+              to="/business-growth-model"
               role="button"
               variants={buttonItem}
               className="flex flex-1 items-center justify-center rounded-lg border-2 border-[#F6F6F4] bg-[#F6F6F4] px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#FF4C16] transition-all duration-200 hover:bg-[#FF4C16] hover:text-[#F6F6F4] hover:border-[#FF4C16] h-11"
@@ -319,9 +319,9 @@ tracking-[-0.04em]
         </div>
 
         {/* Desktop Layout - Single Row */}
-        <div className="hidden lg:flex items-center justify-between border-t pt-12 border-t-white">
+        <div className="hidden lg:flex items-center justify-between border-t pt-12 border-t-[#F6F6F4]">
           <motion.div
-            className="absolute top-0 left-0 h-px bg-gradient-to-r from-transparent via-white to-transparent"
+            className="absolute top-0 left-0 h-px bg-gradient-to-r from-transparent via-[#F6F6F4] to-transparent"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
@@ -332,8 +332,8 @@ tracking-[-0.04em]
             variants={heroContainer}
           >
             {[
-              { label: "I'M A HOMEOWNER", route: "/home-owner" },
-              { label: "ASCND YOUR BUSINESS", route: "/business" },
+              { label: "I'M A HOMEOWNER", route: "/home-owner-growth-model" },
+              { label: "ASCND YOUR BUSINESS", route: "/business-growth-model" },
               { label: "ABOUT US", route: "/about" },
               { label: "REQUEST A QUOTE", route: "/request-quote" },
               { label: "APPLY", route: "/business-apply" },

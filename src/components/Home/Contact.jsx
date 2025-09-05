@@ -116,7 +116,7 @@ const Contact = () => {
         <div className="mx-auto  px-4 sm:px-6 py-6 sm:py-8 md:py-12 overflow-hidden">
           <motion.div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2" variants={container}>
             {/* Left: Subscribe card (white card with inset orange panel) */}
-            <motion.div className="self-end" variants={slideLeft}>
+            <motion.div className="self-end overflow-visible" variants={slideLeft}>
               <motion.img
                 src={logo}
                 alt="ASCND"
@@ -127,16 +127,16 @@ const Contact = () => {
 
               {/* Orange subscribe panel below the divider */}
               <motion.div
-                className="relative mt-3 overflow-visible h-82 rounded-2xl bg-[#FF4C16]"
+                className="relative mt-3 overflow-visible h-82 rounded-[24px]"
                 variants={fadeUp}
               >
                 {/* background solar graphic */}
                 <img
                   src={contact || "/placeholder.svg"}
                   alt=""
-                  className="absolute inset-0 h-full w-full rounded-2xl object-cover opacity-70"
+                  className="absolute inset-0 h-full w-full rounded-[24px] object-cover "
                 />
-                <div className="absolute inset-0 bg-[#FF4C16] mix-blend-multiply opacity-100 rounded-2xl" />
+                <div className="absolute inset-0 bg-[#FF4C16] mix-blend-multiply opacity-100 rounded-[24px]" />
 
                 {/* content */}
                 <div className="relative grid grid-cols-1 items-end gap-4 px-4 pb-4 pt-3 sm:px-5 sm:pb-5 sm:pt-4 md:px-6 md:pb-6 md:min-h-[260px] h-full z-40">
@@ -201,7 +201,7 @@ const Contact = () => {
 
             {/* Right: Contact form */}
             <motion.article
-              className="rounded-2xl border border-[#4B5361] bg-[#FAFBFB] p-3 sm:p-4 md:p-6"
+              className="rounded-[24px] border border-[#4B5361] bg-[#FAFBFB] p-3 sm:p-4 md:p-6"
               variants={slideRight}
             >
               <motion.h4

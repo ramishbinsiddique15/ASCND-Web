@@ -98,11 +98,11 @@ const Model = () => {
             >
               {/* Build equity card */}
               <motion.div
-                className="rounded-2xl p-3 border border-[#F6F6F4] flex items-center gap-3 sm:gap-4"
+                className="rounded-[24px] p-3 border border-[#F6F6F4] flex items-center gap-3 sm:gap-4"
                 variants={cardVariant}
               >
                 <motion.div
-                  className="rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
+                  className=" p-2 sm:p-3 flex-shrink-0"
                 >
                   <img
                     src={equity || "/placeholder.svg"}
@@ -117,11 +117,11 @@ const Model = () => {
 
               {/* Reduce monthly costs card */}
               <motion.div
-                className="rounded-2xl p-3 border border-[#F6F6F4] flex items-center gap-3 sm:gap-4"
+                className="rounded-[24px] p-3 border border-[#F6F6F4] flex items-center gap-3 sm:gap-4"
                 variants={cardVariant}
               >
                 <motion.div
-                  className="rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
+                  className=" p-2 sm:p-3 flex-shrink-0"
                 >
                   <img
                     src={utility || "/placeholder.svg"}
@@ -136,11 +136,11 @@ const Model = () => {
 
               {/* Unlock financing card */}
               <motion.div
-                className="rounded-2xl p-3 border border-[#F6F6F4] flex items-center gap-3 sm:gap-4"
+                className="rounded-[24px] p-3 border border-[#F6F6F4] flex items-center gap-3 sm:gap-4"
                 variants={cardVariant}
               >
                 <motion.div
-                  className="rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
+                  className=" p-2 sm:p-3 flex-shrink-0"
                 >
                   <img
                     src={finance || "/placeholder.svg"}
@@ -155,11 +155,11 @@ const Model = () => {
 
               {/* Fast installations card */}
               <motion.div
-                className="rounded-2xl p-3 border border-[#F6F6F4] flex items-center gap-3 sm:gap-4"
+                className="rounded-[24px] p-3 border border-[#F6F6F4] flex items-center gap-3 sm:gap-4"
                 variants={cardVariant}
               >
                 <motion.div
-                  className="rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
+                  className=" p-2 sm:p-3 flex-shrink-0"
                 >
                   <img
                     src={tier || "/placeholder.svg"}

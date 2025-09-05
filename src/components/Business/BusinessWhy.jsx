@@ -87,11 +87,11 @@ const BusinessWhy = () => {
               variants={container}
             >
               <motion.div
-                className="rounded-2xl p-2 border border-[#0D1318] flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4"
+                className="rounded-[24px] p-2 border border-[#0D1318] flex flex-row items-center gap-3 sm:gap-4"
                 variants={cardVariant}
               >
                 <motion.div
-                  className="rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
+                  className=" p-2 sm:p-3 flex-shrink-0"
                 >
                   <img
                     src={equity || "/placeholder.svg"}
@@ -113,11 +113,11 @@ const BusinessWhy = () => {
               </motion.div>
 
               <motion.div
-                className="rounded-2xl p-2 border border-[#0D1318] flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4"
+                className="rounded-[24px] p-2 border border-[#0D1318] flex flex-row items-center gap-3 sm:gap-4"
                 variants={cardVariant}
               >
                 <motion.div
-                  className="rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
+                  className=" p-2 sm:p-3 flex-shrink-0"
                 >
                   <img
                     src={utility || "/placeholder.svg"}
@@ -139,11 +139,11 @@ const BusinessWhy = () => {
               </motion.div>
 
               <motion.div
-                className="rounded-2xl p-2 border border-[#0D1318] flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4"
+                className="rounded-[24px] p-2 border border-[#0D1318] flex flex-row items-center gap-3 sm:gap-4"
                 variants={cardVariant}
               >
                 <motion.div
-                  className="rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
+                  className=" p-2 sm:p-3 flex-shrink-0"
                 >
                   <img
                     src={finance || "/placeholder.svg"}
@@ -165,11 +165,11 @@ const BusinessWhy = () => {
               </motion.div>
 
               <motion.div
-                className="rounded-2xl p-2 border border-[#0D1318] flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4"
+                className="rounded-[24px] p-2 border border-[#0D1318] flex flex-row items-center gap-3 sm:gap-4"
                 variants={cardVariant}
               >
                 <motion.div
-                  className="rounded-lg sm:rounded-xl p-2 sm:p-3 flex-shrink-0"
+                  className=" p-2 sm:p-3 flex-shrink-0"
                 >
                   <img
                     src={tier || "/placeholder.svg"}

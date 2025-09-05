@@ -19,14 +19,12 @@ const tagVariant = {
     opacity: 0,
     scale: 0.8,
     rotateX: -90,
-    filter: "blur(10px)",
   },
   show: {
     y: 0,
     opacity: 1,
     scale: 1,
     rotateX: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 1.2,
       ease: [0.16, 1, 0.3, 1],
@@ -43,14 +41,12 @@ const wordVariant = {
     opacity: 0,
     scale: 0.9,
     rotateY: -15,
-    filter: "blur(8px)",
   },
   show: {
     y: 0,
     opacity: 1,
     scale: 1,
     rotateY: 0,
-    filter: "blur(0px)",
     transition: {
       duration: 1.4,
       ease: [0.16, 1, 0.3, 1],
@@ -61,18 +57,16 @@ const wordVariant = {
   },
 }
 
-const fadeUp = {
+const textVariant = {
   hidden: {
     y: 50,
     opacity: 0,
     scale: 0.95,
-    filter: "blur(6px)",
   },
   show: {
     y: 0,
     opacity: 1,
     scale: 1,
-    filter: "blur(0px)",
     transition: {
       duration: 1.0,
       ease: [0.16, 1, 0.3, 1],
@@ -222,7 +216,7 @@ tracking-[-0.04em]
             variants={container}
           >
             <motion.p
-              variants={fadeUp}
+              variants={textVariant}
               className="font-bold text-[#0D1318] 
               text-[16px] leading-[24px]
 sm:text-[18px] sm:leading-[28px]

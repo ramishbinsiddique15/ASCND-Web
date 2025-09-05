@@ -193,8 +193,7 @@ const Card = ({ icon, label, title, body, image }) => {
       className="h-full overflow-hidden rounded-[28px] border border-[#B0B8C7] bg-[#F6F6F4]"
       variants={localCardVar}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2, margin: "0px 0px -15% 0px" }}
+      animate="show"
     >
       <div className="grid h-full grid-cols-1 lg:grid-cols-[2fr_1fr]">
         {/* Content */}
@@ -272,7 +271,7 @@ md:text-[18px] md:leading-[28px]
           </div>
         </motion.div>
         {/* Image */}
-        <div className="relative h-48 overflow-hidden sm:h-52 lg:h-full lg:rounded-r-2xl">
+        <div className="relative h-48 overflow-hidden sm:h-52 lg:h-full lg:rounded-r-[28px]">
           <motion.img
             src={image}
             alt=""
@@ -292,16 +291,14 @@ const ContractorServices = () => {
       id="contractorservices"
       variants={sectionFade}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
+      animate="show"
     >
       <div className="mx-auto  px-4 sm:px-6">
         <motion.div
           className="grid grid-cols-1 items-stretch gap-4 py-8 sm:gap-6 sm:py-10 lg:grid-cols-2 lg:gap-8"
           variants={listVar}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          animate="show"
         >
           {items.map((it) => (
             <Card key={it.label} {...it} />
