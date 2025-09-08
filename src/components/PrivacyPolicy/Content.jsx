@@ -38,14 +38,12 @@ const Content = () => {
                     {/* Right: Copy */}
                     <motion.div className="md:col-span-10 flex h-full flex-col justify-end mt-6 md:mt-0 md:pl-6 lg:pl-10" variants={container}>
                         <h2 className="mt-3 font-extrabold leading-[0.8] text-[#0D1318] sm:mt-4 md:mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-                            <motion.span variants={fadeUp} className="block whitespace-nowrap">OTOPILOT LLC PRIVACY POLICY</motion.span>
+                            <motion.span variants={fadeUp} className="block whitespace-nowrap">ASCND Pro LLC PRIVACY POLICY</motion.span>
                         </h2>
                         <br></br>
-                        <motion.p variants={fadeUp} className="text-sm font-semibold leading-relaxed text-[#0D1318] sm:text-base md:text-lg lg:text-xl">
-                            Effective as of [Effective Date]
-                        </motion.p>
+                        {/* <motion.p variants={fadeUp} className="text-sm font-semibold leading-relaxed text-[#0D1318] sm:text-base md:text-lg lg:text-xl"></motion.p> */}
                         <motion.p variants={fadeUp} className="mt-3 text-xs leading-6 text-[#0D1318]/70 sm:mt-4 sm:text-sm sm:leading-7 md:text-base">
-                            This Privacy Policy describes how OtoPilot LLC and our subsidiaries and affiliates (collectively “OtoPilot”, “we”, “us” or “our”) handle personal information that we collect through our website and services (collectively, the “Service”), as well as through social media, our marketing activities, our live events, and other activities described in this Privacy Policy.
+                            This Privacy Policy describes how ASCND Pro LLC and our subsidiaries and affiliates (collectively “ASCND Pro”, “we”, “us” or “our”) handle personal information that we collect through our website and services (collectively, the “Service”), as well as through social media, our marketing activities, our live events, and other activities described in this Privacy Policy.
                             <br></br><br></br>
                             In the course of providing services to our business customers, we process certain personal information on their behalf, subject to the restrictions of their contracts with us. Unless otherwise stated herein, this Privacy Policy does not apply to that personal information.
                         </motion.p>
@@ -80,7 +78,7 @@ const Content = () => {
                                 <li className="ml-14">Contact data, such as your email address and phone number.</li>
                                 <li className="ml-14">Account data, such as your username, name, email address, and password that you set to establish an online account with us, third-party account identifiers, information about your participation in our events, promotions, and any other information that you add to your account.</li>
                                 <li className="ml-14">Communications that we exchange, including when you contact us with questions or feedback, through our customer support service, social media, or otherwise, or that you exchange on or through the Service.</li>
-                                <li className="ml-14">Lead engagement widget data when you submit your information to our lead engagement widget on an OtoPilot customer’s website, including your address and the information you provide about your monthly utility bill.</li>
+                                <li className="ml-14">Lead engagement widget data when you submit your information to our lead engagement widget on an ASCND Pro customer’s website, including your address and the information you provide about your monthly utility bill.</li>
                                 <li className="ml-14">Research data that you provide when you agree to participate in our satisfaction surveys.</li>
                                 <li className="ml-14">User-generated content, such as posts and comments that you may post on our social media pages.</li>
                                 <li className="ml-14">Marketing data, such as your preferences for receiving communications about our marketing communications.</li>
@@ -145,12 +143,12 @@ const Content = () => {
                             <br></br><br></br>
                             <ul className="list-disc">
                                 <li className="ml-14">Affiliates. Subsidiaries and affiliates, for purposes consistent with this Privacy Policy.</li>
-                                <li className="ml-14">Lead engagement widget customers. If you submit your information to our lead engagement widget, you are instructing OtoPilot to share your personal information with the customer whose website features the lead engagement widget. Once your personal information has been shared with the OtoPilot customer, it will also be subject to the customer’s privacy policy and the customer may use your personal information for its own purposes. We encourage you to closely read the customer’s privacy policy before submitting your information. Please note that we do not control and we are not responsible for our customer’s processing of your personal information.</li>
+                                <li className="ml-14">Lead engagement widget customers. If you submit your information to our lead engagement widget, you are instructing ASCND Pro to share your personal information with the customer whose website features the lead engagement widget. Once your personal information has been shared with the ASCND Pro customer, it will also be subject to the customer’s privacy policy and the customer may use your personal information for its own purposes. We encourage you to closely read the customer’s privacy policy before submitting your information. Please note that we do not control and we are not responsible for our customer’s processing of your personal information.</li>
                                 <li className="ml-14">Service providers. Companies and individuals that provide services on our behalf or help us operate the Service or our business (such as information technology, hosting, customer relationship management and support, communications delivery, marketing, advertising, and website analytics).</li>
                                 <li className="ml-14">Advertising partners. Third-party advertising companies that collect information about your activity on the Service and other online services to help us advertise our Service, and/or use customer lists that we share with them to deliver ads on their platforms on our behalf to those customers and similar users.</li>
                                 <li className="ml-14">Professional advisors. Professional advisors, such as lawyers, auditors, bankers, and insurers, where necessary in the course of the professional services that they render to us.</li>
                                 <li className="ml-14">Authorities and others. Law enforcement, government authorities, and private parties, as we believe in good faith to be necessary or appropriate for the compliance and protection purposes described above.</li>
-                                <li className="ml-14">Business transferees. Acquiring and other relevant parties to business transactions (or potential transactions) involving a corporate divestiture, merger, consolidation, acquisition, reorganization, sale, or other disposition of all or any portion of the business or assets of, or equity interests in, OtoPilot or our affiliates (including, in connection with a bankruptcy or similar proceedings).</li>
+                                <li className="ml-14">Business transferees. Acquiring and other relevant parties to business transactions (or potential transactions) involving a corporate divestiture, merger, consolidation, acquisition, reorganization, sale, or other disposition of all or any portion of the business or assets of, or equity interests in, ASCND Pro or our affiliates (including, in connection with a bankruptcy or similar proceedings).</li>
                             </ul>
                         </motion.div>
 
@@ -176,7 +174,7 @@ const Content = () => {
                             5. OTHER SITES AND SERVICES
                         </motion.p>
                         <motion.p variants={fadeUp} className="mt-3 text-xs leading-6 text-[#0D1318]/70 sm:mt-4 sm:text-sm sm:leading-7 md:text-base">
-                            The Service may contain links or integrations that allow you to access websites, mobile applications, and other online services operated by third parties. For example, our Service may allow solar professionals or their clients to access online services that offer financing for solar projects. These links are not an endorsement of, or representation that we are affiliated with, any third party. In addition, our content may be included on web pages or in mobile applications or other online services that are not associated with us. OtoPilot does not have access to the personal information that is provided to these third parties and providing personal information to these third parties is at your own risk. We do not control websites, mobile applications, or online services operated by third parties, and we are not responsible for their actions.
+                            The Service may contain links or integrations that allow you to access websites, mobile applications, and other online services operated by third parties. For example, our Service may allow solar professionals or their clients to access online services that offer financing for solar projects. These links are not an endorsement of, or representation that we are affiliated with, any third party. In addition, our content may be included on web pages or in mobile applications or other online services that are not associated with us. ASCND Pro does not have access to the personal information that is provided to these third parties and providing personal information to these third parties is at your own risk. We do not control websites, mobile applications, or online services operated by third parties, and we are not responsible for their actions.
                         </motion.p>
 
                         <br></br><br></br>
@@ -216,10 +214,9 @@ const Content = () => {
                             10. HOW TO CONTACT US
                         </motion.p>
                         <motion.p variants={fadeUp} className="mt-3 text-xs leading-6 text-[#0D1318]/70 sm:mt-4 sm:text-sm sm:leading-7 md:text-base">
-                            Email: <a href="mailto:privacy@otopilot.com" className="text-blue-600 dark:text-sky-400">privacy@otopilot.com</a><br></br>
-                            Mail: OtoPilot LLC<br></br>
-                            64 E Broadway Rd #200<br></br>
-                            Tempe, AZ 85281<br></br>
+                            Email: <a href="mailto:privacy@ascnd.pro" className="text-blue-600 dark:text-sky-400">privacy@ascnd.pro</a><br></br>
+                            1111 6TH AVE STE 550 #478222<br></br>
+                            SAN DIEGO, CA 92101<br></br>
                             USA
                         </motion.p>
 
@@ -253,7 +250,7 @@ const Content = () => {
                             <br></br><br></br>
                             How to exercise your rights. You may submit requests to exercise your California privacy rights described above as follows:
                             <br></br><br></br>
-                            Right to information, access, and deletion. You may submit requests to exercise your right to information, access, or deletion by sending us an email at <a href="mailto:privacy@otopilot.com" className="text-blue-600 dark:text-sky-400">privacy@otopilot.com</a>.
+                            Right to information, access, and deletion. You may submit requests to exercise your right to information, access, or deletion by sending us an email at <a href="mailto:privacy@ASCND Pro.com" className="text-blue-600 dark:text-sky-400">privacy@ASCND Pro.com</a>.
                             <br></br><br></br>
                             Right to opt-out of the “sale” of your Personal Information. Like many companies, we use services that help deliver interest-based ads to users as described in the Interest-based advertising section above. While we do not “sell” Personal Information in the conventional sense, our use of these services may constitute a statutory “sale” of Personal Information to the providers of those services for purposes of the CCPA. See the Do Not Sell My Personal Information section of our Cookie Notice for information on how to opt-out.
                             <br></br><br></br>
@@ -293,7 +290,7 @@ const Content = () => {
                             <br></br><br></br>
                             Personal Information. References to “personal information” in this Privacy Policy are equivalent to “personal data” governed by the General Data Protection Regulation (GDPR).
                             <br></br><br></br>
-                            Controller. OtoPilot LLC is the controller of your personal information covered by this Privacy Policy.
+                            Controller. ASCND Pro LLC is the controller of your personal information covered by this Privacy Policy.
                             <br></br><br></br>
                             Legal basis for processing. The legal bases of our processing of your personal information as described in this Privacy Policy will depend on the type of personal information and the specific context in which we process it. However, the legal bases we typically rely on are set out in the table below. We use your Personal Information only as permitted by law.
                             <br></br><br></br>
@@ -337,7 +334,7 @@ const Content = () => {
                                 <li className="ml-14">Right to lodge a complaint with the supervisory authority: If you have a concern about any aspect of our privacy practices, including the way we have handled your personal information, you can report it to the relevant Supervisory Authority. You can find your data protection regulator <a href='https://edpb.europa.eu/about-edpb/board/members_en' target='_blank' className="text-blue-600 dark:text-sky-400">here</a>.</li>
                             </ul>
                             <br></br><br></br>
-                            You may submit these requests by email (<a className="text-blue-600 dark:text-sky-400" href="mailto:privacy@otopilot.com">privacy@otopilot.com</a>) or to our postal address provided above. We may request specific information from you to help us confirm your identity and process your request. Applicable law may require or permit us to decline your request. If we decline your request, we will tell you why, subject to legal restrictions.
+                            You may submit these requests by email (<a className="text-blue-600 dark:text-sky-400" href="mailto:privacy@ASCND Pro.com">privacy@ASCND Pro.com</a>) or to our postal address provided above. We may request specific information from you to help us confirm your identity and process your request. Applicable law may require or permit us to decline your request. If we decline your request, we will tell you why, subject to legal restrictions.
                             <br></br><br></br>
                             Cross-Border Data Transfer. If we transfer your personal information out of the EEA or the UK to a country not deemed to provide an adequate level of personal information protection for purposes of applicable data protection laws such that additional safeguards are required, the transfer will be performed:
                             <ul className="list-disc">
