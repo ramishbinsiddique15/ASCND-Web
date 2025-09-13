@@ -2,12 +2,19 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import solar from "../../assets/icons/solar-white.svg"
+import solarOrange from "../../assets/icons/solar.svg"
 import epoxy from "../../assets/icons/epoxy.svg"
+import epoxyWhite from "../../assets/icons/epoxy-white.svg"
 import roofing from "../../assets/icons/roofing.svg"
+import roofingWhite from "../../assets/icons/roofing-white.svg"
 import hvac from "../../assets/icons/hvac.svg"
+import hvacWhite from "../../assets/icons/hvac-white.svg"
 import turf from "../../assets/icons/turf.svg"
+import turfWhite from "../../assets/icons/turf-white.svg"
 import lighting from "../../assets/icons/lighting.svg"
+import lightingWhite from "../../assets/icons/lighting-white.svg"
 import windows from "../../assets/icons/windows.svg"
+import windowsWhite from "../../assets/icons/windows-white.svg"
 import doubleArrow from "../../assets/icons/double-arrow.svg"
 
 const containerVariants = {
@@ -85,13 +92,13 @@ const serviceVariant = {
 
 const ForHomeOwner = () => {
   const services = [
-    { icon: solar, label: "SOLAR ENERGY", isActive: true },
-    { icon: epoxy, label: "EPOXY FLOORING" },
-    { icon: roofing, label: "ROOFING" },
-    { icon: hvac, label: "HVAC" },
-    { icon: turf, label: "TURF" },
-    { icon: lighting, label: "PERMANENT LIGHTING" },
-    { icon: windows, label: "WINDOW COVERINGS" },
+    { icon: solarOrange, iconWhite: solar , label: "SOLAR ENERGY" },
+    { icon: epoxy, iconWhite: epoxyWhite, label: "EPOXY FLOORING" },
+    { icon: roofing, iconWhite: roofingWhite, label: "ROOFING" },
+    { icon: hvac, iconWhite: hvacWhite, label: "HVAC" },
+    { icon: turf, iconWhite: turfWhite, label: "TURF" },
+    { icon: lighting, iconWhite: lightingWhite, label: "PERMANENT LIGHTING" },
+    { icon: windows, iconWhite: windowsWhite, label: "WINDOW COVERINGS" },
   ]
   const MotionLink = motion(Link)
 
@@ -177,13 +184,13 @@ md:text-[18px] md:leading-[28px]
                     <motion.div
                       key={service.label}
                       variants={serviceVariant}
-                      className="flex flex-col items-center space-y-2"
+                      className="flex flex-col items-center space-y-2 group cursor-pointer"
                     >
                       {/* Octagonal shape container */}
                       <div className="relative aspect-square w-full p-0.5">
                         {/* Border element */}
                         <div
-                          className={`absolute inset-0 ${service.isActive ? "bg-[#FF4C16]" : "bg-[#B0B8C7]"}`}
+                          className="absolute inset-0 bg-[#B0B8C7] group-hover:bg-[#FF4C16] transition-all duration-300"
                           style={{
                             clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
                           }}
@@ -191,11 +198,7 @@ md:text-[18px] md:leading-[28px]
 
                         {/* Content element - Icon only */}
                         <div
-                          className={`absolute inset-0.5 flex items-center justify-center transition-all duration-300 ${
-                            service.isActive
-                              ? "bg-[#FF4C16]"
-                              : "bg-[#F6F6F4] hover:bg-gray-50"
-                          }`}
+                          className="absolute inset-0.5 flex items-center justify-center transition-all duration-300 bg-[#F6F6F4] group-hover:bg-[#FF4C16]"
                           style={{
                             clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
                           }}
@@ -203,15 +206,13 @@ md:text-[18px] md:leading-[28px]
                           <img 
                             src={service.icon || "/placeholder.svg"} 
                             alt={service.label} 
-                            className={`w-6 h-6 ${service.isActive ? 'brightness-0 invert' : ''}`}
+                            className="w-6 h-6 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                           />
                         </div>
                       </div>
 
                       {/* Label outside and below the shape */}
-                      <span className={`text-[10px] 1821:text-[14px] font-[700] uppercase tracking-[0.25em] text-center leading-[22px] px-1 ${
-                        service.isActive ? 'text-[#FF4C16]' : 'text-[#0D1318]'
-                      }`}>
+                      <span className="text-[10px] 1821:text-[14px] font-[700] uppercase tracking-[0.25em] text-center leading-[22px] px-1 text-[#0D1318] group-hover:text-[#FF4C16] transition-all duration-300">
                         {service.label}
                       </span>
                     </motion.div>
@@ -227,13 +228,13 @@ md:text-[18px] md:leading-[28px]
                     <motion.div
                       key={service.label}
                       variants={serviceVariant}
-                      className="flex flex-col items-center space-y-2"
+                      className="flex flex-col items-center space-y-2 group cursor-pointer"
                     >
                       {/* Octagonal shape container */}
                       <div className="relative aspect-square w-full p-0.5">
                         {/* Border element */}
                         <div
-                          className={`absolute inset-0 ${service.isActive ? "bg-[#FF4C16]" : "bg-[#B0B8C7]"}`}
+                          className="absolute inset-0 bg-[#B0B8C7] group-hover:bg-[#FF4C16] transition-all duration-300"
                           style={{
                             clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
                           }}
@@ -241,11 +242,7 @@ md:text-[18px] md:leading-[28px]
 
                         {/* Content element - Icon only */}
                         <div
-                          className={`absolute inset-0.5 flex items-center justify-center transition-all duration-300 ${
-                            service.isActive
-                              ? "bg-[#FF4C16]"
-                              : "bg-[#F6F6F4] hover:bg-gray-50"
-                          }`}
+                          className="absolute inset-0.5 flex items-center justify-center transition-all duration-300 bg-[#F6F6F4] group-hover:bg-[#FF4C16]"
                           style={{
                             clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
                           }}
@@ -253,15 +250,13 @@ md:text-[18px] md:leading-[28px]
                           <img
                             src={service.icon || "/placeholder.svg"}
                             alt={service.label}
-                            className={`w-6 h-6 md:w-8 md:h-8 ${service.isActive ? 'brightness-0 invert' : ''}`}
+                            className="w-6 h-6 md:w-8 md:h-8 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                           />
                         </div>
                       </div>
 
                       {/* Label outside and below the shape */}
-                      <span className={`text-[10px] 1821:text-[14px] font-[700] uppercase tracking-[0.25em] text-center leading-[22px] px-1 ${
-                        service.isActive ? 'text-[#FF4C16]' : 'text-[#0D1318]'
-                      }`}>
+                      <span className="text-[10px] 1821:text-[14px] font-[700] uppercase tracking-[0.25em] text-center leading-[22px] px-1 text-[#0D1318] group-hover:text-[#FF4C16] transition-all duration-300">
                         {service.label}
                       </span>
                     </motion.div>
@@ -274,13 +269,13 @@ md:text-[18px] md:leading-[28px]
                     <motion.div
                       key={service.label}
                       variants={serviceVariant}
-                      className="flex flex-col items-center space-y-2 w-[calc(25%-0.75rem)]"
+                      className="flex flex-col items-center space-y-2 w-[calc(25%-0.75rem)] group cursor-pointer"
                     >
                       {/* Octagonal shape container */}
                       <div className="relative aspect-square w-full p-0.5">
                         {/* Border element */}
                         <div
-                          className={`absolute inset-0 ${service.isActive ? "bg-[#FF4C16]" : "bg-[#B0B8C7]"}`}
+                          className="absolute inset-0 bg-[#B0B8C7] group-hover:bg-[#FF4C16] transition-all duration-300"
                           style={{
                             clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
                           }}
@@ -288,11 +283,7 @@ md:text-[18px] md:leading-[28px]
 
                         {/* Content element - Icon only */}
                         <div
-                          className={`absolute inset-0.5 flex items-center justify-center transition-all duration-300 ${
-                            service.isActive
-                              ? "bg-[#FF4C16]"
-                              : "bg-[#F6F6F4] hover:bg-gray-50"
-                          }`}
+                          className="absolute inset-0.5 flex items-center justify-center transition-all duration-300 bg-[#F6F6F4] group-hover:bg-[#FF4C16]"
                           style={{
                             clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
                           }}
@@ -300,15 +291,13 @@ md:text-[18px] md:leading-[28px]
                           <img
                             src={service.icon || "/placeholder.svg"}
                             alt={service.label}
-                            className={`w-6 h-6 md:w-8 md:h-8 ${service.isActive ? 'brightness-0 invert' : ''}`}
+                            className="w-6 h-6 md:w-8 md:h-8 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                           />
                         </div>
                       </div>
 
                       {/* Label outside and below the shape */}
-                      <span className={`text-[10px] 1821:text-[14px] font-[700] uppercase tracking-[0.25em] text-center leading-[22px] px-1 ${
-                        service.isActive ? 'text-[#FF4C16]' : 'text-[#0D1318]'
-                      }`}>
+                      <span className="text-[10px] 1821:text-[14px] font-[700] uppercase tracking-[0.25em] text-center leading-[22px] px-1 text-[#0D1318] group-hover:text-[#FF4C16] transition-all duration-300">
                         {service.label}
                       </span>
                     </motion.div>
