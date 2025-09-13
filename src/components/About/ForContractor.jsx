@@ -100,7 +100,7 @@ const ForContractor = () => {
               {/* Content */}
               <div className="relative z-10">
                 <motion.div
-                  className="w-fit inline-block rounded-sm border-2 border-[#F6F6F4] py-1 font-semibold uppercase tracking-[0.25em] text-[#F6F6F4] text-[9px] sm:text-[14px] md:text-[14px] px-4 mb-10"
+                  className="!w-fit inline-block rounded-sm border-2 border-[#F6F6F4] py-1 font-semibold uppercase tracking-[0.25em] text-[#F6F6F4] text-[9px] sm:text-[14px] md:text-[14px] px-4 mb-10"
                   variants={tagVariants}
                 >
                   FOR CONTRACTORS & SALES PROFESSIONALS
