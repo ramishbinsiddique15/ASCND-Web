@@ -178,7 +178,20 @@ const Pill = ({ title, items }) => {
   const location = useLocation()
   const navigate = useNavigate()
 
+  const handleNavigationd = (path) => {
+    if (path.includes('#')) {
+      const [route, hash] = path.split('#')
+      navigate(route, { state: { scrollTo: hash } })
+    } else {
+      navigate(path)
+    }
+  }
   const handleNavigation = (path) => {
+    if (path.startsWith('http://') || path.startsWith('https://')) {
+      window.location.href = path
+      return
+    }
+
     if (path.includes('#')) {
       const [route, hash] = path.split('#')
       navigate(route, { state: { scrollTo: hash } })
@@ -279,6 +292,8 @@ const Footer = () => {
         { text: "Why ASCND your business?", path: "/contractor#contractorwhy" },
         { text: "Growth Model", path: "/business-growth-model" },
         { text: "Apply to ASCND", path: "/business-apply" },
+        { text: "Join our EPC Network", path: "https://signup.ascnd.pro/ASCND/form/WelcomeEPC/formperma/79RvLkWz4IACKeykmeqcPqZ1D53JqfHgHBDR3yh3AiY" },
+        { text: "Apply to become a Build partner", path: "https://signup.ascnd.pro/ASCND/form/BuildPartnerOnboardingForm/formperma/eY_4SJxwoCXbj7ibvXa8mwp-WXpBosPyYH9Zw06oCKI" },
       ],
     },
     {
