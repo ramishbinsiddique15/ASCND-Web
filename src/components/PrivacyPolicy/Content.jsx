@@ -48,6 +48,10 @@ const Content = () => {
                             In the course of providing services to our business customers, we process certain personal information on their behalf, subject to the restrictions of their contracts with us. Unless otherwise stated herein, this Privacy Policy does not apply to that personal information.
                         </motion.p>
 
+                        <motion.p variants={fadeUp} className="mt-3 text-xs leading-6 text-[#0D1318]/70 sm:mt-4 sm:text-sm sm:leading-7 md:text-base">
+                            No mobile opt-in data will be shared with third parties
+                        </motion.p>
+
                         <br></br>
                         <motion.p variants={fadeUp} className="text-sm font-semibold leading-relaxed text-[#0D1318] sm:text-base md:text-lg lg:text-xl">Contents</motion.p>
                         <motion.div variants={fadeUp} className="mt-3 text-xs leading-6 text-[#0D1318]/70 sm:mt-4 sm:text-sm sm:leading-7 md:text-base">
