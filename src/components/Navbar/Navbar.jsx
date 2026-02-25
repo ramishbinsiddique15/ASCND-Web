@@ -161,6 +161,10 @@ const Navbar = () => {
             <div className="flex-1" />
 
             <motion.div className="flex items-center gap-2 xl:gap-3 2xl:gap-5" variants={rowStagger}>
+              <motion.button
+                onClick={() => handleNavigation("/")} className={outlineBtn + " justify-center cursor-pointer"} variants={btnItem}
+                whileTap={{ scale: 0.98 }} > <span>Home</span>
+              </motion.button>
               <div className="relative" ref={homeDropdownRef}>
                 <MotionLink
                   to="#"

@@ -225,6 +225,34 @@ const BusinessApplyForm = () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [])
+  const isValidPhone = (value) => {
+    // Remove everything except digits
+    const digitsOnly = value.replace(/\D/g, "")
+
+    // Require at least 10 digits (adjust if you want international flexibility)
+    return digitsOnly.length >= 10
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if (!phone.trim()) {
+      alert("Phone number is required.")
+      return
+    }
+
+    if (!isValidPhone(phone)) {
+      alert("Please enter a valid phone number.")
+      return
+    }
+
+    if (!agreeToTerms) {
+      alert("You must agree to the terms.")
+      return
+    }
+    window.location.href = "https://portal.ascnd.pro/sign-up";
+
+    console.log("Submitting form...")
+  }
 
   return (
     <>
@@ -318,20 +346,12 @@ md:text-[18px] md:leading-[28px]
               variants={slideRight}
             >
               <motion.h4
-                className="text-[#4B5361] mb-3 sm:mb-4
-              text-[14px] leading-[20px]
-              sm:text-[16px] sm:leading-[24px]
-              md:text-[18px] md:leading-[28px]
-              2xl:text-[18px] 2xl:leading-[26px]
-              1821:text-[20px] 1821:leading-[28px] font-[700]
-              tracking-[-0.02em]"
-                variants={fadeUp}
-              >
-                Contact Information
+                className="text-[#4B5361] mb-3 sm:mb-4 text-[14px] leading-[20px] sm:text-[16px] sm:leading-[24px] md:text-[18px] md:leading-[28px] 2xl:text-[18px] 2xl:leading-[26px]
+              1821:text-[20px] 1821:leading-[28px] font-[700] tracking-[-0.02em]" variants={fadeUp} > Contact Information
               </motion.h4>
 
-              <motion.form className="space-y-3" variants={container}>
-                {/* Name Fields */}
+              <motion.form  onSubmit={handleSubmit} className="space-y-3" variants={container}>
+                {/* Name Fields*/}
                 <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-2" variants={formField}>
                   <div>
                     <motion.input
@@ -386,9 +406,10 @@ md:text-[18px] md:leading-[28px]
                 <motion.div variants={formField}>
                   <motion.input
                     type="tel"
-                    placeholder="PHONE NUMBER"
+                    placeholder="PHONE NUMBER*"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                    required
                     className="placeholder-with-orange-asterisk w-full rounded-lg border-[2px] border-[#B0B8C7] bg-[#F6F6F4] px-3 py-2.5 text-[11px] sm:px-4 sm:py-3 font-semibold tracking-[0.25em] text-[#0D1318] outline-none focus:border-[#FF4C16] transition-border-color duration-200"
                     variants={formField}
                   />
@@ -396,12 +417,10 @@ md:text-[18px] md:leading-[28px]
 
                 {/* Address Section */}
                 <motion.div variants={formField}>
-                  <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">
-                    Address<span className="text-[#FF4C16]">*</span>
-                  </h3>
+                  {/* <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4"> Address<span className="text-[#FF4C16]">*</span> </h3> */}
 
                   {/* Country */}
-                  <div className="mb-4">
+                  {/* <div className="mb-4">
                     <div className="relative" data-dropdown>
                       <motion.button
                         type="button"
@@ -445,10 +464,10 @@ md:text-[18px] md:leading-[28px]
                         </motion.div>
                       )}
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Address Line 1 */}
-                  <div className="mb-4">
+                  {/* <div className="mb-4">
                     <motion.input
                       type="text"
                       placeholder="ADDRESS LINE 1*"
@@ -457,10 +476,10 @@ md:text-[18px] md:leading-[28px]
                       className="placeholder-with-orange-asterisk w-full rounded-lg border-[2px] border-[#B0B8C7] bg-[#F6F6F4] px-3 py-2.5 text-[11px] sm:px-4 sm:py-3 font-semibold tracking-[0.25em] text-[#0D1318] outline-none focus:border-[#FF4C16] transition-border-color duration-200"
                       variants={formField}
                     />
-                  </div>
+                  </div> */}
 
                   {/* Address Line 2 */}
-                  <div className="mb-4">
+                  {/* <div className="mb-4">
                     <motion.input
                       type="text"
                       placeholder="ADDRESS LINE 2"
@@ -469,10 +488,10 @@ md:text-[18px] md:leading-[28px]
                       className="w-full rounded-lg border-[2px] border-[#B0B8C7] bg-[#F6F6F4] px-3 py-2.5 text-[11px] sm:px-4 sm:py-3 font-semibold tracking-[0.25em] text-[#0D1318] placeholder-[#0D1318]/60 outline-none focus:border-[#FF4C16] transition-border-color duration-200"
                       variants={formField}
                     />
-                  </div>
+                  </div> */}
 
                   {/* City, State, Zip */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                     <motion.input
                       type="text"
                       placeholder="CITY*"
@@ -497,11 +516,11 @@ md:text-[18px] md:leading-[28px]
                       className="placeholder-with-orange-asterisk w-full rounded-lg border-[2px] border-[#B0B8C7] bg-[#F6F6F4] px-3 py-2.5 text-[11px] sm:px-4 sm:py-3 font-semibold tracking-[0.25em] text-[#0D1318] outline-none focus:border-[#FF4C16] transition-border-color duration-200"
                       variants={formField}
                     />
-                  </div>
+                  </div> */}
                 </motion.div>
 
                 {/* Role Selection */}
-                <motion.div variants={formField}>
+                {/* <motion.div variants={formField}>
                   <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">
                     What role are you interested in?<span className="text-[#FF4C16]">*</span>
                   </h3>
@@ -550,10 +569,10 @@ md:text-[18px] md:leading-[28px]
                       </motion.label>
                     ))}
                   </div>
-                </motion.div>
+                </motion.div> */}
 
                 {/* Solar Experience */}
-                <motion.div variants={formField}>
+                {/* <motion.div variants={formField}>
                   <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">
                     Do you have experience in the solar industry?<span className="text-[#FF4C16]">*</span>
                   </h3>
@@ -600,10 +619,10 @@ md:text-[18px] md:leading-[28px]
                       </motion.div>
                     )}
                   </div>
-                </motion.div>
+                </motion.div> */}
 
                 {/* Experience Description */}
-                {hasExperience === "Yes" && (
+                {/* {hasExperience === "Yes" && (
                   <motion.div variants={formField}>
                     <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">If yes, describe your experience</h3>
                     <motion.textarea
@@ -614,10 +633,10 @@ md:text-[18px] md:leading-[28px]
                       variants={formField}
                     />
                   </motion.div>
-                )}
+                )} */}
 
                 {/* Years of Experience */}
-                {hasExperience === "Yes" && (
+                {/* {hasExperience === "Yes" && (
                   <motion.div variants={formField}>
                     <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">How many years?</h3>
                     <div className="relative" data-dropdown>
@@ -664,10 +683,10 @@ md:text-[18px] md:leading-[28px]
                       )}
                     </div>
                   </motion.div>
-                )}
+                )} */}
 
                 {/* Team */}
-                <motion.div variants={formField}>
+                {/* <motion.div variants={formField}>
                   <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">
                     Do you currently have a team?<span className="text-[#FF4C16]">*</span>
                   </h3>
@@ -714,10 +733,10 @@ md:text-[18px] md:leading-[28px]
                       </motion.div>
                     )}
                   </div>
-                </motion.div>
+                </motion.div> */}
 
                 {/* Team Size */}
-                {hasTeam === "Yes" && (
+                {/* {hasTeam === "Yes" && (
                   <motion.div variants={formField}>
                     <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">If yes, what is the size of your team?</h3>
                     <motion.input
@@ -728,10 +747,10 @@ md:text-[18px] md:leading-[28px]
                       variants={formField}
                     />
                   </motion.div>
-                )}
+                )} */}
 
                 {/* Company Information */}
-                <motion.div variants={formField}>
+                {/* <motion.div variants={formField}>
                   <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">Company name</h3>
                   <motion.input
                     type="text"
@@ -752,10 +771,10 @@ md:text-[18px] md:leading-[28px]
                     className="w-full rounded-lg border-[2px] border-[#B0B8C7] bg-[#F6F6F4] px-3 py-2.5 text-[11px] sm:px-4 sm:py-3 font-semibold tracking-[0.25em] text-[#0D1318] placeholder-[#0D1318]/60 outline-none focus:border-[#FF4C16] transition-border-color duration-200"
                     variants={formField}
                   />
-                </motion.div>
+                </motion.div> */}
 
                 {/* Operating States */}
-                <motion.div variants={formField}>
+                {/* <motion.div variants={formField}>
                   <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">
                     What states do you operate in?<span className="text-[#FF4C16]">*</span>
                   </h3>
@@ -766,10 +785,10 @@ md:text-[18px] md:leading-[28px]
                     className="w-full rounded-lg border-[2px] border-[#B0B8C7] bg-[#F6F6F4] px-3 py-2.5 text-[11px] sm:px-4 sm:py-3 font-semibold tracking-[0.25em] text-[#0D1318] outline-none focus:border-[#FF4C16] transition-border-color duration-200"
                     variants={formField}
                   />
-                </motion.div>
+                </motion.div> */}
 
                 {/* Licensed & Insured */}
-                <motion.div variants={formField}>
+                {/* <motion.div variants={formField}>
                   <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">
                     Are you licensed & insured?<span className="text-[#FF4C16]">*</span>
                   </h3>
@@ -816,10 +835,10 @@ md:text-[18px] md:leading-[28px]
                       </motion.div>
                     )}
                   </div>
-                </motion.div>
+                </motion.div> */}
 
                 {/* Partnership Goals */}
-                <motion.div variants={formField}>
+                {/* <motion.div variants={formField}>
                   <h3 className="text-base sm:text-lg font-semibold text-[#0D1318] mb-3 sm:mb-4">
                     What are your goals in partnering with us?<span className="text-[#FF4C16]">*</span>
                   </h3>
@@ -830,7 +849,7 @@ md:text-[18px] md:leading-[28px]
                     className="w-full rounded-lg border-[2px] border-[#B0B8C7] bg-[#F6F6F4] px-3 py-2.5 text-[11px] sm:px-4 sm:py-3 font-semibold tracking-[0.25em] text-[#0D1318] outline-none focus:border-[#FF4C16] transition-border-color duration-200"
                     variants={formField}
                   />
-                </motion.div>
+                </motion.div> */}
 
                 {/* How did you hear about ASCND */}
                 <motion.div variants={formField}>
@@ -884,42 +903,29 @@ md:text-[18px] md:leading-[28px]
 
                 {/* Terms and Conditions */}
                 <motion.div variants={formField}>
-                  <p className="text-[11px] text-[#4B5361] font-[600] leading-[16px] mb-2">
-                    I certify that the information provided is accurate and complete. I understand that this application
-                    does not guarantee acceptance into the ASCND program. Additionally, I consent to receive text messages
-                    from ASCND Pro regarding updates, promotions, and other information. I understand that message and
-                    data rates may apply, and I can opt out at any time by replying STOP.
+                  <p className="text-[12px] text-[#4B5361] font-[600] leading-[16px]">
+                    The terms should have disclosure that no phone information will be shared or sold.
                   </p>
+                  <p className="text-[12px] text-[#4B5361] font-[600] leading-[16px] mb-2">
+                    There should be explicit text consent with the message "By submitting this form and signing up for texts, you consent to receive marketing messages from ASCND Pro at the number provided, including messages sent by autodialer. Consent is not a condition of purchase. Message & data rates may apply. Message frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help"
+                  </p>
+                  <a className="text-[15px] text-[#FF4C16] block sm:inline" target='_blank' href='https://ascnd.pro/privacy-policy'>Privacy Policy </a> &nbsp;&nbsp;&nbsp;
+                  <a className="text-[15px] text-[#FF4C16] block sm:inline" target='_blank' href='https://ascnd.pro/privacy-policy'> Terms and Conditions</a>
 
                   <motion.label className="cursor-pointer mb-6 block">
                     <motion.div
-                      className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border transition-all ${
-                        agreeToTerms
-                          ? "bg-[#FF4C16] border-[#FF4C16]"
-                          : "bg-[#F6F6F4] border-[#B0B8C7]"
-                      }`}
-                      variants={fadeUp}
-                    >
+                      className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border transition-all ${agreeToTerms ? "bg-[#FF4C16] border-[#FF4C16]"
+                          : "bg-[#F6F6F4] border-[#B0B8C7]" }`} variants={fadeUp} >
                       <div className="relative">
                         <input
-                          type="checkbox"
-                          checked={agreeToTerms}
-                          onChange={(e) => setAgreeToTerms(e.target.checked)}
-                          className="sr-only"
-                        />
+                          type="checkbox" checked={agreeToTerms} onChange={(e) => setAgreeToTerms(e.target.checked)} className="sr-only" />
                         <div
                           className={`w-4 h-4 sm:w-5 sm:h-5 rounded border-2 flex items-center justify-center transition-all ${
-                            agreeToTerms ? "bg-[#F6F6F4] border-[#F6F6F4]" : "bg-[#F6F6F4] border-[#FF4C16]"
-                          }`}
-                        >
+                            agreeToTerms ? "bg-[#F6F6F4] border-[#F6F6F4]" : "bg-[#F6F6F4] border-[#FF4C16]" }`} >
                           {agreeToTerms && <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF4C16] rounded-full"></div>}
                         </div>
                       </div>
-                      <span
-                        className={`text-xs sm:text-sm font-medium transition-all ${agreeToTerms ? "text-[#F6F6F4]" : "text-[#0D1318]"}`}
-                      >
-                        I Agree
-                      </span>
+                      <span className={`text-xs sm:text-sm font-medium transition-all ${agreeToTerms ? "text-[#F6F6F4]" : "text-[#0D1318]"}`} > I Agree </span>
                     </motion.div>
                   </motion.label>
 
