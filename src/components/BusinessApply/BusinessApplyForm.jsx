@@ -904,13 +904,10 @@ md:text-[18px] md:leading-[28px]
                 {/* Terms and Conditions */}
                 <motion.div variants={formField}>
                   <p className="text-[12px] text-[#4B5361] font-[600] leading-[16px]">
-                    The terms should have disclosure that no phone information will be shared or sold.
+                    By submitting this form and signing up for texts, you consent to receive marketing messages from ASCND Pro at the number provided, including messages sent by autodialer. Consent is not a condition of purchase. Message & data rates may apply. Message frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for HELP.
                   </p>
-                  <p className="text-[12px] text-[#4B5361] font-[600] leading-[16px] mb-2">
-                    There should be explicit text consent with the message "By submitting this form and signing up for texts, you consent to receive marketing messages from ASCND Pro at the number provided, including messages sent by autodialer. Consent is not a condition of purchase. Message & data rates may apply. Message frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help"
-                  </p>
-                  <a className="text-[15px] text-[#FF4C16] block sm:inline" target='_blank' href='https://ascnd.pro/privacy-policy'>Privacy Policy </a> &nbsp;&nbsp;&nbsp;
-                  <a className="text-[15px] text-[#FF4C16] block sm:inline" target='_blank' href='https://ascnd.pro/privacy-policy'> Terms and Conditions</a>
+                  <a className="text-[15px] text-[#FF4C16] block sm:inline" target='_blank' href='/privacy-policy'>Privacy Policy </a> &nbsp;&nbsp;&nbsp;
+                  <a className="text-[15px] text-[#FF4C16] block sm:inline" target='_blank' href='/terms-and-conditions'> Terms and Conditions</a>
 
                   <motion.label className="cursor-pointer mb-6 block">
                     <motion.div

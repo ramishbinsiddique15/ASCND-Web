@@ -8,6 +8,7 @@ import About from './pages/About/About';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import Request from './pages/Request/Request';
 import BusinessApply from './pages/BusinessApply/BusinessApply';
+import TermsAndConditions from './pages/TermsAndConditions/TermsAndConditions';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/request-quote" element={<Request />} />
         <Route path="/business-apply" element={<BusinessApply />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       </Routes>
     </BrowserRouter>
   );

@@ -385,19 +385,10 @@ const Footer = () => {
             className="mt-6 flex items-center gap-10 border-t border-[#F6F6F4] pt-3 text-[11px] text-[#F6F6F4] sm:mt-8 sm:pt-4 font-[600]"
             variants={fadeUp}
           >
-            <span>© ASCND Industries, 2025</span>
-            <Link
-              className="underline cursor-pointer"
-              to={"/privacy-policy"}
-            >
-              Privacy Policy
-            </Link>
-            <motion.a
-              className="underline cursor-pointer"
-              href="#"
-            >
-              Cookies
-            </motion.a>
+            <span>© ASCND Industries, 2026</span>
+            <Link className="underline cursor-pointer" to={"/privacy-policy"} > Privacy Policy </Link>
+            <Link className="underline cursor-pointer" to={"/terms-and-conditions"} > Terms and Conditions </Link>
+            <motion.a className="underline cursor-pointer" href="#" > Cookies </motion.a>
           </motion.div>
         </motion.div>
       </motion.footer>
